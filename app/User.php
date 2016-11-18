@@ -4,10 +4,13 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Request;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    use EntrustUserTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -26,4 +29,50 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public static function rule($id)
+    {
+//        return [
+//            'name' => 'required',
+//            'email' => 'required|email|unique:users,email',
+//            'password' => 'required|same:confirm-password',
+//            'roles' => 'required'
+//        ];
+
+        switch (Request::method()) {
+            case 'GET':
+            case 'DELETE': {
+                return [];
+            }
+            case 'POST': {
+                return [
+                    'name' => 'required',
+                    'email' => 'required|email|unique:users,email',
+                    'password' => 'required|same:confirm-password',
+                    'roles' => 'required'
+                ];
+            }
+            case 'PUT':
+            case 'PATCH': {
+                return [
+
+                    'name' => 'required',
+                    'email' => 'required|email|unique:users,email,' . $id,
+                    'password' => 'same:confirm-password',
+                    'roles' => 'required'
+
+                ];
+            }
+            default:
+                break;
+        }
+    }
+
+    public static function messages()
+    {
+        return [
+            'name.required' => 'Please input your name'
+        ];
+    }
 }
