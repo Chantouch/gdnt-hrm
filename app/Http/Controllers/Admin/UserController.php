@@ -19,8 +19,8 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $data = User::orderBy('id', 'DESC')->paginate(5);
-        return view('admin.users.index', compact('data'))->with('i', ($request->input('page', 1) - 1) * 5);
+        $data = User::orderBy('name', 'ASC')->paginate(5);
+        return view('admin.users.index', compact('data'));
     }
 
     /**
@@ -42,7 +42,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($data = $request->all(), User::rule(), User::messages());
+        $validator = Validator::make($data = $request->all(), User::validate(), User::messages());
         if ($validator->fails()) {
             return redirect()->back()->withInput()->withErrors($validator)->with('error', 'Some fields have errors, Please correct and try again');
         }
@@ -78,7 +78,7 @@ class UserController extends Controller
         $user = User::find($id);
         $roles = Role::orderBy('display_name')->pluck('display_name', 'id');
         $user_role = $user->roles->pluck('id', 'id')->toArray();
-        return view('admin.users.edit', compact('user','roles', 'user_role'));
+        return view('admin.users.edit', compact('user', 'roles', 'user_role'));
     }
 
     /**
@@ -121,5 +121,15 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('admin.users.index')->with('success', 'User deleted successfully');
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function profile($id)
+    {
+        $profile = User::find($id);
+        return view('admin.personal.index', compact('profile'));
     }
 }

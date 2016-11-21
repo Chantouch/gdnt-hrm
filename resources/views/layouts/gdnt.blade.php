@@ -15,8 +15,9 @@
     <link href="{!! asset('assets/css/icons.css') !!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('assets/css/pages.css') !!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('assets/css/responsive.css') !!}" rel="stylesheet" type="text/css"/>
-
-    <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+@yield('specific_style')
+@yield('specific_css')
+<!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -25,8 +26,6 @@
 
     <script src="{!! asset('assets/js/modernizr.min.js') !!}"></script>
 
-    @yield('specific_style')
-    @yield('specific_css')
     <link href="{!! asset('assets/css/components.css') !!}" rel="stylesheet" type="text/css"/>
 
     <!-- Scripts -->
@@ -58,25 +57,9 @@
     <div class="content-page">
         <!-- Start content -->
         <div class="content">
-            <div class="container">
 
-                <!-- Page-Title -->
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h4 class="page-title">GDNT HRM</h4>
-                        <ol class="breadcrumb">
-                            <li>
-                                <a href="#">Ubold</a>
-                            </li>
-                            <li>
-                                <a href="#">Tables</a>
-                            </li>
-                            <li class="active">
-                                Bootstrap Tables
-                            </li>
-                        </ol>
-                    </div>
-                </div>
+        @yield('full_content')
+            <div class="container">
 
                 @yield('content')
 

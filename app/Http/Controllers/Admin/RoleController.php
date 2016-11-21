@@ -8,9 +8,22 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 use DB;
+use Vinkla\Hashids\HashidsManager;
 
 class RoleController extends Controller
 {
+
+    protected $hashids;
+
+    /**
+     * RoleController constructor.
+     * @param HashidsManager $hashids
+     */
+    public function __construct(HashidsManager $hashids)
+    {
+        $this->hashids = $hashids;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +32,7 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
-        $roles = Role::orderBy('id', 'DESC')->paginate(5);
+        $roles = Role::orderBy('display_name', 'ASC')->paginate(5);
         return view('admin.roles.index', compact('roles'))->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -42,7 +55,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($data = $request->all(), Role::rule(), Role::message());
+        $validator = Validator::make($data = $request->all(), Role::validate(), Role::message());
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput()->with('error', 'Please correct missing fields');
         }

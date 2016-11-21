@@ -8,26 +8,25 @@
                 List all staff that added to system
             </p>
 
-            <button id="demo-delete-row" class="btn btn-danger" disabled><i class="fa fa-times m-r-5"></i>Delete
-            </button>
-            <table id="demo-custom-toolbar" data-toggle="table"
-                   data-toolbar="#demo-delete-row"
+            {{--<button id="demo-delete-row" class="btn btn-danger" disabled><i class="fa fa-times m-r-5"></i>Delete--}}
+            {{--</button>--}}
+            <table data-toggle="table"
                    data-search="true"
-                   data-show-refresh="true"
+                   data-show-refresh="false"
                    data-show-toggle="true"
                    data-show-columns="true"
-                   data-sort-name="id"
+                   {{--data-sort-name="name"--}}
                    data-page-list="[5, 10, 20]"
                    data-page-size="5"
                    data-pagination="true" data-show-pagination-switch="true" class="table-bordered ">
                 <thead>
                 <tr>
-                    <th data-field="state" data-checkbox="true"></th>
-                    <th data-field="id" data-sortable="true">Name</th>
-                    <th data-field="name" data-sortable="true">Email</th>
-                    <th data-field="date" data-sortable="true">Role</th>
-                    <th data-field="amount" data-align="center" data-sortable="true"
-                        data-sorter="priceSorter">Status
+                    <th>#</th>
+                    <th data-field="name" data-sortable="true">Name</th>
+                    <th data-field="email" data-sortable="true">Email</th>
+                    <th data-field="role" data-sortable="true">Role</th>
+                    <th data-field="status" data-align="center" data-sortable="true"
+                        data-sorter="status">Status
                     </th>
                     <th data-align="center">Action</th>
                 </tr>
@@ -36,13 +35,13 @@
                 <tbody>
                 @foreach ($data as $key => $user)
                     <tr>
-                        <td>{{ ++$i }}</td>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
+                        <td>{!! $key + 1 !!}</td>
+                        <td>{!!  $user->name !!}</td>
+                        <td>{!!  $user->email  !!}</td>
                         <td>
                             @if(!empty($user->roles))
-                                @foreach($user->roles as $v)
-                                    <label class="label label-success">{{ $v->display_name }}</label>
+                                @foreach($user->roles as $role)
+                                    <label class="label label-success">{!! $role->display_name !!}</label>
                                 @endforeach
                             @endif
                         </td>
@@ -53,9 +52,21 @@
                             <div class='btn-group'>
                                 <a href="{!! route('admin.users.show', [$user->id]) !!}" class='btn btn-default btn-xs'>
                                     <i class="glyphicon glyphicon-eye-open"></i></a>
-                                <a href="{!! route('admin.users.edit', [$user->id]) !!}" class='btn btn-default btn-xs'>
-                                    <i class="glyphicon glyphicon-edit"></i></a>
-                                {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                                @if(Entrust::hasRole('admin'))
+                                    <a href="{!! route('admin.users.edit', [$user->id]) !!}"
+                                       class='btn btn-default btn-xs'>
+                                        <i class="glyphicon glyphicon-edit"></i></a>
+                                    @if(Auth::user()->id != $user->id)
+                                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                                    @endif
+                                @endif
+                                @if(Entrust::hasRole('staff'))
+                                    @if(Auth::user()->id == $user->id)
+                                        <a href="{!! route('admin.users.edit', [$user->id]) !!}"
+                                           class='btn btn-default btn-xs'>
+                                            <i class="glyphicon glyphicon-edit"></i></a>
+                                    @endif
+                                @endif
                             </div>
                             {!! Form::close() !!}
                         </td>

@@ -35,24 +35,54 @@ class PermissionTable extends Seeder
                 'description' => 'Delete Role'
             ],
             [
-                'name' => 'staff-list',
+                'name' => 'list-staff',
                 'display_name' => 'Display staff Listing',
                 'description' => 'See only Listing Of Staff'
             ],
             [
-                'name' => 'staff-create',
+                'name' => 'create-staff',
                 'display_name' => 'Create Staff',
                 'description' => 'Create New Staff'
             ],
             [
-                'name' => 'staff-edit',
+                'name' => 'edit-staff',
                 'display_name' => 'Edit Staff',
                 'description' => 'Edit Staff'
             ],
             [
-                'name' => 'staff-delete',
+                'name' => 'delete-staff',
                 'display_name' => 'Delete Staff',
                 'description' => 'Delete Staff'
+            ],
+            [
+                'name' => 'edit-own-self',
+                'display_name' => 'Edit Own self',
+                'description' => 'This permission allow use to edit their own information'
+            ],
+            [
+                'name' => 'show-single-staff',
+                'display_name' => 'Show Single Staff',
+                'description' => 'Allowed user to view a single staff for more information'
+            ],
+            [
+                'name' => 'show-single-role',
+                'display_name' => 'Show Single Staff',
+                'description' => 'Allowed user to view a single role, only allowed for Admin role'
+            ],
+            [
+                'name' => 'list-permission',
+                'display_name' => 'View all permission available',
+                'description' => 'Allowed user to view all permission, only allowed for Admin role'
+            ],
+            [
+                'name' => 'show-single-permission',
+                'display_name' => 'View specific permission',
+                'description' => 'Allowed user to view a specific permission, only allowed for Admin role'
+            ],
+            [
+                'name' => 'show-own-self',
+                'display_name' => 'View his/her information completely',
+                'description' => 'Allowed user to view their information completely'
             ]
         ];
 
@@ -60,15 +90,5 @@ class PermissionTable extends Seeder
             Permission::create($value);
         }
 
-//        Permission::create([
-//            'name' => 'create-staff',
-//            'display_name' => 'Create Staff',
-//            'description' => 'create new staff',
-//        ]);
-//        Permission::create([
-//            'name' => 'edit-staff',
-//            'display_name' => 'Edit Staff',
-//            'description' => 'edit existing staff',
-//        ]);
     }
 }

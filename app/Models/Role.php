@@ -12,6 +12,24 @@ class Role extends EntrustRole
         'name', 'display_name', 'description'
     ];
 
+    /**
+     * @return array
+     */
+    public static function validate()
+    {
+        return [
+            'name' => 'required|unique:roles,name',
+            'display_name' => 'required',
+            'description' => 'required',
+            'permission' => 'required',
+        ];
+    }
+
+
+    /**
+     * @param $id
+     * @return array
+     */
     public static function rule($id)
     {
         switch (Request::method()) {

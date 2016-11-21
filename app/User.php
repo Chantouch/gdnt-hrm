@@ -30,15 +30,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public static function validate()
+    {
+        return [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|same:confirm-password',
+            'roles' => 'required'
+        ];
+    }
+
 
     public static function rule($id)
     {
-//        return [
-//            'name' => 'required',
-//            'email' => 'required|email|unique:users,email',
-//            'password' => 'required|same:confirm-password',
-//            'roles' => 'required'
-//        ];
 
         switch (Request::method()) {
             case 'GET':

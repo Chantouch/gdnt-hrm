@@ -4,8 +4,8 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="/home" class="logo"><i class="icon-magnet icon-c-logo"></i><span>Ub<i
-                            class="md md-album"></i>ld</span></a>
+            <a href="/home" class="logo"><i class="icon-magnet icon-c-logo"></i><span>GDNT<i
+                            class="md md-album"></i>HRM</span></a>
         </div>
     </div>
 
@@ -146,9 +146,9 @@
                     <li class="dropdown">
                         @if(!Auth::guest())
                             <a href="#" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true">
-                                <img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> <span>{!! Auth::user()->name !!}</span></a>
+                                <img src="{!! asset('assets/images/users/avatar-1.jpg') !!}" alt="user-img" class="img-circle"> <span>{!! Auth::user()->name !!}</span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0)"><i class="ti-user m-r-5"></i> Profile</a></li>
+                                <li><a href="{!! route('admin.users.show.profile', [Auth::user()->id]) !!}"><i class="ti-user m-r-5"></i> Profile</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-settings m-r-5"></i> Settings</a></li>
                                 <li><a href="javascript:void(0)"><i class="ti-lock m-r-5"></i> Lock screen</a></li>
                                 <li>

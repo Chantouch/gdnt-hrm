@@ -1,5 +1,17 @@
 @extends('layouts.gdnt')
 @section('title', 'Edit existing user')
+@section('specific_css')
+    <link href="{!! asset('assets/plugins/select2/select2.css') !!}" rel="stylesheet" type="text/css"/>
+    <link href="{!! asset('assets/plugins/bootstrap-select/dist/css/bootstrap-select.min.css') !!}" rel="stylesheet" />
+@stop
+
+@section('specific_style')
+    <style>
+        .select2-container-multi .select2-choices .select2-search-field input {
+            padding: 7px 12px !important;
+        }
+    </style>
+@stop
 
 @section('content')
     <div class="row">
@@ -39,4 +51,17 @@
         </div>
     </div>
 
+@stop
+
+@section('specific_js')
+    <script src="{!! asset('assets/plugins/select2/select2.min.js') !!}" type="text/javascript"></script>
+    <script src="{!! asset('assets/plugins/bootstrap-select/dist/js/bootstrap-select.min.js') !!}" type="text/javascript"></script>
+@stop
+
+@section('specific_script')
+    <script>
+        jQuery(document).ready(function () {
+            $('#roles').select2();
+        })
+    </script>
 @stop
