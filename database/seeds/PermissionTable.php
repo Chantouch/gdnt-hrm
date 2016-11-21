@@ -66,7 +66,7 @@ class PermissionTable extends Seeder
             ],
             [
                 'name' => 'show-single-role',
-                'display_name' => 'Show Single Staff',
+                'display_name' => 'Show Single Role',
                 'description' => 'Allowed user to view a single role, only allowed for Admin role'
             ],
             [
