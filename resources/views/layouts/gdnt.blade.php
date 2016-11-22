@@ -67,7 +67,7 @@
         </div>
 
         <footer class="footer">
-            2015 © Ubold.
+            2016 © GDNT.
         </footer>
 
     </div>

@@ -17,9 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', 'HomeController@index');
     Route::group(['prefix' => 'admin', 'middleware' => ['role:super-admin|admin|staff|data-entry']], function () {
         Route::group(array('prefix' => 'system'), function () {
             //Permissions
