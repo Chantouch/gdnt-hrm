@@ -22,7 +22,7 @@
         {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' => 'form-control')) !!}
     </div>
 </div>
-@if(Entrust::hasRole('admin'))
+@if(Entrust::hasRole('system-admin'))
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <label for="roles" class="control-label"><strong>Role:</strong></label>

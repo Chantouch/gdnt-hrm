@@ -18,8 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/dashboard', 'HomeController@index');
-    Route::group(['prefix' => 'admin', 'middleware' => ['role:super-admin|admin|staff|data-entry']], function () {
+    Route::get('/admin/dashboard', ['as' => 'admin.dashboard', 'uses' => 'HomeController@index']);
+    Route::group(['prefix' => 'admin', 'middleware' => ['role:super-admin|system-admin|admin|admin-officer|management|officer']], function () {
         Route::group(array('prefix' => 'system'), function () {
             //Permissions
             Route::get('permissions', ['as' => 'admin.permissions.index', 'uses' => 'Admin\PermissionController@index', 'middleware' => ['permission:list-permission']]);
@@ -42,6 +42,14 @@ Route::group(['middleware' => ['auth']], function () {
             Route::patch('roles/{id}', ['as' => 'admin.roles.update', 'uses' => 'Admin\RoleController@update', 'middleware' => ['permission:role-edit']]);
             Route::delete('roles/{id}', ['as' => 'admin.roles.destroy', 'uses' => 'Admin\RoleController@destroy', 'middleware' => ['permission:role-delete']]);
 
+        });
+
+        //Route Modules
+        Route::group(array('prefix' => 'modules'), function () {
+            //Ministries
+            Route::resource('ministries', 'Admin\MinistryController', ["as" => "admin.modules"]);
+            Route::resource('departments', 'Admin\DepartmentController', ["as" => "admin.modules"]);
+            Route::resource('department-units', 'Admin\DepartmentUnitController', ["as" => "admin.modules"]);
         });
     });
 

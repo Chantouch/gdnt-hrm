@@ -5,8 +5,9 @@
         <div id="sidebar-menu">
             <ul>
                 <li class="text-muted menu-title">Navigation</li>
-                <li class="has_sub">
-                    <a href="#" class="waves-effect {!! Request::is('dashboard') ? 'active' : '' !!}">
+                <li>
+                    <a href="{!! route('admin.dashboard') !!}"
+                       class="waves-effect {{ Request::is('admin/dashboard') ? ' active' : '' }}">
                         <i class="ti-home"></i> <span> Dashboard </span>
                     </a>
                 </li>
@@ -14,10 +15,23 @@
                 <li class="text-muted menu-title">More</li>
 
                 <li class="has_sub">
-                    <a href="#" class="waves-effect"><i class="ti-files"></i><span> Pages </span></a>
+                    <a href="#" class="waves-effect{{ Request::is('admin/modules/*') ? ' active' : '' }}">
+                        <i class="ti-files"></i><span> Modules </span></a>
                     <ul class="list-unstyled">
-                        <li><a href="page-starter.html">Starter Page</a></li>
-                        <li><a href="page-login.html">Login</a></li>
+                        <li class="{!! Request::is('admin/modules/ministries*')? 'active' : '' !!}">
+                            <a href="{!! route('admin.modules.ministries.index') !!}">Ministries</a></li>
+                        <li class="{!! Request::is('admin/modules/departments*') ? 'active' : '' !!}">
+                            <a href="{!! route('admin.modules.departments.index') !!}">Departments</a></li>
+                        <li class="{!! Request::is('admin/modules/department-units*') ? 'active' : '' !!}">
+                            <a href="{!! route('admin.modules.department-units.index') !!}">Department Units</a></li>
+                        <li class="{!! Request::is('admin/modules/departments*') ? 'active' : '' !!}">
+                            <a href="#">Offices</a></li>
+                        <li class="{!! Request::is('admin/modules/departments') ? 'active' : '' !!}">
+                            <a href="#">Frameworks</a></li>
+                        <li class="{!! Request::is('admin/modules/departments') ? 'active' : '' !!}">
+                            <a href="#">Occupations</a></li>
+                        <li class="{!! Request::is('admin/modules/departments') ? 'active' : '' !!}">
+                            <a href="#">Languages</a></li>
                     </ul>
                 </li>
 
@@ -30,7 +44,7 @@
                     <ul class="list-unstyled">
                         <li class="{{ Request::is('admin/system/users*') ? 'active' : '' }}">
                             <a href="{!! route('admin.users.index') !!}">Users</a></li>
-                        @if(Entrust::hasRole('admin'))
+                        @if(Entrust::hasRole('system-admin'))
                             <li class="{{ Request::is('admin/system/roles*') ? 'active' : '' }}">
                                 <a href="{!! route('admin.roles.index') !!}">Roles</a></li>
                             <li class="{{ Request::is('admin/system/permissions*') ? 'active' : '' }}">

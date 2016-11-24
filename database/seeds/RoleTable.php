@@ -14,17 +14,21 @@ class RoleTable extends Seeder
     {
         $role = [
             [
-                'name' => 'staff',
-                'display_name' => 'Staff',
-                'description' => 'User is allowed to see their profiles',
+                'name' => 'system-admin',
+                'display_name' => 'System Administrator',
+                'description' => 'This role is allowed to use all features in system.',
             ], [
-                'name' => 'admin',
-                'display_name' => 'Administrator',
-                'description' => 'User is allowed to manage all module in system',
+                'name' => 'management',
+                'display_name' => 'Management',
+                'description' => 'This role is allowed for only to view and and see the dashboard',
             ], [
-                'name' => 'super-admin',
-                'display_name' => 'Super Administrator',
-                'description' => 'User is allowed to manage all module in system with advanced features',
+                'name' => 'admin-officer',
+                'display_name' => 'Administrator officer',
+                'description' => 'User is allowed to manage all module in system (CRUD)',
+            ], [
+                'name' => 'officer',
+                'display_name' => 'Officer',
+                'description' => 'This role is allowed to view their information only',
             ]
         ];
 

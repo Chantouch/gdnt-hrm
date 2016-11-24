@@ -52,7 +52,7 @@
                             <div class='btn-group'>
                                 <a href="{!! route('admin.users.show', [$user->id]) !!}" class='btn btn-default btn-xs'>
                                     <i class="glyphicon glyphicon-eye-open"></i></a>
-                                @if(Entrust::hasRole('admin'))
+                                @if(Entrust::hasRole('system-admin'))
                                     <a href="{!! route('admin.users.edit', [$user->id]) !!}"
                                        class='btn btn-default btn-xs'>
                                         <i class="glyphicon glyphicon-edit"></i></a>
@@ -60,7 +60,7 @@
                                         {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                                     @endif
                                 @endif
-                                @if(Entrust::hasRole('staff'))
+                                @if(Entrust::hasRole('officer'))
                                     @if(Auth::user()->id == $user->id)
                                         <a href="{!! route('admin.users.edit', [$user->id]) !!}"
                                            class='btn btn-default btn-xs'>
