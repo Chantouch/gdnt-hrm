@@ -1,5 +1,5 @@
 @extends('layouts.gdnt')
-@section('title', 'Edit existing user')
+@section('title', "$ministry->name")
 
 @section('content')
     <div class="row">
@@ -7,7 +7,7 @@
             <div class="card-box">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-left">
-                        <h2>Edit Role</h2>
+                        <h2>Edit Ministry: {!! $ministry->name !!}</h2>
                     </div>
                     <div class="pull-right">
                         <a class="btn btn-primary" href="{{ route('admin.modules.ministries.index') }}"> Back</a>

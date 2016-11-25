@@ -1,5 +1,5 @@
 @extends('layouts.gdnt')
-@section('title', 'Create new user')
+@section('title', 'Create new Ministry')
 @section('content')
     <div class="row">
         <div class="col-sm-12">

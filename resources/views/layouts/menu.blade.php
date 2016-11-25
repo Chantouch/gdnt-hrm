@@ -24,14 +24,14 @@
                             <a href="{!! route('admin.modules.departments.index') !!}">Departments</a></li>
                         <li class="{!! Request::is('admin/modules/department-units*') ? 'active' : '' !!}">
                             <a href="{!! route('admin.modules.department-units.index') !!}">Department Units</a></li>
-                        <li class="{!! Request::is('admin/modules/departments*') ? 'active' : '' !!}">
-                            <a href="#">Offices</a></li>
-                        <li class="{!! Request::is('admin/modules/departments') ? 'active' : '' !!}">
-                            <a href="#">Frameworks</a></li>
-                        <li class="{!! Request::is('admin/modules/departments') ? 'active' : '' !!}">
-                            <a href="#">Occupations</a></li>
-                        <li class="{!! Request::is('admin/modules/departments') ? 'active' : '' !!}">
-                            <a href="#">Languages</a></li>
+                        <li class="{!! Request::is('admin/modules/offices*') ? 'active' : '' !!}">
+                            <a href="{!! route('admin.modules.offices.index') !!}">Offices</a></li>
+                        <li class="{!! Request::is('admin/modules/frames*') ? 'active' : '' !!}">
+                            <a href="{!! route('admin.modules.frames.index') !!}">Frameworks</a></li>
+                        <li class="{!! Request::is('admin/modules/occupations*') ? 'active' : '' !!}">
+                            <a href="{!! route('admin.modules.occupations.index') !!}">Occupations</a></li>
+                        <li class="{!! Request::is('admin/modules/languages*') ? 'active' : '' !!}">
+                            <a href="{!! route('admin.modules.languages.index') !!}">Languages</a></li>
                     </ul>
                 </li>
 
@@ -55,10 +55,10 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="#" class="waves-effect"><i class="ti-user"></i><span> Crm </span></a>
+                    <a href="#" class="waves-effect"><i class="ti-user"></i><span> Employers </span></a>
                     <ul class="list-unstyled">
-                        <li><a href="crm-dashboard.html"> Dashboard </a></li>
-                        <li><a href="crm-contact.html"> Contacts </a></li>
+                        <li><a href="crm-dashboard.html"> Employers </a></li>
+                        <li><a href="crm-contact.html"> Add more </a></li>
                     </ul>
                 </li>
             </ul>

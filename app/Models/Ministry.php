@@ -4,16 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Vinkla\Hashids\Facades\Hashids;
 
 class Ministry extends Model
 {
 
     use SoftDeletes;
+
+    protected $appends = ['hashid'];
     /**
      * @var array
      */
     protected $fillable = [
-        'name', 'description', 'status',
+        'name', 'description', 'status'
     ];
 
     /**
@@ -24,8 +27,13 @@ class Ministry extends Model
     protected $casts = [
         'name' => 'string',
         'description' => 'string',
-        'status' => 'boolean'
+        'status' => 'boolean',
     ];
+
+    public function getHashidAttribute()
+    {
+        return Hashids::encode($this->attributes['id']);
+    }
 
     /**
      * @return array

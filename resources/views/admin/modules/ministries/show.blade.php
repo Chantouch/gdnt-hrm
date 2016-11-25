@@ -1,5 +1,5 @@
 @extends('layouts.gdnt')
-@section('title', 'User list')
+@section('title', "$ministry->name")
 
 @section('content')
     <div class="row">

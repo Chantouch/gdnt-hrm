@@ -11,7 +11,7 @@
                             <h2>Create new Department</h2>
                         </div>
                         <div class="pull-right">
-                            <a class="btn btn-primary" href="{{ route('admin.modules.departments.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('admin.modules.department-units.index') }}"> Back</a>
                         </div>
                     </div>
                 </div>

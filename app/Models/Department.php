@@ -35,7 +35,7 @@ class Department extends Model
      */
     public function ministry()
     {
-        return $this->belongsTo(Ministry::class);
+        return $this->belongsTo(Ministry::class)->withTrashed();
     }
 
     /**

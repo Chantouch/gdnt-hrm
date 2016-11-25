@@ -19,9 +19,11 @@ class CreateDepartmentUnitsTable extends Migration
             $table->longText('description');
             $table->tinyInteger('status')->default(1);
             $table->integer('department_id', false, true)->unsigned();
+            $table->integer('office_id', false, true)->unsigned();
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('department_id')->references('id')->on('departments')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('office_id')->references('id')->on('offices')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

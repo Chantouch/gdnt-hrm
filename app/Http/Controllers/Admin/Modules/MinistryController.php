@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Modules;
 
 use App\Models\Ministry;
 use Illuminate\Http\Request;
@@ -54,6 +54,8 @@ class MinistryController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput()->with('error', 'Your fields maybe missed');
         }
+        $unique_id = str_random(50);
+        $data['unique_id'] = $unique_id;
 
         Ministry::create($data);
 
@@ -68,7 +70,10 @@ class MinistryController extends Controller
      */
     public function show($id)
     {
-        $ministry = Ministry::with('departments')->findOrFail($id);
+        $ministry = Ministry::with('departments')->find($id);
+        if (empty($ministry)) {
+            return redirect()->route('admin.modules.ministries.index')->with('error', 'Ministry not found');
+        }
         return view('admin.modules.ministries.show', compact('ministry'));
     }
 

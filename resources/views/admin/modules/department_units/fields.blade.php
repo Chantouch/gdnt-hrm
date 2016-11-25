@@ -13,7 +13,7 @@
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group{!! $errors->has('department_id') ? ' has-error' : '' !!}">
-            <label for="name" class="control-label"><strong>Ministry:</strong></label>
+            <label for="name" class="control-label"><strong>Department:</strong></label>
             {!! Form::select('department_id', $department, null, array('placeholder' => '--Pick department--','class' => 'form-control')) !!}
             @if($errors->has('department_id'))
                 <span class="help-block">

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Modules;
 
 use App\Models\Department;
 use App\Models\DepartmentUnit;
@@ -73,7 +73,11 @@ class DepartmentUnitController extends Controller
      */
     public function show($id)
     {
-        //
+        $department_unit = DepartmentUnit::find($id);
+        if (empty($department_unit)) {
+            return redirect()->route('admin.modules.department-units.index')->with('error', 'DepartmentUnit not found');
+        }
+        return view('admin.modules.department_units.show', compact('department_unit'));
     }
 
     /**
@@ -84,7 +88,11 @@ class DepartmentUnitController extends Controller
      */
     public function edit($id)
     {
-        //
+        $department_unit = DepartmentUnit::find($id);
+        if (empty($department_unit)) {
+            return redirect()->route('admin.modules.department-units.index')->with('error', 'DepartmentUnit not found');
+        }
+        return view('admin.modules.department_units.edit', compact('department_unit'));
     }
 
     /**
@@ -96,7 +104,29 @@ class DepartmentUnitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $department_unit = DepartmentUnit::find($id);
+        if (empty($department_unit)) {
+            return redirect()->route('admin.modules.department-units.index')->with('error', 'DepartmentUnit not found');
+        }
+        try {
+            DB::beginTransaction();
+            $validator = Validator::make($data = $request->all(), DepartmentUnit::rules(), DepartmentUnit::messages());
+            if ($validator->fails()) {
+                return redirect()->back()->withInput()->withErrors($validator)->with('error', 'Please check your missing field');
+            }
+            $department_unit = $department_unit->update($data);
+            if (!$department_unit) {
+                DB::rollbackTransaction();
+                return redirect()->back()->withInput()->with('error', 'Unable to process your request right now');
+            }
+
+        } catch (ErrorException $errorException) {
+
+        }
+
+        DB::commit();
+        return redirect()->route('admin.modules.department-units.index')->with('success', 'DepartmentUnit updated successfully');
+
     }
 
     /**
@@ -107,6 +137,11 @@ class DepartmentUnitController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $department_unit = DepartmentUnit::find($id);
+        if (empty($department_unit)) {
+            return redirect()->route('admin.modules.department-units.index')->with('error', 'DepartmentUnit not found');
+        }
+        $department_unit->delete();
+        return redirect()->route('admin.modules.department-units.index')->with('success', 'DepartmentUnit successfully deleted');
     }
 }

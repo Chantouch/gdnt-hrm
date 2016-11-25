@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Modules;
 
 use App\Models\Department;
 use App\Models\Ministry;
@@ -20,7 +20,7 @@ class DepartmentController extends Controller
      */
     public function index()
     {
-        $departments = Department::with('departmentUnits')->where('status', 1)->paginate(10);
+        $departments = Department::with('departmentUnits')->paginate(10);
         return view('admin.modules.departments.index', compact('departments'));
     }
 
