@@ -55,9 +55,11 @@
                 </li>
 
                 <li class="has_sub">
-                    <a href="#" class="waves-effect"><i class="ti-user"></i><span> Employers </span></a>
+                    <a href="#" class="waves-effect{!! Request::is('admin/managements/*') ? ' active': '' !!}">
+                        <i class="ti-user"></i><span> Managements </span></a>
                     <ul class="list-unstyled">
-                        <li><a href="crm-dashboard.html"> Employers </a></li>
+                        <li class="{{ Request::is('admin/managements/employers*') ? 'active' : '' }}">
+                            <a href="{!! route('admin.managements.employers.index') !!}"> Employers </a></li>
                         <li><a href="crm-contact.html"> Add more </a></li>
                     </ul>
                 </li>

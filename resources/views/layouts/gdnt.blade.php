@@ -31,15 +31,15 @@
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
-                'csrfToken' => csrf_token(),
+            'csrfToken' => csrf_token(),
         ]); ?>
     </script>
 </head>
 <body class="fixed-left">
 
-<div class="animationload">
-    <div class="loader"></div>
-</div>
+{{--<div class="animationload">--}}
+{{--<div class="loader"></div>--}}
+{{--</div>--}}
 
 <!-- Begin page -->
 <div id="wrapper">
@@ -58,7 +58,7 @@
         <!-- Start content -->
         <div class="content">
 
-        @yield('full_content')
+            @yield('full_content')
             <div class="container">
 
                 @yield('content')
@@ -104,6 +104,10 @@
 <script src="{!! asset('assets/js/jquery.app.js')!!}"></script>
 
 @yield('specific_script')
-
+<script>
+    jQuery(document).ready(function () {
+        @yield('script_ready')
+    });
+</script>
 </body>
 </html>

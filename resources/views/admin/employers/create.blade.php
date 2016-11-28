@@ -1,5 +1,9 @@
 @extends('layouts.gdnt')
 @section('title', 'Create new user')
+@section('specific_css')
+    <link href="{!! asset('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}"
+          rel="stylesheet">
+@stop
 @section('content')
     <div class="row">
         <div class="col-sm-12">
@@ -8,10 +12,10 @@
                 <div class="row">
                     <div class="col-lg-12 margin-tb">
                         <div class="pull-left">
-                            <h2>Create new Department</h2>
+                            <h2>Create new Employer</h2>
                         </div>
                         <div class="pull-right">
-                            <a class="btn btn-primary" href="{{ route('admin.modules.departments.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('admin.managements.employers.index') }}"> Back</a>
                         </div>
                     </div>
                 </div>
@@ -35,13 +39,27 @@
                     @endif
                 </div>
 
-                {!! Form::open(array('route' => 'admin.modules.departments.store','method'=>'POST', 'class'=> 'form-horizontal', 'role'=> 'form')) !!}
+                {!! Form::open(array('route' => 'admin.managements.employers.store','method'=>'POST', 'class'=> 'form', 'role'=> 'form')) !!}
 
-                @include('admin.modules.departments.fields')
+                @include('admin.employers.fields')
 
                 {!! Form::close() !!}
 
             </div>
         </div>
     </div>
+@stop
+
+@section('specific_script')
+    <script src="{!! asset('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}"></script>
+@stop
+
+@section('script_ready')
+
+    jQuery('#datepicker-autoclose, #passport_expired_date, #dob, #id_card_expired').datepicker({
+    autoclose: true,
+    todayHighlight: true,
+    format: 'yyyy-m-d'
+    });
+
 @stop

@@ -46,7 +46,6 @@ Route::group(['middleware' => ['auth']], function () {
 
         //Route Modules
         Route::group(array('prefix' => 'modules'), function () {
-            //Ministries
             Route::resource('ministries', 'Admin\Modules\MinistryController', ["as" => "admin.modules"]);
             Route::resource('departments', 'Admin\Modules\DepartmentController', ["as" => "admin.modules"]);
             Route::resource('department-units', 'Admin\Modules\DepartmentUnitController', ["as" => "admin.modules"]);
@@ -54,6 +53,11 @@ Route::group(['middleware' => ['auth']], function () {
             Route::resource('frames', 'Admin\Modules\FrameController', ["as" => "admin.modules"]);
             Route::resource('occupations', 'Admin\Modules\OccupationController', ["as" => "admin.modules"]);
             Route::resource('languages', 'Admin\Modules\LanguageController', ["as" => "admin.modules"]);
+        });
+
+        //Route Management
+        Route::group(array('prefix' => 'managements'), function () {
+            Route::resource('employers', 'Admin\Employers\EmployerController', ["as" => 'admin.managements']);
         });
     });
 

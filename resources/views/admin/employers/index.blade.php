@@ -1,5 +1,5 @@
 @extends('layouts.gdnt')
-@section('title', 'Ministries')
+@section('title', 'Management | Employment')
 
 @section('content')
     <div class="row">
@@ -12,7 +12,7 @@
                     </p>
                 </div>
                 <div class="pull-right">
-                    <a href="{!! route('admin.modules.departments.create') !!}" class="btn btn-default">
+                    <a href="{!! route('admin.managements.employers.create') !!}" class="btn btn-default">
                         <i class="fa fa-plus"></i> Add</a>
                 </div>
 
@@ -35,7 +35,7 @@
                     @endif
                 </div>
 
-                @include('admin.modules.departments.table')
+                @include('admin.employers.table')
 
             </div>
         </div>
