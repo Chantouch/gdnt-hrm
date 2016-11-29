@@ -18,9 +18,10 @@ class CreateFirstStateJobsTable extends Migration
             $table->integer('emp_id', false, true)->unsigned();
             $table->integer('office_id', false, true)->unsigned();
             $table->integer('department_unit_id', false, true)->unsigned();
+            $table->integer('department_id', false, true)->unsigned();
             $table->integer('ministry_id', false, true)->unsigned();
             $table->integer('occupation_id', false, true)->unsigned();
-            $table->string('position_grade')->nullable();
+            $table->integer('frame_id', false, true)->unsigned();
             $table->string('others')->nullable();
             $table->string('custom1')->nullable();
             $table->string('custom2')->nullable();
@@ -31,8 +32,10 @@ class CreateFirstStateJobsTable extends Migration
             $table->foreign('emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('office_id')->references('id')->on('offices')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('department_unit_id')->references('id')->on('department_units')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('department_id')->references('id')->on('departments')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('ministry_id')->references('id')->on('ministries')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('occupation_id')->references('id')->on('occupations')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('frame_id')->references('id')->on('frames')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

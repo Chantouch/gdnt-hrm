@@ -19,6 +19,7 @@ class CreateCurrentJobStatusTable extends Migration
             $table->integer('frame_id', false, true)->usnigned();
             $table->integer('occupation_id', false, true)->unisgned();
             $table->integer('department_id', false, true)->unsigned();
+            $table->integer('department_unit_id', false, true)->unsigned();
             $table->integer('office_id', false, true)->unsigned();
             $table->string('others')->nullable();
             $table->dateTime('last_date_promoted')->nullable();
@@ -31,6 +32,7 @@ class CreateCurrentJobStatusTable extends Migration
             $table->foreign('frame_id')->references('id')->on('frames')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('occupation_id')->references('id')->on('occupations')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('department_id')->references('id')->on('departments')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('department_unit_id')->references('id')->on('department_units')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('office_id')->references('id')->on('offices')->onUpdate('cascade')->onDelete('cascade');
         });
     }

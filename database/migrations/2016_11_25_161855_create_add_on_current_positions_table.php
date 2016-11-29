@@ -18,6 +18,7 @@ class CreateAddOnCurrentPositionsTable extends Migration
             $table->integer('emp_id', false, true)->unsigned();
             $table->string('position')->nullable();
             $table->string('equal_position')->nullable();
+            $table->dateTime('start_date')->nullable();
             $table->string('department')->nullable();
             $table->string('others')->nullable();
             $table->string('custom1')->nullable();

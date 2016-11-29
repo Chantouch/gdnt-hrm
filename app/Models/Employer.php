@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -10,7 +11,7 @@ class Employer extends Model
 
     use SoftDeletes;
     protected $table = 'users';
-
+    protected $dates = ['dob', 'id_card_expired', 'passport_expired_date'];
     /**
      * @var array
      */
@@ -50,7 +51,22 @@ class Employer extends Model
     public static function marital_status()
     {
         return [
-            's' => 'single', 'm' => 'married', 'd' => 'divorcee', 'w' => 'widow'
+            's' => 'Single', 'm' => 'Married', 'd' => 'Divorcee', 'w' => 'Widow'
         ];
+    }
+
+    public function getDobAttribute()
+    {
+        return Carbon::parse($this->attributes['dob'])->format('Y-M-d');
+    }
+
+    public function getIdCardExpiredAttribute()
+    {
+        return Carbon::parse($this->attributes['id_card_expired'])->format('Y-M-d');
+    }
+
+    public function getPassportExpiredDateAttribute()
+    {
+        return Carbon::parse($this->attributes['passport_expired_date'])->format('Y-M-d');
     }
 }

@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('admin.roles.index') }}"> Back</a>
+                    <a class="btn btn-primary" href="{{ route('admin.permissions.index') }}"> Back</a>
                 </div>
 
                 <div class="row">

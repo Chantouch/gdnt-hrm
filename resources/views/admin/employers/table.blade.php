@@ -48,12 +48,12 @@
                     @endif
                 </td>
                 <td class="text-center">
-                    {!! Form::open(['route' => ['admin.modules.departments.destroy', $employer->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['admin.managements.employers.destroy', $employer->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{!! route('admin.modules.departments.show', [$employer->id]) !!}"
+                        <a href="{!! route('admin.managements.employers.show', [$employer->id]) !!}"
                            class='btn btn-default btn-xs'>
                             <i class="glyphicon glyphicon-eye-open"></i></a>
-                        <a href="{!! route('admin.modules.departments.edit', [$employer->id]) !!}"
+                        <a href="{!! route('admin.managements.employers.edit', [$employer->id]) !!}"
                            class='btn btn-default btn-xs'>
                             <i class="glyphicon glyphicon-edit"></i></a>
                         {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}

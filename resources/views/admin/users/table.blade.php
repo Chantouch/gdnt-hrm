@@ -13,12 +13,10 @@
             <table data-toggle="table"
                    data-search="true"
                    data-show-refresh="false"
-                   data-show-toggle="true"
+                   data-show-toggle="false"
                    data-show-columns="true"
                    {{--data-sort-name="name"--}}
-                   data-page-list="[5, 10, 20]"
-                   data-page-size="5"
-                   data-pagination="true" data-show-pagination-switch="true" class="table-bordered ">
+                   data-pagination="false" data-show-pagination-switch="false" class="table-bordered ">
                 <thead>
                 <tr>
                     <th>#</th>
@@ -47,7 +45,6 @@
                         </td>
                         <td><label for="status" class="label label-default">Active</label></td>
                         <td>
-
                             {!! Form::open(['route' => ['admin.users.destroy', $user->id], 'method' => 'delete']) !!}
                             <div class='btn-group'>
                                 <a href="{!! route('admin.users.show', [$user->id]) !!}" class='btn btn-default btn-xs'>

@@ -36,7 +36,7 @@ class EmployerController extends Controller
     public function create()
     {
         $marital_status = Employer::marital_status();
-        return view('admin.employers.create' ,compact('marital_status'));
+        return view('admin.employers.create', compact('marital_status'));
     }
 
     /**
@@ -79,7 +79,11 @@ class EmployerController extends Controller
      */
     public function show($id)
     {
-        //
+        $employer = Employer::find($id);
+        if (empty($employer)) {
+            return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
+        }
+        return view('admin.employers.show', compact('employer'));
     }
 
     /**
@@ -90,7 +94,12 @@ class EmployerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employer = Employer::find($id);
+        if (empty($employer)) {
+            return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
+        }
+        $marital_status = Employer::marital_status();
+        return view('admin.employers.edit', compact('employer', 'marital_status'));
     }
 
     /**
@@ -102,7 +111,33 @@ class EmployerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $employer = Employer::find($id);
+        if (empty($employer)) {
+            return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
+        }
+        $validator = Validator::make($data = $request->all(), Employer::rules(), Employer::messages());
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput()->with('error', 'Please fill your missing field');
+        }
+        try {
+            DB::beginTransaction();
+            $passport_expired_date = date('Y-m-d', strtotime($request->passport_expired_date));
+            $data['passport_expired_date'] = $passport_expired_date;
+            $id_card_expired = date('Y-m-d', strtotime($request->id_card_expired));
+            $data['id_card_expired'] = $id_card_expired;
+            $dob = date('Y-m-d', strtotime($request->dob));
+            $data['dob'] = $dob;
+            $employer = $employer->update($data);
+            if (!$employer) {
+                DB::rollbackTransaction();
+                return redirect()->back()->with('error', 'Unable to process your request right now');
+            }
+        } catch (ErrorException $errorException) {
+
+        }
+        DB::commit();
+        return redirect()->route('admin.managements.employers.index')->with('success', "Employer was successfully updated");
+
     }
 
     /**
@@ -113,6 +148,11 @@ class EmployerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employer = Employer::find($id);
+        if (empty($employer)) {
+            return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
+        }
+        $employer->delete();
+        return redirect()->route('admin.managements.employers.index')->with('success', "Employer name $employer->full_name was deleted successfully");
     }
 }
