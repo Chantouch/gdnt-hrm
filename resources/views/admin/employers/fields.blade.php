@@ -297,7 +297,7 @@
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
                                 <label for="start_date" class="control-label"><strong>Start Date:</strong></label>
-                                {!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}
+                                {!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'start_date')) !!}
                                 @if($errors->has('start_date'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('start_date') !!}</strong>
@@ -396,567 +396,568 @@
                     </div>
 
                     {{--B.Current status job--}}
-                    <div class="col-md-12 m-l-15">
-                        <h4>B.Current status Job</h4>
-                    </div>
-                    <div class="panel-body">
+                    {{--<div class="col-md-12 m-l-15">--}}
+                        {{--<h4>B.Current status Job</h4>--}}
+                    {{--</div>--}}
+                    {{--<div class="panel-body">--}}
                         {{--//Level or Grade--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('frame_id') ? ' has-error' : '' !!}">
-                                <label for="frame_id" class="control-label"><strong>Frame:</strong></label>
-                                {!! Form::text('frame_id', null, array('placeholder' => 'Select your frame','class' => 'form-control')) !!}
-                                @if($errors->has('frame_id'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('frame_id') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('frame_id') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="frame_id" class="control-label"><strong>Frame:</strong></label>--}}
+                                {{--{!! Form::text('frame_id', null, array('placeholder' => 'Select your frame','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('frame_id'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('frame_id') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Last date promoted--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('last_date_promoted') ? ' has-error' : '' !!}">
-                                <label for="last_date_promoted" class="control-label">
-                                    <strong>Last Date Promoted:</strong></label>
-                                {!! Form::text('last_date_promoted', null, array('placeholder' => 'Select permanent Date','class' => 'form-control')) !!}
-                                @if($errors->has('last_date_promoted'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('last_date_promoted') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('last_date_promoted') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="last_date_promoted" class="control-label">--}}
+                                    {{--<strong>Last Date Promoted:</strong></label>--}}
+                                {{--{!! Form::text('last_date_promoted', null, array('placeholder' => 'Select permanent Date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('last_date_promoted'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('last_date_promoted') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Occupation--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('occupation_id') ? ' has-error' : '' !!}">
-                                <label for="last_date_promoted" class="control-label">
-                                    <strong>Occupation:</strong></label>
-                                {!! Form::text('occupation_id', null, array('placeholder' => 'Select occupation','class' => 'form-control')) !!}
-                                @if($errors->has('occupation_id'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('occupation_id') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('occupation_id') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="last_date_promoted" class="control-label">--}}
+                                    {{--<strong>Occupation:</strong></label>--}}
+                                {{--{!! Form::text('occupation_id', null, array('placeholder' => 'Select occupation','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('occupation_id'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('occupation_id') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Last date got promoted--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('last_date_got_promoted') ? ' has-error' : '' !!}">
-                                <label for="last_date_got_promoted" class="control-label">
-                                    <strong>Last Date Promoted:</strong></label>
-                                {!! Form::text('last_date_got_promoted', null, array('placeholder' => 'Select last date got promoted','class' => 'form-control')) !!}
-                                @if($errors->has('last_date_got_promoted'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('last_date_got_promoted') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('last_date_got_promoted') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="last_date_got_promoted" class="control-label">--}}
+                                    {{--<strong>Last Date Promoted:</strong></label>--}}
+                                {{--{!! Form::text('last_date_got_promoted', null, array('placeholder' => 'Select last date got promoted','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('last_date_got_promoted'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('last_date_got_promoted') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Level or grade--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('department_id') ? ' has-error' : '' !!}">
-                                <label for="department_id" class="control-label"><strong>Last Position:</strong></label>
-                                {!! Form::text('department_id', null, array('placeholder' => 'Enter your department','class' => 'form-control')) !!}
-                                @if($errors->has('department_id'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('department_id') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('department_id') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="department_id" class="control-label"><strong>Last Position:</strong></label>--}}
+                                {{--{!! Form::text('department_id', null, array('placeholder' => 'Enter your department','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('department_id'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('department_id') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Department unit--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('department_unit_id') ? ' has-error' : '' !!}">
-                                <label for="department_unit_id" class="control-label">
-                                    <strong>Occupation:</strong></label>
-                                {!! Form::text('department_unit_id', null, array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
-                                @if($errors->has('department_unit_id'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('department_unit_id') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('department_unit_id') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="department_unit_id" class="control-label">--}}
+                                    {{--<strong>Occupation:</strong></label>--}}
+                                {{--{!! Form::text('department_unit_id', null, array('placeholder' => 'Select department unit','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('department_unit_id'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('department_unit_id') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Office--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('office_id') ? ' has-error' : '' !!}">
-                                <label for="office_id" class="control-label">
-                                    <strong>Office:</strong></label>
-                                {!! Form::text('office_id', null, array('placeholder' => 'Select office','class' => 'form-control')) !!}
-                                @if($errors->has('office_id'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('office_id') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('office_id') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="office_id" class="control-label">--}}
+                                    {{--<strong>Office:</strong></label>--}}
+                                {{--{!! Form::text('office_id', null, array('placeholder' => 'Select office','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('office_id'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('office_id') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                     {{--C.Addon to current position--}}
-                    <div class="col-md-12 m-l-15">
-                        <h4>C.Addon to current position</h4>
-                    </div>
-                    <div class="panel-body">
+                    {{--<div class="col-md-12 m-l-15">--}}
+                        {{--<h4>C.Addon to current position</h4>--}}
+                    {{--</div>--}}
+                    {{--<div class="panel-body">--}}
                         {{--//Start date--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
-                                <label for="start_date" class="control-label"><strong>Start date:</strong></label>
-                                {!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}
-                                @if($errors->has('start_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('start_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="start_date" class="control-label"><strong>Start date:</strong></label>--}}
+                                {{--{!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('start_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('start_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Occupation--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('position') ? ' has-error' : '' !!}">
-                                <label for="position" class="control-label">
-                                    <strong>Position:</strong></label>
-                                {!! Form::text('position', null, array('placeholder' => 'Enter position','class' => 'form-control')) !!}
-                                @if($errors->has('position'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('position') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('position') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="position" class="control-label">--}}
+                                    {{--<strong>Position:</strong></label>--}}
+                                {{--{!! Form::text('position', null, array('placeholder' => 'Enter position','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('position'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('position') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Equal position--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('equal_position') ? ' has-error' : '' !!}">
-                                <label for="equal_position" class="control-label">
-                                    <strong>Equal position:</strong></label>
-                                {!! Form::text('equal_position', null, array('placeholder' => 'Enter equal position','class' => 'form-control')) !!}
-                                @if($errors->has('equal_position'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('equal_position') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('equal_position') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="equal_position" class="control-label">--}}
+                                    {{--<strong>Equal position:</strong></label>--}}
+                                {{--{!! Form::text('equal_position', null, array('placeholder' => 'Enter equal position','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('equal_position'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('equal_position') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Department--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">
-                                <label for="department" class="control-label">
-                                    <strong>Department:</strong></label>
-                                {!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}
-                                @if($errors->has('department'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('department') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="department" class="control-label">--}}
+                                    {{--<strong>Department:</strong></label>--}}
+                                {{--{!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('department'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('department') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                     {{--D.Status out of frame--}}
-                    <div class="col-md-12 m-l-15">
-                        <h4>D.Status out of basic frame</h4>
-                    </div>
-                    <div class="panel-body">
+                    {{--<div class="col-md-12 m-l-15">--}}
+                        {{--<h4>D.Status out of basic frame</h4>--}}
+                    {{--</div>--}}
+                    {{--<div class="panel-body">--}}
                         {{--//Department--}}
-                        <div class="col-xs-12 col-sm-4 col-md-4">
-                            <div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">
-                                <label for="department" class="control-label">
-                                    <strong>Department:</strong></label>
-                                {!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}
-                                @if($errors->has('department'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('department') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-4 col-md-4">--}}
+                            {{--<div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="department" class="control-label">--}}
+                                    {{--<strong>Department:</strong></label>--}}
+                                {{--{!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('department'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('department') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Start date--}}
-                        <div class="col-xs-12 col-sm-3 col-md-3">
-                            <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
-                                <label for="start_date" class="control-label">
-                                    <strong>Start date:</strong></label>
-                                {!! Form::text('start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control')) !!}
-                                @if($errors->has('start_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('start_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-3 col-md-3">--}}
+                            {{--<div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="start_date" class="control-label">--}}
+                                    {{--<strong>Start date:</strong></label>--}}
+                                {{--{!! Form::text('start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('start_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('start_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//End date--}}
-                        <div class="col-xs-12 col-sm-3 col-md-3">
-                            <div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">
-                                <label for="end_date" class="control-label">
-                                    <strong>End date:</strong></label>
-                                {!! Form::text('end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control')) !!}
-                                @if($errors->has('end_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('end_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+                        {{--<div class="col-xs-12 col-sm-3 col-md-3">--}}
+                            {{--<div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="end_date" class="control-label">--}}
+                                    {{--<strong>End date:</strong></label>--}}
+                                {{--{!! Form::text('end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('end_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('end_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                     {{--E.Status of free no salary--}}
-                    <div class="col-md-12 m-l-15">
-                        <h4>E.Status of free no salary</h4>
-                    </div>
-                    <div class="panel-body">
+                    {{--<div class="col-md-12 m-l-15">--}}
+                        {{--<h4>E.Status of free no salary</h4>--}}
+                    {{--</div>--}}
+                    {{--<div class="panel-body">--}}
                         {{--//Department--}}
-                        <div class="col-xs-12 col-sm-4 col-md-4">
-                            <div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">
-                                <label for="department" class="control-label">
-                                    <strong>Department:</strong></label>
-                                {!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}
-                                @if($errors->has('department'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('department') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-4 col-md-4">--}}
+                            {{--<div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="department" class="control-label">--}}
+                                    {{--<strong>Department:</strong></label>--}}
+                                {{--{!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('department'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('department') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Start date--}}
-                        <div class="col-xs-12 col-sm-3 col-md-3">
-                            <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
-                                <label for="start_date" class="control-label">
-                                    <strong>Start date:</strong></label>
-                                {!! Form::text('start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control')) !!}
-                                @if($errors->has('start_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('start_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-3 col-md-3">--}}
+                            {{--<div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="start_date" class="control-label">--}}
+                                    {{--<strong>Start date:</strong></label>--}}
+                                {{--{!! Form::text('start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('start_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('start_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//End date--}}
-                        <div class="col-xs-12 col-sm-3 col-md-3">
-                            <div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">
-                                <label for="end_date" class="control-label">
-                                    <strong>End date:</strong></label>
-                                {!! Form::text('end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control')) !!}
-                                @if($errors->has('end_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('end_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+                        {{--<div class="col-xs-12 col-sm-3 col-md-3">--}}
+                            {{--<div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="end_date" class="control-label">--}}
+                                    {{--<strong>End date:</strong></label>--}}
+                                {{--{!! Form::text('end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('end_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('end_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                 </div>
             </div>
 
             {{--3.Job History (From New to Old)--}}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion-public" href="#job-history"
-                           aria-expanded="false" class="collapsed">
-                            3.Job History (Fill from New to Old)
-                        </a>
-                    </h4>
-                </div>
-                <div id="job-history" class="panel-collapse collapse">
+            {{--<div class="panel panel-default">--}}
+                {{--<div class="panel-heading">--}}
+                    {{--<h4 class="panel-title">--}}
+                        {{--<a data-toggle="collapse" data-parent="#accordion-public" href="#job-history"--}}
+                           {{--aria-expanded="false" class="collapsed">--}}
+                            {{--3.Job History (Fill from New to Old)--}}
+                        {{--</a>--}}
+                    {{--</h4>--}}
+                {{--</div>--}}
+                {{--<div id="job-history" class="panel-collapse collapse">--}}
                     {{--A.Public job--}}
-                    <div class="col-md-12 m-l-15">
-                        <h4>A.Public Job</h4>
-                    </div>
-                    <div class="panel-body">
+                    {{--<div class="col-md-12 m-l-15">--}}
+                        {{--<h4>A.Public Job</h4>--}}
+                    {{--</div>--}}
+                    {{--<div class="panel-body">--}}
                         {{--//Start date--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
-                                <label for="start_date" class="control-label"><strong>Start Date:</strong></label>
-                                {!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}
-                                @if($errors->has('start_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('start_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="start_date" class="control-label"><strong>Start Date:</strong></label>--}}
+                                {{--{!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('start_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('start_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//End date--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">
-                                <label for="end_date" class="control-label"><strong>Start Date:</strong></label>
-                                {!! Form::text('end_date', null, array('placeholder' => 'Select your end date','class' => 'form-control')) !!}
-                                @if($errors->has('end_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('end_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="end_date" class="control-label"><strong>Start Date:</strong></label>--}}
+                                {{--{!! Form::text('end_date', null, array('placeholder' => 'Select your end date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('end_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('end_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Ministry institute--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('ministry_institute') ? ' has-error' : '' !!}">
-                                <label for="ministry_institute" class="control-label">
-                                    <strong>Ministry/Institute:</strong></label>
-                                {!! Form::text('ministry_institute', null, array('placeholder' => 'Select ministry or institute','class' => 'form-control')) !!}
-                                @if($errors->has('ministry_institute'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('ministry_institute') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('ministry_institute') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="ministry_institute" class="control-label">--}}
+                                    {{--<strong>Ministry/Institute:</strong></label>--}}
+                                {{--{!! Form::text('ministry_institute', null, array('placeholder' => 'Select ministry or institute','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('ministry_institute'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('ministry_institute') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Department--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">
-                                <label for="department" class="control-label">
-                                    <strong>Department:</strong></label>
-                                {!! Form::text('department', null, array('placeholder' => 'Select department','class' => 'form-control')) !!}
-                                @if($errors->has('department'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('department') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="department" class="control-label">--}}
+                                    {{--<strong>Department:</strong></label>--}}
+                                {{--{!! Form::text('department', null, array('placeholder' => 'Select department','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('department'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('department') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//position--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('occupation') ? ' has-error' : '' !!}">
-                                <label for="occupation" class="control-label"><strong>Position:</strong></label>
-                                {!! Form::text('occupation', null, array('placeholder' => 'Enter your occupation','class' => 'form-control')) !!}
-                                @if($errors->has('occupation'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('occupation') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('occupation') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="occupation" class="control-label"><strong>Position:</strong></label>--}}
+                                {{--{!! Form::text('occupation', null, array('placeholder' => 'Enter your occupation','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('occupation'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('occupation') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Others--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('others') ? ' has-error' : '' !!}">
-                                <label for="occupation_id" class="control-label">
-                                    <strong>Others:</strong></label>
-                                {!! Form::text('others', null, array('placeholder' => 'Enter others','class' => 'form-control')) !!}
-                                @if($errors->has('others'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('others') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('others') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="occupation_id" class="control-label">--}}
+                                    {{--<strong>Others:</strong></label>--}}
+                                {{--{!! Form::text('others', null, array('placeholder' => 'Enter others','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('others'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('others') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
                     {{--B.Private job--}}
-                    <div class="col-md-12 m-l-15">
-                        <h4>A.Private Job</h4>
-                    </div>
-                    <div class="panel-body">
+                    {{--<div class="col-md-12 m-l-15">--}}
+                        {{--<h4>A.Private Job</h4>--}}
+                    {{--</div>--}}
+                    {{--<div class="panel-body">--}}
                         {{--//Start date--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
-                                <label for="start_date" class="control-label"><strong>Start Date:</strong></label>
-                                {!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}
-                                @if($errors->has('start_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('start_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="start_date" class="control-label"><strong>Start Date:</strong></label>--}}
+                                {{--{!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('start_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('start_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//End date--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">
-                                <label for="end_date" class="control-label"><strong>Start Date:</strong></label>
-                                {!! Form::text('end_date', null, array('placeholder' => 'Select your end date','class' => 'form-control')) !!}
-                                @if($errors->has('end_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('end_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="end_date" class="control-label"><strong>Start Date:</strong></label>--}}
+                                {{--{!! Form::text('end_date', null, array('placeholder' => 'Select your end date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('end_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('end_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Ministry institute--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('ministry_institute') ? ' has-error' : '' !!}">
-                                <label for="ministry_institute" class="control-label">
-                                    <strong>Ministry/Institute:</strong></label>
-                                {!! Form::text('ministry_institute', null, array('placeholder' => 'Select ministry or institute','class' => 'form-control')) !!}
-                                @if($errors->has('ministry_institute'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('ministry_institute') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('ministry_institute') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="ministry_institute" class="control-label">--}}
+                                    {{--<strong>Ministry/Institute:</strong></label>--}}
+                                {{--{!! Form::text('ministry_institute', null, array('placeholder' => 'Select ministry or institute','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('ministry_institute'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('ministry_institute') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//position--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('occupation') ? ' has-error' : '' !!}">
-                                <label for="occupation" class="control-label"><strong>Position:</strong></label>
-                                {!! Form::text('occupation', null, array('placeholder' => 'Enter your occupation','class' => 'form-control')) !!}
-                                @if($errors->has('occupation'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('occupation') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('occupation') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="occupation" class="control-label"><strong>Position:</strong></label>--}}
+                                {{--{!! Form::text('occupation', null, array('placeholder' => 'Enter your occupation','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('occupation'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('occupation') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Others--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('others') ? ' has-error' : '' !!}">
-                                <label for="occupation_id" class="control-label">
-                                    <strong>Skills/Professional:</strong></label>
-                                {!! Form::text('others', null, array('placeholder' => 'Enter others','class' => 'form-control')) !!}
-                                @if($errors->has('others'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('others') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('others') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="occupation_id" class="control-label">--}}
+                                    {{--<strong>Skills/Professional:</strong></label>--}}
+                                {{--{!! Form::text('others', null, array('placeholder' => 'Enter others','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('others'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('others') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
             {{--4.Award / Punishment--}}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion-public" href="#ward-punishment"
-                           class="collapsed" aria-expanded="false">
-                            4.Award / Punishment
-                        </a>
-                    </h4>
-                </div>
-                <div id="ward-punishment" class="panel-collapse collapse">
+            {{--<div class="panel panel-default">--}}
+                {{--<div class="panel-heading">--}}
+                    {{--<h4 class="panel-title">--}}
+                        {{--<a data-toggle="collapse" data-parent="#accordion-public" href="#ward-punishment"--}}
+                           {{--class="collapsed" aria-expanded="false">--}}
+                            {{--4.Award / Punishment--}}
+                        {{--</a>--}}
+                    {{--</h4>--}}
+                {{--</div>--}}
+                {{--<div id="ward-punishment" class="panel-collapse collapse">--}}
                     {{--A.Award--}}
-                    <div class="col-md-12 m-l-15">
-                        <h4>A.Award</h4>
-                    </div>
-                    <div class="panel-body">
+                    {{--<div class="col-md-12 m-l-15">--}}
+                        {{--<h4>A.Award</h4>--}}
+                    {{--</div>--}}
+                    {{--<div class="panel-body">--}}
                         {{--//Doc number--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('doc_number') ? ' has-error' : '' !!}">
-                                <label for="doc_number" class="control-label"><strong>Doc number:</strong></label>
-                                {!! Form::text('doc_number', null, array('placeholder' => 'Enter your doc number','class' => 'form-control')) !!}
-                                @if($errors->has('doc_number'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('doc_number') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('doc_number') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="doc_number" class="control-label"><strong>Doc number:</strong></label>--}}
+                                {{--{!! Form::text('doc_number', null, array('placeholder' => 'Enter your doc number','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('doc_number'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('doc_number') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//published_date--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('published_date') ? ' has-error' : '' !!}">
-                                <label for="published_date" class="control-label"><strong>Published date:</strong></label>
-                                {!! Form::text('published_date', null, array('placeholder' => 'Select your published date','class' => 'form-control')) !!}
-                                @if($errors->has('published_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('published_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('published_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="published_date" class="control-label"><strong>Published date:</strong></label>--}}
+                                {{--{!! Form::text('published_date', null, array('placeholder' => 'Select your published date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('published_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('published_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//department--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">
-                                <label for="department" class="control-label">
-                                    <strong>Department:</strong></label>
-                                {!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}
-                                @if($errors->has('department'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('department') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="department" class="control-label">--}}
+                                    {{--<strong>Department:</strong></label>--}}
+                                {{--{!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('department'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('department') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Description--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('description') ? ' has-error' : '' !!}">
-                                <label for="description" class="control-label"><strong>Description:</strong></label>
-                                {!! Form::text('description', null, array('placeholder' => 'Enter your description','class' => 'form-control')) !!}
-                                @if($errors->has('description'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('description') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('description') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="description" class="control-label"><strong>Description:</strong></label>--}}
+                                {{--{!! Form::text('description', null, array('placeholder' => 'Enter your description','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('description'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('description') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//type--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('type') ? ' has-error' : '' !!}">
-                                <label for="type" class="control-label">
-                                    <strong>Type:</strong></label>
-                                {!! Form::text('type', null, array('placeholder' => 'Select your type','class' => 'form-control')) !!}
-                                @if($errors->has('type'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('type') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('type') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="type" class="control-label">--}}
+                                    {{--<strong>Type:</strong></label>--}}
+                                {{--{!! Form::text('type', null, array('placeholder' => 'Select your type','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('type'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('type') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
                     {{--B.Punishment--}}
-                    <div class="col-md-12 m-l-15">
-                        <h4>B.Punishment</h4>
-                    </div>
-                    <div class="panel-body">
+                    {{--<div class="col-md-12 m-l-15">--}}
+                        {{--<h4>B.Punishment</h4>--}}
+                    {{--</div>--}}
+                    {{--<div class="panel-body">--}}
                         {{--//Doc number--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('doc_number') ? ' has-error' : '' !!}">
-                                <label for="doc_number" class="control-label"><strong>Doc number:</strong></label>
-                                {!! Form::text('doc_number', null, array('placeholder' => 'Enter your doc number','class' => 'form-control')) !!}
-                                @if($errors->has('doc_number'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('doc_number') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('doc_number') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="doc_number" class="control-label"><strong>Doc number:</strong></label>--}}
+                                {{--{!! Form::text('doc_number', null, array('placeholder' => 'Enter your doc number','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('doc_number'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('doc_number') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//published_date--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('published_date') ? ' has-error' : '' !!}">
-                                <label for="published_date" class="control-label"><strong>Published date:</strong></label>
-                                {!! Form::text('published_date', null, array('placeholder' => 'Select your published date','class' => 'form-control')) !!}
-                                @if($errors->has('published_date'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('published_date') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('published_date') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="published_date" class="control-label"><strong>Published date:</strong></label>--}}
+                                {{--{!! Form::text('published_date', null, array('placeholder' => 'Select your published date','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('published_date'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('published_date') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//department--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">
-                                <label for="department" class="control-label">
-                                    <strong>Department:</strong></label>
-                                {!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}
-                                @if($errors->has('department'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('department') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="department" class="control-label">--}}
+                                    {{--<strong>Department:</strong></label>--}}
+                                {{--{!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('department'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('department') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//Description--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('description') ? ' has-error' : '' !!}">
-                                <label for="description" class="control-label"><strong>Description:</strong></label>
-                                {!! Form::text('description', null, array('placeholder' => 'Enter your description','class' => 'form-control')) !!}
-                                @if($errors->has('description'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('description') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('description') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="description" class="control-label"><strong>Description:</strong></label>--}}
+                                {{--{!! Form::text('description', null, array('placeholder' => 'Enter your description','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('description'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('description') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
                         {{--//type--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('punish_type') ? ' has-error' : '' !!}">
-                                <label for="punish_type" class="control-label">
-                                    <strong>Punish type:</strong></label>
-                                {!! Form::text('punish_type', null, array('placeholder' => 'Select your punish_type','class' => 'form-control')) !!}
-                                @if($errors->has('punish_type'))
-                                    <span class="help-block">
-                                        <strong>{!! $errors->first('punish_type') !!}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
+                        {{--<div class="col-xs-12 col-sm-6 col-md-6">--}}
+                            {{--<div class="form-group{!! $errors->has('punish_type') ? ' has-error' : '' !!}">--}}
+                                {{--<label for="punish_type" class="control-label">--}}
+                                    {{--<strong>Punish type:</strong></label>--}}
+                                {{--{!! Form::text('punish_type', null, array('placeholder' => 'Select your punish_type','class' => 'form-control')) !!}--}}
+                                {{--@if($errors->has('punish_type'))--}}
+                                    {{--<span class="help-block">--}}
+                                        {{--<strong>{!! $errors->first('punish_type') !!}</strong>--}}
+                                    {{--</span>--}}
+                                {{--@endif--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
 
-                </div>
-            </div>
+                {{--</div>--}}
+            {{--</div>--}}
+
         </div>
     </div>
 

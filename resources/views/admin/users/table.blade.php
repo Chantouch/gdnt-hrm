@@ -34,8 +34,14 @@
                 @foreach ($data as $key => $user)
                     <tr>
                         <td>{!! $key + 1 !!}</td>
-                        <td>{!!  $user->name !!}</td>
-                        <td>{!!  $user->email  !!}</td>
+                        <td>
+                            @if($user->name != '' || $user->name != null)
+                                {!! $user->name !!}
+                            @else
+                                {!! $user->full_name !!}
+                            @endif
+                        </td>
+                        <td>{!! $user->email !!}</td>
                         <td>
                             @if(!empty($user->roles))
                                 @foreach($user->roles as $role)

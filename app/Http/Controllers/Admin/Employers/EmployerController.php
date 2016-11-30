@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Employers;
 
 use App\Models\Employer;
+use App\Models\FirstStateJob;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Psy\Exception\ErrorException;
@@ -11,10 +12,17 @@ use DB;
 
 class EmployerController extends Controller
 {
+    /**
+     * EmployerController constructor.
+     */
+    protected $firstStateJob;
+    protected $employer;
 
-    public function __construct()
+    public function __construct(Employer $employer, FirstStateJob $stateJob)
     {
         $this->middleware('auth');
+        $this->employer = $employer;
+        $this->firstStateJob = $stateJob;
     }
 
     /**
@@ -24,7 +32,7 @@ class EmployerController extends Controller
      */
     public function index()
     {
-        $employers = Employer::orderBy('name', 'ASC')->paginate(5);
+        $employers = Employer::with('firstStateJob')->orderBy('name', 'ASC')->paginate(5);
         return view('admin.employers.index', compact('employers'));
     }
 
@@ -38,6 +46,41 @@ class EmployerController extends Controller
         $marital_status = Employer::marital_status();
         return view('admin.employers.create', compact('marital_status'));
     }
+
+
+    public function storeEmp(Request $request)
+    {
+        DB::beginTransaction();
+        $this->employer->full_name = $request->full_name;
+        $this->employer->email = $request->email;
+        $this->employer->emp_id = $request->emp_id;
+        $this->employer->save();
+
+        $this->firstStateJob->start_date = $request->start_date;
+        $this->firstStateJob->department_unit_id = $request->department_unit_id;
+        $this->firstStateJob->department_id = $request->department_id;
+        $this->firstStateJob->ministry_id = $request->ministry_id;
+        $this->firstStateJob->occupation_id = $request->occupation_id;
+        $this->firstStateJob->office_id = $request->office_id;
+        $this->firstStateJob->frame_id = $request->frame_id;
+        $this->firstStateJob->emp_id = $this->employer->id;
+        $this->firstStateJob->save();
+        DB::commit();
+        return redirect()->route('admin.managements.employers.index')->with('success', 'Employer successfully added');
+    }
+
+    public function editEmp($idEmp)
+    {
+        $employer = Employer::join('first_state_jobs', 'users.id', '=', 'first_state_jobs.emp_id')->find($idEmp);
+//        $employer = Employer::with('firstStateJob')->find($idEmp);
+//        $state_job = FirstStateJob::with('employer')->find($idJob);
+        if (empty($employer)) {
+            return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
+        }
+        $marital_status = Employer::marital_status();
+        return view('admin.employers.edit', compact('employer', 'marital_status'));
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -111,11 +154,12 @@ class EmployerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $employer = Employer::find($id);
+//        $employer = Employer::find($id);
+        $employer = Employer::with('firstStateJob')->join('first_state_jobs', 'users.id', '=', 'first_state_jobs.emp_id')->where('id', $id);
         if (empty($employer)) {
             return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
         }
-        $validator = Validator::make($data = $request->all(), Employer::rules(), Employer::messages());
+        $validator = Validator::make($data = $request->all(), Employer::rule($id), Employer::messages());
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput()->with('error', 'Please fill your missing field');
         }

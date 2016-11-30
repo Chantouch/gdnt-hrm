@@ -58,6 +58,8 @@ Route::group(['middleware' => ['auth']], function () {
         //Route Management
         Route::group(array('prefix' => 'managements'), function () {
             Route::resource('employers', 'Admin\Employers\EmployerController', ["as" => 'admin.managements']);
+            Route::post('employers/store-emp', ['as' => 'admin.managements.employers.store-emp', 'uses' => 'Admin\Employers\EmployerController@storeEmp']);
+            Route::get('employers/{idEmp}/editEmp', ['as' => 'admin.managements.employers.edit-emp', 'uses' => 'Admin\Employers\EmployerController@editEmp']);
         });
     });
 

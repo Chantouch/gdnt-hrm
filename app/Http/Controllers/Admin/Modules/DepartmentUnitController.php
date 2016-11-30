@@ -13,6 +13,12 @@ use Validator;
 
 class DepartmentUnitController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -89,10 +95,11 @@ class DepartmentUnitController extends Controller
     public function edit($id)
     {
         $department_unit = DepartmentUnit::find($id);
+        $department = Department::where('status', 1)->orderBy('name')->pluck('name', 'id');
         if (empty($department_unit)) {
             return redirect()->route('admin.modules.department-units.index')->with('error', 'DepartmentUnit not found');
         }
-        return view('admin.modules.department_units.edit', compact('department_unit'));
+        return view('admin.modules.department_units.edit', compact('department_unit', 'department'));
     }
 
     /**

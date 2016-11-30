@@ -39,7 +39,7 @@
                     @endif
                 </div>
 
-                {!! Form::open(array('route' => 'admin.managements.employers.store','method'=>'POST', 'class'=> 'form', 'role'=> 'form')) !!}
+                {!! Form::open(array('route' => 'admin.managements.employers.store-emp','method'=>'POST', 'class'=> 'form', 'role'=> 'form')) !!}
 
                 @include('admin.employers.fields')
 
@@ -56,7 +56,7 @@
 
 @section('script_ready')
 
-    jQuery('#datepicker-autoclose, #passport_expired_date, #dob, #id_card_expired').datepicker({
+    jQuery('#datepicker-autoclose, #passport_expired_date, #dob, #id_card_expired, #start_date').datepicker({
     autoclose: true,
     todayHighlight: true,
     format: 'yyyy-m-d'

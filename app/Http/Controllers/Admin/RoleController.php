@@ -22,6 +22,7 @@ class RoleController extends Controller
     public function __construct(HashidsManager $hashids)
     {
         $this->hashids = $hashids;
+        $this->middleware('auth');
     }
 
     /**

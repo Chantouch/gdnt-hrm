@@ -33,7 +33,7 @@
                     @endif
                 </div>
 
-                {!! Form::model($languages, ['method' => 'PATCH','route' => ['admin.modules.languages.update', $languages->id], 'class' => 'form-horizontal', 'role'=> 'form']) !!}
+                {!! Form::model($language, ['method' => 'PATCH','route' => ['admin.modules.languages.update', $language->id], 'class' => 'form-horizontal', 'role'=> 'form']) !!}
 
                 @include('admin.modules.languages.fields')
 

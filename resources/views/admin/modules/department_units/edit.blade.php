@@ -10,7 +10,7 @@
                         <h2>Edit Department: {!! $department_unit->name !!}</h2>
                     </div>
                     <div class="pull-right">
-                        <a class="btn btn-primary" href="{{ route('admin.modules.department_units.index') }}"> Back</a>
+                        <a class="btn btn-primary" href="{{ route('admin.modules.department-units.index') }}"> Back</a>
                     </div>
                 </div>
 

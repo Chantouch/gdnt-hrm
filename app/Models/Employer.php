@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Request;
 
 class Employer extends Model
 {
@@ -36,6 +37,33 @@ class Employer extends Model
         ];
     }
 
+    public static function rule($id)
+    {
+
+        switch (Request::method()) {
+            case 'GET':
+            case 'DELETE': {
+                return [];
+            }
+            case 'POST': {
+                return [
+                    'name' => 'required',
+                    'email' => 'required|email|unique:users,email,' . $id . ',id',
+                    'password' => 'required|same:confirm-password',
+                    'roles' => 'required'
+                ];
+            }
+            case 'PUT':
+            case 'PATCH': {
+                return [
+                    'email' => 'required|email|unique:users,email,' . $id . ',id',
+                ];
+            }
+            default:
+                break;
+        }
+    }
+
     public static function messages()
     {
         return [
@@ -55,10 +83,10 @@ class Employer extends Model
         ];
     }
 
-    public function getDobAttribute()
-    {
-        return Carbon::parse($this->attributes['dob'])->format('Y-M-d');
-    }
+//    public function getDobAttribute()
+//    {
+//        return Carbon::parse($this->attributes['dob'])->format('Y-M-d');
+//    }
 
     public function getIdCardExpiredAttribute()
     {
@@ -68,5 +96,21 @@ class Employer extends Model
     public function getPassportExpiredDateAttribute()
     {
         return Carbon::parse($this->attributes['passport_expired_date'])->format('Y-M-d');
+    }
+
+    public function setDepartmentCodeAttribute($value)
+    {
+        $this->attributes['department_code'] = ($value == '') ? '' : $value;
+    }
+
+    public function setIdNoticeEmpAttribute($value)
+    {
+        $this->attributes['id_notice_emp'] = ($value == '') ? '' : $value;
+    }
+
+
+    public function firstStateJob()
+    {
+        return $this->hasOne(FirstStateJob::class, 'emp_id');
     }
 }

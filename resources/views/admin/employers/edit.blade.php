@@ -51,7 +51,7 @@
 @stop
 @section('script_ready')
 
-    jQuery('#passport_expired_date, #dob, #id_card_expired').datepicker({
+    jQuery('#passport_expired_date, #dob, #id_card_expired, #start_date').datepicker({
     autoclose: true,
     todayHighlight: true,
     format: 'yyyy-M-d'
