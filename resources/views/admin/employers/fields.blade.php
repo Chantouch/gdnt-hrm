@@ -433,7 +433,8 @@
                             <div class="form-group{!! $errors->has('cjs_last_date_promoted') ? ' has-error' : '' !!}">
                                 <label for="cjs_last_date_promoted" class="control-label">
                                     <strong>Last Date Promoted:</strong></label>
-                                {!! Form::text('cjs_last_date_promoted', null, array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id' => 'cjs_last_date_promoted')) !!}
+                                {{--{!! Form::text('cjs_last_date_promoted', null, array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id' => 'cjs_last_date_promoted')) !!}--}}
+                                {!! Form::text('cjs_last_date_promoted', (isset($employer->currentJob->cjs_last_date_promoted) ? $employer->currentJob->cjs_last_date_promoted : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'cjs_last_date_promoted')) !!}
                                 @if($errors->has('cjs_last_date_promoted'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('cjs_last_date_promoted') !!}</strong>
@@ -460,7 +461,8 @@
                             <div class="form-group{!! $errors->has('last_date_got_promoted') ? ' has-error' : '' !!}">
                                 <label for="cjs_last_date_got_promoted" class="control-label">
                                     <strong>Last Date Promoted:</strong></label>
-                                {!! Form::text('cjs_last_date_got_promoted', null, array('placeholder' => 'Select last date got promoted','class' => 'form-control', 'id' => 'cjs_last_date_got_promoted')) !!}
+                                {{--{!! Form::text('cjs_last_date_got_promoted', null, array('placeholder' => 'Select last date got promoted','class' => 'form-control', 'id' => 'cjs_last_date_got_promoted')) !!}--}}
+                                {!! Form::text('cjs_last_date_got_promoted', (isset($employer->currentJob->cjs_last_date_got_promoted) ? $employer->currentJob->cjs_last_date_got_promoted : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'cjs_last_date_got_promoted')) !!}
                                 @if($errors->has('last_date_got_promoted'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('cjs_last_date_got_promoted') !!}</strong>
@@ -471,7 +473,8 @@
                         {{--//Level or grade--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group{!! $errors->has('cjs_department_id') ? ' has-error' : '' !!}">
-                                <label for="cjs_department_id" class="control-label"><strong>Last Position:</strong></label>
+                                <label for="cjs_department_id" class="control-label"><strong>Last
+                                        Position:</strong></label>
                                 {{--{!! Form::text('cjs_department_id', null, array('placeholder' => 'Enter your department','class' => 'form-control')) !!}--}}
                                 {!! Form::select('cjs_department_id', (isset($employer->currentJob->cjs_department_id) ? (isset($employer->currentJob->cjs_department_id) ? $department : null) : $department), (isset($employer->currentJob->cjs_department_id) ? $employer->currentJob->cjs_department_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
                                 @if($errors->has('cjs_department_id'))
