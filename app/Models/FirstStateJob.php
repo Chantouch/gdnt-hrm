@@ -8,21 +8,44 @@ use Illuminate\Database\Eloquent\Model;
 class FirstStateJob extends Model
 {
     protected $table = 'first_state_jobs';
+
     protected $dates = [
-        'permanent_staff_date', 'start_date'
+        'fsj_permanent_staff_date',
     ];
     protected $fillable = [
-        'custom1', 'custom2', 'department_id', 'department_unit_id', 'emp_id', 'frame_id',
-        'ministry_id', 'occupation_id', 'office_id', 'others', 'permanent_staff_date', 'start_date',
+        'fsj_custom1', 'fsj_custom2', 'fsj_department_id', 'fsj_department_unit_id', 'fsj_emp_id', 'fsj_frame_id',
+        'fsj_ministry_id', 'fsj_occupation_id', 'fsj_office_id', 'fsj_others', 'fsj_permanent_staff_date', 'fsj_start_date',
     ];
 
-    public function getStartDateAttribute()
+    public function getFSJStartDateAttribute()
     {
-        return $this->attributes['start_date'] = Carbon::parse($this->attributes['start_date'])->format('Y-m-d');
+        return $this->attributes['fsj_start_date'] = Carbon::parse($this->attributes['fsj_start_date'])->format('Y-m-d');
+    }
+
+    public function getFSJPermanentStaffDateAttribute()
+    {
+        return $this->attributes['fsj_permanent_staff_date'] = Carbon::parse($this->attributes['fsj_permanent_staff_date'])->format('Y-m-d');
+    }
+
+    public static function rules()
+    {
+        return [
+            'fsj_start_date' => 'required'
+        ];
+    }
+
+    public function frame()
+    {
+        return $this->hasOne(Frame::class, 'fsj_frame_id');
     }
 
     public function employer()
     {
-        return $this->belongsTo(Employer::class);
+        return $this->hasMany(Employer::class);
+    }
+
+    public function getFrameAttribute()
+    {
+        return $this->frame()->pluck('id');
     }
 }

@@ -15,25 +15,25 @@ class CreateSiblingChildrenTable extends Migration
     {
         Schema::create('sibling_children', function (Blueprint $table){
             $table->increments('id');
-            $table->integer('emp_id', false, true)->unsigned();
-            $table->string('job_department')->nullable();
-            $table->string('full_name')->nullable();
-            $table->string('fn_en')->nullable();
-            $table->enum('type', ['CHILD', 'SIBLING']);
-            $table->enum('gender', ['MALE', 'FEMALE', 'OTHERS']);
-            $table->string('nationality')->nullable();
-            $table->string('ethnic')->nullable();
-            $table->dateTime('dob')->nullable();
-            $table->string('place_of_birth')->nullable();
-            $table->string('address')->nullable();
-            $table->string('job')->nullable();
-            $table->tinyInteger('subsidy');
-            $table->string('others')->nullable();
-            $table->string('custom1')->nullable();
-            $table->string('custom2')->nullable();
+            $table->integer('sc_emp_id', false, true)->unsigned();
+            $table->string('sc_job_department')->nullable();
+            $table->string('sc_full_name')->nullable();
+            $table->string('sc_fn_en')->nullable();
+            $table->enum('sc_type', ['CHILD', 'SIBLING']);
+            $table->enum('sc_gender', ['MALE', 'FEMALE', 'OTHERS']);
+            $table->string('sc_nationality')->nullable();
+            $table->string('sc_ethnic')->nullable();
+            $table->dateTime('sc_dob')->nullable();
+            $table->string('sc_place_of_birth')->nullable();
+            $table->string('sc_address')->nullable();
+            $table->string('sc_job')->nullable();
+            $table->tinyInteger('sc_subsidy');
+            $table->string('sc_others')->nullable();
+            $table->string('sc_custom1')->nullable();
+            $table->string('sc_custom2')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('sc_emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

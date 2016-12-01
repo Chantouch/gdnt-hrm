@@ -15,18 +15,18 @@ class CreateLanguageLevelsTable extends Migration
     {
         Schema::create('language_levels', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('emp_id', false, true)->unsigned();
-            $table->integer('lang_id', false, true)->unsigned();
-            $table->enum('read', ['Beginner', 'Conversation', 'Business', 'Fluent', 'Mother Tongue']);
-            $table->enum('write', ['Beginner', 'Conversation', 'Business', 'Fluent', 'Mother Tongue']);
-            $table->enum('listen', ['Beginner', 'Conversation', 'Business', 'Fluent', 'Mother Tongue']);
-            $table->enum('speak', ['Beginner', 'Conversation', 'Business', 'Fluent', 'Mother Tongue']);
-            $table->string('others')->nullable();
-            $table->string('custom1')->nullable();
-            $table->string('custom2')->nullable();
+            $table->integer('ll_emp_id', false, true)->unsigned();
+            $table->integer('ll_lang_id', false, true)->unsigned();
+            $table->enum('ll_read', ['Beginner', 'Conversation', 'Business', 'Fluent', 'Mother Tongue']);
+            $table->enum('ll_write', ['Beginner', 'Conversation', 'Business', 'Fluent', 'Mother Tongue']);
+            $table->enum('ll_listen', ['Beginner', 'Conversation', 'Business', 'Fluent', 'Mother Tongue']);
+            $table->enum('ll_speak', ['Beginner', 'Conversation', 'Business', 'Fluent', 'Mother Tongue']);
+            $table->string('ll_others')->nullable();
+            $table->string('ll_custom1')->nullable();
+            $table->string('ll_custom2')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('ll_emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -203,8 +203,9 @@
                     <h4 class="m-t-0 m-b-20 header-title"><b>My Office</b></h4>
 
                     <div class="gmap">
-                        <iframe height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                                src="http://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Google+India+Bangalore,+Bennigana+Halli,+Bangalore,+Karnataka&amp;aq=0&amp;oq=google+&amp;sll=9.930582,78.12303&amp;sspn=0.192085,0.308647&amp;ie=UTF8&amp;hq=Google&amp;hnear=Bennigana+Halli,+Bangalore,+Bengaluru+Urban,+Karnataka&amp;t=m&amp;ll=12.993518,77.660294&amp;spn=0.012545,0.036006&amp;z=15&amp;output=embed"></iframe>
+                        {{--<iframe height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"--}}
+                                {{--src=""></iframe>--}}
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d491.6935755640356!2d104.9239360624847!3d11.574130463049336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x21586236e0659238!2sGeneral+Department+of+National+Treasury!5e0!3m2!1sen!2skh!4v1480556871678" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                     <br/>
                     <div class="gmap-info">

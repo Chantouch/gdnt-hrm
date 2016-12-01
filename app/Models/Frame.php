@@ -37,4 +37,9 @@ class Frame extends Model
             'name.required' => 'Frame name can not leave it blank',
         ];
     }
+
+    public function firstStateJob()
+    {
+        return $this->belongsTo(FirstStateJob::class);
+    }
 }

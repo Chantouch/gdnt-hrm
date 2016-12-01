@@ -83,10 +83,10 @@ class Employer extends Model
         ];
     }
 
-//    public function getDobAttribute()
-//    {
-//        return Carbon::parse($this->attributes['dob'])->format('Y-M-d');
-//    }
+    public function getDobAttribute()
+    {
+        return Carbon::parse($this->attributes['dob'])->format('Y-M-d');
+    }
 
     public function getIdCardExpiredAttribute()
     {
@@ -100,7 +100,7 @@ class Employer extends Model
 
     public function setDepartmentCodeAttribute($value)
     {
-        $this->attributes['department_code'] = ($value == '') ? '' : $value;
+        $this->attributes['department_code'] = ($value == 'GDNT') ? '' : $value;
     }
 
     public function setIdNoticeEmpAttribute($value)
@@ -111,6 +111,11 @@ class Employer extends Model
 
     public function firstStateJob()
     {
-        return $this->hasOne(FirstStateJob::class, 'emp_id');
+        return $this->hasOne(FirstStateJob::class, 'fsj_emp_id');
+    }
+
+    public function currentJob()
+    {
+        return $this->hasOne(CurrentJobStatus::class, 'cjs_emp_id');
     }
 }

@@ -15,18 +15,18 @@ class CreateAddOnCurrentPositionsTable extends Migration
     {
         Schema::create('add_on_current_positions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('emp_id', false, true)->unsigned();
-            $table->string('position')->nullable();
-            $table->string('equal_position')->nullable();
-            $table->dateTime('start_date')->nullable();
-            $table->string('department')->nullable();
-            $table->string('others')->nullable();
-            $table->string('custom1')->nullable();
-            $table->string('custom2')->nullable();
+            $table->integer('acp_emp_id', false, true)->unsigned();
+            $table->string('acp_position')->nullable();
+            $table->string('acp_equal_position')->nullable();
+            $table->dateTime('acp_start_date')->nullable();
+            $table->string('acp_department')->nullable();
+            $table->string('acp_others')->nullable();
+            $table->string('acp_custom1')->nullable();
+            $table->string('acp_custom2')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('acp_emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -15,16 +15,16 @@ class CreateAttachmentsTable extends Migration
     {
         Schema::create('attachments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('emp_id', false, true)->unsigned();
-            $table->enum('type', ['A', 'B', 'C', 'E', 'F', 'G']);
-            $table->string('url')->nullable();
-            $table->longText('description')->nullable();
-            $table->string('others')->nullable();
-            $table->string('custom1')->nullable();
-            $table->string('custom2')->nullable();
+            $table->integer('att_emp_id', false, true)->unsigned();
+            $table->enum('att_type', ['A', 'B', 'C', 'E', 'F', 'G']);
+            $table->string('att_url')->nullable();
+            $table->longText('att_description')->nullable();
+            $table->string('att_others')->nullable();
+            $table->string('att_custom1')->nullable();
+            $table->string('att_custom2')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('att_emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

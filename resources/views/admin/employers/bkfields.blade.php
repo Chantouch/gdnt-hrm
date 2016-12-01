@@ -27,8 +27,7 @@
 
                         <div class="col-xs-12 col-sm-4 col-md-4">
                             <div class="form-group{!! $errors->has('id_notice_emp') ? ' has-error' : '' !!}">
-                                <label for="id_notice_emp" class="control-label"><strong>ID Notice
-                                        Card:</strong></label>
+                                <label for="id_notice_emp" class="control-label"><strong>ID Notice Card:</strong></label>
                                 {!! Form::text('id_notice_emp', null, array('placeholder' => 'ID Notice Employer','class' => 'form-control')) !!}
                                 @if($errors->has('id_notice_emp'))
                                     <span class="help-block">
@@ -40,8 +39,7 @@
 
                         <div class="col-xs-12 col-sm-4 col-md-4">
                             <div class="form-group{!! $errors->has('department_code') ? ' has-error' : '' !!}">
-                                <label for="department_code" class="control-label"><strong>Department
-                                        code:</strong></label>
+                                <label for="department_code" class="control-label"><strong>Department code:</strong></label>
                                 {!! Form::text('department_code', null, array('placeholder' => 'Department code','class' => 'form-control')) !!}
                                 @if($errors->has('department_code'))
                                     <span class="help-block">
@@ -94,8 +92,7 @@
                                 <label for="dob" class="control-label"><strong>Date of birth:</strong></label>
                                 <div class="input-group">
                                     {!! Form::text('dob', null, array('placeholder' => 'Enter Date of birth','class' => 'form-control', 'id'=>'dob')) !!}
-                                    <span class="input-group-addon bg-custom b-0 text-white"><i
-                                                class="icon-calender"></i></span>
+                                    <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                                     @if($errors->has('dob'))
                                         <span class="help-block">
                                             <strong>{!! $errors->first('dob') !!}</strong>
@@ -107,8 +104,7 @@
 
                         <div class="col-xs-12 col-sm-2 col-md-2">
                             <div class="form-group{!! $errors->has('marital_status') ? ' has-error' : '' !!}">
-                                <label for="marital_status" class="control-label"><strong>Marital
-                                        status:</strong></label>
+                                <label for="marital_status" class="control-label"><strong>Marital status:</strong></label>
                                 {!! Form::select('marital_status', $marital_status, null, array('placeholder' => '--ជ្រើសរើស--','class' => 'form-control')) !!}
                                 @if($errors->has('marital_status'))
                                     <span class="help-block">
@@ -144,8 +140,7 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group{!! $errors->has('place_of_birth') ? ' has-error' : '' !!}">
-                                <label for="place_of_birth" class="control-label"><strong>Place of
-                                        birth:</strong></label>
+                                <label for="place_of_birth" class="control-label"><strong>Place of birth:</strong></label>
                                 {!! Form::textarea('place_of_birth', null, array('placeholder' => 'Enter place of birth','class' => 'form-control', 'rows'=>'3')) !!}
                                 @if($errors->has('place_of_birth'))
                                     <span class="help-block">
@@ -157,8 +152,7 @@
 
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group{!! $errors->has('current_address') ? ' has-error' : '' !!}">
-                                <label for="current_address" class="control-label"><strong>Current
-                                        address:</strong></label>
+                                <label for="current_address" class="control-label"><strong>Current address:</strong></label>
                                 {!! Form::textarea('current_address', null, array('placeholder' => 'Enter current address','class' => 'form-control', 'rows'=>'3')) !!}
                                 @if($errors->has('current_address'))
                                     <span class="help-block">
@@ -230,12 +224,10 @@
 
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group{!! $errors->has('id_card_expired') ? ' has-error' : '' !!}">
-                                <label for="id_card_expired" class="control-label"><strong>Expired
-                                        date:</strong></label>
+                                <label for="id_card_expired" class="control-label"><strong>Expired date:</strong></label>
                                 <div class="input-group">
                                     {!! Form::text('id_card_expired', null, array('placeholder' => 'Enter id card expired','class' => 'form-control', 'id'=> 'id_card_expired')) !!}
-                                    <span class="input-group-addon bg-custom b-0 text-white"><i
-                                                class="icon-calender"></i></span>
+                                    <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                                     @if($errors->has('id_card_expired'))
                                         <span class="help-block">
                                             <strong>{!! $errors->first('id_card_expired') !!}</strong>
@@ -262,8 +254,7 @@
                                 <label for="passport_expired_date" class="control-label"><strong>Expired date:</strong></label>
                                 <div class="input-group">
                                     {!! Form::text('passport_expired_date', null, array('placeholder' => 'Enter passport expired date','class' => 'form-control', 'id'=>'passport_expired_date')) !!}
-                                    <span class="input-group-addon bg-custom b-0 text-white"><i
-                                                class="icon-calender"></i></span>
+                                    <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                                     @if($errors->has('passport_expired_date'))
                                         <span class="help-block">
                                             <strong>{!! $errors->first('passport_expired_date') !!}</strong>
@@ -297,7 +288,6 @@
                     </h4>
                 </div>
                 <div id="public_status" class="panel-collapse collapse">
-
                     {{--A.First job in state--}}
                     <div class="col-md-12 m-l-15">
                         <h4>A.First State Job</h4>
@@ -305,105 +295,100 @@
                     <div class="panel-body">
                         {{--//Start date--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('fsj_start_date') ? ' has-error' : '' !!}">
+                            <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
                                 <label for="start_date" class="control-label"><strong>Start Date:</strong></label>
-                                {!! Form::text('fsj_start_date', (isset($employer->firstStateJob->fsj_start_date)? $employer->firstStateJob->fsj_start_date : null), array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'start_date')) !!}
-                                @if($errors->has('fsj_start_date'))
+                                {!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'start_date')) !!}
+                                @if($errors->has('start_date'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('fsj_start_date') !!}</strong>
+                                        <strong>{!! $errors->first('start_date') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Permanent staff--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('fsj_permanent_staff_date') ? ' has-error' : '' !!}">
+                            <div class="form-group{!! $errors->has('permanent_staff_date') ? ' has-error' : '' !!}">
                                 <label for="permanent_staff_date" class="control-label">
                                     <strong>Permanent Date:</strong></label>
-                                {!! Form::text('fsj_permanent_staff_date', (isset($employer->firstStateJob->fsj_permanent_staff_date) ? $employer->firstStateJob->fsj_permanent_staff_date : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'fsj_permanent_staff_date')) !!}
-                                @if($errors->has('fsj_permanent_staff_date'))
+                                {!! Form::text('permanent_staff_date', null, array('placeholder' => 'Select permanent Date','class' => 'form-control')) !!}
+                                @if($errors->has('permanent_staff_date'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('fsj_permanent_staff_date') !!}</strong>
+                                        <strong>{!! $errors->first('permanent_staff_date') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Level or grade--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('fsj_position_grade') ? ' has-error' : '' !!}">
-                                <label for="fsj_frame_id" class="control-label"><strong>Position Grade:</strong></label>
-                                {!! Form::select('fsj_frame_id', (isset($employer->firstStateJob->fsj_frame_id) ? (isset($employer->firstStateJob->fsj_frame_id) ? $frame : null) : $frame), (isset($employer->firstStateJob->fsj_frame_id) ? $employer->firstStateJob->fsj_frame_id : null), array('placeholder' => '--សូមជ្រើសរើសក្របខណ្ឌថ្នាក់--','class' => 'form-control')) !!}
-                                @if($errors->has('fsj_frame_id'))
+                            <div class="form-group{!! $errors->has('position_grade') ? ' has-error' : '' !!}">
+                                <label for="frame_id" class="control-label"><strong>Position Grade:</strong></label>
+                                {!! Form::text('frame_id', null, array('placeholder' => 'Enter your frame','class' => 'form-control')) !!}
+                                @if($errors->has('frame_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('fsj_frame_id') !!}</strong>
+                                        <strong>{!! $errors->first('frame_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Occupation--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('fsj_occupation_id') ? ' has-error' : '' !!}">
+                            <div class="form-group{!! $errors->has('occupation_id') ? ' has-error' : '' !!}">
                                 <label for="occupation_id" class="control-label">
                                     <strong>Occupation:</strong></label>
-                                {!! Form::select('fsj_occupation_id', (isset($employer->firstStateJob->fsj_occupation_id) ? (isset($employer->firstStateJob->fsj_occupation_id) ? $occupation : null) : $occupation), (isset($employer->firstStateJob->fsj_occupation_id) ? $employer->firstStateJob->fsj_occupation_id : null), array('placeholder' => 'Select Occupation','class' => 'form-control')) !!}
-                                @if($errors->has('fsj_occupation_id'))
+                                {!! Form::text('occupation_id', null, array('placeholder' => 'Select Occupation','class' => 'form-control')) !!}
+                                @if($errors->has('occupation_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('fsj_occupation_id') !!}</strong>
+                                        <strong>{!! $errors->first('occupation_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Ministry--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('fsj_ministry_id') ? ' has-error' : '' !!}">
+                            <div class="form-group{!! $errors->has('ministry_id') ? ' has-error' : '' !!}">
                                 <label for="ministry_id" class="control-label"><strong>Ministry:</strong></label>
-                                {{--{!! Form::text('fsj_ministry_id', (isset($employer->firstStateJob->fsj_ministry_id) ? $employer->firstStateJob->fsj_ministry_id : null), array('placeholder' => 'Select ministry','class' => 'form-control')) !!}--}}
-                                {!! Form::select('fsj_ministry_id', (isset($employer->firstStateJob->fsj_ministry_id) ? (isset($employer->firstStateJob->fsj_ministry_id) ? $ministry : null) : $ministry), (isset($employer->firstStateJob->fsj_ministry_id) ? $employer->firstStateJob->fsj_ministry_id : null), array('placeholder' => 'Select ministry','class' => 'form-control')) !!}
-                                @if($errors->has('fsj_ministry_id'))
+                                {!! Form::text('ministry_id', null, array('placeholder' => 'Select ministry','class' => 'form-control')) !!}
+                                @if($errors->has('ministry_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('fsj_ministry_id') !!}</strong>
+                                        <strong>{!! $errors->first('ministry_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Department--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('fsj_department_id') ? ' has-error' : '' !!}">
+                            <div class="form-group{!! $errors->has('department_id') ? ' has-error' : '' !!}">
                                 <label for="department_id" class="control-label">
                                     <strong>Department:</strong></label>
-                                {{--{!! Form::text('fsj_department_id', (isset($employer->firstStateJob->fsj_department_id) ? $employer->firstStateJob->fsj_department_id : null), array('placeholder' => 'Select department','class' => 'form-control')) !!}--}}
-                                {!! Form::select('fsj_department_id', (isset($employer->firstStateJob->fsj_department_id) ? (isset($employer->firstStateJob->fsj_department_id) ? $department : null) : $department), (isset($employer->firstStateJob->fsj_department_id) ? $employer->firstStateJob->fsj_department_id : null), array('placeholder' => 'Select department','class' => 'form-control')) !!}
-                                @if($errors->has('fsj_department_id'))
+                                {!! Form::text('department_id', null, array('placeholder' => 'Select department','class' => 'form-control')) !!}
+                                @if($errors->has('department_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('fsj_department_id') !!}</strong>
+                                        <strong>{!! $errors->first('department_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Department unit--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('fsj_department_unit_id') ? ' has-error' : '' !!}">
-                                <label for="department_unit_id" class="control-label"><strong>Department
-                                        Unit:</strong></label>
-                                {{--{!! Form::text('fsj_department_unit_id', (isset($employer->firstStateJob->fsj_department_unit_id) ? $employer->firstStateJob->fsj_department_unit_id : null), array('placeholder' => 'Enter your department unit','class' => 'form-control')) !!}--}}
-                                {!! Form::select('fsj_department_unit_id', (isset($employer->firstStateJob->fsj_department_unit_id) ? (isset($employer->firstStateJob->fsj_department_unit_id) ? $department_unit : null) : $department_unit), (isset($employer->firstStateJob->fsj_department_unit_id) ? $employer->firstStateJob->fsj_department_unit_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
-                                @if($errors->has('fsj_department_unit_id'))
+                            <div class="form-group{!! $errors->has('department_unit_id') ? ' has-error' : '' !!}">
+                                <label for="department_unit_id" class="control-label"><strong>Department Unit:</strong></label>
+                                {!! Form::text('department_unit_id', null, array('placeholder' => 'Enter your department unit','class' => 'form-control')) !!}
+                                @if($errors->has('department_unit_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('fsj_department_unit_id') !!}</strong>
+                                        <strong>{!! $errors->first('department_unit_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Office--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('fsj_office_id') ? ' has-error' : '' !!}">
+                            <div class="form-group{!! $errors->has('office_id') ? ' has-error' : '' !!}">
                                 <label for="office_id" class="control-label">
                                     <strong>Office:</strong></label>
-                                {{--{!! Form::text('fsj_office_id', (isset($employer->firstStateJob->fsj_office_id) ? $employer->firstStateJob->fsj_office_id : null), array('placeholder' => 'Select office','class' => 'form-control')) !!}--}}
-                                {!! Form::select('fsj_office_id', (isset($employer->firstStateJob->fsj_office_id) ? (isset($employer->firstStateJob->fsj_office_id) ? $office : null) : $office), (isset($employer->firstStateJob->fsj_office_id) ? $employer->firstStateJob->fsj_office_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
-                                @if($errors->has('fsj_office_id'))
+                                {!! Form::text('office_id', null, array('placeholder' => 'Select office','class' => 'form-control')) !!}
+                                @if($errors->has('office_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('fsj_office_id') !!}</strong>
+                                        <strong>{!! $errors->first('office_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -417,40 +402,38 @@
                     <div class="panel-body">
                         {{--//Level or Grade--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('cjs_frame_id') ? ' has-error' : '' !!}">
-                                <label for="cjs_frame_id" class="control-label"><strong>Frame:</strong></label>
-                                {{--{!! Form::text('cjs_frame_id', null, array('placeholder' => 'Select your frame','class' => 'form-control')) !!}--}}
-                                {!! Form::select('cjs_frame_id', (isset($employer->currentJob->cjs_frame_id) ? (isset($employer->currentJob->cjs_frame_id) ? $frame : null) : $frame), (isset($employer->currentJob->cjs_frame_id) ? $employer->currentJob->cjs_frame_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
-                                @if($errors->has('cjs_frame_id'))
+                            <div class="form-group{!! $errors->has('frame_id') ? ' has-error' : '' !!}">
+                                <label for="frame_id" class="control-label"><strong>Frame:</strong></label>
+                                {!! Form::text('frame_id', null, array('placeholder' => 'Select your frame','class' => 'form-control')) !!}
+                                @if($errors->has('frame_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('cjs_frame_id') !!}</strong>
+                                        <strong>{!! $errors->first('frame_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Last date promoted--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('cjs_last_date_promoted') ? ' has-error' : '' !!}">
-                                <label for="cjs_last_date_promoted" class="control-label">
+                            <div class="form-group{!! $errors->has('last_date_promoted') ? ' has-error' : '' !!}">
+                                <label for="last_date_promoted" class="control-label">
                                     <strong>Last Date Promoted:</strong></label>
-                                {!! Form::text('cjs_last_date_promoted', null, array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id' => 'cjs_last_date_promoted')) !!}
-                                @if($errors->has('cjs_last_date_promoted'))
+                                {!! Form::text('last_date_promoted', null, array('placeholder' => 'Select permanent Date','class' => 'form-control')) !!}
+                                @if($errors->has('last_date_promoted'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('cjs_last_date_promoted') !!}</strong>
+                                        <strong>{!! $errors->first('last_date_promoted') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Occupation--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('cjs_occupation_id') ? ' has-error' : '' !!}">
-                                <label for="cjs_last_date_promoted" class="control-label">
+                            <div class="form-group{!! $errors->has('occupation_id') ? ' has-error' : '' !!}">
+                                <label for="last_date_promoted" class="control-label">
                                     <strong>Occupation:</strong></label>
-                                {{--{!! Form::text('cjs_occupation_id', null, array('placeholder' => 'Select occupation','class' => 'form-control')) !!}--}}
-                                {!! Form::select('cjs_occupation_id', (isset($employer->currentJob->cjs_occupation_id) ? (isset($employer->currentJob->cjs_occupation_id) ? $occupation : null) : $occupation), (isset($employer->currentJob->cjs_occupation_id) ? $employer->currentJob->cjs_occupation_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
-                                @if($errors->has('cjs_occupation_id'))
+                                {!! Form::text('occupation_id', null, array('placeholder' => 'Select occupation','class' => 'form-control')) !!}
+                                @if($errors->has('occupation_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('cjs_occupation_id') !!}</strong>
+                                        <strong>{!! $errors->first('occupation_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -458,53 +441,50 @@
                         {{--//Last date got promoted--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group{!! $errors->has('last_date_got_promoted') ? ' has-error' : '' !!}">
-                                <label for="cjs_last_date_got_promoted" class="control-label">
+                                <label for="last_date_got_promoted" class="control-label">
                                     <strong>Last Date Promoted:</strong></label>
-                                {!! Form::text('cjs_last_date_got_promoted', null, array('placeholder' => 'Select last date got promoted','class' => 'form-control', 'id' => 'cjs_last_date_got_promoted')) !!}
+                                {!! Form::text('last_date_got_promoted', null, array('placeholder' => 'Select last date got promoted','class' => 'form-control')) !!}
                                 @if($errors->has('last_date_got_promoted'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('cjs_last_date_got_promoted') !!}</strong>
+                                        <strong>{!! $errors->first('last_date_got_promoted') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Level or grade--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('cjs_department_id') ? ' has-error' : '' !!}">
-                                <label for="cjs_department_id" class="control-label"><strong>Last Position:</strong></label>
-                                {{--{!! Form::text('cjs_department_id', null, array('placeholder' => 'Enter your department','class' => 'form-control')) !!}--}}
-                                {!! Form::select('cjs_department_id', (isset($employer->currentJob->cjs_department_id) ? (isset($employer->currentJob->cjs_department_id) ? $department : null) : $department), (isset($employer->currentJob->cjs_department_id) ? $employer->currentJob->cjs_department_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
-                                @if($errors->has('cjs_department_id'))
+                            <div class="form-group{!! $errors->has('department_id') ? ' has-error' : '' !!}">
+                                <label for="department_id" class="control-label"><strong>Last Position:</strong></label>
+                                {!! Form::text('department_id', null, array('placeholder' => 'Enter your department','class' => 'form-control')) !!}
+                                @if($errors->has('department_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('cjs_department_id') !!}</strong>
+                                        <strong>{!! $errors->first('department_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Department unit--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('cjs_department_unit_id') ? ' has-error' : '' !!}">
-                                <label for="cjs_department_unit_id" class="control-label">
-                                    <strong>Department unit:</strong></label>
-                                {{--{!! Form::text('cjs_department_unit_id', null, array('placeholder' => 'Select department unit','class' => 'form-control')) !!}--}}
-                                {!! Form::select('cjs_department_unit_id', (isset($employer->currentJob->cjs_department_unit_id) ? (isset($employer->currentJob->cjs_department_unit_id) ? $department_unit : null) : $department_unit), (isset($employer->currentJob->cjs_department_unit_id) ? $employer->currentJob->cjs_department_unit_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
-                                @if($errors->has('cjs_department_unit_id'))
+                            <div class="form-group{!! $errors->has('department_unit_id') ? ' has-error' : '' !!}">
+                                <label for="department_unit_id" class="control-label">
+                                    <strong>Occupation:</strong></label>
+                                {!! Form::text('department_unit_id', null, array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
+                                @if($errors->has('department_unit_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('cjs_department_unit_id') !!}</strong>
+                                        <strong>{!! $errors->first('department_unit_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
                         {{--//Office--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('cjs_office_id') ? ' has-error' : '' !!}">
-                                <label for="cjs_office_id" class="control-label">
+                            <div class="form-group{!! $errors->has('office_id') ? ' has-error' : '' !!}">
+                                <label for="office_id" class="control-label">
                                     <strong>Office:</strong></label>
-                                {{--{!! Form::text('cjs_office_id', null, array('placeholder' => 'Select office','class' => 'form-control')) !!}--}}
-                                {!! Form::select('cjs_office_id', (isset($employer->currentJob->cjs_office_id) ? (isset($employer->currentJob->cjs_office_id) ? $office : null) : $office), (isset($employer->currentJob->cjs_office_id) ? $employer->currentJob->cjs_office_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
-                                @if($errors->has('cjs_office_id'))
+                                {!! Form::text('office_id', null, array('placeholder' => 'Select office','class' => 'form-control')) !!}
+                                @if($errors->has('office_id'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('cjs_office_id') !!}</strong>
+                                        <strong>{!! $errors->first('office_id') !!}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -660,7 +640,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -859,8 +838,7 @@
                         {{--//published_date--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group{!! $errors->has('published_date') ? ' has-error' : '' !!}">
-                                <label for="published_date" class="control-label"><strong>Published
-                                        date:</strong></label>
+                                <label for="published_date" class="control-label"><strong>Published date:</strong></label>
                                 {!! Form::text('published_date', null, array('placeholder' => 'Select your published date','class' => 'form-control')) !!}
                                 @if($errors->has('published_date'))
                                     <span class="help-block">
@@ -928,8 +906,7 @@
                         {{--//published_date--}}
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group{!! $errors->has('published_date') ? ' has-error' : '' !!}">
-                                <label for="published_date" class="control-label"><strong>Published
-                                        date:</strong></label>
+                                <label for="published_date" class="control-label"><strong>Published date:</strong></label>
                                 {!! Form::text('published_date', null, array('placeholder' => 'Select your published date','class' => 'form-control')) !!}
                                 @if($errors->has('published_date'))
                                     <span class="help-block">
@@ -977,6 +954,7 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 

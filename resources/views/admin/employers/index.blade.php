@@ -6,7 +6,7 @@
         <div class="col-sm-12">
             <div class="card-box">
                 <div class="pull-left">
-                    <h4 class="m-t-0 header-title"><b>Ministries</b></h4>
+                    <h4 class="m-t-0 header-title"><b>Employers</b></h4>
                     <p class="text-muted font-13">
                         Permission for staff that can be access to the system
                     </p>

@@ -15,25 +15,25 @@ class CreateWifeHusbandParentsTable extends Migration
     {
         Schema::create('wife_husband_parents', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('emp_id', false, true)->unsigned();
-            $table->string('department')->nullable();
-            $table->string('full_name')->nullable();
-            $table->string('fn_en')->nullable();
-            $table->enum('type', ['WIFE', 'HUSBAND', 'FATHER', 'MOTHER']);
-            $table->string('nationality')->nullable();
-            $table->string('ethnic')->nullable();
-            $table->dateTime('dob')->nullable();
-            $table->string('place_of_birth')->nullable();
-            $table->string('address')->nullable();
-            $table->string('job')->nullable();
-            $table->tinyInteger('subsidy');
-            $table->tinyInteger('status');
-            $table->string('others')->nullable();
-            $table->string('custom1')->nullable();
-            $table->string('custom2')->nullable();
+            $table->integer('whp_emp_id', false, true)->unsigned();
+            $table->string('whp_department')->nullable();
+            $table->string('whp_full_name')->nullable();
+            $table->string('whp_fn_en')->nullable();
+            $table->enum('whp_type', ['WIFE', 'HUSBAND', 'FATHER', 'MOTHER']);
+            $table->string('whp_nationality')->nullable();
+            $table->string('whp_ethnic')->nullable();
+            $table->dateTime('whp_dob')->nullable();
+            $table->string('whp_place_of_birth')->nullable();
+            $table->string('whp_address')->nullable();
+            $table->string('whp_job')->nullable();
+            $table->tinyInteger('whp_subsidy');
+            $table->tinyInteger('whp_status');
+            $table->string('whp_others')->nullable();
+            $table->string('whp_custom1')->nullable();
+            $table->string('whp_custom2')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('whp_emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

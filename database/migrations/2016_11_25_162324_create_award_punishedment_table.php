@@ -15,20 +15,20 @@ class CreateAwardPunishedmentTable extends Migration
     {
         Schema::create('award_punishments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('emp_id', false, true)->unsigned();
-            $table->integer('doc_number')->nullable();
-            $table->dateTime('published_date')->nullable();
-            $table->string('department')->nullable();
-            $table->longText('description')->nullable();
-            $table->enum('type', ['A', 'B', 'C', 'E', 'F', 'G']);
-            $table->enum('punish_type', ['A', 'B', 'C', 'E', 'F', 'G']);
-            $table->string('others')->nullable();
-            $table->string('custom1')->nullable();
-            $table->string('custom2')->nullable();
+            $table->integer('ap_emp_id', false, true)->unsigned();
+            $table->integer('ap_doc_number')->nullable();
+            $table->dateTime('ap_published_date')->nullable();
+            $table->string('ap_department')->nullable();
+            $table->longText('ap_description')->nullable();
+            $table->enum('ap_type', ['A', 'B', 'C', 'E', 'F', 'G']);
+            $table->enum('ap_punish_type', ['A', 'B', 'C', 'E', 'F', 'G']);
+            $table->string('ap_others')->nullable();
+            $table->string('ap_custom1')->nullable();
+            $table->string('ap_custom2')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('ap_emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

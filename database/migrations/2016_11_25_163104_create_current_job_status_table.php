@@ -15,25 +15,25 @@ class CreateCurrentJobStatusTable extends Migration
     {
         Schema::create('current_job_status', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('emp_id', false, true)->unsigned();
-            $table->integer('frame_id', false, true)->usnigned();
-            $table->integer('occupation_id', false, true)->unisgned();
-            $table->integer('department_id', false, true)->unsigned();
-            $table->integer('department_unit_id', false, true)->unsigned();
-            $table->integer('office_id', false, true)->unsigned();
-            $table->string('others')->nullable();
-            $table->dateTime('last_date_promoted')->nullable();
-            $table->dateTime('last_date_got_promoted')->nullable();
-            $table->string('custom1')->nullable();
-            $table->string('custom2')->nullable();
+            $table->integer('cjs_emp_id', false, true)->unsigned();
+            $table->integer('cjs_frame_id', false, true)->usnigned();
+            $table->integer('cjs_occupation_id', false, true)->unisgned();
+            $table->integer('cjs_department_id', false, true)->unsigned();
+            $table->integer('cjs_department_unit_id', false, true)->unsigned();
+            $table->integer('cjs_office_id', false, true)->unsigned();
+            $table->string('cjs_others')->nullable();
+            $table->dateTime('cjs_last_date_promoted')->nullable();
+            $table->dateTime('cjs_last_date_got_promoted')->nullable();
+            $table->string('cjs_custom1')->nullable();
+            $table->string('cjs_custom2')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('frame_id')->references('id')->on('frames')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('occupation_id')->references('id')->on('occupations')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('department_id')->references('id')->on('departments')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('department_unit_id')->references('id')->on('department_units')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('office_id')->references('id')->on('offices')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('cjs_emp_id')->references('id')->on('employers')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('cjs_frame_id')->references('id')->on('frames')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('cjs_occupation_id')->references('id')->on('occupations')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('cjs_department_id')->references('id')->on('departments')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('cjs_department_unit_id')->references('id')->on('department_units')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('cjs_office_id')->references('id')->on('offices')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

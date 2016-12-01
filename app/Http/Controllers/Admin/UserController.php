@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Employer;
 use App\Models\Role;
 use App\User;
 use Illuminate\Http\Request;
@@ -134,7 +135,7 @@ class UserController extends Controller
      */
     public function profile($id)
     {
-        $profile = User::find($id);
+        $profile = Employer::find($id);
         return view('admin.personal.index', compact('profile'));
     }
 }
