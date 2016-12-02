@@ -56,7 +56,7 @@
 
 @section('script_ready')
 
-    jQuery('#cjs_last_date_promoted, #passport_expired_date, #dob, #id_card_expired, #start_date, #fsj_permanent_staff_date, #cjs_last_date_got_promoted').datepicker({
+    jQuery('#cjs_last_date_promoted, #passport_expired_date, #dob, #id_card_expired, #start_date, #fsj_permanent_staff_date, #cjs_last_date_got_promoted, #acp_start_date, #fn_start_date, #fn_end_date').datepicker({
     autoclose: true,
     todayHighlight: true,
     format: 'yyyy-m-d'

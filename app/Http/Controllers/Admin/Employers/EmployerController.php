@@ -2,15 +2,22 @@
 
 namespace App\Http\Controllers\Admin\Employers;
 
+use App\Models\AddonCurrentPosition;
+use App\Models\AwardPunishment;
 use App\Models\CurrentJobStatus;
 use App\Models\Department;
 use App\Models\DepartmentUnit;
+use App\Models\EducationLevel;
 use App\Models\Employer;
 use App\Models\FirstStateJob;
 use App\Models\Frame;
+use App\Models\JobsHistory;
+use App\Models\Language;
+use App\Models\LanguageLevel;
 use App\Models\Ministry;
 use App\Models\Occupation;
 use App\Models\Office;
+use App\Models\OutFrameNoSalary;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Psy\Exception\ErrorException;
@@ -169,13 +176,16 @@ class EmployerController extends Controller
         $department_unit = DepartmentUnit::where('status', 1)->orderBy('name')->pluck('name', 'id');
         $frame = Frame::where('status', 1)->orderBy('name')->pluck('name', 'id')->all();
         $office = Office::where('status', 1)->orderBy('name')->pluck('name', 'id');
+        $types = AwardPunishment::types();
+        $language = Language::where('status', 1)->orderBy('name')->pluck('name', 'id');
+        $can_level = LanguageLevel::level();
         if (empty($employer->firstStateJob)) {
-            return view('admin.employers.edit', compact('employer', 'marital_status', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'))->with('error', 'Employer not found');
+            return view('admin.employers.edit', compact('employer', 'can_level', 'language', 'types', 'marital_status', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'))->with('error', 'Employer not found');
         }
         if (empty($employer)) {
             return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
         }
-        return view('admin.employers.edit', compact('employer', 'marital_status', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'));
+        return view('admin.employers.edit', compact('employer', 'marital_status', 'can_level', 'language', 'types', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'));
     }
 
     /**
@@ -183,13 +193,15 @@ class EmployerController extends Controller
      *
      * @param  \Illuminate\Http\Request $request
      * @param  int $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
-        $employer = Employer::with('firstStateJob')->find($id);
+        $employer = Employer::with('firstStateJob')->with('currentJob')
+            ->with('addOnCurrentPosition')->with('educationLevel')
+            ->with('languageLevel')
+            ->find($id);
 //        $employer = Employer::with('firstStateJob')->join('first_state_jobs', 'users.id', '=', 'first_state_jobs.emp_id')->where('id', $id);
-
         if (empty($employer)) {
             return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
         }
@@ -207,35 +219,179 @@ class EmployerController extends Controller
             $data['dob'] = $dob;
             $start_date = date('Y-m-d', strtotime($request->start_date));
             $data['start_date'] = $start_date;
+
+            //First State Job
+            $start_date = date('Y-m-d', strtotime($request->fsj_start_date));
+            $data['fsj_start_date'] = $start_date;
             if (!empty($employer->firstStateJob)) {
-                $job = $employer->firstStateJob->update($data);
-                if (!$job) {
+                $fsj = $employer->firstStateJob->update($data);
+                if (!$fsj) {
                     DB::rollbackTransaction();
                     return redirect()->back()->with('error', 'Unable to process your request right now');
                 }
             } else {
-                $start_date = date('Y-m-d', strtotime($request->fsj_start_date));
-                $data['fsj_start_date'] = $start_date;
                 $data['fsj_emp_id'] = $employer->id;
-                FirstStateJob::create($data);
+                $fsj = FirstStateJob::create($data);
+                if (!$fsj) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now');
+                }
             }
 
+            //CurrentJob
+            $cjs_last_date_got_promoted = date('Y-m-d', strtotime($request->cjs_last_date_got_promoted));
+            $data['cjs_last_date_got_promoted'] = $cjs_last_date_got_promoted;
+            $cjs_last_date_promoted = date('Y-m-d', strtotime($request->cjs_last_date_promoted));
+            $data['cjs_last_date_promoted'] = $cjs_last_date_promoted;
             if (!empty($employer->currentJob)) {
-                $job = $employer->currentJob->update($data);
-                if (!$job) {
+                $cjs = $employer->currentJob->update($data);
+                if (!$cjs) {
                     DB::rollbackTransaction();
                     return redirect()->back()->with('error', 'Unable to process your request right now');
                 }
             } else {
-                $cjs_last_date_got_promoted = date('Y-m-d', strtotime($request->cjs_last_date_got_promoted));
-                $data['cjs_last_date_got_promoted'] = $cjs_last_date_got_promoted;
-                $cjs_last_date_promoted = date('Y-m-d', strtotime($request->cjs_last_date_promoted));
-                $data['cjs_last_date_promoted'] = $cjs_last_date_promoted;
                 $data['cjs_emp_id'] = $employer->id;
-                CurrentJobStatus::create($data);
+                $cjs = CurrentJobStatus::create($data);
+                if (!$cjs) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now');
+                }
             }
 
+            //Addon Current Position
+            $acp_start_date = date('Y-m-d', strtotime($request->acp_start_date));
+            $data['acp_start_date'] = $acp_start_date;
+            if (!empty($employer->addOnCurrentPosition)) {
+                $validator = Validator::make($data, AwardPunishment::rules(), AwardPunishment::messages());
+                if ($validator->fails()) {
+                    return redirect()->back()->withInput()->withErrors($validator);
+                }
+                $acp = $employer->addOnCurrentPosition->update($data);
+                if (!$acp) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now');
+                }
+            } else {
+                $validator = Validator::make($data, AwardPunishment::rules(), AwardPunishment::messages());
+                if ($validator->fails()) {
+                    return redirect()->back()->withInput()->withErrors($validator);
+                }
+                $data['acp_emp_id'] = $employer->id;
+                $acp = AddonCurrentPosition::create($data);
+                if (!$acp) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now');
+                }
+            }
 
+            //OutFrameNoSalary
+            $fn_start_date = date('Y-m-d', strtotime($request->fn_start_date));
+            $data['fn_start_date'] = $fn_start_date;
+            $fn_end_date = date('Y-m-d', strtotime($request->fn_end_date));
+            $data['fn_end_date'] = $fn_end_date;
+            if (!empty($employer->outFrameNoSalary)) {
+                $ofns = $employer->outFrameNoSalary->update($data);
+                if (!$ofns) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['fn_emp_id'] = $employer->id;
+                $ofns = OutFrameNoSalary::create($data);
+                if (!$ofns) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            }
+
+            //jobHistoryPrivatePublic
+            $phj_start_date = date('Y-m-d', strtotime($request->phj_start_date));
+            $data['phj_start_date'] = $phj_start_date;
+            $phj_end_date = date('Y-m-d', strtotime($request->phj_end_date));
+            $data['phj_end_date'] = $phj_end_date;
+            if (!empty($employer->jobHistoryPrivatePublic)) {
+                $phj = $employer->jobHistoryPrivatePublic->update($data);
+                if (!$phj) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['phj_emp_id'] = $employer->id;
+                $phj = JobsHistory::create($data);
+                if (!$phj) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            }
+
+            //Award and Punishment
+            $ap_published_date = date('Y-m-d', strtotime($request->ap_published_date));
+            $data['ap_published_date'] = $ap_published_date;
+            if (!empty($employer->awardPunishment)) {
+                $ap = $employer->awardPunishment->update($data);
+                if (!$ap) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['ap_emp_id'] = $employer->id;
+                $ap = AwardPunishment::create($data);
+                if (!$ap) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            }
+
+            //General and Temporary Educations
+            $el_start_date = date('Y-m-d', strtotime($request->el_start_date));
+            $data['el_start_date'] = $el_start_date;
+            $el_end_date = date('Y-m-d', strtotime($request->el_end_date));
+            $data['el_end_date'] = $el_end_date;
+            if (!empty($employer->educationLevel)) {
+                $el = $employer->educationLevel->update($data);
+                if (!$el) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['el_emp_id'] = $employer->id;
+                $el = EducationLevel::create($data);
+                if (!$el) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            }
+
+            //Language level
+            if (!empty($employer->languageLevel)) {
+                $ll = $employer->languageLevel->update($data);
+                if (!$ll) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['ll_emp_id'] = $employer->id;
+                $el = LanguageLevel::create($data);
+                if (!$el) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+//                foreach ($request->ll_lang_id as $key => $n) {
+//                    $data = [
+//                        'll_emp_id' => $employer->id,
+//                        'll_lang_id' => $n,
+//                        'll_read' => $request->ll_read[$key],
+//                    ];
+//
+//                    $el = LanguageLevel::create($data);
+//                    if (!$el) {
+//                        DB::rollbackTransaction();
+//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+//                    }
+//                }
+            }
+
+            //Do Update Employer details
             $employer = $employer->update($data);
             if (!$employer) {
                 DB::rollbackTransaction();
@@ -257,7 +413,8 @@ class EmployerController extends Controller
      */
     public function destroy($id)
     {
-        $employer = Employer::find($id);
+        //$employer = Employer::find($id);
+        $employer = Employer::with('firstStateJob')->with('currentJob')->with('addOnCurrentPosition')->with('educationLevel')->find($id);
         if (empty($employer)) {
             return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
         }

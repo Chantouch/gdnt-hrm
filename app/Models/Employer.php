@@ -24,6 +24,9 @@ class Employer extends Model
         'current_address', 'custom1', 'custom2', 'active'
     ];
 
+    /**
+     * @return array
+     */
     public static function rules()
     {
         return [
@@ -37,6 +40,10 @@ class Employer extends Model
         ];
     }
 
+    /**
+     * @param $id
+     * @return array
+     */
     public static function rule($id)
     {
 
@@ -64,6 +71,9 @@ class Employer extends Model
         }
     }
 
+    /**
+     * @return array
+     */
     public static function messages()
     {
         return [
@@ -71,11 +81,18 @@ class Employer extends Model
         ];
     }
 
+    /**
+     * @param $value
+     * @return string
+     */
     public function setNameAttribute($value)
     {
         return $this->attributes['name'] = "Default";
     }
 
+    /**
+     * @return array
+     */
     public static function marital_status()
     {
         return [
@@ -83,16 +100,25 @@ class Employer extends Model
         ];
     }
 
+    /**
+     * @return string
+     */
     public function getDobAttribute()
     {
         return Carbon::parse($this->attributes['dob'])->format('Y-M-d');
     }
 
+    /**
+     * @return string
+     */
     public function getIdCardExpiredAttribute()
     {
         return Carbon::parse($this->attributes['id_card_expired'])->format('Y-M-d');
     }
 
+    /**
+     * @return string
+     */
     public function getPassportExpiredDateAttribute()
     {
         return Carbon::parse($this->attributes['passport_expired_date'])->format('Y-M-d');
@@ -103,19 +129,75 @@ class Employer extends Model
         $this->attributes['department_code'] = ($value == 'GDNT') ? '' : $value;
     }
 
+    /**
+     * @param $value
+     */
     public function setIdNoticeEmpAttribute($value)
     {
         $this->attributes['id_notice_emp'] = ($value == '') ? '' : $value;
     }
 
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function firstStateJob()
     {
         return $this->hasOne(FirstStateJob::class, 'fsj_emp_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function currentJob()
     {
         return $this->hasOne(CurrentJobStatus::class, 'cjs_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function addOnCurrentPosition()
+    {
+        return $this->hasOne(AddonCurrentPosition::class, 'acp_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function outFrameNoSalary()
+    {
+        return $this->hasOne(OutFrameNoSalary::class, 'fn_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function jobHistoryPrivatePublic()
+    {
+        return $this->hasOne(JobsHistory::class, 'phj_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function awardPunishment()
+    {
+        return $this->hasOne(AwardPunishment::class, 'ap_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function educationLevel()
+    {
+        return $this->hasOne(EducationLevel::class, 'el_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function languageLevel()
+    {
+        return $this->hasOne(LanguageLevel::class, 'll_emp_id');
     }
 }
