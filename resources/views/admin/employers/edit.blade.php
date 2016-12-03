@@ -51,7 +51,7 @@
     <script type="text/javascript">
 
         function addRow() {
-            $("#add_language:first").clone(true).appendTo('#lang_level').find('input, select').val('NO');
+            $("#add_language:first").clone(true).appendTo('#ll_lang').find('input, select').val('NO');
             //$("._details:first").clone(true).appendTo('#edu_details').find('.datepicker').val('');
         }
         function removeRow() {

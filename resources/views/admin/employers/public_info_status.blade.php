@@ -355,7 +355,7 @@
                 </div>
             </div>
             {{--//Start date--}}
-            <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
                     <label for="start_date" class="control-label">
                         <strong>Start date:</strong></label>
@@ -368,7 +368,7 @@
                 </div>
             </div>
             {{--//End date--}}
-            <div class="col-xs-12 col-sm-3 col-md-3">
+            <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">
                     <label for="end_date" class="control-label">
                         <strong>End date:</strong></label>

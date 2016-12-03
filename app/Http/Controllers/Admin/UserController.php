@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $data = User::orderBy('name', 'ASC')->paginate(5);
+        $data = User::orderBy('name', 'ASC')->paginate(15);
         return view('admin.users.index', compact('data'));
     }
 
