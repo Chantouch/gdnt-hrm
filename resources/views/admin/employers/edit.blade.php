@@ -48,6 +48,17 @@
 @stop
 @section('specific_script')
     <script src="{!! asset('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}"></script>
+    <script type="text/javascript">
+
+        function addRow() {
+            $("#add_language:first").clone(true).appendTo('#lang_level').find('input, select').val('NO');
+            //$("._details:first").clone(true).appendTo('#edu_details').find('.datepicker').val('');
+        }
+        function removeRow() {
+            if ($("#add_language").length != 1)
+                $("#add_language:last").last().remove()
+        }
+    </script>
 @stop
 @section('script_ready')
 
@@ -55,6 +66,15 @@
     autoclose: true,
     todayHighlight: true,
     format: 'yyyy-m-d',
+    });
+
+    $('#add').on('click', function(e){
+    e.preventDefault();
+    addRow();
+    });
+    $('#minus').on('click', function(e){
+    e.preventDefault();
+    removeRow();
     });
 
 @stop

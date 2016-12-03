@@ -65,49 +65,11 @@ class EmployerController extends Controller
         $department_unit = DepartmentUnit::where('status', 1)->orderBy('name')->pluck('name', 'id');
         $frame = Frame::where('status', 1)->orderBy('name')->pluck('name', 'id');
         $office = Office::where('status', 1)->orderBy('name')->pluck('name', 'id');
-        return view('admin.employers.create', compact('marital_status', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'));
+        $types = AwardPunishment::types();
+        $language = Language::where('status', 1)->orderBy('name')->pluck('name', 'id');
+        $can_level = LanguageLevel::level();
+        return view('admin.employers.create', compact('marital_status', 'can_level', 'language', 'ministry', 'types', 'occupation', 'department', 'department_unit', 'frame', 'office'));
     }
-
-
-    public function storeEmp(Request $request)
-    {
-        DB::beginTransaction();
-        $this->employer->full_name = $request->full_name;
-        $this->employer->email = $request->email;
-        $this->employer->emp_id = $request->emp_id;
-        $this->employer->save();
-
-        $this->firstStateJob->fsj_start_date = $request->fsj_start_date;
-        $this->firstStateJob->fsj_department_unit_id = $request->fsj_department_unit_id;
-        $this->firstStateJob->fsj_department_id = $request->fsj_department_id;
-        $this->firstStateJob->fsj_ministry_id = $request->fsj_ministry_id;
-        $this->firstStateJob->fsj_occupation_id = $request->fsj_occupation_id;
-        $this->firstStateJob->fsj_office_id = $request->fsj_office_id;
-        $this->firstStateJob->fsj_frame_id = $request->fsj_frame_id;
-        $this->firstStateJob->emp_id = $this->employer->id;
-        $this->firstStateJob->save();
-        DB::commit();
-        return redirect()->route('admin.managements.employers.index')->with('success', 'Employer successfully added');
-    }
-
-    public function editEmp($idEmp)
-    {
-        $employer = Employer::join('first_state_jobs', 'users.id', '=', 'first_state_jobs.emp_id')->find($idEmp);
-//        $employer = Employer::with('firstStateJob')->find($idEmp);
-//        $state_job = FirstStateJob::with('employer')->find($idJob);
-        $ministry = Ministry::where('status', 1)->orderBy('name')->pluck('name', 'id');
-        $occupation = Occupation::where('status', 1)->orderBy('name')->pluck('name', 'id');
-        $department = Department::where('status', 1)->orderBy('name')->pluck('name', 'id');
-        $department_unit = DepartmentUnit::where('status', 1)->orderBy('name')->pluck('name', 'id');
-        $frame = Frame::where('status', 1)->orderBy('name')->pluck('name', 'id');
-        $office = Office::where('status', 1)->orderBy('name')->pluck('name', 'id');
-        if (empty($employer)) {
-            return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
-        }
-        $marital_status = Employer::marital_status();
-        return view('admin.employers.edit', compact('employer', 'marital_status', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'));
-    }
-
 
     /**
      * Store a newly created resource in storage.
@@ -169,7 +131,12 @@ class EmployerController extends Controller
      */
     public function edit($id)
     {
-        $employer = Employer::with('firstStateJob')->find($id);
+        $employer = Employer::with('firstStateJob')->with('currentJob')
+            ->with('addOnCurrentPosition')->with('educationLevel')
+            ->with('languageLevel')
+            ->find($id);
+        $languages = LanguageLevel::where('ll_emp_id', $employer->id)->get();
+
         $marital_status = Employer::marital_status();
         $ministry = Ministry::where('status', 1)->orderBy('name')->pluck('name', 'id');
         $occupation = Occupation::where('status', 1)->orderBy('name')->pluck('name', 'id');
@@ -186,7 +153,7 @@ class EmployerController extends Controller
         if (empty($employer)) {
             return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
         }
-        return view('admin.employers.edit', compact('employer', 'marital_status', 'can_level', 'language', 'types', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'));
+        return view('admin.employers.edit', compact('employer', 'languages', 'marital_status', 'can_level', 'language', 'types', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'));
     }
 
     /**
@@ -365,31 +332,37 @@ class EmployerController extends Controller
 
             //Language level
             if (!empty($employer->languageLevel)) {
-                $ll = $employer->languageLevel->update($data);
-                if (!$ll) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                $language = LanguageLevel::where('ll_emp_id', $employer->id)->get();
+                foreach ($language as $lang => $value) {
+                    $update_language = LanguageLevel::find($data['langIds'][$lang]);
+                    $update_language->ll_lang_id = $data['ll_lang_id_' . $value->ll_lang_id];
+                    $update_language->ll_read = $data['ll_read_' . LanguageLevel::clean($value->ll_read)];
+                    $update_language->ll_write = $data['ll_write_' . LanguageLevel::clean($value->ll_write)];
+                    $update_language->ll_listen = $data['ll_listen_' . LanguageLevel::clean($value->ll_listen)];
+                    $update_language->ll_speak = $data['ll_speak_' . LanguageLevel::clean($value->ll_speak)];
+                    $el = $update_language->save();
+                    if (!$el) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             } else {
-                $data['ll_emp_id'] = $employer->id;
-                $el = LanguageLevel::create($data);
-                if (!$el) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                foreach ($request->ll_lang_id as $key => $n) {
+                    $data = [
+                        'll_emp_id' => $employer->id,
+                        'll_lang_id' => $n,
+                        'll_read' => $request->ll_read[$key],
+                        'll_write' => $request->ll_write[$key],
+                        'll_listen' => $request->ll_listen[$key],
+                        'll_speak' => $request->ll_speak[$key],
+                    ];
+
+                    $el = LanguageLevel::create($data);
+                    if (!$el) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
-//                foreach ($request->ll_lang_id as $key => $n) {
-//                    $data = [
-//                        'll_emp_id' => $employer->id,
-//                        'll_lang_id' => $n,
-//                        'll_read' => $request->ll_read[$key],
-//                    ];
-//
-//                    $el = LanguageLevel::create($data);
-//                    if (!$el) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
             }
 
             //Family Status

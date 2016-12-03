@@ -7,7 +7,7 @@
             </a>
         </h4>
     </div>
-    <div id="family_status" class="panel-collapse collapse in">
+    <div id="family_status" class="panel-collapse collapse">
         <div class="col-md-12 m-l-15">
             <h4>A.Parents Info</h4>
         </div>
@@ -41,8 +41,10 @@
             <div class="col-xs-12 col-sm-2 col-md-2">
                 <div class="form-group{!! $errors->has('whp_status') ? ' has-error' : '' !!}">
                     <label for="whp_status" class="control-label"><strong>Status:</strong></label><br>
-                    {!! Form::radio('whp_status', (isset($employer->wifeHusbandParent->whp_status)  ? 'dead' : null), array('class' => 'form-control')) !!} Dead
-                    {!! Form::radio('whp_status', (isset($employer->wifeHusbandParent->whp_status)  ? 'living' : null), array('class' => 'form-control')) !!} Living
+                    {!! Form::radio('whp_status', '1', null, ['class'=> 'radio-primary']) !!} Living
+                    {!! Form::radio('whp_status', '0', null) !!} Dead
+                    {{--{!! Form::radio('whp_status', (isset($employer->wifeHusbandParent->whp_status)  ? 'dead' : null), array('class' => 'form-control')) !!} Dead--}}
+                    {{--{!! Form::radio('whp_status', (isset($employer->wifeHusbandParent->whp_status)  ? 'living' : null), array('class' => 'form-control')) !!} Living--}}
                     @if($errors->has('whp_status'))
                         <span class="help-block">
                             <strong>{!! $errors->first('whp_status') !!}</strong>

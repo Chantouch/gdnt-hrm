@@ -7,7 +7,7 @@
             </a>
         </h4>
     </div>
-    <div id="collapse-personal-info" class="panel-collapse collapse in">
+    <div id="collapse-personal-info" class="panel-collapse collapse">
         <div class="panel-body">
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="form-group{!! $errors->has('emp_id') ? ' has-error' : '' !!}">
@@ -15,8 +15,8 @@
                     {!! Form::text('emp_id', null, array('placeholder' => 'ID Card Staff','class' => 'form-control')) !!}
                     @if($errors->has('emp_id'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('emp_id') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('emp_id') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -28,8 +28,8 @@
                     {!! Form::text('id_notice_emp', null, array('placeholder' => 'ID Notice Employer','class' => 'form-control')) !!}
                     @if($errors->has('id_notice_emp'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('id_notice_emp') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('id_notice_emp') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -41,8 +41,8 @@
                     {!! Form::text('department_code', null, array('placeholder' => 'Department code','class' => 'form-control')) !!}
                     @if($errors->has('department_code'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('department_code') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('department_code') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -53,8 +53,8 @@
                     {!! Form::text('full_name', null, array('placeholder' => 'Full Name','class' => 'form-control')) !!}
                     @if($errors->has('full_name'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('full_name') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('full_name') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
