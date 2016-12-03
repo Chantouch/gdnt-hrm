@@ -65,8 +65,8 @@
                     {!! Form::text('fn_en', null, array('placeholder' => 'Full name latin','class' => 'form-control')) !!}
                     @if($errors->has('fn_en'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('fn_en') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('fn_en') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -79,8 +79,8 @@
                     {!! Form::radio('gender', 'o', null) !!} Other
                     @if($errors->has('gender'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('gender') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('gender') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>

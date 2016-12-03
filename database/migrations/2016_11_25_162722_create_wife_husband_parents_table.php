@@ -27,7 +27,7 @@ class CreateWifeHusbandParentsTable extends Migration
             $table->string('whp_address')->nullable();
             $table->string('whp_job')->nullable();
             $table->tinyInteger('whp_subsidy');
-            $table->tinyInteger('whp_status');
+            $table->enum('whp_status', ['living', 'dead']);
             $table->string('whp_others')->nullable();
             $table->string('whp_custom1')->nullable();
             $table->string('whp_custom2')->nullable();

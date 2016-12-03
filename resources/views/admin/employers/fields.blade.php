@@ -27,7 +27,7 @@
             {{--6.Language level status--}}
 
             {{--7.Family status--}}
-
+            @include('admin.employers.family_status')
             {{--7.Family status--}}
 
 

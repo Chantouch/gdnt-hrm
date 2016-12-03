@@ -200,4 +200,12 @@ class Employer extends Model
     {
         return $this->hasOne(LanguageLevel::class, 'll_emp_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function wifeHusbandParent()
+    {
+        return $this->hasOne(WifeHusbandParents::class, 'whp_emp_id');
+    }
 }

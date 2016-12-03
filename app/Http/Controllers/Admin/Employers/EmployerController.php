@@ -18,6 +18,7 @@ use App\Models\Ministry;
 use App\Models\Occupation;
 use App\Models\Office;
 use App\Models\OutFrameNoSalary;
+use App\Models\WifeHusbandParents;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Psy\Exception\ErrorException;
@@ -389,6 +390,22 @@ class EmployerController extends Controller
 //                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
 //                    }
 //                }
+            }
+
+            //Family Status
+            if (!empty($employer->wifeHusbandParent)) {
+                $whp = $employer->wifeHusbandParent->update($data);
+                if (!$whp) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['whp_emp_id'] = $employer->id;
+                $whp = WifeHusbandParents::create($data);
+                if (!$whp) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
             }
 
             //Do Update Employer details

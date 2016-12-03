@@ -3,7 +3,7 @@
         <tr>
             <th width="20px">#</th>
             <th>Name</th>
-            <th>Latin</th>
+            <th class="hidden-sm hidden-md hidden-lg">Latin</th>
             <th>ID Card</th>
             <th>Email</th>
             <th>DOB</th>
@@ -24,7 +24,7 @@
                         <span>{{ $employer->full_name }}</span>
                     @endif
                 </td>
-                <td>{{ $employer->fn_en }}</td>
+                <td class="hidden-sm hidden-md hidden-lg">{{ $employer->fn_en }}</td>
                 <td>{{ $employer->id_card }}</td>
                 <td>{{ $employer->email }}</td>
                 <td>{{ $employer->dob }}</td>
