@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title> @yield('title') | {{ config('app.name', 'GDNT HRM') }}</title>
+    <title> @yield('title') | {{ config('app.name') }}</title>
 
     <link href="{!! asset('assets/css/bootstrap.min.css') !!}" rel="stylesheet" type="text/css"/>
     <link href="{!! asset('assets/css/core.css') !!}" rel="stylesheet" type="text/css"/>

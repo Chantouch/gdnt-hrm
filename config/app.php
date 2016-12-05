@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'GDNT HRM',
+    'name' => 'General Department of National Treasury HRM',
 
     /*
     |--------------------------------------------------------------------------

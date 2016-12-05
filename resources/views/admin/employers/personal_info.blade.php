@@ -94,8 +94,8 @@
                                     class="icon-calender"></i></span>
                         @if($errors->has('dob'))
                             <span class="help-block">
-                                            <strong>{!! $errors->first('dob') !!}</strong>
-                                        </span>
+                                <strong>{!! $errors->first('dob') !!}</strong>
+                            </span>
                         @endif
                     </div>
                 </div>

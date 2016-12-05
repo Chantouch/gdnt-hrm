@@ -7,7 +7,7 @@
             </a>
         </h4>
     </div>
-    <div id="lang_level" class="panel-collapse collapse in">
+    <div id="lang_level" class="panel-collapse collapse">
         {{--A.Language--}}
         <div id="ll_lang" class="row">
             @if(isset($employer))

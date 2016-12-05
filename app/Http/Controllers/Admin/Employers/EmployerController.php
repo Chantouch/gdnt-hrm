@@ -9,15 +9,19 @@ use App\Models\Department;
 use App\Models\DepartmentUnit;
 use App\Models\EducationLevel;
 use App\Models\Employer;
+use App\Models\Father;
 use App\Models\FirstStateJob;
 use App\Models\Frame;
 use App\Models\JobsHistory;
 use App\Models\Language;
 use App\Models\LanguageLevel;
 use App\Models\Ministry;
+use App\Models\Mother;
 use App\Models\Occupation;
 use App\Models\Office;
 use App\Models\OutFrameNoSalary;
+use App\Models\Sibling;
+use App\Models\Spouse;
 use App\Models\WifeHusbandParents;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -133,10 +137,10 @@ class EmployerController extends Controller
     {
         $employer = Employer::with('firstStateJob')->with('currentJob')
             ->with('addOnCurrentPosition')->with('educationLevel')
-            ->with('languageLevel')
+            ->with('languageLevel')->with('mother')->with('father')
+            ->with('siblings')
             ->find($id);
         $languages = LanguageLevel::where('ll_emp_id', $employer->id)->get();
-
         $marital_status = Employer::marital_status();
         $ministry = Ministry::where('status', 1)->orderBy('name')->pluck('name', 'id');
         $occupation = Occupation::where('status', 1)->orderBy('name')->pluck('name', 'id');
@@ -147,9 +151,9 @@ class EmployerController extends Controller
         $types = AwardPunishment::types();
         $language = Language::where('status', 1)->orderBy('name')->pluck('name', 'id');
         $can_level = LanguageLevel::level();
-        if (empty($employer->firstStateJob)) {
-            return view('admin.employers.edit', compact('employer', 'can_level', 'language', 'types', 'marital_status', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'))->with('error', 'Employer not found');
-        }
+        //if (empty($employer->firstStateJob)) {
+        //  return view('admin.employers.edit', compact('employer', 'can_level', 'language', 'types', 'marital_status', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'))->with('error', 'Employer not found');
+        //}
         if (empty($employer)) {
             return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
         }
@@ -167,7 +171,8 @@ class EmployerController extends Controller
     {
         $employer = Employer::with('firstStateJob')->with('currentJob')
             ->with('addOnCurrentPosition')->with('educationLevel')
-            ->with('languageLevel')
+            ->with('languageLevel')->with('mother')->with('father')
+            ->with('siblings')
             ->find($id);
 //        $employer = Employer::with('firstStateJob')->join('first_state_jobs', 'users.id', '=', 'first_state_jobs.emp_id')->where('id', $id);
         if (empty($employer)) {
@@ -365,17 +370,73 @@ class EmployerController extends Controller
                 }
             }
 
-            //Family Status
-            if (!empty($employer->wifeHusbandParent)) {
-                $whp = $employer->wifeHusbandParent->update($data);
-                if (!$whp) {
+            //Family Status :: Father
+            $f_dob = date('Y-m-d', strtotime($request->f_dob));
+            $data['f_dob'] = $f_dob;
+            if (!empty($employer->father)) {
+                $father = $employer->father->update($data);
+                if (!$father) {
                     DB::rollbackTransaction();
                     return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
                 }
             } else {
-                $data['whp_emp_id'] = $employer->id;
-                $whp = WifeHusbandParents::create($data);
-                if (!$whp) {
+                $data['f_emp_id'] = $employer->id;
+                $father = Father::create($data);
+                if (!$father) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            }
+
+            //Family Status :: Mother
+            $m_dob = date('Y-m-d', strtotime($request->m_dob));
+            $data['m_dob'] = $m_dob;
+            if (!empty($employer->mother)) {
+                $mother = $employer->mother->update($data);
+                if (!$mother) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['m_emp_id'] = $employer->id;
+                $mother = Mother::create($data);
+                if (!$mother) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            }
+
+            //Family Status :: Spouse
+            $sp_dob = date('Y-m-d', strtotime($request->sp_dob));
+            $data['sp_dob'] = $sp_dob;
+            if (!empty($employer->spouse)) {
+                $spouse = $employer->spouse->update($data);
+                if (!$spouse) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['sp_emp_id'] = $employer->id;
+                $spouse = Spouse::create($data);
+                if (!$spouse) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            }
+
+            //Family Status :: Siblings
+            $sib_dob = date('Y-m-d', strtotime($request->sib_dob));
+            $data['sib_dob'] = $sib_dob;
+            if (!empty($employer->siblings)) {
+                $siblings = $employer->siblings->update($data);
+                if (!$siblings) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['sib_emp_id'] = $employer->id;
+                $siblings = Sibling::create($data);
+                if (!$siblings) {
                     DB::rollbackTransaction();
                     return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
                 }

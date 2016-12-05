@@ -208,4 +208,36 @@ class Employer extends Model
     {
         return $this->hasOne(WifeHusbandParents::class, 'whp_emp_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function father()
+    {
+        return $this->hasOne(Father::class, 'f_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function mother()
+    {
+        return $this->hasOne(Mother::class, 'm_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function spouse()
+    {
+        return $this->hasOne(Spouse::class, 'sp_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function siblings()
+    {
+        return $this->hasOne(Sibling::class, 'sib_emp_id');
+    }
 }

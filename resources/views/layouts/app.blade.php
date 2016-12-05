@@ -8,10 +8,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'GDNT HRM') }}</title>
+    <title>{{ config('app.name', 'GDNT HRM') }} || @yield('title')</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+    <link href="{!! asset('css/app.css') !!}" rel="stylesheet">
 
 @yield('specific_style')
 @yield('specific_css')
@@ -19,7 +19,7 @@
 <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
-                'csrfToken' => csrf_token(),
+            'csrfToken' => csrf_token(),
         ]); ?>
     </script>
 </head>
@@ -40,7 +40,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'GDNT HRM') }}
                 </a>
             </div>
 

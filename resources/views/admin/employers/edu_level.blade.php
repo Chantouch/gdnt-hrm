@@ -72,26 +72,32 @@
             <div class="col-xs-12 col-sm-3 col-md-3">
                 <div class="form-group{!! $errors->has('el_start_date') ? ' has-error' : '' !!}">
                     <label for="start_date" class="control-label"><strong>Start Date:</strong></label>
-                    {{--{!! Form::text('el_start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}--}}
-                    {!! Form::text('el_start_date', (isset($employer->educationLevel->el_start_date) ? $employer->educationLevel->el_start_date : null), array('placeholder' => 'Enter start date','class' => 'form-control', 'id'=>'el_start_date')) !!}
-                    @if($errors->has('el_start_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {{--{!! Form::text('el_start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}--}}
+                        {!! Form::text('el_start_date', (isset($employer->educationLevel->el_start_date) ? $employer->educationLevel->el_start_date : null), array('placeholder' => 'Enter start date','class' => 'form-control', 'id'=>'el_start_date')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('el_start_date'))
+                            <span class="help-block">
                              <strong>{!! $errors->first('el_start_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//End date--}}
             <div class="col-xs-12 col-sm-3 col-md-3">
                 <div class="form-group{!! $errors->has('el_end_date') ? ' has-error' : '' !!}">
                     <label for="end_date" class="control-label"><strong>Start Date:</strong></label>
-                    {{--{!! Form::text('el_end_date', null, array('placeholder' => 'Select your end date','class' => 'form-control')) !!}--}}
-                    {!! Form::text('el_end_date', (isset($employer->educationLevel->el_end_date) ? $employer->educationLevel->el_end_date : null), array('placeholder' => 'Enter end date','class' => 'form-control', 'id'=>'el_end_date')) !!}
-                    @if($errors->has('el_end_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {{--{!! Form::text('el_end_date', null, array('placeholder' => 'Select your end date','class' => 'form-control')) !!}--}}
+                        {!! Form::text('el_end_date', (isset($employer->educationLevel->el_end_date) ? $employer->educationLevel->el_end_date : null), array('placeholder' => 'Enter end date','class' => 'form-control', 'id'=>'el_end_date')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('el_end_date'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('el_end_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,24 +111,30 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
                     <label for="start_date" class="control-label"><strong>Start Date:</strong></label>
-                    {!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}
-                    @if($errors->has('start_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('start_date'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('start_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//End date--}}
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">
                     <label for="end_date" class="control-label"><strong>Start Date:</strong></label>
-                    {!! Form::text('end_date', null, array('placeholder' => 'Select your end date','class' => 'form-control')) !!}
-                    @if($errors->has('end_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {!! Form::text('end_date', null, array('placeholder' => 'Select your end date','class' => 'form-control')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('end_date'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('end_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//Ministry institute--}}

@@ -21,8 +21,8 @@
                     {!! Form::text('ap_doc_number', (isset($employer->awardPunishment->ap_doc_number) ? $employer->awardPunishment->ap_doc_number : null), array('placeholder' => 'Enter others','class' => 'form-control', 'id'=>'ap_doc_number')) !!}
                     @if($errors->has('ap_doc_number'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('ap_doc_number') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('ap_doc_number') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -31,13 +31,16 @@
                 <div class="form-group{!! $errors->has('ap_published_date') ? ' has-error' : '' !!}">
                     <label for="ap_published_date" class="control-label"><strong>Published
                             date:</strong></label>
-                    {{--{!! Form::text('ap_published_date', null, array('placeholder' => 'Select your published date','class' => 'form-control')) !!}--}}
-                    {!! Form::text('ap_published_date', (isset($employer->awardPunishment->ap_published_date) ? $employer->awardPunishment->ap_published_date : null), array('placeholder' => 'Enter others','class' => 'form-control', 'id'=>'ap_published_date')) !!}
-                    @if($errors->has('ap_published_date'))
-                        <span class="help-block">
-                                        <strong>{!! $errors->first('ap_published_date') !!}</strong>
-                                    </span>
-                    @endif
+                    <div class="input-group">
+                        {{--{!! Form::text('ap_published_date', null, array('placeholder' => 'Select your published date','class' => 'form-control')) !!}--}}
+                        {!! Form::text('ap_published_date', (isset($employer->awardPunishment->ap_published_date) ? $employer->awardPunishment->ap_published_date : null), array('placeholder' => 'Enter others','class' => 'form-control', 'id'=>'ap_published_date')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('ap_published_date'))
+                            <span class="help-block">
+                                <strong>{!! $errors->first('ap_published_date') !!}</strong>
+                            </span>
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//department--}}
@@ -49,8 +52,8 @@
                     {!! Form::text('ap_department', (isset($employer->awardPunishment->ap_department) ? $employer->awardPunishment->ap_department : null), array('placeholder' => 'Enter others','class' => 'form-control', 'id'=>'ap_department')) !!}
                     @if($errors->has('ap_department'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('ap_department') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('ap_department') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -64,8 +67,8 @@
                     {!! Form::select('ap_type', (isset($employer->awardPunishment->ap_type) ? (isset($employer->awardPunishment->ap_type) ? $types : null) : $types), (isset($employer->awardPunishment->ap_type) ? $employer->awardPunishment->ap_type : null), array('placeholder' => 'Select Type','class' => 'form-control')) !!}
                     @if($errors->has('ap_type'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('ap_type') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('ap_type') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -77,8 +80,8 @@
                     {!! Form::textarea('ap_description', (isset($employer->awardPunishment->ap_description) ? $employer->awardPunishment->ap_description : null), array('placeholder' => 'Enter others','class' => 'form-control', 'id'=>'ap_description', 'rows'=>'3')) !!}
                     @if($errors->has('ap_description'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('ap_description') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('ap_description') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -95,8 +98,8 @@
                     {!! Form::text('doc_number', null, array('placeholder' => 'Enter your doc number','class' => 'form-control')) !!}
                     @if($errors->has('doc_number'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('doc_number') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('doc_number') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -105,12 +108,15 @@
                 <div class="form-group{!! $errors->has('published_date') ? ' has-error' : '' !!}">
                     <label for="published_date" class="control-label"><strong>Published
                             date:</strong></label>
-                    {!! Form::text('published_date', null, array('placeholder' => 'Select your published date','class' => 'form-control')) !!}
-                    @if($errors->has('published_date'))
-                        <span class="help-block">
-                                        <strong>{!! $errors->first('published_date') !!}</strong>
-                                    </span>
-                    @endif
+                    <div class="input-group">
+                        {!! Form::text('published_date', null, array('placeholder' => 'Select your published date','class' => 'form-control')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('published_date'))
+                            <span class="help-block">
+                            <strong>{!! $errors->first('published_date') !!}</strong>
+                        </span>
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//department--}}
@@ -121,8 +127,8 @@
                     {!! Form::text('department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}
                     @if($errors->has('department'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('department') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('department') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -134,8 +140,8 @@
                     {!! Form::text('punish_type', null, array('placeholder' => 'Select your punish_type','class' => 'form-control')) !!}
                     @if($errors->has('punish_type'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('punish_type') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('punish_type') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>
@@ -146,8 +152,8 @@
                     {!! Form::textarea('description', null, array('placeholder' => 'Enter your description','class' => 'form-control', 'rows'=> '4')) !!}
                     @if($errors->has('description'))
                         <span class="help-block">
-                                        <strong>{!! $errors->first('description') !!}</strong>
-                                    </span>
+                            <strong>{!! $errors->first('description') !!}</strong>
+                        </span>
                     @endif
                 </div>
             </div>

@@ -18,25 +18,32 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('fsj_start_date') ? ' has-error' : '' !!}">
                     <label for="start_date" class="control-label"><strong>Start Date:</strong></label>
-                    {!! Form::text('fsj_start_date', (isset($employer->firstStateJob->fsj_start_date)? $employer->firstStateJob->fsj_start_date : null), array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'start_date')) !!}
-                    @if($errors->has('fsj_start_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {!! Form::text('fsj_start_date', (isset($employer->firstStateJob->fsj_start_date)? $employer->firstStateJob->fsj_start_date : null), array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'start_date')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('fsj_start_date'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('fsj_start_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
+
             {{--//Permanent staff--}}
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('fsj_permanent_staff_date') ? ' has-error' : '' !!}">
                     <label for="permanent_staff_date" class="control-label">
                         <strong>Permanent Date:</strong></label>
-                    {!! Form::text('fsj_permanent_staff_date', (isset($employer->firstStateJob->fsj_permanent_staff_date) ? $employer->firstStateJob->fsj_permanent_staff_date : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'fsj_permanent_staff_date')) !!}
-                    @if($errors->has('fsj_permanent_staff_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {!! Form::text('fsj_permanent_staff_date', (isset($employer->firstStateJob->fsj_permanent_staff_date) ? $employer->firstStateJob->fsj_permanent_staff_date : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'fsj_permanent_staff_date')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('fsj_permanent_staff_date'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('fsj_permanent_staff_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//Level or grade--}}
@@ -144,13 +151,16 @@
                 <div class="form-group{!! $errors->has('cjs_last_date_promoted') ? ' has-error' : '' !!}">
                     <label for="cjs_last_date_promoted" class="control-label">
                         <strong>Last Date Promoted:</strong></label>
-                    {{--{!! Form::text('cjs_last_date_promoted', null, array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id' => 'cjs_last_date_promoted')) !!}--}}
-                    {!! Form::text('cjs_last_date_promoted', (isset($employer->currentJob->cjs_last_date_promoted) ? $employer->currentJob->cjs_last_date_promoted : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'cjs_last_date_promoted')) !!}
-                    @if($errors->has('cjs_last_date_promoted'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {{--{!! Form::text('cjs_last_date_promoted', null, array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id' => 'cjs_last_date_promoted')) !!}--}}
+                        {!! Form::text('cjs_last_date_promoted', (isset($employer->currentJob->cjs_last_date_promoted) ? $employer->currentJob->cjs_last_date_promoted : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'cjs_last_date_promoted')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('cjs_last_date_promoted'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('cjs_last_date_promoted') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//Occupation--}}
@@ -172,13 +182,16 @@
                 <div class="form-group{!! $errors->has('last_date_got_promoted') ? ' has-error' : '' !!}">
                     <label for="cjs_last_date_got_promoted" class="control-label">
                         <strong>Last Date Promoted:</strong></label>
-                    {{--{!! Form::text('cjs_last_date_got_promoted', null, array('placeholder' => 'Select last date got promoted','class' => 'form-control', 'id' => 'cjs_last_date_got_promoted')) !!}--}}
-                    {!! Form::text('cjs_last_date_got_promoted', (isset($employer->currentJob->cjs_last_date_got_promoted) ? $employer->currentJob->cjs_last_date_got_promoted : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'cjs_last_date_got_promoted')) !!}
-                    @if($errors->has('last_date_got_promoted'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {{--{!! Form::text('cjs_last_date_got_promoted', null, array('placeholder' => 'Select last date got promoted','class' => 'form-control', 'id' => 'cjs_last_date_got_promoted')) !!}--}}
+                        {!! Form::text('cjs_last_date_got_promoted', (isset($employer->currentJob->cjs_last_date_got_promoted) ? $employer->currentJob->cjs_last_date_got_promoted : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'cjs_last_date_got_promoted')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('last_date_got_promoted'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('cjs_last_date_got_promoted') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//Level or grade--}}
@@ -234,13 +247,16 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('acp_start_date') ? ' has-error' : '' !!}">
                     <label for="start_date" class="control-label"><strong>Start date:</strong></label>
-                    {{--{!! Form::text('acp_start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'acp_start_date')) !!}--}}
-                    {!! Form::text('acp_start_date', (isset($employer->addOnCurrentPosition->acp_start_date) ? $employer->addOnCurrentPosition->acp_start_date : null), array('placeholder' => 'Select start date Date','class' => 'form-control', 'id'=>'acp_start_date')) !!}
-                    @if($errors->has('acp_start_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {{--{!! Form::text('acp_start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'acp_start_date')) !!}--}}
+                        {!! Form::text('acp_start_date', (isset($employer->addOnCurrentPosition->acp_start_date) ? $employer->addOnCurrentPosition->acp_start_date : null), array('placeholder' => 'Select start date Date','class' => 'form-control', 'id'=>'acp_start_date')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('acp_start_date'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('acp_start_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//Occupation--}}
@@ -311,13 +327,16 @@
                 <div class="form-group{!! $errors->has('fn_start_date') ? ' has-error' : '' !!}">
                     <label for="fn_start_date" class="control-label">
                         <strong>Start date:</strong></label>
-                    {{--{!! Form::text('fn_start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control', 'id'=>'fn_start_date')) !!}--}}
-                    {!! Form::text('fn_start_date', (isset($employer->outFrameNoSalary->fn_start_date) ? $employer->outFrameNoSalary->fn_start_date : null), array('placeholder' => 'Select start date Date','class' => 'form-control', 'id'=>'fn_start_date')) !!}
-                    @if($errors->has('fn_start_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {{--{!! Form::text('fn_start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control', 'id'=>'fn_start_date')) !!}--}}
+                        {!! Form::text('fn_start_date', (isset($employer->outFrameNoSalary->fn_start_date) ? $employer->outFrameNoSalary->fn_start_date : null), array('placeholder' => 'Select start date Date','class' => 'form-control', 'id'=>'fn_start_date')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('fn_start_date'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('fn_start_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//End date--}}
@@ -325,13 +344,16 @@
                 <div class="form-group{!! $errors->has('fn_end_date') ? ' has-error' : '' !!}">
                     <label for="fn_end_date" class="control-label">
                         <strong>End date:</strong></label>
-                    {{--{!! Form::text('fn_end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control', 'id'=>'fn_end_date')) !!}--}}
-                    {!! Form::text('fn_end_date', (isset($employer->outFrameNoSalary->fn_end_date) ? $employer->outFrameNoSalary->fn_end_date : null), array('placeholder' => 'Select start date Date','class' => 'form-control', 'id'=>'fn_end_date')) !!}
-                    @if($errors->has('fn_end_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {{--{!! Form::text('fn_end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control', 'id'=>'fn_end_date')) !!}--}}
+                        {!! Form::text('fn_end_date', (isset($employer->outFrameNoSalary->fn_end_date) ? $employer->outFrameNoSalary->fn_end_date : null), array('placeholder' => 'Select start date Date','class' => 'form-control', 'id'=>'fn_end_date')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('fn_end_date'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('fn_end_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
@@ -359,12 +381,15 @@
                 <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
                     <label for="start_date" class="control-label">
                         <strong>Start date:</strong></label>
-                    {!! Form::text('start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control')) !!}
-                    @if($errors->has('start_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {!! Form::text('start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('start_date'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('start_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
             {{--//End date--}}
@@ -372,12 +397,15 @@
                 <div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">
                     <label for="end_date" class="control-label">
                         <strong>End date:</strong></label>
-                    {!! Form::text('end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control')) !!}
-                    @if($errors->has('end_date'))
-                        <span class="help-block">
+                    <div class="input-group">
+                        {!! Form::text('end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control')) !!}
+                        <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
+                        @if($errors->has('end_date'))
+                            <span class="help-block">
                             <strong>{!! $errors->first('end_date') !!}</strong>
                         </span>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

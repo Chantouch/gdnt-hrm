@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Validator;
 
 class WifeHusbandParents extends Model
 {
@@ -27,8 +29,31 @@ class WifeHusbandParents extends Model
         'whp_type',
     ];
 
+    public static function rules()
+    {
+        return [
+            'whp_full_name' => 'required'
+        ];
+    }
+
     public function getWHPDOBAttribute()
     {
         return $this->attributes['whp_dob'] = Carbon::parse($this->attributes['whp_dob'])->format('Y-m-d');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
+
+    public function updateMother(Request $request)
+    {
+        $validator = Validator::make($date = $request->all(), WifeHusbandParents::rules());
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->with('error', 'Please fill all required fields');
+        }
     }
 }
