@@ -26,8 +26,9 @@ class DepartmentUnitController extends Controller
      */
     public function index()
     {
+        $title = "មើលនាយកដ្ឋាន ទាំងអស់​";
         $department_units = DepartmentUnit::with('offices')->where('status', 1)->paginate(10);
-        return view('admin.modules.department_units.index', compact('department_units'));
+        return view('admin.modules.department_units.index', compact('department_units', 'title'));
     }
 
     /**
@@ -37,8 +38,9 @@ class DepartmentUnitController extends Controller
      */
     public function create()
     {
+        $title = "បង្កើតនាយកដ្ឋានថ្មី";
         $department = Department::with('ministry')->where('status', 1)->orderBy('name')->pluck('name', 'id');
-        return view('admin.modules.department_units.create', compact('department'));
+        return view('admin.modules.department_units.create', compact('department', 'title'));
     }
 
     /**
@@ -79,11 +81,12 @@ class DepartmentUnitController extends Controller
      */
     public function show($id)
     {
+        $title = "មើលនាយកដ្ឋាន";
         $department_unit = DepartmentUnit::find($id);
         if (empty($department_unit)) {
             return redirect()->route('admin.modules.department-units.index')->with('error', 'DepartmentUnit not found');
         }
-        return view('admin.modules.department_units.show', compact('department_unit'));
+        return view('admin.modules.department_units.show', compact('department_unit', 'title'));
     }
 
     /**
@@ -94,12 +97,13 @@ class DepartmentUnitController extends Controller
      */
     public function edit($id)
     {
+        $title = "កែរប្រែនាយកដ្ឋាន";
         $department_unit = DepartmentUnit::find($id);
         $department = Department::where('status', 1)->orderBy('name')->pluck('name', 'id');
         if (empty($department_unit)) {
             return redirect()->route('admin.modules.department-units.index')->with('error', 'DepartmentUnit not found');
         }
-        return view('admin.modules.department_units.edit', compact('department_unit', 'department'));
+        return view('admin.modules.department_units.edit', compact('department_unit', 'department', 'title'));
     }
 
     /**

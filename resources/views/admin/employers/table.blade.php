@@ -2,17 +2,17 @@
     @if(count($employers))
         <tr>
             <th width="20px">#</th>
-            <th>Name</th>
-            <th class="hidden-sm hidden-md hidden-lg">Latin</th>
-            <th>ID Card</th>
-            <th>Email</th>
-            <th>DOB</th>
-            <th>Phone</th>
-            <th>Gender</th>
-            <th>Nation</th>
-            <th>POB</th>
-            <th>Status</th>
-            <th width="100px" class="text-center">Action</th>
+            <th>គោត្តនាម-នាម</th>
+            <th class="hidden-sm hidden-md hidden-lg">ឡាតាំង</th>
+            <th>អត្តសញ្ញាណប័ណ្ណ</th>
+            <th>អ៊ីមែល</th>
+            <th>ថ្ងៃខែឆ្នាំកំណើត</th>
+            <th>លេខទូរសព្ទ</th>
+            <th>ភេទ</th>
+            <th>សញ្ជាតិ</th>
+            <th>កន្លែងកំណើត</th>
+            <th>ស្ថានភាព</th>
+            <th width="100px" class="text-center">សកម្មភាព</th>
         </tr>
         @foreach ($employers as $key => $employer)
             <tr>
@@ -31,11 +31,11 @@
                 <td>{{ $employer->hand_phone }}</td>
                 <td>
                     @if($employer->gender == 'm')
-                        <span>Male</span>
-                    @elseif($employer=='f')
-                        <span>Female</span>
+                        <span>ប្រុស</span>
+                    @elseif($employer->gender == 'f')
+                        <span>ស្រី</span>
                     @else
-                        <span>Others</span>
+                        <span>ផ្សេងៗ</span>
                     @endif
                 </td>
                 <td>{!! $employer->nationality !!}</td>

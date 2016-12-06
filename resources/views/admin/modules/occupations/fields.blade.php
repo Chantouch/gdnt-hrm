@@ -31,7 +31,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Submit</button>
-            <a class="btn btn-primary waves-effect" href="{{ route('admin.modules.frames.index') }}"> Cancel</a>
+            <a class="btn btn-primary waves-effect" href="{{ route('admin.modules.occupations.index') }}"> Cancel</a>
         </div>
     </div>
 </div>

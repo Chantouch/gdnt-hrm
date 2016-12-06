@@ -96,7 +96,34 @@ class Employer extends Model
     public static function marital_status()
     {
         return [
-            's' => 'Single', 'm' => 'Married', 'd' => 'Divorcee', 'w' => 'Widow'
+            's' => 'នៅលីវ',
+            'm' => 'រៀវការ',
+            'd' => 'លែងលះ',
+            'w' => 'នៅព្រៅ'
+        ];
+    }
+
+    public static function status()
+    {
+        return [
+            'l' => 'រស់',
+            'd' => 'ស្លាប់',
+        ];
+    }
+
+    public static function gender()
+    {
+        return [
+            'MALE' => 'ប្រុស',
+            'FEMALE' => 'ស្រី',
+        ];
+    }
+
+    public static function subsidy()
+    {
+        return [
+            '1' => 'មាន',
+            '0' => 'មិនមាន',
         ];
     }
 
@@ -169,6 +196,11 @@ class Employer extends Model
         return $this->hasOne(OutFrameNoSalary::class, 'fn_emp_id');
     }
 
+    public function noSalaryStatus()
+    {
+        return $this->hasOne(NoSalaryStatus::class, 'nss_emp_id');
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -234,10 +266,18 @@ class Employer extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function siblings()
     {
         return $this->hasOne(Sibling::class, 'sib_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function children()
+    {
+        return $this->hasOne(Children::class, 'child_emp_id');
     }
 }

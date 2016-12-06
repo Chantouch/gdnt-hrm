@@ -25,8 +25,9 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+        $title = "បង្ហាញអ្នកប្រើប្រាស់";
         $data = User::orderBy('name', 'ASC')->paginate(15);
-        return view('admin.users.index', compact('data'));
+        return view('admin.users.index', compact('data', 'title'));
     }
 
     /**
@@ -36,8 +37,9 @@ class UserController extends Controller
      */
     public function create()
     {
+        $title = "បង្កើតអ្នកប្រើប្រាស់";
         $roles = Role::orderBy('name')->pluck('display_name', 'id');
-        return view('admin.users.create', compact('roles'));
+        return view('admin.users.create', compact('roles', 'title'));
     }
 
     /**
@@ -69,8 +71,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
+        $title = "បង្ហាញអ្នកប្រើប្រាស់";
         $user = User::find($id);
-        return view('admin.users.show', compact('user'));
+        return view('admin.users.show', compact('user', 'title'));
     }
 
     /**
@@ -81,10 +84,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+        $title = "កែប្រែអ្នកប្រើប្រាស់";
         $user = User::find($id);
         $roles = Role::orderBy('display_name')->pluck('display_name', 'id');
         $user_role = $user->roles->pluck('id', 'id')->toArray();
-        return view('admin.users.edit', compact('user', 'roles', 'user_role'));
+        return view('admin.users.edit', compact('user', 'roles', 'user_role', 'title'));
     }
 
     /**
@@ -135,7 +139,8 @@ class UserController extends Controller
      */
     public function profile($id)
     {
+        $title = "មើលអ្នកប្រើប្រាស់";
         $profile = Employer::find($id);
-        return view('admin.personal.index', compact('profile'));
+        return view('admin.personal.index', compact('profile', 'title'));
     }
 }

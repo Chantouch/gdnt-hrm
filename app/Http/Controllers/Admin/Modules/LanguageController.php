@@ -23,8 +23,9 @@ class LanguageController extends Controller
      */
     public function index()
     {
+        $title = "មើលភាសាទាំងអស់";
         $languages = Language::paginate(10);
-        return view('admin.modules.languages.index', compact('languages'));
+        return view('admin.modules.languages.index', compact('languages', 'title'));
     }
 
     /**
@@ -34,7 +35,8 @@ class LanguageController extends Controller
      */
     public function create()
     {
-        return view('admin.modules.languages.create');
+        $title = "បង្កើតភាសាថ្មី";
+        return view('admin.modules.languages.create', compact('title'));
     }
 
     /**
@@ -71,11 +73,12 @@ class LanguageController extends Controller
      */
     public function show($id)
     {
+        $title = "មើលភាសា";
         $language = Language::find($id);
         if (empty($language)) {
             return redirect()->route('admin.modules.languages.index')->with('error', 'Language not found');
         }
-        return view('admin.modules.languages.show', compact('language'));
+        return view('admin.modules.languages.show', compact('language', 'title'));
     }
 
     /**
@@ -86,11 +89,12 @@ class LanguageController extends Controller
      */
     public function edit($id)
     {
+        $title = "កែរប្រែភាសា";
         $language = Language::find($id);
         if (empty($language)) {
             return redirect()->route('admin.modules.languages.index')->with('error', 'Language not found');
         }
-        return view('admin.modules.languages.edit', compact('language'));
+        return view('admin.modules.languages.edit', compact('language', 'title'));
     }
 
     /**

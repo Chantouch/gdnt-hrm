@@ -23,8 +23,9 @@ class OccupationController extends Controller
      */
     public function index()
     {
+        $title = "មើលមុខរបរទាំងអស់";
         $occupations = Occupation::paginate(10);
-        return view('admin.modules.occupations.index', compact('occupations'));
+        return view('admin.modules.occupations.index', compact('occupations', 'title'));
     }
 
     /**
@@ -34,7 +35,8 @@ class OccupationController extends Controller
      */
     public function create()
     {
-        return view('admin.modules.occupations.create');
+        $title = "បង្កើតមុខរបរថ្មី";
+        return view('admin.modules.occupations.create', compact('title'));
     }
 
     /**
@@ -71,11 +73,12 @@ class OccupationController extends Controller
      */
     public function show($id)
     {
+        $title = "មើលមុខរបរ";
         $occupation = Occupation::find($id);
         if (empty($occupation)) {
             return redirect()->route('admin.modules.occupations.index')->with('error', 'Occupation not found');
         }
-        return view('admin.modules.occupations.show', compact('occupation'));
+        return view('admin.modules.occupations.show', compact('occupation', 'title'));
     }
 
     /**
@@ -86,11 +89,12 @@ class OccupationController extends Controller
      */
     public function edit($id)
     {
+        $title = "កែរប្រែមុខរបរ";
         $occupation = Occupation::find($id);
         if (empty($occupation)) {
             return redirect()->route('admin.modules.occupations.index')->with('error', 'Occupation not found');
         }
-        return view('admin.modules.occupations.edit', compact('occupation'));
+        return view('admin.modules.occupations.edit', compact('occupation', 'title'));
     }
 
     /**

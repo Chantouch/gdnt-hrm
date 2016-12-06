@@ -25,6 +25,7 @@ class Mother extends Model
         'm_status',
     ];
 
+
     /**
      * @return string
      */

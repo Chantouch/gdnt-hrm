@@ -60,9 +60,26 @@
 
             @yield('full_content')
             <div class="container">
-
+                <!-- Page-Title -->
+                <div class="row show-user">
+                    <div class="col-sm-12">
+                        <h4 class="page-title">{!! $title !!}</h4>
+                        <ol class="breadcrumb">
+                            @for($i = 1; $i <= count(Request::segments()); $i++)
+                                <li {!! $i == count(Request::segments()) ? 'class="active"' : '' !!}>
+                                    @if($i < count(Request::segments()) & $i > 0)
+                                        <a href="#">{{ucfirst(Request::segment($i))}}</a>
+                                        {{--{!!' <i class="fa fa-angle-right"></i>'!!}--}}
+                                    @endif
+                                    @if($i == count(Request::segments()) & $i > 0)
+                                        {{ucfirst(Request::segment($i))}}
+                                    @endif
+                                </li>
+                            @endfor
+                        </ol>
+                    </div>
+                </div>
                 @yield('content')
-
             </div>
         </div>
 

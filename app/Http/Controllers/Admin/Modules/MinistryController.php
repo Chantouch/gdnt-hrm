@@ -28,8 +28,9 @@ class MinistryController extends Controller
      */
     public function index()
     {
+        $title = "មើលក្រសួង ទាំងអស់";
         $ministries = Ministry::with('departments')->paginate(10);
-        return view('admin.modules.ministries.index', compact('ministries'));
+        return view('admin.modules.ministries.index', compact('ministries', 'title'));
     }
 
     /**
@@ -39,7 +40,8 @@ class MinistryController extends Controller
      */
     public function create()
     {
-        return view('admin.modules.ministries.create');
+        $title = "បង្កើតក្រសួងថ្មី";
+        return view('admin.modules.ministries.create', compact('title'));
     }
 
     /**
@@ -70,11 +72,12 @@ class MinistryController extends Controller
      */
     public function show($id)
     {
+        $title = "បង្ហាញក្រសួង";
         $ministry = Ministry::with('departments')->find($id);
         if (empty($ministry)) {
             return redirect()->route('admin.modules.ministries.index')->with('error', 'Ministry not found');
         }
-        return view('admin.modules.ministries.show', compact('ministry'));
+        return view('admin.modules.ministries.show', compact('ministry', 'title'));
     }
 
     /**
@@ -85,8 +88,9 @@ class MinistryController extends Controller
      */
     public function edit($id)
     {
+        $title = "កែរប្រែក្រសួងចាស់";
         $ministry = Ministry::findOrFail($id);
-        return view('admin.modules.ministries.edit', compact('ministry'));
+        return view('admin.modules.ministries.edit', compact('ministry', 'title'));
     }
 
     /**

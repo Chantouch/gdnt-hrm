@@ -25,8 +25,9 @@ class DepartmentController extends Controller
      */
     public function index()
     {
+        $title = "មើលអង្គភាពទាំងអស់";
         $departments = Department::with('departmentUnits')->paginate(10);
-        return view('admin.modules.departments.index', compact('departments'));
+        return view('admin.modules.departments.index', compact('departments', 'title'));
     }
 
     /**
@@ -36,8 +37,9 @@ class DepartmentController extends Controller
      */
     public function create()
     {
+        $title = "បង្កើតអង្គភាពថ្មី";
         $ministry = Ministry::where('status', 1)->orderBy('name')->pluck('name', 'id');
-        return view('admin.modules.departments.create', compact('ministry'));
+        return view('admin.modules.departments.create', compact('ministry', 'title'));
     }
 
     /**
@@ -78,9 +80,10 @@ class DepartmentController extends Controller
      */
     public function show($id)
     {
+        $title = "បង្ហាញអង្គភាព";
         $ministry = Ministry::where('status', 1);
         $department = Department::with('departmentUnits')->findOrFail($id);
-        return view('admin.modules.departments.show', compact('department', 'ministry'));
+        return view('admin.modules.departments.show', compact('department', 'ministry', 'title'));
 
     }
 
@@ -92,9 +95,10 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
+        $title = "កែរប្រែអង្គភាព";
         $ministry = Ministry::with('department')->where('status', 1)->orderBy('name')->pluck('name', 'id');
         $department = Department::with('departmentUnits')->findOrFail($id);
-        return view('admin.modules.departments.edit', compact('department', 'ministry'));
+        return view('admin.modules.departments.edit', compact('department', 'ministry', 'title'));
     }
 
     /**

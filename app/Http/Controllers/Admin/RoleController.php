@@ -33,8 +33,9 @@ class RoleController extends Controller
      */
     public function index(Request $request)
     {
+        $title = "មើលច្បាប់ទាំងអស់";
         $roles = Role::orderBy('display_name', 'ASC')->paginate(5);
-        return view('admin.roles.index', compact('roles'))->with('i', ($request->input('page', 1) - 1) * 5);
+        return view('admin.roles.index', compact('roles', 'title'))->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -44,8 +45,9 @@ class RoleController extends Controller
      */
     public function create()
     {
+        $title = "បង្កើតច្បាប់";
         $permission = Permission::get();
-        return view('admin.roles.create', compact('permission'));
+        return view('admin.roles.create', compact('permission', 'title'));
     }
 
     /**
@@ -79,11 +81,12 @@ class RoleController extends Controller
      */
     public function show($id)
     {
+        $title = "មើលច្បាប់";
         $role = Role::find($id);
         $role_permission = Permission::join("permission_role", "permission_role.permission_id", "=", "permissions.id")
             ->where("permission_role.role_id", $id)
             ->get();
-        return view('admin.roles.show', compact('role', 'role_permission'));
+        return view('admin.roles.show', compact('role', 'role_permission', 'title'));
     }
 
     /**
@@ -94,11 +97,12 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
+        $title = "កែរប្រែច្បាប់";
         $role = Role::find($id);
         $permission = Permission::get();
         $role_permissions = DB::table("permission_role")->where("permission_role.role_id", $id)
             ->pluck('permission_role.permission_id', 'permission_role.permission_id')->toArray();
-        return view('admin.roles.edit', compact('role', 'permission', 'role_permissions'));
+        return view('admin.roles.edit', compact('role', 'permission', 'role_permissions', 'title'));
     }
 
     /**

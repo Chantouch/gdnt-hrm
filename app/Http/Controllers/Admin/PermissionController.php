@@ -18,13 +18,15 @@ class PermissionController extends Controller
      */
     public function index()
     {
+        $title = "មើលការអនុញ្ញាត ទាំងអស់";
         $permissions = Permission::orderBy('display_name', 'ASC')->paginate(10);
-        return view('admin.permissions.index', compact('permissions'));
+        return view('admin.permissions.index', compact('permissions', 'title'));
     }
 
     public function show($id)
     {
+        $title = "មើលការអនុញ្ញាត";
         $permission = Permission::find($id);
-        return view('admin.permissions.show', compact('permission'));
+        return view('admin.permissions.show', compact('permission', 'title'));
     }
 }

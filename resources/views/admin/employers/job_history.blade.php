@@ -3,20 +3,20 @@
         <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion-public" href="#job-history"
                aria-expanded="false" class="collapsed">
-                3.Job History (Fill from New to Old)
+                ៣.ប្រវត្តិការងារ (សូមបំពេញតាមលំដាប់ ពីថ្មីទៅចាស់)
             </a>
         </h4>
     </div>
     <div id="job-history" class="panel-collapse collapse">
         {{--A.Public job--}}
         <div class="col-md-12 m-l-15">
-            <h4>A.Public Job</h4>
+            <h4>ក.ក្នុងមុខងារសាធារណៈ</h4>
         </div>
         <div class="panel-body">
             {{--//Start date--}}
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('phj_start_date') ? ' has-error' : '' !!}">
-                    <label for="phj_start_date" class="control-label"><strong>Start Date:</strong></label>
+                    <label for="phj_start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                     <div class="input-group">
                         {{--{!! Form::text('phj_start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}--}}
                         {!! Form::text('phj_start_date', (isset($employer->jobHistoryPrivatePublic->phj_start_date) ? $employer->jobHistoryPrivatePublic->phj_start_date : null), array('placeholder' => 'Select start date Date','class' => 'form-control', 'id'=>'phj_start_date')) !!}
@@ -32,7 +32,7 @@
             {{--//End date--}}
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('phj_end_date') ? ' has-error' : '' !!}">
-                    <label for="phj_end_date" class="control-label"><strong>Start Date:</strong></label>
+                    <label for="phj_end_date" class="control-label"><strong>ថ្ងៃឈប់:</strong></label>
                     <div class="input-group">
                         {{--{!! Form::text('phj_end_date', null, array('placeholder' => 'Select your end date','class' => 'form-control')) !!}--}}
                         {!! Form::text('phj_end_date', (isset($employer->jobHistoryPrivatePublic->phj_end_date) ? $employer->jobHistoryPrivatePublic->phj_end_date : null), array('placeholder' => 'Select start end Date','class' => 'form-control', 'id'=>'phj_end_date')) !!}
@@ -49,7 +49,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('phj_ministry_institute') ? ' has-error' : '' !!}">
                     <label for="phj_ministry_institute" class="control-label">
-                        <strong>Ministry/Institute:</strong></label>
+                        <strong>ក្រសួង-ស្ថាប័ន:</strong></label>
                     {{--{!! Form::text('phj_ministry_institute', null, array('placeholder' => 'Select ministry or institute','class' => 'form-control')) !!}--}}
                     {!! Form::text('phj_ministry_institute', (isset($employer->jobHistoryPrivatePublic->phj_ministry_institute) ? $employer->jobHistoryPrivatePublic->phj_ministry_institute : null), array('placeholder' => 'Enter your ministry or institute','class' => 'form-control', 'id'=>'phj_ministry_institute')) !!}
                     @if($errors->has('phj_ministry_institute'))
@@ -63,7 +63,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('phj_department') ? ' has-error' : '' !!}">
                     <label for="phj_department" class="control-label">
-                        <strong>Department:</strong></label>
+                        <strong>អង្គភាព:</strong></label>
                     {{--{!! Form::text('phj_department', null, array('placeholder' => 'Select department','class' => 'form-control')) !!}--}}
                     {!! Form::text('phj_department', (isset($employer->jobHistoryPrivatePublic->phj_department) ? $employer->jobHistoryPrivatePublic->phj_department : null), array('placeholder' => 'Enter your department','class' => 'form-control', 'id'=>'phj_department')) !!}
                     @if($errors->has('phj_department'))
@@ -76,7 +76,7 @@
             {{--//position--}}
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('phj_occupation') ? ' has-error' : '' !!}">
-                    <label for="phj_occupation" class="control-label"><strong>Position:</strong></label>
+                    <label for="phj_occupation" class="control-label"><strong>មុខតំណែង:</strong></label>
                     {{--{!! Form::text('phj_occupation', null, array('placeholder' => 'Enter your occupation','class' => 'form-control')) !!}--}}
                     {!! Form::text('phj_occupation', (isset($employer->jobHistoryPrivatePublic->phj_occupation) ? $employer->jobHistoryPrivatePublic->phj_occupation : null), array('placeholder' => 'Enter your position','class' => 'form-control', 'id'=>'phj_occupation')) !!}
                     @if($errors->has('phj_occupation'))
@@ -90,7 +90,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('phj_others') ? ' has-error' : '' !!}">
                     <label for="phj_others" class="control-label">
-                        <strong>Others:</strong></label>
+                        <strong>ផ្សេងៗ:</strong></label>
                     {{--{!! Form::text('phj_others', null, array('placeholder' => 'Enter others','class' => 'form-control')) !!}--}}
                     {!! Form::text('phj_others', (isset($employer->jobHistoryPrivatePublic->phj_others) ? $employer->jobHistoryPrivatePublic->phj_others : null), array('placeholder' => 'Enter others','class' => 'form-control', 'id'=>'phj_others')) !!}
                     @if($errors->has('phj_others'))
@@ -104,13 +104,13 @@
 
         {{--B.Private job--}}
         <div class="col-md-12 m-l-15">
-            <h4>A.Private Job</h4>
+            <h4>ខ.ក្នុងវិស័យ​​ឯកជន</h4>
         </div>
         <div class="panel-body">
             {{--//Start date--}}
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('start_date') ? ' has-error' : '' !!}">
-                    <label for="start_date" class="control-label"><strong>Start Date:</strong></label>
+                    <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                     <div class="input-group">
                         {!! Form::text('start_date', null, array('placeholder' => 'Select your start date','class' => 'form-control')) !!}
                         <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
@@ -125,7 +125,7 @@
             {{--//End date--}}
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('end_date') ? ' has-error' : '' !!}">
-                    <label for="end_date" class="control-label"><strong>Start Date:</strong></label>
+                    <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                     <div class="input-group">
                         {!! Form::text('end_date', null, array('placeholder' => 'Select your end date','class' => 'form-control')) !!}
                         <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
@@ -141,7 +141,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('ministry_institute') ? ' has-error' : '' !!}">
                     <label for="ministry_institute" class="control-label">
-                        <strong>Ministry/Institute:</strong></label>
+                        <strong>គ្រឹះស្ថាន/អង្គភាព:</strong></label>
                     {!! Form::text('ministry_institute', null, array('placeholder' => 'Select ministry or institute','class' => 'form-control')) !!}
                     @if($errors->has('ministry_institute'))
                         <span class="help-block">
@@ -153,7 +153,7 @@
             {{--//position--}}
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('occupation') ? ' has-error' : '' !!}">
-                    <label for="occupation" class="control-label"><strong>Position:</strong></label>
+                    <label for="occupation" class="control-label"><strong>តួនាទី:</strong></label>
                     {!! Form::text('occupation', null, array('placeholder' => 'Enter your occupation','class' => 'form-control')) !!}
                     @if($errors->has('occupation'))
                         <span class="help-block">
@@ -166,7 +166,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('others') ? ' has-error' : '' !!}">
                     <label for="occupation_id" class="control-label">
-                        <strong>Skills/Professional:</strong></label>
+                        <strong>ជំនាញ/បច្ចេកទេស:</strong></label>
                     {!! Form::text('others', null, array('placeholder' => 'Enter others','class' => 'form-control')) !!}
                     @if($errors->has('others'))
                         <span class="help-block">

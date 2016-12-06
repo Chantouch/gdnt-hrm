@@ -25,8 +25,9 @@ class OfficeController extends Controller
      */
     public function index()
     {
+        $title = "មើលការិយាល័យទាំងអស់";
         $offices = Office::with('departmentUnit')->paginate(10);
-        return view('admin.modules.offices.index', compact('offices'));
+        return view('admin.modules.offices.index', compact('offices', 'title'));
     }
 
     /**
@@ -36,8 +37,9 @@ class OfficeController extends Controller
      */
     public function create()
     {
+        $title = "បង្កើតការិយាល័យថ្មី";
         $department_units = DepartmentUnit::with('department')->where('status', 1)->orderBy('name', 'ASC')->pluck('name', 'id');
-        return view('admin.modules.offices.create', compact('department_units'));
+        return view('admin.modules.offices.create', compact('department_units', 'title'));
     }
 
     /**
@@ -74,12 +76,13 @@ class OfficeController extends Controller
      */
     public function show($id)
     {
+        $title = "បង្ហាញការិយាល័យ";
         $office = Office::with('departmentUnit')->find($id);
         if (empty($office)) {
 //            Flash::error('Office not found');
             return redirect()->route('admin.modules.offices.index')->with('error', 'Office not found');
         }
-        return view('admin.modules.offices.show', compact('office'));
+        return view('admin.modules.offices.show', compact('office', 'title'));
     }
 
     /**
@@ -90,13 +93,14 @@ class OfficeController extends Controller
      */
     public function edit($id)
     {
+        $title = "កែរប្រែការិយាល័យ";
         $department_units = DepartmentUnit::with('department')->where('status', 1)->orderBy('name', 'ASC')->pluck('name', 'id');
         $office = Office::with('departmentUnit')->find($id);
         if (empty($office)) {
             Flash::error('Office not found');
             return redirect()->route('admin.modules.offices.index')->with('error', 'Office not found');
         }
-        return view('admin.modules.offices.edit', compact('office', 'department_units'));
+        return view('admin.modules.offices.edit', compact('office', 'department_units', 'title'));
     }
 
     /**

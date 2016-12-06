@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Employers;
 
 use App\Models\AddonCurrentPosition;
 use App\Models\AwardPunishment;
+use App\Models\Children;
 use App\Models\CurrentJobStatus;
 use App\Models\Department;
 use App\Models\DepartmentUnit;
@@ -17,6 +18,7 @@ use App\Models\Language;
 use App\Models\LanguageLevel;
 use App\Models\Ministry;
 use App\Models\Mother;
+use App\Models\NoSalaryStatus;
 use App\Models\Occupation;
 use App\Models\Office;
 use App\Models\OutFrameNoSalary;
@@ -51,8 +53,9 @@ class EmployerController extends Controller
      */
     public function index()
     {
+        $title = "គ្រប់គ្រង បុគ្គលិក";
         $employers = Employer::with('firstStateJob')->orderBy('name', 'ASC')->paginate(15);
-        return view('admin.employers.index', compact('employers'));
+        return view('admin.employers.index', compact('employers', 'title'));
     }
 
     /**
@@ -62,6 +65,7 @@ class EmployerController extends Controller
      */
     public function create()
     {
+        $title = "បន្ថែម បុគ្គលិកថ្មី";
         $marital_status = Employer::marital_status();
         $ministry = Ministry::where('status', 1)->orderBy('name')->pluck('name', 'id');
         $occupation = Occupation::where('status', 1)->orderBy('name')->pluck('name', 'id');
@@ -72,7 +76,10 @@ class EmployerController extends Controller
         $types = AwardPunishment::types();
         $language = Language::where('status', 1)->orderBy('name')->pluck('name', 'id');
         $can_level = LanguageLevel::level();
-        return view('admin.employers.create', compact('marital_status', 'can_level', 'language', 'ministry', 'types', 'occupation', 'department', 'department_unit', 'frame', 'office'));
+        $gender = Employer::gender();
+        $subsidy = Employer::subsidy();
+        $status = Employer::status();
+        return view('admin.employers.create', compact('marital_status', 'title', 'subsidy', 'gender', 'status', 'can_level', 'language', 'ministry', 'types', 'occupation', 'department', 'department_unit', 'frame', 'office'));
     }
 
     /**
@@ -120,11 +127,12 @@ class EmployerController extends Controller
      */
     public function show($id)
     {
+        $title = "បង្ហាញមើលបុគ្គលិក";
         $employer = Employer::find($id);
         if (empty($employer)) {
             return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
         }
-        return view('admin.employers.show', compact('employer'));
+        return view('admin.employers.show', compact('employer', 'title'));
     }
 
     /**
@@ -135,6 +143,7 @@ class EmployerController extends Controller
      */
     public function edit($id)
     {
+        $title = "កែប្រែបុគ្គលិកចាស់";
         $employer = Employer::with('firstStateJob')->with('currentJob')
             ->with('addOnCurrentPosition')->with('educationLevel')
             ->with('languageLevel')->with('mother')->with('father')
@@ -151,13 +160,17 @@ class EmployerController extends Controller
         $types = AwardPunishment::types();
         $language = Language::where('status', 1)->orderBy('name')->pluck('name', 'id');
         $can_level = LanguageLevel::level();
+        $gender = Employer::gender();
+        $subsidy = Employer::subsidy();
+        $status = Employer::status();
+
         //if (empty($employer->firstStateJob)) {
         //  return view('admin.employers.edit', compact('employer', 'can_level', 'language', 'types', 'marital_status', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'))->with('error', 'Employer not found');
         //}
         if (empty($employer)) {
             return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
         }
-        return view('admin.employers.edit', compact('employer', 'languages', 'marital_status', 'can_level', 'language', 'types', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'));
+        return view('admin.employers.edit', compact('employer', 'subsidy', 'title', 'gender', 'status', 'languages', 'marital_status', 'can_level', 'language', 'types', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'));
     }
 
     /**
@@ -172,7 +185,7 @@ class EmployerController extends Controller
         $employer = Employer::with('firstStateJob')->with('currentJob')
             ->with('addOnCurrentPosition')->with('educationLevel')
             ->with('languageLevel')->with('mother')->with('father')
-            ->with('siblings')
+            ->with('siblings')->with('children')
             ->find($id);
 //        $employer = Employer::with('firstStateJob')->join('first_state_jobs', 'users.id', '=', 'first_state_jobs.emp_id')->where('id', $id);
         if (empty($employer)) {
@@ -271,6 +284,26 @@ class EmployerController extends Controller
             } else {
                 $data['fn_emp_id'] = $employer->id;
                 $ofns = OutFrameNoSalary::create($data);
+                if (!$ofns) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            }
+
+            //No Salary status
+            $nss_start_date = date('Y-m-d', strtotime($request->nss_start_date));
+            $data['nss_start_date'] = $nss_start_date;
+            $nss_end_date = date('Y-m-d', strtotime($request->nss_end_date));
+            $data['nss_end_date'] = $nss_end_date;
+            if (!empty($employer->noSalaryStatus)) {
+                $ofns = $employer->noSalaryStatus->update($data);
+                if (!$ofns) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['nss_emp_id'] = $employer->id;
+                $ofns = NoSalaryStatus::create($data);
                 if (!$ofns) {
                     DB::rollbackTransaction();
                     return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
@@ -437,6 +470,24 @@ class EmployerController extends Controller
                 $data['sib_emp_id'] = $employer->id;
                 $siblings = Sibling::create($data);
                 if (!$siblings) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            }
+
+            //Family Status :: Children
+            $child_dob = date('Y-m-d', strtotime($request->child_dob));
+            $data['child_dob'] = $child_dob;
+            if (!empty($employer->children)) {
+                $children = $employer->children->update($data);
+                if (!$children) {
+                    DB::rollbackTransaction();
+                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            } else {
+                $data['child_emp_id'] = $employer->id;
+                $children = Children::create($data);
+                if (!$children) {
                     DB::rollbackTransaction();
                     return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
                 }

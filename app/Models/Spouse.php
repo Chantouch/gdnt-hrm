@@ -74,4 +74,6 @@ class Spouse extends Model
     {
         return $this->attributes['sp_dob'] = Carbon::parse($this->attributes['sp_dob'])->format('Y-m-d');
     }
+
+
 }

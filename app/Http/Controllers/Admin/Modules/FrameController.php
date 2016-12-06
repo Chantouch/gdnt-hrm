@@ -23,8 +23,9 @@ class FrameController extends Controller
      */
     public function index()
     {
+        $title = "មើលក្របខណ្ឌឋានន្តរស័ក្កិ";
         $frames = Frame::paginate(10);
-        return view('admin.modules.frames.index', compact('frames'));
+        return view('admin.modules.frames.index', compact('frames', 'title'));
     }
 
     /**
@@ -34,7 +35,8 @@ class FrameController extends Controller
      */
     public function create()
     {
-        return view('admin.modules.frames.create');
+        $title = "ក្របខណ្ឌឋានន្តរស័ក្កិ";
+        return view('admin.modules.frames.create', compact('title'));
     }
 
     /**
@@ -71,11 +73,12 @@ class FrameController extends Controller
      */
     public function show($id)
     {
+        $title = "បង្ហាញក្របខណ្ឌឋានន្តរស័ក្កិ";
         $frame = Frame::find($id);
         if (empty($frame)) {
             return redirect()->route('admin.modules.frames.index')->with('error', 'Frame not found');
         }
-        return view('admin.modules.frames.show', compact('frame'));
+        return view('admin.modules.frames.show', compact('frame', 'title'));
     }
 
     /**
@@ -86,11 +89,12 @@ class FrameController extends Controller
      */
     public function edit($id)
     {
+        $title = "កែរប្រែក្របខណ្ឌឋានន្តរស័ក្កិ";
         $frame = Frame::find($id);
         if (empty($frame)) {
             return redirect()->route('admin.modules.frames.index')->with('error', 'Frame not found');
         }
-        return view('admin.modules.frames.edit', compact('frame'));
+        return view('admin.modules.frames.edit', compact('frame', 'title'));
     }
 
     /**
