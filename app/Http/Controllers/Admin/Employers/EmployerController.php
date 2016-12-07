@@ -13,6 +13,7 @@ use App\Models\Employer;
 use App\Models\Father;
 use App\Models\FirstStateJob;
 use App\Models\Frame;
+use App\Models\HistoryPrivateJob;
 use App\Models\JobsHistory;
 use App\Models\Language;
 use App\Models\LanguageLevel;
@@ -170,7 +171,11 @@ class EmployerController extends Controller
         if (empty($employer)) {
             return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
         }
-        return view('admin.employers.edit', compact('employer', 'subsidy', 'title', 'gender', 'status', 'languages', 'marital_status', 'can_level', 'language', 'types', 'ministry', 'occupation', 'department', 'department_unit', 'frame', 'office'));
+        return view('admin.employers.edit',
+            compact('employer', 'subsidy', 'title', 'gender', 'status',
+                'languages', 'marital_status', 'can_level', 'language',
+                'types', 'ministry', 'occupation', 'department',
+                'department_unit', 'frame', 'office'));
     }
 
     /**
@@ -270,43 +275,69 @@ class EmployerController extends Controller
                 }
             }
 
-            //OutFrameNoSalary
-            $fn_start_date = date('Y-m-d', strtotime($request->fn_start_date));
-            $data['fn_start_date'] = $fn_start_date;
-            $fn_end_date = date('Y-m-d', strtotime($request->fn_end_date));
-            $data['fn_end_date'] = $fn_end_date;
-            if (!empty($employer->outFrameNoSalary)) {
-                $ofns = $employer->outFrameNoSalary->update($data);
-                if (!$ofns) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+            //Out of Frame
+            if (count($employer->outFrameNoSalary) >= 1) {
+                $out_frame = OutFrameNoSalary::with('employer')->where('fn_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($out_frame as $frame) {
+                    $frame->fn_department = $data['fn_department'][$i];
+                    $frame->fn_start_date = date('Y-m-d', strtotime($data['fn_start_date'][$i]));
+                    $frame->fn_end_date = date('Y-m-d', strtotime($data['fn_end_date'][$i]));
+                    $of = $frame->save();
+                    $i++;
+                    if (!$of) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             } else {
-                $data['fn_emp_id'] = $employer->id;
-                $ofns = OutFrameNoSalary::create($data);
-                if (!$ofns) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                foreach ($request->fn_department as $key => $department) {
+                    $entry = [
+                        'fn_emp_id' => $employer->id,
+                        'fn_department' => $department,
+                        $fn_start_date = date('Y-m-d', strtotime($request->fn_start_date[$key])),
+                        'fn_start_date' => $fn_start_date,
+                        $fn_end_date = date('Y-m-d', strtotime($request->fn_end_date[$key])),
+                        'fn_end_date' => $fn_end_date,
+                    ];
+                    $of = OutFrameNoSalary::create($entry);
+                    if (!$of) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             }
 
             //No Salary status
-            $nss_start_date = date('Y-m-d', strtotime($request->nss_start_date));
-            $data['nss_start_date'] = $nss_start_date;
-            $nss_end_date = date('Y-m-d', strtotime($request->nss_end_date));
-            $data['nss_end_date'] = $nss_end_date;
-            if (!empty($employer->noSalaryStatus)) {
-                $ofns = $employer->noSalaryStatus->update($data);
-                if (!$ofns) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+            if (count($employer->noSalaryStatus) >= 1) {
+                $nss = NoSalaryStatus::with('employer')->where('nss_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($nss as $ns) {
+                    $ns->nss_department = $data['nss_department'][$i];
+                    $ns->nss_start_date = date('Y-m-d', strtotime($data['nss_start_date'][$i]));
+                    $ns->nss_end_date = date('Y-m-d', strtotime($data['nss_end_date'][$i]));
+                    $nss = $ns->save();
+                    $i++;
+                    if (!$nss) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             } else {
-                $data['nss_emp_id'] = $employer->id;
-                $ofns = NoSalaryStatus::create($data);
-                if (!$ofns) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                foreach ($request->nss_department as $key => $department) {
+                    $entry = [
+                        'nss_emp_id' => $employer->id,
+                        'nss_department' => $department,
+                        $nss_start_date = date('Y-m-d', strtotime($request->nss_start_date[$key])),
+                        'nss_start_date' => $nss_start_date,
+                        $nss_end_date = date('Y-m-d', strtotime($request->nss_end_date[$key])),
+                        'nss_end_date' => $nss_end_date,
+                    ];
+                    $nss = NoSalaryStatus::create($entry);
+                    if (!$nss) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             }
 
@@ -327,6 +358,42 @@ class EmployerController extends Controller
                 if (!$phj) {
                     DB::rollbackTransaction();
                     return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                }
+            }
+
+            if (count($employer->historyPrivateJob) >= 1) {
+                $hpj = HistoryPrivateJob::with('employer')->where('hpj_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($hpj as $m) {
+                    $m->hpj_ministry_institute = $data['hpj_ministry_institute'][$i];
+                    $m->hpj_occupation = $data['hpj_occupation'][$i];
+                    $m->hpj_others = $data['hpj_others'][$i];
+                    $m->hpj_start_date = date('Y-m-d', strtotime($data['hpj_start_date'][$i]));
+                    $m->hpj_end_date = date('Y-m-d', strtotime($data['hpj_end_date'][$i]));
+                    $hpj = $m->save();
+                    $i++;
+                    if (!$hpj) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            } else {
+                foreach ($request->hpj_ministry_institute as $key => $ministry_institute) {
+                    $entry = [
+                        'hpj_emp_id' => $employer->id,
+                        'hpj_ministry_institute' => $ministry_institute,
+                        'hpj_occupation' => $request->hpj_occupation[$key],
+                        'hpj_others' => $request->hpj_others[$key],
+                        $hpj_start_date = date('Y-m-d', strtotime($request->hpj_start_date[$key])),
+                        'hpj_start_date' => $hpj_start_date,
+                        $hpj_end_date = date('Y-m-d', strtotime($request->hpj_end_date[$key])),
+                        'hpj_end_date' => $hpj_end_date
+                    ];
+                    $hpj = HistoryPrivateJob::create($entry);
+                    if (!$hpj) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             }
 
@@ -372,7 +439,7 @@ class EmployerController extends Controller
             if (!empty($employer->languageLevel)) {
                 $language = LanguageLevel::where('ll_emp_id', $employer->id)->get();
                 foreach ($language as $lang => $value) {
-                    $update_language = LanguageLevel::find($data['langIds'][$lang]);
+                    $update_language = LanguageLevel::with('employer')->find($data['langIds'][$lang]);
                     $update_language->ll_lang_id = $data['ll_lang_id_' . $value->ll_lang_id];
                     $update_language->ll_read = $data['ll_read_' . LanguageLevel::clean($value->ll_read)];
                     $update_language->ll_write = $data['ll_write_' . LanguageLevel::clean($value->ll_write)];

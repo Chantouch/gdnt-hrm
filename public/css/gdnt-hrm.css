@@ -1,3 +1,30 @@
+@import url(https://fonts.googleapis.com/css?family=Hanuman:400,700&subset=khmer);
+
+body {
+    background: #ebeff2;
+    font-family: 'Hanuman', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    margin: 0;
+    overflow-x: hidden;
+    color: #797979;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    background: #ebeff2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #505458;
+    font-family: "Hanuman", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    margin: 10px 0;
+}
+
 #presentation {
     width: 480px;
     height: 120px;

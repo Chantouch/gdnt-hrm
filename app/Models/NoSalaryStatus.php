@@ -29,4 +29,9 @@ class NoSalaryStatus extends Model
     {
         return $this->attributes['nss_end_date'] = Carbon::parse($this->attributes['nss_end_date'])->format('Y-m-d');
     }
+
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
 }

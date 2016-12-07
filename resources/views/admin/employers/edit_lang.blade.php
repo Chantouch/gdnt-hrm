@@ -2,7 +2,8 @@
     <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="form-group{!! $errors->has('ll_lang_id') ? ' has-error' : '' !!}">
             <label for="ll_lang_id" class="control-label">
-                <strong>ភាសា:</strong></label>
+                <strong>ភាសា:</strong>
+            </label>
             {!! Form::select('ll_lang_id[]', (isset($employer->languageLevel->ll_lang_id) ? (isset($employer->languageLevel->ll_lang_id) ? $language : null) : $language), (isset($employer->languageLevel->ll_lang_id) ? $employer->languageLevel->ll_lang_id : null), array('placeholder' => '--Select your known language--','class' => 'form-control')) !!}
             {{--{!! Form::text('ll_lang_id', (isset($employer->languageLevel->ll_lang_id) ? $employer->languageLevel->ll_lang_id : null), array('placeholder' => 'Enter education level','class' => 'form-control', 'id'=>'ll_lang_id')) !!}--}}
             @if($errors->has('ll_lang_id'))
@@ -16,7 +17,8 @@
     <div class="col-xs-12 col-sm-2 col-md-2">
         <div class="form-group{!! $errors->has('ll_read') ? ' has-error' : '' !!}">
             <label for="el_school" class="control-label">
-                <strong>អាន:</strong></label>
+                <strong>អាន:</strong>
+            </label>
             {{--{!! Form::text('ll_read', (isset($employer->languageLevel->el_school) ? $employer->languageLevel->el_school : null), array('placeholder' => 'Enter school name','class' => 'form-control', 'id'=>'el_school')) !!}--}}
             {!! Form::select('ll_read[]', (isset($employer->languageLevel->ll_read) ? (isset($employer->languageLevel->ll_read) ? $can_level : null) : $can_level), (isset($employer->languageLevel->ll_read) ? $employer->languageLevel->ll_read : null), array('placeholder' => '--Select your ability--','class' => 'form-control')) !!}
             @if($errors->has('ll_read'))
@@ -30,7 +32,8 @@
     <div class="col-xs-12 col-sm-2 col-md-2">
         <div class="form-group{!! $errors->has('ll_write') ? ' has-error' : '' !!}">
             <label for="el_school" class="control-label">
-                <strong>សរសេរ:</strong></label>
+                <strong>សរសេរ:</strong>
+            </label>
             {{--{!! Form::text('ll_write', (isset($employer->languageLevel->el_school) ? $employer->languageLevel->el_school : null), array('placeholder' => 'Enter school name','class' => 'form-control', 'id'=>'el_school')) !!}--}}
             {!! Form::select('ll_write[]', (isset($employer->languageLevel->ll_write) ? (isset($employer->languageLevel->ll_write) ? $can_level : null) : $can_level), (isset($employer->languageLevel->ll_write) ? $employer->languageLevel->ll_write : null), array('placeholder' => '--Select your ability--','class' => 'form-control')) !!}
             @if($errors->has('ll_write'))
@@ -44,7 +47,8 @@
     <div class="col-xs-12 col-sm-2 col-md-2">
         <div class="form-group{!! $errors->has('ll_listen') ? ' has-error' : '' !!}">
             <label for="el_school" class="control-label">
-                <strong>ស្តាប់:</strong></label>
+                <strong>ស្តាប់:</strong>
+            </label>
             {{--{!! Form::text('ll_listen', (isset($employer->languageLevel->el_school) ? $employer->languageLevel->el_school : null), array('placeholder' => 'Enter school name','class' => 'form-control', 'id'=>'el_school')) !!}--}}
             {!! Form::select('ll_listen[]', (isset($employer->languageLevel->ll_listen) ? (isset($employer->languageLevel->ll_listen) ? $can_level : null) : $can_level), (isset($employer->languageLevel->ll_listen) ? $employer->languageLevel->ll_listen : null), array('placeholder' => '--Select your ability--','class' => 'form-control')) !!}
             @if($errors->has('ll_listen'))
@@ -58,7 +62,8 @@
     <div class="col-xs-12 col-sm-2 col-md-2">
         <div class="form-group{!! $errors->has('ll_speak') ? ' has-error' : '' !!}">
             <label for="el_school" class="control-label">
-                <strong>និយាយ:</strong></label>
+                <strong>និយាយ:</strong>
+            </label>
             {{--{!! Form::text('ll_speak', (isset($employer->languageLevel->el_school) ? $employer->languageLevel->el_school : null), array('placeholder' => 'Enter school name','class' => 'form-control', 'id'=>'el_school')) !!}--}}
             {!! Form::select('ll_speak[]', (isset($employer->languageLevel->ll_speak) ? (isset($employer->languageLevel->ll_speak) ? $can_level : null) : $can_level), (isset($employer->languageLevel->ll_speak) ? $employer->languageLevel->ll_speak : null), array('placeholder' => '--Select your ability--','class' => 'form-control')) !!}
             @if($errors->has('ll_speak'))

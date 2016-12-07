@@ -3,7 +3,7 @@
         <h4 class="panel-title">
             <a data-toggle="collapse" data-parent="#accordion-public" href="#lang_level"
                aria-expanded="false" class="collapsed">
-                ៦.សម្ថភាពភាសាបរទេស (មធ្យម, ល្អបង្គួរ,​ ល្អ និងល្អណាស់)
+                ៦.សមត្ថភាពភាសាបរទេស (មធ្យម, ល្អបង្គួរ,​ ល្អ និងល្អណាស់)
             </a>
         </h4>
     </div>

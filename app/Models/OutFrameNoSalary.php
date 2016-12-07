@@ -32,13 +32,23 @@ class OutFrameNoSalary extends Model
         return $this->attributes['fn_start_date'] = Carbon::parse($this->attributes['fn_start_date'])->format('Y-m-d');
     }
 
-//    public function setFNEndDateAttribute()
-//    {
-//        return $this->attributes['fn_end_date'] = Carbon::parse($this->attributes['fn_end_date'])->format('Y-m-d');
-//    }
+    public function setFNEndDateAttribute($value)
+    {
+        $this->attributes['fn_end_date'] = Carbon::createFromFormat('Y-m-d', $value);
+    }
+
+    public function setFNStartDateAttribute($value)
+    {
+        $this->attributes['fn_start_date'] = Carbon::createFromFormat('Y-m-d', $value);
+    }
 
     public function getFNEndDateAttribute()
     {
         return $this->attributes['fn_end_date'] = Carbon::parse($this->attributes['fn_end_date'])->format('Y-m-d');
+    }
+
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
     }
 }

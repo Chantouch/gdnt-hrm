@@ -38,4 +38,9 @@ class LanguageLevel extends Model
 
         return preg_replace('/-+/', '_', $string); // Replaces multiple hyphens with single one.
     }
+
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
 }

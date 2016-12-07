@@ -193,12 +193,15 @@ class Employer extends Model
      */
     public function outFrameNoSalary()
     {
-        return $this->hasOne(OutFrameNoSalary::class, 'fn_emp_id');
+        return $this->hasMany(OutFrameNoSalary::class, 'fn_emp_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function noSalaryStatus()
     {
-        return $this->hasOne(NoSalaryStatus::class, 'nss_emp_id');
+        return $this->hasMany(NoSalaryStatus::class, 'nss_emp_id');
     }
 
     /**
@@ -207,6 +210,14 @@ class Employer extends Model
     public function jobHistoryPrivatePublic()
     {
         return $this->hasOne(JobsHistory::class, 'phj_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function historyPrivateJob()
+    {
+        return $this->hasMany(HistoryPrivateJob::class, 'hpj_emp_id');
     }
 
     /**

@@ -27,6 +27,7 @@
     <script src="{!! asset('assets/js/modernizr.min.js') !!}"></script>
 
     <link href="{!! asset('assets/css/components.css') !!}" rel="stylesheet" type="text/css"/>
+    <link href="{!! asset('css/gdnt-hrm.css') !!}" rel="stylesheet" type="text/css"/>
 
     <!-- Scripts -->
     <script>
