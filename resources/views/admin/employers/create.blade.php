@@ -48,6 +48,11 @@
     </div>
 @stop
 
+
+@section('specific_js')
+    <script src="{!! asset('js/employer_edit_form.js') !!}"></script>
+@stop
+
 @section('specific_script')
     <script src="{!! asset('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}"></script>
     <script type="text/javascript">
@@ -58,14 +63,35 @@
         }
         function removeRow() {
             if ($("#add_language").length != 1)
-                $("#add_language:last").last().remove()
+                $("#add_language").last().remove()
         }
+
+        $("input.mydatepickers, input.nss_date_pickers, input.hpj_date_picker, input.phj_date_picker, input.aw_date_picker").click(function () {
+            $(this).datepicker({
+                autoclose: true,
+                todayHighlight: true,
+                format: 'yyyy-m-d'
+            });
+        });
+
     </script>
 @stop
 
 @section('script_ready')
 
-    jQuery('#cjs_last_date_promoted, #passport_expired_date, #dob, #id_card_expired, #start_date, #fsj_permanent_staff_date, #cjs_last_date_got_promoted, #acp_start_date, #fn_start_date, #fn_end_date, #phj_start_date, #phj_end_date, #ap_published_date, #el_start_date, #el_end_date, #whp_dob, #sp_dob, #m_dob, #f_dob').datepicker({
+    jQuery('#cjs_last_date_promoted, #passport_expired_date, #dob, #id_card_expired, #start_date, #fsj_permanent_staff_date, #cjs_last_date_got_promoted, #acp_start_date').datepicker({
+    autoclose: true,
+    todayHighlight: true,
+    format: 'yyyy-m-d',
+    });
+
+    jQuery('#el_start_date, #el_end_date, #whp_dob, #sp_dob, #m_dob, #f_dob, #sib_dob, #child_dob').datepicker({
+    autoclose: true,
+    todayHighlight: true,
+    format: 'yyyy-m-d',
+    });
+
+    $(".mydatepickers, .nss_date_pickers, .hpj_date_picker, .phj_date_picker, .aw_date_picker, .pun_date_picker").datepicker({
     autoclose: true,
     todayHighlight: true,
     format: 'yyyy-m-d',
@@ -75,8 +101,77 @@
     e.preventDefault();
     addRow();
     });
-    $('#minus').on('click', function(e){
+
+    $('button#minus').on('click', function(e){
     e.preventDefault();
     removeRow();
     });
+
+    $('button#out_frame_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_out_frame();
+    });
+
+    $('button#out_frame_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row("div#add_frame");
+    });
+
+    $('button#nss_btn_add').on('click', function(e){
+    e.preventDefault();
+    nss_add_row();
+    });
+
+    $('button#nss_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#nss_form');
+    });
+
+
+    $('button#hpj_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form_private();
+    });
+
+    $('button#hpj_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#hpj_add_form');
+    });
+
+    {{--Form Public History Job--}}
+    $('button#phj_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form_public();
+    });
+
+    $('button#phj_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#public_form');
+    });
+    {{--End form public history job--}}
+
+    {{--Start Form Award Form--}}
+    $('button#aw_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form_award();
+    });
+
+    $('button#aw_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#award_form_add');
+    });
+    {{--End Form Award Form--}}
+
+    {{--Start Form Punishment Form--}}
+    $('button#pun_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form_punishment();
+    });
+
+    $('button#pun_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#punishment_form_add');
+    });
+    {{--End Form Punishement Form--}}
+
 @stop

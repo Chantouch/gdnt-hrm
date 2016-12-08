@@ -492,42 +492,6 @@ class EmployerController extends Controller
                 }
             }
 
-            //Award and Punishment
-//            $ap_published_date = date('Y-m-d', strtotime($request->ap_published_date));
-//            $data['ap_published_date'] = $ap_published_date;
-//            if (!empty($employer->awardPunishment)) {
-//                $ap = $employer->awardPunishment->update($data);
-//                if (!$ap) {
-//                    DB::rollbackTransaction();
-//                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                }
-//            } else {
-//                $data['ap_emp_id'] = $employer->id;
-//                $ap = AwardPunishment::create($data);
-//                if (!$ap) {
-//                    DB::rollbackTransaction();
-//                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                }
-//            }
-
-//            foreach ($request->ap_doc_number as $key => $doc_number) {
-//                $entry = [
-//                    'ap_emp_id' => $employer->id,
-//                    //'ap_department' => $department,
-//                    'ap_doc_number' => $doc_number,
-//                    //'ap_type' => $request->ap_type[$key],
-//                    'ap_description' => $request->ap_description[$key],
-//                    //$ap_published_date = date('Y-m-d', strtotime($request->ap_published_date[$key])),
-//                    //'ap_published_date' => $ap_published_date,
-//                ];
-//                dd($entry);
-//                $hpj = AwardPunishment::create($entry);
-//                if (!$hpj) {
-//                    DB::rollbackTransaction();
-//                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                }
-//            }
-
             //General and Temporary Educations
             $el_start_date = date('Y-m-d', strtotime($request->el_start_date));
             $data['el_start_date'] = $el_start_date;

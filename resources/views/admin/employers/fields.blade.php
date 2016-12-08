@@ -11,7 +11,7 @@
             {{--2.Information status Public--}}
 
             {{--3.Job History (From New to Old)--}}
-            @include('admin.employers.job_history')
+            @include('admin.employers.job_history.index')
             {{--3.Job History (From New to Old)--}}
 
             {{--4.Award / Punishment--}}
