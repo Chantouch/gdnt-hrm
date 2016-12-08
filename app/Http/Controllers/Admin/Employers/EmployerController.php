@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Employers;
 
 use App\Models\AddonCurrentPosition;
+use App\Models\Award;
 use App\Models\AwardPunishment;
 use App\Models\Children;
 use App\Models\CurrentJobStatus;
@@ -23,6 +24,7 @@ use App\Models\NoSalaryStatus;
 use App\Models\Occupation;
 use App\Models\Office;
 use App\Models\OutFrameNoSalary;
+use App\Models\Punishment;
 use App\Models\Sibling;
 use App\Models\Spouse;
 use App\Models\WifeHusbandParents;
@@ -381,6 +383,7 @@ class EmployerController extends Controller
                 }
             }
 
+            //History of private job
             if (count($employer->historyPrivateJob) >= 1) {
                 $hpj = HistoryPrivateJob::with('employer')->where('hpj_emp_id', '=', $employer->id)->get();
                 $i = 0;
@@ -417,23 +420,113 @@ class EmployerController extends Controller
                 }
             }
 
-            //Award and Punishment
-            $ap_published_date = date('Y-m-d', strtotime($request->ap_published_date));
-            $data['ap_published_date'] = $ap_published_date;
-            if (!empty($employer->awardPunishment)) {
-                $ap = $employer->awardPunishment->update($data);
-                if (!$ap) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+            //Punishment
+            if (count($employer->punishments) >= 1) {
+                $punishments = Punishment::with('employer')->where('pun_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($punishments as $punishment) {
+                    $punishment->pun_doc_number = $data['pun_doc_number'][$i];
+                    $punishment->pun_department = $data['pun_department'][$i];
+                    $punishment->pun_punish_type = $data['pun_punish_type'][$i];
+                    $punishment->pun_description = $data['pun_description'][$i];
+                    $punishment->pun_published_date = date('Y-m-d', strtotime($data['pun_published_date'][$i]));
+                    $punishment = $punishment->save();
+                    $i++;
+                    if (!$punishment) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             } else {
-                $data['ap_emp_id'] = $employer->id;
-                $ap = AwardPunishment::create($data);
-                if (!$ap) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                foreach ($request->pun_doc_number as $key => $doc_number) {
+                    $entry = [
+                        'pun_emp_id' => $employer->id,
+                        'pun_doc_number' => $doc_number,
+                        'pun_department' => $request->pun_department[$key],
+                        'pun_punish_type' => $request->pun_punish_type[$key],
+                        'pun_description' => $request->pun_description[$key],
+                        $pun_published_date = date('Y-m-d', strtotime($request->pun_published_date[$key])),
+                        'pun_published_date' => $pun_published_date
+                    ];
+                    $punishment = Punishment::create($entry);
+                    if (!$punishment) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             }
+
+            //Awards
+            if (count($employer->awards) >= 1) {
+                $awards = Award::with('employer')->where('aw_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($awards as $award) {
+                    $award->aw_doc_number = $data['aw_doc_number'][$i];
+                    $award->aw_department = $data['aw_department'][$i];
+                    $award->aw_type = $data['aw_type'][$i];
+                    $award->aw_description = $data['aw_description'][$i];
+                    $award->aw_published_date = date('Y-m-d', strtotime($data['aw_published_date'][$i]));
+                    $award = $award->save();
+                    $i++;
+                    if (!$award) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            } else {
+                foreach ($request->aw_doc_number as $key => $doc_number) {
+                    $entry = [
+                        'aw_emp_id' => $employer->id,
+                        'aw_doc_number' => $doc_number,
+                        'aw_department' => $request->aw_department[$key],
+                        'aw_type' => $request->aw_type[$key],
+                        'aw_description' => $request->aw_description[$key],
+                        $aw_published_date = date('Y-m-d', strtotime($request->aw_published_date[$key])),
+                        'aw_published_date' => $aw_published_date
+                    ];
+                    $award = Award::create($entry);
+                    if (!$award) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
+
+            //Award and Punishment
+//            $ap_published_date = date('Y-m-d', strtotime($request->ap_published_date));
+//            $data['ap_published_date'] = $ap_published_date;
+//            if (!empty($employer->awardPunishment)) {
+//                $ap = $employer->awardPunishment->update($data);
+//                if (!$ap) {
+//                    DB::rollbackTransaction();
+//                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+//                }
+//            } else {
+//                $data['ap_emp_id'] = $employer->id;
+//                $ap = AwardPunishment::create($data);
+//                if (!$ap) {
+//                    DB::rollbackTransaction();
+//                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+//                }
+//            }
+
+//            foreach ($request->ap_doc_number as $key => $doc_number) {
+//                $entry = [
+//                    'ap_emp_id' => $employer->id,
+//                    //'ap_department' => $department,
+//                    'ap_doc_number' => $doc_number,
+//                    //'ap_type' => $request->ap_type[$key],
+//                    'ap_description' => $request->ap_description[$key],
+//                    //$ap_published_date = date('Y-m-d', strtotime($request->ap_published_date[$key])),
+//                    //'ap_published_date' => $ap_published_date,
+//                ];
+//                dd($entry);
+//                $hpj = AwardPunishment::create($entry);
+//                if (!$hpj) {
+//                    DB::rollbackTransaction();
+//                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+//                }
+//            }
 
             //General and Temporary Educations
             $el_start_date = date('Y-m-d', strtotime($request->el_start_date));

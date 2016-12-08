@@ -62,11 +62,11 @@
                 $("#add_language").last().remove()
         }
 
-        $("input.mydatepickers, input.nss_date_pickers, input.hpj_date_picker, input.phj_date_picker, input.award_date_picker").click(function () {
+        $("input.mydatepickers, input.nss_date_pickers, input.hpj_date_picker, input.phj_date_picker, input.aw_date_picker").click(function () {
             $(this).datepicker({
                 autoclose: true,
                 todayHighlight: true,
-                format: 'yyyy-M-d'
+                format: 'yyyy-m-d'
             });
         });
 
@@ -86,7 +86,7 @@
     format: 'yyyy-m-d',
     });
 
-    $(".mydatepickers, .nss_date_pickers, .hpj_date_picker, .phj_date_picker, .award_date_picker").datepicker({
+    $(".mydatepickers, .nss_date_pickers, .hpj_date_picker, .phj_date_picker, .aw_date_picker, .pun_date_picker").datepicker({
     autoclose: true,
     todayHighlight: true,
     format: 'yyyy-m-d',
@@ -177,15 +177,27 @@
     {{--End form public history job--}}
 
     {{--Start Form Award Form--}}
-    $('button#award_btn_add').on('click', function(e){
+    $('button#aw_btn_add').on('click', function(e){
     e.preventDefault();
     add_new_form_award();
     });
 
-    $('button#award_btn_remove').on('click', function(e){
+    $('button#aw_btn_remove').on('click', function(e){
     e.preventDefault();
-    remove_row('div#award_form');
+    remove_row('div#award_form_add');
     });
     {{--End Form Award Form--}}
+
+    {{--Start Form Punishment Form--}}
+    $('button#pun_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form_punishment();
+    });
+
+    $('button#pun_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#punishment_form_add');
+    });
+    {{--End Form Punishement Form--}}
 
 @stop

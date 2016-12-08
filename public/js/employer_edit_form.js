@@ -130,10 +130,11 @@ function add_new_form_public() {
     });
     i++;
 }
+
 function add_new_form_award() {
     var i = 1;
-    $('.award_date_picker').datepicker('destroy');
-    myTr = $("div#award_form:first").clone().appendTo("div#award_form_add");
+    $('.aw_date_picker').datepicker('destroy');
+    myTr = $("div#award_form_add:first").clone().appendTo("div#award_form");
     myTr.removeClass('hasDatepicker').find("input").each(function () {
         $(this).attr({
             'id': function (_, id) {
@@ -146,7 +147,31 @@ function add_new_form_award() {
         });
     });
     //myTr.find('input[id^="datep"]').addClass("nss_datepickers");
-    $(".award_date_picker").datepicker({
+    $(".aw_date_picker").datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'yyyy-m-d'
+    });
+    i++;
+}
+
+function add_new_form_punishment() {
+    var i = 1;
+    $('.pun_date_picker').datepicker('destroy');
+    myTr = $("div#punishment_form_add:first").clone().appendTo("div#punishment_form");
+    myTr.removeClass('hasDatepicker').find("input").each(function () {
+        $(this).attr({
+            'id': function (_, id) {
+                return id + i
+            },
+            'name': function (_, name) {
+                return name
+            },
+            'value': ''
+        });
+    });
+    //myTr.find('input[id^="datep"]').addClass("nss_datepickers");
+    $(".pun_date_picker").datepicker({
         autoclose: true,
         todayHighlight: true,
         format: 'yyyy-m-d'

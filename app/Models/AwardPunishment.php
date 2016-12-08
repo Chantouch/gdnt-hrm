@@ -45,7 +45,7 @@ class AwardPunishment extends Model
     public static function types()
     {
         return [
-            'A' => 'A', 'B' => 'B', 'C' => 'C', 'E' => 'C', 'F' => 'F', 'G' => 'G'
+            'A' => 'A', 'B' => 'B', 'C' => 'C', 'E' => 'E', 'F' => 'F', 'G' => 'G'
         ];
     }
 

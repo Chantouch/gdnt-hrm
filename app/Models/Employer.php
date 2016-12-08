@@ -228,6 +228,16 @@ class Employer extends Model
         return $this->hasOne(AwardPunishment::class, 'ap_emp_id');
     }
 
+    public function punishments()
+    {
+        return $this->hasMany(Punishment::class, 'pun_emp_id');
+    }
+
+    public function awards()
+    {
+        return $this->hasMany(Award::class, 'aw_emp_id');
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */

@@ -15,7 +15,7 @@
             {{--3.Job History (From New to Old)--}}
 
             {{--4.Award / Punishment--}}
-            @include('admin.employers.award_punishment')
+            @include('admin.employers.award_punishment.index')
             {{--4.Award / Punishment--}}
 
             {{--5.Education Level--}}
@@ -30,13 +30,12 @@
             @include('admin.employers.family_status')
             {{--7.Family status--}}
 
-
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary waves-effect">Submit</button>
             <a class="btn btn-primary waves-effect" href="{{ route('admin.managements.employers.index') }}"> Cancel</a>
         </div>
     </div>
