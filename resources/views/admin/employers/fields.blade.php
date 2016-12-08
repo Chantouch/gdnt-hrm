@@ -23,7 +23,7 @@
             {{--5.Education Level--}}
 
             {{--6.Language level status--}}
-            @include('admin.employers.language_levels')
+            @include('admin.employers.languages.index')
             {{--6.Language level status--}}
 
             {{--7.Family status--}}
