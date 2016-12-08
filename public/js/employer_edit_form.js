@@ -40,16 +40,14 @@ function nss_add_row() {
             'name': function (_, name) {
                 return name
             },
-            'value': function (_, value) {
-                return value
-            }
+            'value': ''
         });
     });
     //myTr.find('input[id^="datep"]').addClass("nss_datepickers");
     $(".nss_date_pickers").datepicker({
         autoclose: true,
         todayHighlight: true,
-        format: 'yyyy-M-d'
+        format: 'yyyy-m-d'
     });
     i++;
 }
@@ -66,9 +64,7 @@ function add_out_frame() {
             'name': function (_, name) {
                 return name
             },
-            'value': function (_, value) {
-                return value
-            }
+            'value': ''
         });
     });
     //myTr.find('input[id^="datep"]').addClass("mydatepickers");
@@ -87,7 +83,7 @@ function remove_row(id) {
 }
 
 
-function add_new_row(date_picker, form, append_id) {
+function add_new_form_private() {
     var i = 1;
     $('.hpj_date_picker').datepicker('destroy');
     myTr = $("div#hpj_add_form:first").clone().appendTo("div#hpj_form");
@@ -99,16 +95,61 @@ function add_new_row(date_picker, form, append_id) {
             'name': function (_, name) {
                 return name
             },
-            'value': function (_, value) {
-                return value
-            }
+            'value': ''
         });
     });
     //myTr.find('input[id^="datep"]').addClass("nss_datepickers");
     $(".hpj_date_picker").datepicker({
         autoclose: true,
         todayHighlight: true,
-        format: 'yyyy-M-d'
+        format: 'yyyy-m-d'
+    });
+    i++;
+}
+
+function add_new_form_public() {
+    var i = 1;
+    $('.phj_date_picker').datepicker('destroy');
+    myTr = $("div#public_form:first").clone().appendTo("div#public_add_form");
+    myTr.removeClass('hasDatepicker').find("input").each(function () {
+        $(this).attr({
+            'id': function (_, id) {
+                return id + i
+            },
+            'name': function (_, name) {
+                return name
+            },
+            'value': ''
+        });
+    });
+    //myTr.find('input[id^="datep"]').addClass("nss_datepickers");
+    $(".phj_date_picker").datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'yyyy-m-d'
+    });
+    i++;
+}
+function add_new_form_award() {
+    var i = 1;
+    $('.award_date_picker').datepicker('destroy');
+    myTr = $("div#award_form:first").clone().appendTo("div#award_form_add");
+    myTr.removeClass('hasDatepicker').find("input").each(function () {
+        $(this).attr({
+            'id': function (_, id) {
+                return id + i
+            },
+            'name': function (_, name) {
+                return name
+            },
+            'value': ''
+        });
+    });
+    //myTr.find('input[id^="datep"]').addClass("nss_datepickers");
+    $(".award_date_picker").datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'yyyy-m-d'
     });
     i++;
 }

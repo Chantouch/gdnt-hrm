@@ -42,4 +42,9 @@ class JobsHistory extends Model
     {
         return $this->attributes['phj_end_date'] = Carbon::parse($this->attributes['phj_end_date'])->format('Y-m-d');
     }
+
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
 }

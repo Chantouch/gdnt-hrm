@@ -209,7 +209,7 @@ class Employer extends Model
      */
     public function jobHistoryPrivatePublic()
     {
-        return $this->hasOne(JobsHistory::class, 'phj_emp_id');
+        return $this->hasMany(JobsHistory::class, 'phj_emp_id');
     }
 
     /**

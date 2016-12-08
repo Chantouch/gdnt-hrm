@@ -48,4 +48,12 @@ class AwardPunishment extends Model
             'A' => 'A', 'B' => 'B', 'C' => 'C', 'E' => 'C', 'F' => 'F', 'G' => 'G'
         ];
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function employer()
+    {
+        return $this->belongsTo(Employer::class);
+    }
 }

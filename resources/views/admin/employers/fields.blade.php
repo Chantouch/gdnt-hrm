@@ -7,7 +7,7 @@
             {{--1.Personal info--}}
 
             {{--2.Information status Public--}}
-            @include('admin.employers.public_info_status')
+            @include('admin.employers.public_status.index')
             {{--2.Information status Public--}}
 
             {{--3.Job History (From New to Old)--}}

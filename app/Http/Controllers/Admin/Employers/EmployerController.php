@@ -190,7 +190,7 @@ class EmployerController extends Controller
         $employer = Employer::with('firstStateJob')->with('currentJob')
             ->with('addOnCurrentPosition')->with('educationLevel')
             ->with('languageLevel')->with('mother')->with('father')
-            ->with('siblings')->with('children')
+            ->with('siblings')->with('children')->with('jobHistoryPrivatePublic')
             ->find($id);
 //        $employer = Employer::with('firstStateJob')->join('first_state_jobs', 'users.id', '=', 'first_state_jobs.emp_id')->where('id', $id);
         if (empty($employer)) {
@@ -342,22 +342,42 @@ class EmployerController extends Controller
             }
 
             //jobHistoryPrivatePublic
-            $phj_start_date = date('Y-m-d', strtotime($request->phj_start_date));
-            $data['phj_start_date'] = $phj_start_date;
-            $phj_end_date = date('Y-m-d', strtotime($request->phj_end_date));
-            $data['phj_end_date'] = $phj_end_date;
-            if (!empty($employer->jobHistoryPrivatePublic)) {
-                $phj = $employer->jobHistoryPrivatePublic->update($data);
-                if (!$phj) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+            if (count($employer->jobHistoryPrivatePublic) >= 1) {
+                $phj = JobsHistory::with('employer')->where('phj_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($phj as $history) {
+                    $history->phj_ministry_institute = $data['phj_ministry_institute'][$i];
+                    $history->phj_occupation = $data['phj_occupation'][$i];
+                    $history->phj_department = $data['phj_department'][$i];
+                    $history->phj_others = $data['phj_others'][$i];
+                    $history->phj_start_date = date('Y-m-d', strtotime($data['phj_start_date'][$i]));
+                    $history->phj_end_date = date('Y-m-d', strtotime($data['phj_end_date'][$i]));
+                    $job = $history->save();
+                    $i++;
+                    if (!$job) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             } else {
-                $data['phj_emp_id'] = $employer->id;
-                $phj = JobsHistory::create($data);
-                if (!$phj) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                foreach ($request->phj_ministry_institute as $key => $ministry) {
+                    $entry = [
+                        'phj_emp_id' => $employer->id,
+                        'phj_ministry_institute' => $ministry,
+                        'phj_occupation' => $request->phj_occupation[$key],
+                        'phj_department' => $request->phj_department[$key],
+                        'phj_type' => $request->phj_type[$key],
+                        'phj_others' => $request->phj_others[$key],
+                        $phj_start_date = date('Y-m-d', strtotime($request->phj_start_date[$key])),
+                        'phj_start_date' => $phj_start_date,
+                        $phj_end_date = date('Y-m-d', strtotime($request->phj_end_date[$key])),
+                        'phj_end_date' => $phj_end_date
+                    ];
+                    $phj = JobsHistory::create($entry);
+                    if (!$phj) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             }
 
