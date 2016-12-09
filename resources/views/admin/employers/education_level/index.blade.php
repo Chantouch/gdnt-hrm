@@ -18,5 +18,6 @@
     <div id="g-t-edu" class="panel-collapse collapse">
         @include('admin.employers.education_level.general')
         @include('admin.employers.education_level.degree_specialize')
+        @include('admin.employers.education_level.short_course')
     </div>
 </div>

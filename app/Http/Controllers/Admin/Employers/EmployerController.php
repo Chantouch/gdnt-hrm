@@ -7,6 +7,7 @@ use App\Models\Award;
 use App\Models\AwardPunishment;
 use App\Models\Children;
 use App\Models\CurrentJobStatus;
+use App\Models\DegreeSpecialize;
 use App\Models\Department;
 use App\Models\DepartmentUnit;
 use App\Models\EducationLevel;
@@ -14,6 +15,7 @@ use App\Models\Employer;
 use App\Models\Father;
 use App\Models\FirstStateJob;
 use App\Models\Frame;
+use App\Models\GeneralEducation;
 use App\Models\HistoryPrivateJob;
 use App\Models\JobsHistory;
 use App\Models\Language;
@@ -25,6 +27,7 @@ use App\Models\Occupation;
 use App\Models\Office;
 use App\Models\OutFrameNoSalary;
 use App\Models\Punishment;
+use App\Models\ShortCourse;
 use App\Models\Sibling;
 use App\Models\Spouse;
 use App\Models\WifeHusbandParents;
@@ -193,6 +196,7 @@ class EmployerController extends Controller
             ->with('addOnCurrentPosition')->with('educationLevel')
             ->with('languageLevel')->with('mother')->with('father')
             ->with('siblings')->with('children')->with('jobHistoryPrivatePublic')
+            ->with('degree_specializes')->with('general_educations')
             ->find($id);
 //        $employer = Employer::with('firstStateJob')->join('first_state_jobs', 'users.id', '=', 'first_state_jobs.emp_id')->where('id', $id);
         if (empty($employer)) {
@@ -493,24 +497,116 @@ class EmployerController extends Controller
             }
 
             //General and Temporary Educations
-            $el_start_date = date('Y-m-d', strtotime($request->el_start_date));
-            $data['el_start_date'] = $el_start_date;
-            $el_end_date = date('Y-m-d', strtotime($request->el_end_date));
-            $data['el_end_date'] = $el_end_date;
-            if (!empty($employer->educationLevel)) {
-                $el = $employer->educationLevel->update($data);
-                if (!$el) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+            if (count($employer->general_educations) >= 1) {
+                $general_educations = GeneralEducation::with('employer')->where('ge_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($general_educations as $general_education) {
+                    $general_education->ge_level_edu = $data['ge_level_edu'][$i];
+                    $general_education->ge_degree = $data['ge_degree'][$i];
+                    $general_education->ge_school = $data['ge_school'][$i];
+                    $general_education->ge_start_date = date('Y-m-d', strtotime($request->ge_start_date[$i]));
+                    $general_education->ge_country = $data['ge_country'][$i];
+                    $general_education->ge_end_date = date('Y-m-d', strtotime($request->ge_end_date[$i]));
+                    $general_education = $general_education->save();
+                    $i++;
+                    if (!$general_education) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             } else {
-                $data['el_emp_id'] = $employer->id;
-                $el = EducationLevel::create($data);
-                if (!$el) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                foreach ($request->ge_level_edu as $key => $level) {
+                    $entry = [
+                        'ge_emp_id' => $employer->id,
+                        'ge_level_edu' => $level,
+                        'ge_degree' => $data['ge_degree'][$key],
+                        'ge_school' => $data['ge_school'][$key],
+                        'ge_country' => $data['ge_country'][$key],
+                        'ge_end_date' => date('Y-m-d', strtotime($data['ge_end_date'][$key])),
+                        'ge_start_date' => date('Y-m-d', strtotime($data['ge_start_date'][$key]))
+                    ];
+                    $general_education = GeneralEducation::create($entry);
+                    if (!$general_education) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             }
+            
+            //Degree Specialize
+            if (count($employer->degree_specializes) >= 1) {
+                $degree_specializes = DegreeSpecialize::with('employer')->where('ds_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($degree_specializes as $degree_specialize) {
+                    $degree_specialize->ds_level_edu = $data['ds_level_edu'][$i];
+                    $degree_specialize->ds_degree = $data['ds_degree'][$i];
+                    $degree_specialize->ds_school = $data['ds_school'][$i];
+                    $degree_specialize->ds_start_date = date('Y-m-d', strtotime($request->ds_start_date[$i]));
+                    $degree_specialize->ds_country = $data['ds_country'][$i];
+                    $degree_specialize->ds_end_date = date('Y-m-d', strtotime($request->ds_end_date[$i]));
+                    $degree_specialize = $degree_specialize->save();
+                    $i++;
+                    if (!$degree_specialize) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            } else {
+                foreach ($request->ds_level_edu as $key => $level) {
+                    $entry = [
+                        'ds_emp_id' => $employer->id,
+                        'ds_level_edu' => $level,
+                        'ds_degree' => $data['ds_degree'][$key],
+                        'ds_school' => $data['ds_school'][$key],
+                        'ds_country' => $data['ds_country'][$key],
+                        'ds_end_date' => date('Y-m-d', strtotime($data['ds_end_date'][$key])),
+                        'ds_start_date' => date('Y-m-d', strtotime($data['ds_start_date'][$key]))
+                    ];
+                    $degree_specialize = DegreeSpecialize::create($entry);
+                    if (!$degree_specialize) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
+            
+            //Short Courses
+            if (count($employer->short_courses) >= 1) {
+                $short_courses = ShortCourse::with('employer')->where('courses_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($short_courses as $short_course) {
+                    $short_course->courses_level_edu = $data['courses_level_edu'][$i];
+                    $short_course->courses_degree = $data['courses_degree'][$i];
+                    $short_course->courses_school = $data['courses_school'][$i];
+                    $short_course->courses_start_date = date('Y-m-d', strtotime($request->courses_start_date[$i]));
+                    $short_course->courses_country = $data['courses_country'][$i];
+                    $short_course->courses_end_date = date('Y-m-d', strtotime($request->courses_end_date[$i]));
+                    $short_course = $short_course->save();
+                    $i++;
+                    if (!$short_course) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            } else {
+                foreach ($request->courses_level_edu as $key => $level) {
+                    $entry = [
+                        'courses_emp_id' => $employer->id,
+                        'courses_level_edu' => $level,
+                        'courses_degree' => $data['courses_degree'][$key],
+                        'courses_school' => $data['courses_school'][$key],
+                        'courses_country' => $data['courses_country'][$key],
+                        'courses_end_date' => date('Y-m-d', strtotime($data['courses_end_date'][$key])),
+                        'courses_start_date' => date('Y-m-d', strtotime($data['courses_start_date'][$key]))
+                    ];
+                    $short_course = ShortCourse::create($entry);
+                    if (!$short_course) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
+
 
             //Language level
             if (count($employer->languageLevel) >= 1) {

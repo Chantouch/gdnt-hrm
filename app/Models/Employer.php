@@ -239,11 +239,35 @@ class Employer extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function educationLevel()
     {
-        return $this->hasOne(EducationLevel::class, 'el_emp_id');
+        return $this->hasMany(EducationLevel::class, 'el_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function general_educations()
+    {
+        return $this->hasMany(GeneralEducation::class, 'ge_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function degree_specializes()
+    {
+        return $this->hasMany(DegreeSpecialize::class, 'ds_emp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function short_courses()
+    {
+        return $this->hasMany(ShortCourse::class, 'courses_emp_id');
     }
 
     /**

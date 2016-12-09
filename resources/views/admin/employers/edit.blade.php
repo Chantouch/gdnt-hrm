@@ -80,7 +80,7 @@
     format: 'yyyy-m-d',
     });
 
-    jQuery('#el_start_date, #el_end_date, #whp_dob, #sp_dob, #m_dob, #f_dob').datepicker({
+    jQuery('#el_end_date, #whp_dob, #sp_dob, #m_dob, #f_dob').datepicker({
     autoclose: true,
     todayHighlight: true,
     format: 'yyyy-m-d',
@@ -223,5 +223,41 @@
     remove_row('div#sibling_form_add');
     });
     {{--End Form Siblings Form--}}
+
+    {{--Start Form General Education Form--}}
+    $('button#general_edu_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form('date_picker', 'general_edu_form', 'general_edu_form_add');
+    });
+
+    $('button#general_edu_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#general_edu_form_add');
+    });
+    {{--End Form General Education Form--}}
+
+    {{--Start Form Degree/Specialize Form--}}
+    $('button#degree_edu_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form('date_picker', 'degree_edu_form', 'degree_edu_form_add');
+    });
+
+    $('button#degree_edu_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#degree_edu_form_add');
+    });
+    {{--End Form Degree/Specialize Form--}}
+
+    {{--Start Form Short Courses Form--}}
+    $('button#courses_edu_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form('date_picker', 'courses_edu_form', 'courses_edu_form_add');
+    });
+
+    $('button#courses_edu_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#courses_edu_form_add');
+    });
+    {{--End Form Short Courses Form--}}
 
 @stop
