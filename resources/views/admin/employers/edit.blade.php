@@ -62,7 +62,7 @@
                 $("#add_language").last().remove()
         }
 
-        $("input.mydatepickers, input.nss_date_pickers, input.hpj_date_picker, input.phj_date_picker, input.aw_date_picker").click(function () {
+        $("input.mydatepickers, input.nss_date_pickers, input.hpj_date_picker, input.phj_date_picker, input.aw_date_picker, input.date_picker").click(function () {
             $(this).datepicker({
                 autoclose: true,
                 todayHighlight: true,
@@ -80,13 +80,13 @@
     format: 'yyyy-m-d',
     });
 
-    jQuery('#el_start_date, #el_end_date, #whp_dob, #sp_dob, #m_dob, #f_dob, #sib_dob, #child_dob').datepicker({
+    jQuery('#el_start_date, #el_end_date, #whp_dob, #sp_dob, #m_dob, #f_dob').datepicker({
     autoclose: true,
     todayHighlight: true,
     format: 'yyyy-m-d',
     });
 
-    $(".mydatepickers, .nss_date_pickers, .hpj_date_picker, .phj_date_picker, .aw_date_picker, .pun_date_picker").datepicker({
+    $(".mydatepickers, .nss_date_pickers, .hpj_date_picker, .phj_date_picker, .aw_date_picker, .pun_date_picker, .date_picker").datepicker({
     autoclose: true,
     todayHighlight: true,
     format: 'yyyy-m-d',
@@ -199,5 +199,29 @@
     remove_row('div#punishment_form_add');
     });
     {{--End Form Punishement Form--}}
+
+    {{--Start Form Children Form--}}
+    $('button#child_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form('date_picker', 'child_form', 'child_form_add');
+    });
+
+    $('button#child_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#child_form_add');
+    });
+    {{--End Form Children Form--}}
+
+    {{--Start Form Siblings Form--}}
+    $('button#sibling_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form('date_picker', 'sibling_form', 'sibling_form_add');
+    });
+
+    $('button#sibling_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#sibling_form_add');
+    });
+    {{--End Form Siblings Form--}}
 
 @stop

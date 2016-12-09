@@ -3,7 +3,7 @@
         <div class="panel-group" id="accordion-public">
 
             {{--1.Personal info--}}
-            @include('admin.employers.personal_info')
+            @include('admin.employers.personal.index')
             {{--1.Personal info--}}
 
             {{--2.Information status Public--}}
@@ -19,7 +19,7 @@
             {{--4.Award / Punishment--}}
 
             {{--5.Education Level--}}
-            @include('admin.employers.edu_level')
+            @include('admin.employers.education_level.index')
             {{--5.Education Level--}}
 
             {{--6.Language level status--}}
@@ -27,7 +27,7 @@
             {{--6.Language level status--}}
 
             {{--7.Family status--}}
-            @include('admin.employers.family_status')
+            @include('admin.employers.family_status.index')
             {{--7.Family status--}}
 
         </div>

@@ -15,8 +15,8 @@
                                 {!! Form::text('pun_doc_number[]', (isset($punishment->pun_doc_number) ? $punishment->pun_doc_number : null), array('placeholder' => 'Enter your doc number','class' => 'form-control')) !!}
                                 @if($errors->has('doc_number'))
                                     <span class="help-block">
-                                    <strong>{!! $errors->first('doc_number') !!}</strong>
-                                </span>
+                                        <strong>{!! $errors->first('doc_number') !!}</strong>
+                                    </span>
                                 @endif
                             </div>
                         </div>
@@ -31,8 +31,8 @@
                                     <i class="icon-calender"></i></span>
                                     @if($errors->has('published_date'))
                                         <span class="help-block">
-                                <strong>{!! $errors->first('published_date') !!}</strong>
-                            </span>
+                                            <strong>{!! $errors->first('published_date') !!}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
@@ -80,6 +80,7 @@
                         </div>
                     </div>
                 @endforeach
+                @el
             @endif
         @else
             <div id="punishment_form_add">

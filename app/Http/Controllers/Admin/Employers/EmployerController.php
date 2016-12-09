@@ -513,17 +513,18 @@ class EmployerController extends Controller
             }
 
             //Language level
-            if (!empty($employer->languageLevel)) {
-                $language = LanguageLevel::where('ll_emp_id', $employer->id)->get();
-                foreach ($language as $lang => $value) {
-                    $update_language = LanguageLevel::with('employer')->find($data['langIds'][$lang]);
-                    $update_language->ll_lang_id = $data['ll_lang_id_' . $value->ll_lang_id];
-                    $update_language->ll_read = $data['ll_read_' . LanguageLevel::clean($value->ll_read)];
-                    $update_language->ll_write = $data['ll_write_' . LanguageLevel::clean($value->ll_write)];
-                    $update_language->ll_listen = $data['ll_listen_' . LanguageLevel::clean($value->ll_listen)];
-                    $update_language->ll_speak = $data['ll_speak_' . LanguageLevel::clean($value->ll_speak)];
-                    $el = $update_language->save();
-                    if (!$el) {
+            if (count($employer->languageLevel) >= 1) {
+                $languages = LanguageLevel::with('employer')->where('ll_emp_id', $employer->id)->get();
+                $i = 0;
+                foreach ($languages as $language) {
+                    $language->ll_lang_id = $data['ll_lang_id'][$i];
+                    $language->ll_read = $data['ll_read'][$i];
+                    $language->ll_write = $data['ll_write'][$i];
+                    $language->ll_listen = $data['ll_listen'][$i];
+                    $language->ll_speak = $data['ll_speak'][$i];
+                    $language = $language->save();
+                    $i++;
+                    if (!$language) {
                         DB::rollbackTransaction();
                         return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
                     }
@@ -539,8 +540,8 @@ class EmployerController extends Controller
                         'll_speak' => $request->ll_speak[$key],
                     ];
 
-                    $el = LanguageLevel::create($data);
-                    if (!$el) {
+                    $language = LanguageLevel::create($data);
+                    if (!$language) {
                         DB::rollbackTransaction();
                         return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
                     }
@@ -602,38 +603,76 @@ class EmployerController extends Controller
             }
 
             //Family Status :: Siblings
-            $sib_dob = date('Y-m-d', strtotime($request->sib_dob));
-            $data['sib_dob'] = $sib_dob;
-            if (!empty($employer->siblings)) {
-                $siblings = $employer->siblings->update($data);
-                if (!$siblings) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+            if (count($employer->siblings) >= 1) {
+                $siblings = Sibling::with('employer')->where('sib_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($siblings as $sibling) {
+                    $sibling->sib_full_name = $data['sib_full_name'][$i];
+                    $sibling->sib_fn_en = $data['sib_fn_en'][$i];
+                    //$sibling->sib_dob = $data['sib_dob'][$i];
+                    $sibling->sib_gender = $data['sib_gender'][$i];
+                    $sibling->sib_job = $data['sib_job'][$i];
+                    $sibling->sib_dob = date('Y-m-d', strtotime($data['sib_dob'][$i]));
+                    $sibling = $sibling->save();
+                    $i++;
+                    if (!$sibling) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             } else {
-                $data['sib_emp_id'] = $employer->id;
-                $siblings = Sibling::create($data);
-                if (!$siblings) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                foreach ($request->sib_full_name as $key => $name) {
+                    $entry = [
+                        'sib_emp_id' => $employer->id,
+                        'sib_full_name' => $name,
+                        'sib_fn_en' => $request->sib_fn_en[$key],
+                        'sib_dob' => $request->sib_dob[$key],
+                        'sib_gender' => $request->sib_gender[$key],
+                        'sib_job' => $request->sib_job[$key]
+                    ];
+                    $sibling = Sibling::create($entry);
+                    if (!$sibling) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             }
 
             //Family Status :: Children
-            $child_dob = date('Y-m-d', strtotime($request->child_dob));
-            $data['child_dob'] = $child_dob;
-            if (!empty($employer->children)) {
-                $children = $employer->children->update($data);
-                if (!$children) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+            if (count($employer->children) >= 1) {
+                $children = Children::with('employer')->where('child_emp_id', '=', $employer->id)->get();
+                $i = 0;
+                foreach ($children as $child) {
+                    $child->child_full_name = $data['child_full_name'][$i];
+                    $child->child_fn_en = $data['child_fn_en'][$i];
+                    //$child->child_dob = $data['child_dob'][$i];
+                    $child->child_gender = $data['child_gender'][$i];
+                    $child->child_job = $data['child_job'][$i];
+                    $child->child_dob = date('Y-m-d', strtotime($data['child_dob'][$i]));
+                    $child->child_subsidy = $data['child_subsidy'][$i];
+                    $child = $child->save();
+                    $i++;
+                    if (!$child) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             } else {
-                $data['child_emp_id'] = $employer->id;
-                $children = Children::create($data);
-                if (!$children) {
-                    DB::rollbackTransaction();
-                    return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                foreach ($request->child_full_name as $key => $name) {
+                    $entry = [
+                        'child_emp_id' => $employer->id,
+                        'child_full_name' => $name,
+                        'child_fn_en' => $request->child_fn_en[$key],
+                        'child_dob' => $request->child_dob[$key],
+                        'child_gender' => $request->child_gender[$key],
+                        'child_job' => $request->child_job[$key],
+                        'child_subsidy' => $request->child_subsidy[$key],
+                    ];
+                    $children = Children::create($entry);
+                    if (!$children) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
                 }
             }
 

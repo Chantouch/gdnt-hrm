@@ -247,11 +247,11 @@ class Employer extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function languageLevel()
     {
-        return $this->hasOne(LanguageLevel::class, 'll_emp_id');
+        return $this->hasMany(LanguageLevel::class, 'll_emp_id');
     }
 
     /**
@@ -287,18 +287,18 @@ class Employer extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function siblings()
     {
-        return $this->hasOne(Sibling::class, 'sib_emp_id');
+        return $this->hasMany(Sibling::class, 'sib_emp_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function children()
     {
-        return $this->hasOne(Children::class, 'child_emp_id');
+        return $this->hasMany(Children::class, 'child_emp_id');
     }
 }

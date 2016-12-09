@@ -259,11 +259,12 @@
 
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('passport_expired_date') ? ' has-error' : '' !!}">
-                    <label for="passport_expired_date" class="control-label"><strong>កាលបរិច្ឆេទផុតកំណត់:</strong></label>
+                    <label for="passport_expired_date"
+                           class="control-label"><strong>កាលបរិច្ឆេទផុតកំណត់:</strong></label>
                     <div class="input-group">
                         {!! Form::text('passport_expired_date', null, array('placeholder' => 'Enter passport expired date','class' => 'form-control', 'id'=>'passport_expired_date')) !!}
-                        <span class="input-group-addon bg-custom b-0 text-white"><i
-                                    class="icon-calender"></i></span>
+                        <span class="input-group-addon bg-custom b-0 text-white">
+                            <i class="icon-calender"></i></span>
                         @if($errors->has('passport_expired_date'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('passport_expired_date') !!}</strong>

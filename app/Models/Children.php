@@ -37,7 +37,12 @@ class Children extends Model
         return $this->belongsTo(Employer::class);
     }
 
-    public function getChildDobAttribute($key)
+    public function setChildDobAttribute($value)
+    {
+        $this->attributes['child_dob'] = Carbon::createFromFormat('Y-m-d', $value);
+    }
+
+    public function getChildDobAttribute()
     {
         return $this->attributes['child_dob'] = Carbon::parse($this->attributes['child_dob'])->format('Y-M-d');
     }
