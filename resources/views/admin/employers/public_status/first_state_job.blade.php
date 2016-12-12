@@ -17,7 +17,7 @@
             <label for="start_date"
                    class="control-label"><strong>កាលបរិច្ឆេទប្រកាសចូលបម្រើការងាររដ្ឋដំបូង:</strong></label>
             <div class="input-group">
-                {!! Form::text('fsj_start_date', (isset($employer->firstStateJob->fsj_start_date)? $employer->firstStateJob->fsj_start_date : null), array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'start_date')) !!}
+                {!! Form::text('fsj_start_date', (isset($employer->firstStateJob->fsj_start_date)? $employer->firstStateJob->fsj_start_date : null), array('placeholder' => 'Select your start date','class' => 'form-control date_picker', 'id'=>'start_date')) !!}
                 <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                 @if($errors->has('fsj_start_date'))
                     <span class="help-block">
@@ -34,7 +34,7 @@
             <label for="permanent_staff_date" class="control-label">
                 <strong>កាលបរិច្ឆេទតាំងស៊ប់:</strong></label>
             <div class="input-group">
-                {!! Form::text('fsj_permanent_staff_date', (isset($employer->firstStateJob->fsj_permanent_staff_date) ? $employer->firstStateJob->fsj_permanent_staff_date : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'fsj_permanent_staff_date')) !!}
+                {!! Form::text('fsj_permanent_staff_date', (isset($employer->firstStateJob->fsj_permanent_staff_date) ? $employer->firstStateJob->fsj_permanent_staff_date : null), array('placeholder' => 'Select permanent Date','class' => 'form-control date_picker', 'id'=>'fsj_permanent_staff_date')) !!}
                 <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                 @if($errors->has('fsj_permanent_staff_date'))
                     <span class="help-block">
@@ -120,8 +120,8 @@
             {!! Form::select('fsj_office_id', (isset($employer->firstStateJob->fsj_office_id) ? (isset($employer->firstStateJob->fsj_office_id) ? $office : null) : $office), (isset($employer->firstStateJob->fsj_office_id) ? $employer->firstStateJob->fsj_office_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
             @if($errors->has('fsj_office_id'))
                 <span class="help-block">
-                            <strong>{!! $errors->first('fsj_office_id') !!}</strong>
-                        </span>
+                    <strong>{!! $errors->first('fsj_office_id') !!}</strong>
+                </span>
             @endif
         </div>
     </div>

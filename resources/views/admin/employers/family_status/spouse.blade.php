@@ -40,16 +40,6 @@
 
     <div class="col-xs-12 col-sm-2 col-md-2">
         <label for="subsidy" class="control-label col-md-12">ស្ថានភាព:</label>
-        {{--<div class="radio radio-info radio-inline">--}}
-        {{--<input type="radio" id="yes" value="yes" name="m_subsidy" checked>--}}
-        {{--{!! Form::radio('sp_status', '1', null) !!}--}}
-        {{--<label for="yes"> Live </label>--}}
-        {{--</div>--}}
-        {{--<div class="radio radio-inline">--}}
-        {{--<input type="radio" id="no" value="no" name="m_subsidy">--}}
-        {{--{!! Form::radio('sp_status', '0', null) !!}--}}
-        {{--<label for="no"> Dead </label>--}}
-        {{--</div>--}}
         {!! Form::select('sp_status', (isset($employer->spouse->sp_status) ? (isset($employer->spouse->sp_status) ? $status : null) : $status), (isset($employer->spouse->sp_status) ? $employer->spouse->sp_status : null), array('placeholder' => 'Select status','class' => 'form-control')) !!}
         @if($errors->has('sp_status'))
             <span class="help-block">
@@ -64,7 +54,7 @@
                 <strong>ថ្ងៃខែឆ្នាំកំណើត:</strong></label>
             <div class="input-group">
                 {{--{!! Form::text('sp_dob', null, array('placeholder' => 'Enter date of birth','class' => 'form-control', 'id'=>'sp_dob')) !!}--}}
-                {!! Form::text('sp_dob', (isset($employer->spouse->sp_dob)? $employer->spouse->sp_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control', 'id'=>'sp_dob')) !!}
+                {!! Form::text('sp_dob', (isset($employer->spouse->sp_dob)? $employer->spouse->sp_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control date_picker', 'id'=>'sp_dob')) !!}
                 <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                 @if($errors->has('sp_dob'))
                     <span class="help-block">

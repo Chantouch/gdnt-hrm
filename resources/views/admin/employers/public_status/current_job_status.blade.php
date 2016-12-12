@@ -33,7 +33,7 @@
                 <strong>កាលបរិច្ឆេទឡើងក្របខណ្ឌឋានន្តរស័ក្តិ និង ថ្នាក់ចុងក្រោយ:</strong></label>
             <div class="input-group">
                 {{--{!! Form::text('cjs_last_date_promoted', null, array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id' => 'cjs_last_date_promoted')) !!}--}}
-                {!! Form::text('cjs_last_date_promoted', (isset($employer->currentJob->cjs_last_date_promoted) ? $employer->currentJob->cjs_last_date_promoted : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'cjs_last_date_promoted')) !!}
+                {!! Form::text('cjs_last_date_promoted', (isset($employer->currentJob->cjs_last_date_promoted) ? $employer->currentJob->cjs_last_date_promoted : null), array('placeholder' => 'Select permanent Date','class' => 'form-control date_picker', 'id'=>'cjs_last_date_promoted')) !!}
                 <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                 @if($errors->has('cjs_last_date_promoted'))
                     <span class="help-block">
@@ -64,7 +64,7 @@
                 <strong>កាលបរិច្ឆេទទទួលមុខតំណែងចុងក្រោយ:</strong></label>
             <div class="input-group">
                 {{--{!! Form::text('cjs_last_date_got_promoted', null, array('placeholder' => 'Select last date got promoted','class' => 'form-control', 'id' => 'cjs_last_date_got_promoted')) !!}--}}
-                {!! Form::text('cjs_last_date_got_promoted', (isset($employer->currentJob->cjs_last_date_got_promoted) ? $employer->currentJob->cjs_last_date_got_promoted : null), array('placeholder' => 'Select permanent Date','class' => 'form-control', 'id'=>'cjs_last_date_got_promoted')) !!}
+                {!! Form::text('cjs_last_date_got_promoted', (isset($employer->currentJob->cjs_last_date_got_promoted) ? $employer->currentJob->cjs_last_date_got_promoted : null), array('placeholder' => 'Select permanent Date','class' => 'form-control date_picker', 'id'=>'cjs_last_date_got_promoted')) !!}
                 <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                 @if($errors->has('last_date_got_promoted'))
                     <span class="help-block">

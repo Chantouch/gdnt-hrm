@@ -30,13 +30,15 @@ class Employer extends Model
     public static function rules()
     {
         return [
-            'full_name' => 'required',
-            'emp_id' => 'required|max:10',
-            'email' => 'required',
-            'id_card' => 'required',
-            'id_card_expired' => 'required',
-            'current_address' => 'required',
-            'place_of_birth' => 'required',
+//            'full_name' => 'required',
+//            'gender' => 'required|in:f,m',
+//            'emp_id' => 'required|max:10|unique:users',
+//            'email' => 'required|unique:users',
+//            'dob' => 'required|date_format:Y-m-d|before:"now -18 year"',
+//            'id_card' => 'required',
+//            'id_card_expired' => 'required',
+//            'current_address' => 'required',
+//            'place_of_birth' => 'required',
         ];
     }
 
@@ -77,15 +79,15 @@ class Employer extends Model
     public static function messages()
     {
         return [
-            'full_name.required' => 'Please fill your full name'
+            'full_name.required' => 'Please fill your full name',
+            'email.unique' => 'លោកអ្នកមិនអាចបញ្ចូលនូវ Email ដែលស្ទួនគ្នាបានទេ',
         ];
     }
 
     /**
-     * @param $value
      * @return string
      */
-    public function setNameAttribute($value)
+    public function setNameAttribute()
     {
         return $this->attributes['name'] = "Default";
     }

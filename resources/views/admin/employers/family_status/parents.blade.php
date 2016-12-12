@@ -39,23 +39,6 @@
     <div class="col-xs-12 col-sm-2 col-md-2">
         <div class="form-group">
             <label for="f_status" class="control-label col-md-12">ស្ថានភាព:</label>
-            {{--<div class="col-md-12">--}}
-            {{--<div class="radio radio-info radio-inline">--}}
-            {{--<input type="radio" id="yes" value="yes" name="m_subsidy" checked>--}}
-            {{--{!! Form::radio('f_status', '1', null) !!}--}}
-            {{--<label for="yes"> Live </label>--}}
-            {{--</div>--}}
-            {{--<div class="radio radio-inline">--}}
-            {{--<input type="radio" id="no" value="no" name="m_subsidy">--}}
-            {{--{!! Form::radio('f_status', '0', null) !!}--}}
-            {{--<label for="no"> Dead </label>--}}
-            {{--</div>--}}
-            {{--@if($errors->has('f_status'))--}}
-            {{--<span class="help-block">--}}
-            {{--<strong>{!! $errors->first('f_status') !!}</strong>--}}
-            {{--</span>--}}
-            {{--@endif--}}
-            {{--</div>--}}
             {!! Form::select('f_status', (isset($employer->father->f_status) ? (isset($employer->father->f_status) ? $status : null) : $status), (isset($employer->father->f_status) ? $employer->father->f_status : null), array('placeholder' => 'Select status','class' => 'form-control')) !!}
             @if($errors->has('f_status'))
                 <span class="help-block">
@@ -71,7 +54,7 @@
                 <strong>ថ្ថៃខែឆ្នាំកំណើត:</strong></label>
             <div class="input-group">
                 {{--{!! Form::text('f_dob', null, array('placeholder' => 'Enter date of birth','class' => 'form-control', 'id'=>'f_dob')) !!}--}}
-                {!! Form::text('f_dob', (isset($employer->father->f_dob)? $employer->father->f_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control', 'id'=>'f_dob')) !!}
+                {!! Form::text('f_dob', (isset($employer->father->f_dob)? $employer->father->f_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control date_picker', 'id'=>'f_dob')) !!}
                 <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                 @if($errors->has('f_dob'))
                     <span class="help-block">
@@ -179,18 +162,6 @@
 
     <div class="col-xs-12 col-sm-2 col-md-2">
         <label for="subsidy" class="control-label col-md-12">ស្ថានភាព:</label>
-        {{--<div class="col-md-12">
-            <div class="radio radio-info radio-inline">
-                --}}{{--<input type="radio" id="yes" value="yes" name="m_subsidy" checked>--}}{{--
-                {!! Form::radio('m_status', '1', null) !!}
-                <label for="yes"> Live </label>
-            </div>
-            <div class="radio radio-inline">
-                --}}{{--<input type="radio" id="no" value="no" name="m_subsidy">--}}{{--
-                {!! Form::radio('m_status', '0', null) !!}
-                <label for="no"> Dead </label>
-            </div>
-        </div>--}}
         {!! Form::select('m_status', (isset($employer->mother->m_status) ? (isset($employer->mother->m_status) ? $status : null) : $status), (isset($employer->mother->m_status) ? $employer->mother->m_status : null), array('placeholder' => 'Select status','class' => 'form-control')) !!}
         @if($errors->has('m_status'))
             <span class="help-block">
@@ -205,7 +176,7 @@
                 <strong>ថ្ងៃខែឆ្នាំកំណើត:</strong></label>
             <div class="input-group">
                 {{--{!! Form::text('m_dob', null, array('placeholder' => 'Enter date of birth','class' => 'form-control', 'id'=>'m_dob')) !!}--}}
-                {!! Form::text('m_dob', (isset($employer->mother->m_dob)? $employer->mother->m_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control', 'id'=>'m_dob')) !!}
+                {!! Form::text('m_dob', (isset($employer->mother->m_dob)? $employer->mother->m_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control date_picker', 'id'=>'m_dob')) !!}
                 <span class="input-group-addon bg-custom b-0 text-white"><i class="icon-calender"></i></span>
                 @if($errors->has('m_dob'))
                     <span class="help-block">

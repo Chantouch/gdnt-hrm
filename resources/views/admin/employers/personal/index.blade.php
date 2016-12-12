@@ -12,11 +12,11 @@
                 <div class="form-group{!! $errors->has('emp_id') ? ' has-error' : '' !!}">
                     <label for="emp_id" class="control-label"><strong>អត្តសញ្ណាណមន្ត្រីរាជការ:</strong></label>
                     {!! Form::text('emp_id', null, array('placeholder' => 'ID Card Staff','class' => 'form-control')) !!}
-                    @if($errors->has('emp_id'))
-                        <span class="help-block">
-                            <strong>{!! $errors->first('emp_id') !!}</strong>
-                        </span>
-                    @endif
+                    {{--@if($errors->has('emp_id'))--}}
+                    {{--<span class="help-block">--}}
+                    {{--<strong>{!! $errors->first('emp_id') !!}</strong>--}}
+                    {{--</span>--}}
+                    {{--@endif--}}
                 </div>
             </div>
 
@@ -50,11 +50,11 @@
                 <div class="form-group{!! $errors->has('full_name') ? ' has-error' : '' !!}">
                     <label for="full_name" class="control-label"><strong>គោត្តនាម-នាម:</strong></label>
                     {!! Form::text('full_name', null, array('placeholder' => 'Full Name','class' => 'form-control')) !!}
-                    @if($errors->has('full_name'))
-                        <span class="help-block">
-                            <strong>{!! $errors->first('full_name') !!}</strong>
-                        </span>
-                    @endif
+                    {{--@if($errors->has('full_name'))--}}
+                    {{--<span class="help-block">--}}
+                    {{--<strong>{!! $errors->first('full_name') !!}</strong>--}}
+                    {{--</span>--}}
+                    {{--@endif--}}
                 </div>
             </div>
 
@@ -93,7 +93,7 @@
                 <div class="form-group{!! $errors->has('dob') ? ' has-error' : '' !!}">
                     <label for="dob" class="control-label"><strong>ថ្ងៃខែឆ្នាំកំណើត:</strong></label>
                     <div class="input-group">
-                        {!! Form::text('dob', null, array('placeholder' => 'Enter Date of birth','class' => 'form-control', 'id'=>'dob')) !!}
+                        {!! Form::text('dob', null, array('placeholder' => 'Enter Date of birth','class' => 'form-control date_picker', 'id'=>'dob')) !!}
                         <span class="input-group-addon bg-custom b-0 text-white"><i
                                     class="icon-calender"></i></span>
                         @if($errors->has('dob'))
@@ -233,7 +233,7 @@
                     <label for="id_card_expired" class="control-label">
                         <strong>កាលបរិច្ឆេទផុតកំណត់:</strong></label>
                     <div class="input-group">
-                        {!! Form::text('id_card_expired', null, array('placeholder' => 'Enter id card expired','class' => 'form-control', 'id'=> 'id_card_expired')) !!}
+                        {!! Form::text('id_card_expired', null, array('placeholder' => 'Enter id card expired','class' => 'form-control date_picker', 'id'=> 'id_card_expired')) !!}
                         <span class="input-group-addon bg-custom b-0 text-white"><i
                                     class="icon-calender"></i></span>
                         @if($errors->has('id_card_expired'))
@@ -262,7 +262,7 @@
                     <label for="passport_expired_date"
                            class="control-label"><strong>កាលបរិច្ឆេទផុតកំណត់:</strong></label>
                     <div class="input-group">
-                        {!! Form::text('passport_expired_date', null, array('placeholder' => 'Enter passport expired date','class' => 'form-control', 'id'=>'passport_expired_date')) !!}
+                        {!! Form::text('passport_expired_date', null, array('placeholder' => 'Enter passport expired date','class' => 'form-control date_picker', 'id'=>'passport_expired_date')) !!}
                         <span class="input-group-addon bg-custom b-0 text-white">
                             <i class="icon-calender"></i></span>
                         @if($errors->has('passport_expired_date'))
