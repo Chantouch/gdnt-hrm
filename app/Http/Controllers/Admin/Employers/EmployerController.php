@@ -43,16 +43,14 @@ class EmployerController extends Controller
     /**
      * EmployerController constructor.
      */
-    protected $firstStateJob;
-    protected $employer;
-    protected $current_job;
 
-    public function __construct(Employer $employer, FirstStateJob $stateJob, CurrentJobStatus $current_job)
+    protected $employer;
+
+
+    public function __construct(Employer $employer)
     {
         $this->middleware('auth');
         $this->employer = $employer;
-        $this->firstStateJob = $stateJob;
-        $this->current_job = $current_job;
     }
 
     /**
@@ -114,14 +112,11 @@ class EmployerController extends Controller
             $data['dob'] = $dob;
             $start_date = date('Y-m-d', strtotime($request->fsj_start_date));
             $data['fsj_start_date'] = $start_date;
-            $office_id = $request->fsj_office_id;
-            //dd($office_id);
             $employer = Employer::create($data);
             $id = $employer->id;
-            $this->firstStateJob->fsj_emp_id = $id;
-            $this->current_job->cjs_emp_id = $id;
-            $first_state_job = $this->firstStateJob->save();
-            //$this->current_job->save();
+            $data['fsj_emp_id'] = $id;
+            $first_state_job = FirstStateJob::create($data);
+
             if (!$employer && $first_state_job) {
                 DB::rollbackTransaction();
                 return redirect()->back()->withErrors($validator)->withInput()->with('error', 'Unable to process your request');
