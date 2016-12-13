@@ -1,8 +1,59 @@
 @extends('layouts.gdnt')
-@section('title', 'Create new user')
+@section('title', 'បន្ថែមបុគ្គលិកថ្មី')
 @section('specific_css')
     <link href="{!! asset('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}"
           rel="stylesheet">
+    <style>
+        ::-webkit-input-placeholder { /* Chrome */
+            opacity: 0.4;
+        }
+
+        :-ms-input-placeholder { /* IE 10+ */
+            opacity: 0.4;
+        }
+
+        ::-moz-placeholder { /* Firefox 19+ */
+            opacity: 0.4;
+        }
+
+        :-moz-placeholder { /* Firefox 4 - 18 */
+            opacity: 0.4;
+        }
+
+        ::-webkit-input-placeholder { /* Chrome */
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus::-webkit-input-placeholder {
+            opacity: 0.69;
+        }
+
+        :-ms-input-placeholder { /* IE 10+ */
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus:-ms-input-placeholder {
+            opacity: 0.69;
+        }
+
+        ::-moz-placeholder { /* Firefox 19+ */
+            opacity: 1;
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus::-moz-placeholder {
+            opacity: 0.69;
+        }
+
+        :-moz-placeholder { /* Firefox 4 - 18 */
+            opacity: 1;
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus:-moz-placeholder {
+            opacity: 0.69;
+        }
+    </style>
 @stop
 @section('content')
     <div class="row">
@@ -83,13 +134,13 @@
     format: 'yyyy-m-d',
     });
 
-    $('#add').on('click', function(e){
+    $('#language_btn_add').on('click', function(e){
     e.preventDefault();
-    addRow();
+    add_row('form_language','form_language_add');
     });
-    $('button#minus').on('click', function(e){
+    $('button#language_btn_remove').on('click', function(e){
     e.preventDefault();
-    removeRow();
+    remove_row("div#form_language_add");
     });
 
     {{--//Start Basic out of frame --}}

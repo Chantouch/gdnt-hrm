@@ -19,7 +19,7 @@
                         <div class="form-group{!! $errors->has('child_full_name') ? ' has-error' : '' !!}">
                             <label for="child_full_name" class="control-label">
                                 <strong>គោត្តនាម និង នាម:</strong></label>
-                            {!! Form::text('child_full_name[]', (isset($child->child_full_name)? $child->child_full_name : null), array('placeholder' => 'Enter your full name','class' => 'form-control')) !!}
+                            {!! Form::text('child_full_name[]', (isset($child->child_full_name)? $child->child_full_name : null), array('placeholder' => 'សូមបញ្ចូលគោត្តនៈនាមនិងនាម','class' => 'form-control')) !!}
                             @if($errors->has('child_full_name'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('child_full_name') !!}</strong>
@@ -31,7 +31,7 @@
                     <div class="col-xs-12 col-sm-5 col-md-5">
                         <div class="form-group{!! $errors->has('child_fn_en') ? ' has-error' : '' !!}">
                             <label for="child_fn_en" class="control-label"><strong>អក្សរឡាតាំង:</strong></label>
-                            {!! Form::text('child_fn_en[]', (isset($child->child_fn_en)? $child->child_fn_en : null), array('placeholder' => 'Enter latin name','class' => 'form-control')) !!}
+                            {!! Form::text('child_fn_en[]', (isset($child->child_fn_en)? $child->child_fn_en : null), array('placeholder' => 'សូមបញ្ចូលជាអក្សរឡាតាំង','class' => 'form-control')) !!}
                             @if($errors->has('child_fn_en'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('child_fn_en') !!}</strong>
@@ -42,7 +42,7 @@
 
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <label for="child_gender" class="control-label col-md-12">ភេទ:</label>
-                        {!! Form::select('child_gender[]', (isset($child->child_gender) ? (isset($child->child_gender) ? $gender : null) : $gender), (isset($child->child_gender) ? $child->child_gender : null), array('placeholder' => 'Select gender','class' => 'form-control')) !!}
+                        {!! Form::select('child_gender[]', (isset($child->child_gender) ? (isset($child->child_gender) ? $gender : null) : $gender), (isset($child->child_gender) ? $child->child_gender : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                         @if($errors->has('child_gender'))
                             <span class="help-block">
                                     <strong>{!! $errors->first('child_gender') !!}</strong>
@@ -70,7 +70,7 @@
                     <div class="col-xs-12 col-sm-5 col-md-5">
                         <div class="form-group{!! $errors->has('child_job') ? ' has-error' : '' !!}">
                             <label for="child_job" class="control-label"><strong>បុខរបរ(អង្គភាព):</strong></label>
-                            {!! Form::text('child_job[]', (isset($child->child_job)? $child->child_job : null), array('placeholder' => 'Enter your current job including department','class' => 'form-control')) !!}
+                            {!! Form::text('child_job[]', (isset($child->child_job)? $child->child_job : null), array('placeholder' => 'សូមបញ្ចូលមុខរបរបច្ចុប្បន្ននិងស្ថាប័នឬអង្គភាព','class' => 'form-control')) !!}
                             @if($errors->has('child_job'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('child_job') !!}</strong>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <label for="subsidy" class="control-label col-md-12">ប្រាក់ឧបត្ថម្ភ:</label>
-                        {!! Form::select('child_subsidy[]', (isset($child->child_subsidy) ? (isset($child->child_subsidy) ? $subsidy : null) : $subsidy), (isset($child->child_subsidy) ? $child->child_subsidy : null), array('placeholder' => 'Select status','class' => 'form-control')) !!}
+                        {!! Form::select('child_subsidy[]', (isset($child->child_subsidy) ? (isset($child->child_subsidy) ? $subsidy : null) : $subsidy), (isset($child->child_subsidy) ? $child->child_subsidy : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                         @if($errors->has('child_subsidy'))
                             <span class="help-block">
                                     <strong>{!! $errors->first('child_subsidy') !!}</strong>
@@ -97,7 +97,7 @@
                             <label for="child_full_name" class="control-label">
                                 <strong>គោត្តនាម និង នាម:</strong>
                             </label>
-                            {!! Form::text('child_full_name[]', (isset($employer->children->child_full_name)? $employer->children->child_full_name : null), array('placeholder' => 'Enter your full name','class' => 'form-control')) !!}
+                            {!! Form::text('child_full_name[]', (isset($employer->children->child_full_name)? $employer->children->child_full_name : null), array('placeholder' => 'សូមបញ្ចូលគោត្តនៈនាមនិងនាម','class' => 'form-control')) !!}
                             @if($errors->has('child_full_name'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('child_full_name') !!}</strong>
@@ -111,7 +111,7 @@
                             <label for="child_fn_en" class="control-label">
                                 <strong>អក្សរឡាតាំង:</strong>
                             </label>
-                            {!! Form::text('child_fn_en[]', (isset($employer->children->child_fn_en)? $employer->children->child_fn_en : null), array('placeholder' => 'Enter latin name','class' => 'form-control')) !!}
+                            {!! Form::text('child_fn_en[]', (isset($employer->children->child_fn_en)? $employer->children->child_fn_en : null), array('placeholder' => 'សូមបញ្ចូលជាអក្សរឡាតាំង','class' => 'form-control')) !!}
                             @if($errors->has('child_fn_en'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('child_fn_en') !!}</strong>
@@ -122,7 +122,7 @@
 
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <label for="child_gender" class="control-label col-md-12">ភេទ:</label>
-                        {!! Form::select('child_gender[]', (isset($employer->children->child_gender) ? (isset($employer->children->child_gender) ? $gender : null) : $gender), (isset($employer->children->child_gender) ? $employer->children->child_gender : null), array('placeholder' => 'Select gender','class' => 'form-control')) !!}
+                        {!! Form::select('child_gender[]', (isset($employer->children->child_gender) ? (isset($employer->children->child_gender) ? $gender : null) : $gender), (isset($employer->children->child_gender) ? $employer->children->child_gender : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                         @if($errors->has('child_gender'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('child_gender') !!}</strong>
@@ -150,7 +150,7 @@
                     <div class="col-xs-12 col-sm-5 col-md-5">
                         <div class="form-group{!! $errors->has('child_job') ? ' has-error' : '' !!}">
                             <label for="child_job" class="control-label"><strong>បុខរបរ(អង្គភាព):</strong></label>
-                            {!! Form::text('child_job[]', (isset($employer->children->child_job)? $employer->children->child_job : null), array('placeholder' => 'Enter your current job including department','class' => 'form-control')) !!}
+                            {!! Form::text('child_job[]', (isset($employer->children->child_job)? $employer->children->child_job : null), array('placeholder' => 'សូមបញ្ចូលមុខរបរបច្ចុប្បន្ននិងស្ថាប័នឬអង្គភាព','class' => 'form-control')) !!}
                             @if($errors->has('child_job'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('child_job') !!}</strong>
@@ -160,7 +160,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <label for="subsidy" class="control-label col-md-12">ប្រាក់ឧបត្ថម្ភ:</label>
-                        {!! Form::select('child_subsidy[]', (isset($employer->children->child_subsidy) ? (isset($employer->children->child_subsidy) ? $subsidy : null) : $subsidy), (isset($employer->children->child_subsidy) ? $employer->children->child_subsidy : null), array('placeholder' => 'Select status','class' => 'form-control')) !!}
+                        {!! Form::select('child_subsidy[]', (isset($employer->children->child_subsidy) ? (isset($employer->children->child_subsidy) ? $subsidy : null) : $subsidy), (isset($employer->children->child_subsidy) ? $employer->children->child_subsidy : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                         @if($errors->has('child_subsidy'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('child_subsidy') !!}</strong>
@@ -174,7 +174,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="col-xs-12 col-sm-2 col-md-2" id="no_salary_div_add">
                         <div class="form-group">
-                            <button type="button" id="child_btn_add" class="btn btn-block btn-default">
+                            <button type="button" id="child_btn_add" class="btn btn-block btn-default waves-effect">
                                 <i class="fa fa-plus-square"></i> បន្ថែម
                             </button>
                         </div>
@@ -183,7 +183,7 @@
                     <div class="col-xs-12 col-sm-2 col-md-2"
                          id="no_salary_div_remove">
                         <div class="form-group">
-                            <button type="button" id="child_btn_remove" class="btn btn-block btn-default">
+                            <button type="button" id="child_btn_remove" class="btn btn-block btn-default waves-effect">
                                 <i class="fa fa-minus-square"></i> ដកចេញ
                             </button>
                         </div>
@@ -197,7 +197,7 @@
                 <div class="col-xs-12 col-sm-5 col-md-5">
                     <div class="form-group{!! $errors->has('child_full_name') ? ' has-error' : '' !!}">
                         <label for="child_full_name" class="control-label"><strong>គោត្តនាម និង នាម:</strong></label>
-                        {!! Form::text('child_full_name[]', (isset($employer->children->child_full_name)? $employer->children->child_full_name : null), array('placeholder' => 'Enter your full name','class' => 'form-control')) !!}
+                        {!! Form::text('child_full_name[]', (isset($employer->children->child_full_name)? $employer->children->child_full_name : null), array('placeholder' => 'សូមបញ្ចូលគោត្តនៈនាមនិងនាម','class' => 'form-control')) !!}
                         @if($errors->has('child_full_name'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('child_full_name') !!}</strong>
@@ -209,7 +209,7 @@
                 <div class="col-xs-12 col-sm-5 col-md-5">
                     <div class="form-group{!! $errors->has('child_fn_en') ? ' has-error' : '' !!}">
                         <label for="child_fn_en" class="control-label"><strong>អក្សរឡាតាំង:</strong></label>
-                        {!! Form::text('child_fn_en[]', (isset($employer->children->child_fn_en)? $employer->children->child_fn_en : null), array('placeholder' => 'Enter latin name','class' => 'form-control')) !!}
+                        {!! Form::text('child_fn_en[]', (isset($employer->children->child_fn_en)? $employer->children->child_fn_en : null), array('placeholder' => 'សូមបញ្ចូលជាអក្សរឡាតាំង','class' => 'form-control')) !!}
                         @if($errors->has('child_fn_en'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('child_fn_en') !!}</strong>
@@ -220,7 +220,7 @@
 
                 <div class="col-xs-12 col-sm-2 col-md-2">
                     <label for="child_gender" class="control-label col-md-12">ភេទ:</label>
-                    {!! Form::select('child_gender[]', (isset($employer->children->child_gender) ? (isset($employer->children->child_gender) ? $gender : null) : $gender), (isset($employer->children->child_gender) ? $employer->children->child_gender : null), array('placeholder' => 'Select gender','class' => 'form-control')) !!}
+                    {!! Form::select('child_gender[]', (isset($employer->children->child_gender) ? (isset($employer->children->child_gender) ? $gender : null) : $gender), (isset($employer->children->child_gender) ? $employer->children->child_gender : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                     @if($errors->has('child_gender'))
                         <span class="help-block">
                             <strong>{!! $errors->first('child_gender') !!}</strong>
@@ -249,7 +249,7 @@
                 <div class="col-xs-12 col-sm-5 col-md-5">
                     <div class="form-group{!! $errors->has('child_job') ? ' has-error' : '' !!}">
                         <label for="child_job" class="control-label"><strong>បុខរបរ(អង្គភាព):</strong></label>
-                        {!! Form::text('child_job[]', (isset($employer->children->child_job)? $employer->children->child_job : null), array('placeholder' => 'Enter your current job including department','class' => 'form-control')) !!}
+                        {!! Form::text('child_job[]', (isset($employer->children->child_job)? $employer->children->child_job : null), array('placeholder' => 'សូមបញ្ចូលមុខរបរបច្ចុប្បន្ននិងស្ថាប័នឬអង្គភាព','class' => 'form-control')) !!}
                         @if($errors->has('child_job'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('child_job') !!}</strong>
@@ -259,7 +259,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2 col-md-2">
                     <label for="subsidy" class="control-label col-md-12">ប្រាក់ឧបត្ថម្ភ:</label>
-                    {!! Form::select('child_subsidy[]', (isset($employer->children->child_subsidy) ? (isset($employer->children->child_subsidy) ? $subsidy : null) : $subsidy), (isset($employer->children->child_subsidy) ? $employer->children->child_subsidy : null), array('placeholder' => 'Select status','class' => 'form-control')) !!}
+                    {!! Form::select('child_subsidy[]', (isset($employer->children->child_subsidy) ? (isset($employer->children->child_subsidy) ? $subsidy : null) : $subsidy), (isset($employer->children->child_subsidy) ? $employer->children->child_subsidy : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                     @if($errors->has('child_subsidy'))
                         <span class="help-block">
                             <strong>{!! $errors->first('child_subsidy') !!}</strong>
@@ -273,7 +273,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="col-xs-12 col-sm-2 col-md-2" id="no_salary_div_add">
                     <div class="form-group">
-                        <button type="button" id="child_btn_add" class="btn btn-block btn-default">
+                        <button type="button" id="child_btn_add" class="btn btn-block btn-default waves-effect">
                             <i class="fa fa-plus-square"></i> បន្ថែម
                         </button>
                     </div>
@@ -282,7 +282,7 @@
                 <div class="col-xs-12 col-sm-2 col-md-2"
                      id="no_salary_div_remove">
                     <div class="form-group">
-                        <button type="button" id="child_btn_remove" class="btn btn-block btn-default">
+                        <button type="button" id="child_btn_remove" class="btn btn-block btn-default waves-effect">
                             <i class="fa fa-minus-square"></i> ដកចេញ
                         </button>
                     </div>

@@ -22,7 +22,7 @@
                                 <label for="courses_level_edu" class="control-label">
                                     <strong>កម្រិត:</strong>
                                 </label>
-                                {!! Form::text('courses_level_edu[]', (isset($short_course->courses_level_edu) ? $short_course->courses_level_edu : null), array('placeholder' => 'Enter education level','class' => 'form-control', 'id'=>'courses_level_edu')) !!}
+                                {!! Form::text('courses_level_edu[]', (isset($short_course->courses_level_edu) ? $short_course->courses_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'courses_level_edu')) !!}
                                 @if($errors->has('courses_level_edu'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('courses_level_edu') !!}</strong>
@@ -36,7 +36,7 @@
                                 <label for="courses_school" class="control-label">
                                     <strong>ឈ្មោះសាលា:</strong>
                                 </label>
-                                {!! Form::text('courses_school[]', (isset($short_course->courses_school) ? $short_course->courses_school : null), array('placeholder' => 'Enter school name','class' => 'form-control', 'id'=>'courses_school')) !!}
+                                {!! Form::text('courses_school[]', (isset($short_course->courses_school) ? $short_course->courses_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'courses_school')) !!}
                                 @if($errors->has('courses_school'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('courses_school') !!}</strong>
@@ -50,7 +50,7 @@
                                 <label for="courses_country" class="control-label">
                                     <strong>ប្រទេស:</strong>
                                 </label>
-                                {!! Form::text('courses_country[]', (isset($short_course->courses_country) ? $short_course->courses_country : null), array('placeholder' => 'Enter country name','class' => 'form-control', 'id'=>'courses_country')) !!}
+                                {!! Form::text('courses_country[]', (isset($short_course->courses_country) ? $short_course->courses_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'courses_country')) !!}
                                 @if($errors->has('courses_country'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('courses_country') !!}</strong>
@@ -62,7 +62,7 @@
                         <div class="col-xs-12 col-sm-6 col-md-6">
                             <div class="form-group{!! $errors->has('courses_degree') ? ' has-error' : '' !!}">
                                 <label for="courses_degree" class="control-label"><strong>ថ្មាក់:</strong></label>
-                                {!! Form::text('courses_degree[]', (isset($short_course->courses_degree) ? $short_course->courses_degree : null), array('placeholder' => 'Enter degree level','class' => 'form-control', 'id'=>'courses_degree')) !!}
+                                {!! Form::text('courses_degree[]', (isset($short_course->courses_degree) ? $short_course->courses_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'courses_degree')) !!}
                                 @if($errors->has('courses_degree'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('courses_degree') !!}</strong>
@@ -75,7 +75,7 @@
                             <div class="form-group{!! $errors->has('courses_start_date') ? ' has-error' : '' !!}">
                                 <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                                 <div class="input-group">
-                                    {!! Form::text('courses_start_date[]', (isset($short_course->courses_start_date) ? $short_course->courses_start_date : null), array('placeholder' => 'Enter start date','class' => 'form-control date_picker', 'id'=>'courses_start_date')) !!}
+                                    {!! Form::text('courses_start_date[]', (isset($short_course->courses_start_date) ? $short_course->courses_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'courses_start_date')) !!}
                                     <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                                     @if($errors->has('courses_start_date'))
@@ -91,7 +91,7 @@
                             <div class="form-group{!! $errors->has('courses_end_date') ? ' has-error' : '' !!}">
                                 <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                                 <div class="input-group">
-                                    {!! Form::text('courses_end_date[]', (isset($short_course->courses_end_date) ? $short_course->courses_end_date : null), array('placeholder' => 'Enter end date','class' => 'form-control date_picker', 'id'=>'courses_end_date')) !!}
+                                    {!! Form::text('courses_end_date[]', (isset($short_course->courses_end_date) ? $short_course->courses_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'courses_end_date')) !!}
                                     <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                                     @if($errors->has('courses_end_date'))
@@ -113,7 +113,7 @@
                         <div class="form-group{!! $errors->has('courses_level_edu') ? ' has-error' : '' !!}">
                             <label for="courses_level_edu" class="control-label">
                                 <strong>កម្រិត:</strong></label>
-                            {!! Form::text('courses_level_edu[]', (isset($employer->educationLevel->courses_level_edu) ? $employer->educationLevel->courses_level_edu : null), array('placeholder' => 'Enter education level','class' => 'form-control', 'id'=>'courses_level_edu')) !!}
+                            {!! Form::text('courses_level_edu[]', (isset($employer->educationLevel->courses_level_edu) ? $employer->educationLevel->courses_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'courses_level_edu')) !!}
                             @if($errors->has('courses_level_edu'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('courses_level_edu') !!}</strong>
@@ -126,7 +126,7 @@
                         <div class="form-group{!! $errors->has('courses_school') ? ' has-error' : '' !!}">
                             <label for="courses_school" class="control-label">
                                 <strong>ឈ្មោះសាលា:</strong></label>
-                            {!! Form::text('courses_school[]', (isset($employer->educationLevel->courses_school) ? $employer->educationLevel->courses_school : null), array('placeholder' => 'Enter school name','class' => 'form-control', 'id'=>'courses_school')) !!}
+                            {!! Form::text('courses_school[]', (isset($employer->educationLevel->courses_school) ? $employer->educationLevel->courses_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'courses_school')) !!}
                             @if($errors->has('courses_school'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('courses_school') !!}</strong>
@@ -139,7 +139,7 @@
                         <div class="form-group{!! $errors->has('courses_country') ? ' has-error' : '' !!}">
                             <label for="courses_country" class="control-label">
                                 <strong>ប្រទេស:</strong></label>
-                            {!! Form::text('courses_country[]', (isset($employer->educationLevel->courses_country) ? $employer->educationLevel->courses_country : null), array('placeholder' => 'Enter country name','class' => 'form-control', 'id'=>'courses_country')) !!}
+                            {!! Form::text('courses_country[]', (isset($employer->educationLevel->courses_country) ? $employer->educationLevel->courses_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'courses_country')) !!}
                             @if($errors->has('courses_country'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('courses_country') !!}</strong>
@@ -151,7 +151,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="form-group{!! $errors->has('courses_degree') ? ' has-error' : '' !!}">
                             <label for="courses_degree" class="control-label"><strong>ថ្មាក់:</strong></label>
-                            {!! Form::text('courses_degree[]', (isset($employer->educationLevel->courses_degree) ? $employer->educationLevel->courses_degree : null), array('placeholder' => 'Enter degree level','class' => 'form-control', 'id'=>'courses_degree')) !!}
+                            {!! Form::text('courses_degree[]', (isset($employer->educationLevel->courses_degree) ? $employer->educationLevel->courses_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'courses_degree')) !!}
                             @if($errors->has('courses_degree'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('courses_degree') !!}</strong>
@@ -164,7 +164,7 @@
                         <div class="form-group{!! $errors->has('courses_start_date') ? ' has-error' : '' !!}">
                             <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                             <div class="input-group">
-                                {!! Form::text('courses_start_date[]', (isset($employer->educationLevel->courses_start_date) ? $employer->educationLevel->courses_start_date : null), array('placeholder' => 'Enter start date','class' => 'form-control date_picker', 'id'=>'courses_start_date')) !!}
+                                {!! Form::text('courses_start_date[]', (isset($employer->educationLevel->courses_start_date) ? $employer->educationLevel->courses_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'courses_start_date')) !!}
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                     <i class="icon-calender"></i></span>
                                 @if($errors->has('courses_start_date'))
@@ -180,7 +180,7 @@
                         <div class="form-group{!! $errors->has('courses_end_date') ? ' has-error' : '' !!}">
                             <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                             <div class="input-group">
-                                {!! Form::text('courses_end_date[]', (isset($employer->educationLevel->courses_end_date) ? $employer->educationLevel->courses_end_date : null), array('placeholder' => 'Enter end date','class' => 'form-control date_picker', 'id'=>'courses_end_date')) !!}
+                                {!! Form::text('courses_end_date[]', (isset($employer->educationLevel->courses_end_date) ? $employer->educationLevel->courses_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'courses_end_date')) !!}
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                     <i class="icon-calender"></i></span>
                                 @if($errors->has('courses_end_date'))
@@ -198,7 +198,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="col-xs-12 col-sm-2 col-md-2" id="no_salary_div_add">
                         <div class="form-group">
-                            <button type="button" id="courses_edu_btn_add" class="btn btn-block btn-default">
+                            <button type="button" id="courses_edu_btn_add" class="btn btn-block btn-default waves-effect">
                                 <i class="fa fa-plus-square"></i> បន្ថែម
                             </button>
                         </div>
@@ -207,7 +207,7 @@
                     <div class="col-xs-12 col-sm-2 col-md-2"
                          id="no_salary_div_remove">
                         <div class="form-group">
-                            <button type="button" id="courses_edu_btn_remove" class="btn btn-block btn-default">
+                            <button type="button" id="courses_edu_btn_remove" class="btn btn-block btn-default waves-effect">
                                 <i class="fa fa-minus-square"></i> ដកចេញ
                             </button>
                         </div>
@@ -223,7 +223,7 @@
                     <div class="form-group{!! $errors->has('courses_level_edu') ? ' has-error' : '' !!}">
                         <label for="courses_level_edu" class="control-label">
                             <strong>កម្រិត:</strong></label>
-                        {!! Form::text('courses_level_edu[]', (isset($employer->educationLevel->courses_level_edu) ? $employer->educationLevel->courses_level_edu : null), array('placeholder' => 'Enter education level','class' => 'form-control', 'id'=>'courses_level_edu')) !!}
+                        {!! Form::text('courses_level_edu[]', (isset($employer->educationLevel->courses_level_edu) ? $employer->educationLevel->courses_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'courses_level_edu')) !!}
                         @if($errors->has('courses_level_edu'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('courses_level_edu') !!}</strong>
@@ -236,7 +236,7 @@
                     <div class="form-group{!! $errors->has('courses_school') ? ' has-error' : '' !!}">
                         <label for="courses_school" class="control-label">
                             <strong>ឈ្មោះសាលា:</strong></label>
-                        {!! Form::text('courses_school[]', (isset($employer->educationLevel->courses_school) ? $employer->educationLevel->courses_school : null), array('placeholder' => 'Enter school name','class' => 'form-control', 'id'=>'courses_school')) !!}
+                        {!! Form::text('courses_school[]', (isset($employer->educationLevel->courses_school) ? $employer->educationLevel->courses_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'courses_school')) !!}
                         @if($errors->has('courses_school'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('courses_school') !!}</strong>
@@ -249,7 +249,7 @@
                     <div class="form-group{!! $errors->has('courses_country') ? ' has-error' : '' !!}">
                         <label for="courses_country" class="control-label">
                             <strong>ប្រទេស:</strong></label>
-                        {!! Form::text('courses_country[]', (isset($employer->educationLevel->courses_country) ? $employer->educationLevel->courses_country : null), array('placeholder' => 'Enter country name','class' => 'form-control', 'id'=>'courses_country')) !!}
+                        {!! Form::text('courses_country[]', (isset($employer->educationLevel->courses_country) ? $employer->educationLevel->courses_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'courses_country')) !!}
                         @if($errors->has('courses_country'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('courses_country') !!}</strong>
@@ -261,7 +261,7 @@
                 <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group{!! $errors->has('courses_degree') ? ' has-error' : '' !!}">
                         <label for="courses_degree" class="control-label"><strong>ថ្មាក់:</strong></label>
-                        {!! Form::text('courses_degree[]', (isset($employer->educationLevel->courses_degree) ? $employer->educationLevel->courses_degree : null), array('placeholder' => 'Enter degree level','class' => 'form-control', 'id'=>'courses_degree')) !!}
+                        {!! Form::text('courses_degree[]', (isset($employer->educationLevel->courses_degree) ? $employer->educationLevel->courses_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'courses_degree')) !!}
                         @if($errors->has('courses_degree'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('courses_degree') !!}</strong>
@@ -274,7 +274,7 @@
                     <div class="form-group{!! $errors->has('courses_start_date') ? ' has-error' : '' !!}">
                         <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                         <div class="input-group">
-                            {!! Form::text('courses_start_date[]', (isset($employer->educationLevel->courses_start_date) ? $employer->educationLevel->courses_start_date : null), array('placeholder' => 'Enter start date','class' => 'form-control date_picker', 'id'=>'courses_start_date')) !!}
+                            {!! Form::text('courses_start_date[]', (isset($employer->educationLevel->courses_start_date) ? $employer->educationLevel->courses_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'courses_start_date')) !!}
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
                             @if($errors->has('courses_start_date'))
@@ -290,7 +290,7 @@
                     <div class="form-group{!! $errors->has('courses_end_date') ? ' has-error' : '' !!}">
                         <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                         <div class="input-group">
-                            {!! Form::text('courses_end_date[]', (isset($employer->educationLevel->courses_end_date) ? $employer->educationLevel->courses_end_date : null), array('placeholder' => 'Enter end date','class' => 'form-control date_picker', 'id'=>'courses_end_date')) !!}
+                            {!! Form::text('courses_end_date[]', (isset($employer->educationLevel->courses_end_date) ? $employer->educationLevel->courses_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'courses_end_date')) !!}
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
                             @if($errors->has('courses_end_date'))
@@ -308,7 +308,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="col-xs-12 col-sm-2 col-md-2" id="no_salary_div_add">
                     <div class="form-group">
-                        <button type="button" id="courses_edu_btn_add" class="btn btn-block btn-default">
+                        <button type="button" id="courses_edu_btn_add" class="btn btn-block btn-default waves-effect">
                             <i class="fa fa-plus-square"></i> បន្ថែម
                         </button>
                     </div>
@@ -317,7 +317,7 @@
                 <div class="col-xs-12 col-sm-2 col-md-2"
                      id="no_salary_div_remove">
                     <div class="form-group">
-                        <button type="button" id="courses_edu_btn_remove" class="btn btn-block btn-default">
+                        <button type="button" id="courses_edu_btn_remove" class="btn btn-block btn-default waves-effect">
                             <i class="fa fa-minus-square"></i> ដកចេញ
                         </button>
                     </div>

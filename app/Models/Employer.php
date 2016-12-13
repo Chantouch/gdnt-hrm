@@ -134,7 +134,7 @@ class Employer extends Model
      */
     public function getDobAttribute()
     {
-        return Carbon::parse($this->attributes['dob'])->format('Y-M-d');
+        return Carbon::parse($this->attributes['dob'])->format('Y-m-d');
     }
 
     /**
@@ -142,7 +142,7 @@ class Employer extends Model
      */
     public function getIdCardExpiredAttribute()
     {
-        return Carbon::parse($this->attributes['id_card_expired'])->format('Y-M-d');
+        return Carbon::parse($this->attributes['id_card_expired'])->format('Y-m-d');
     }
 
     /**
@@ -150,7 +150,7 @@ class Employer extends Model
      */
     public function getPassportExpiredDateAttribute()
     {
-        return Carbon::parse($this->attributes['passport_expired_date'])->format('Y-M-d');
+        return Carbon::parse($this->attributes['passport_expired_date'])->format('Y-m-d');
     }
 
     public function setDepartmentCodeAttribute($value)

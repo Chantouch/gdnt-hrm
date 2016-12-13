@@ -18,7 +18,7 @@
                 <strong>ក្របខណ្ឌឋានន្តរស័ក្តិ និង ថ្នាក់:</strong>
             </label>
             {{--{!! Form::text('cjs_frame_id', null, array('placeholder' => 'Select your frame','class' => 'form-control')) !!}--}}
-            {!! Form::select('cjs_frame_id', (isset($employer->currentJob->cjs_frame_id) ? (isset($employer->currentJob->cjs_frame_id) ? $frame : null) : $frame), (isset($employer->currentJob->cjs_frame_id) ? $employer->currentJob->cjs_frame_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
+            {!! Form::select('cjs_frame_id', (isset($employer->currentJob->cjs_frame_id) ? (isset($employer->currentJob->cjs_frame_id) ? $frame : null) : $frame), (isset($employer->currentJob->cjs_frame_id) ? $employer->currentJob->cjs_frame_id : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
             @if($errors->has('cjs_frame_id'))
                 <span class="help-block">
                             <strong>{!! $errors->first('cjs_frame_id') !!}</strong>
@@ -49,7 +49,7 @@
             <label for="cjs_last_date_promoted" class="control-label">
                 <strong>មុខរបរ:</strong></label>
             {{--{!! Form::text('cjs_occupation_id', null, array('placeholder' => 'Select occupation','class' => 'form-control')) !!}--}}
-            {!! Form::select('cjs_occupation_id', (isset($employer->currentJob->cjs_occupation_id) ? (isset($employer->currentJob->cjs_occupation_id) ? $occupation : null) : $occupation), (isset($employer->currentJob->cjs_occupation_id) ? $employer->currentJob->cjs_occupation_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
+            {!! Form::select('cjs_occupation_id', (isset($employer->currentJob->cjs_occupation_id) ? (isset($employer->currentJob->cjs_occupation_id) ? $occupation : null) : $occupation), (isset($employer->currentJob->cjs_occupation_id) ? $employer->currentJob->cjs_occupation_id : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
             @if($errors->has('cjs_occupation_id'))
                 <span class="help-block">
                             <strong>{!! $errors->first('cjs_occupation_id') !!}</strong>
@@ -80,7 +80,7 @@
             <label for="cjs_department_id" class="control-label">
                 <strong>អគ្គលេខាធិការដ្ឋាន/អគ្គនាយកដ្ឋាន/អគ្គធិការដ្ឋាន/រិទ្យាស្ថាន:</strong></label>
             {{--{!! Form::text('cjs_department_id', null, array('placeholder' => 'Enter your department','class' => 'form-control')) !!}--}}
-            {!! Form::select('cjs_department_id', (isset($employer->currentJob->cjs_department_id) ? (isset($employer->currentJob->cjs_department_id) ? $department : null) : $department), (isset($employer->currentJob->cjs_department_id) ? $employer->currentJob->cjs_department_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
+            {!! Form::select('cjs_department_id', (isset($employer->currentJob->cjs_department_id) ? (isset($employer->currentJob->cjs_department_id) ? $department : null) : $department), (isset($employer->currentJob->cjs_department_id) ? $employer->currentJob->cjs_department_id : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
             @if($errors->has('cjs_department_id'))
                 <span class="help-block">
                             <strong>{!! $errors->first('cjs_department_id') !!}</strong>
@@ -93,8 +93,8 @@
         <div class="form-group{!! $errors->has('cjs_department_unit_id') ? ' has-error' : '' !!}">
             <label for="cjs_department_unit_id" class="control-label">
                 <strong>អគ្គនាយកដ្ឋាន/អង្គភាព/មន្ទីរ:</strong></label>
-            {{--{!! Form::text('cjs_department_unit_id', null, array('placeholder' => 'Select department unit','class' => 'form-control')) !!}--}}
-            {!! Form::select('cjs_department_unit_id', (isset($employer->currentJob->cjs_department_unit_id) ? (isset($employer->currentJob->cjs_department_unit_id) ? $department_unit : null) : $department_unit), (isset($employer->currentJob->cjs_department_unit_id) ? $employer->currentJob->cjs_department_unit_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
+            {{--{!! Form::text('cjs_department_unit_id', null, array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}--}}
+            {!! Form::select('cjs_department_unit_id', (isset($employer->currentJob->cjs_department_unit_id) ? (isset($employer->currentJob->cjs_department_unit_id) ? $department_unit : null) : $department_unit), (isset($employer->currentJob->cjs_department_unit_id) ? $employer->currentJob->cjs_department_unit_id : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
             @if($errors->has('cjs_department_unit_id'))
                 <span class="help-block">
                             <strong>{!! $errors->first('cjs_department_unit_id') !!}</strong>
@@ -108,7 +108,7 @@
             <label for="cjs_office_id" class="control-label">
                 <strong>ការិយាល័យ:</strong></label>
             {{--{!! Form::text('cjs_office_id', null, array('placeholder' => 'Select office','class' => 'form-control')) !!}--}}
-            {!! Form::select('cjs_office_id', (isset($employer->currentJob->cjs_office_id) ? (isset($employer->currentJob->cjs_office_id) ? $office : null) : $office), (isset($employer->currentJob->cjs_office_id) ? $employer->currentJob->cjs_office_id : null), array('placeholder' => 'Select department unit','class' => 'form-control')) !!}
+            {!! Form::select('cjs_office_id', (isset($employer->currentJob->cjs_office_id) ? (isset($employer->currentJob->cjs_office_id) ? $office : null) : $office), (isset($employer->currentJob->cjs_office_id) ? $employer->currentJob->cjs_office_id : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
             @if($errors->has('cjs_office_id'))
                 <span class="help-block">
                             <strong>{!! $errors->first('cjs_office_id') !!}</strong>

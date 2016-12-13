@@ -3,6 +3,58 @@
 @section('specific_css')
     <link href="{!! asset('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}"
           rel="stylesheet">
+    <style>
+        ::-webkit-input-placeholder { /* Chrome */
+            opacity: 0.4;
+        }
+
+        :-ms-input-placeholder { /* IE 10+ */
+            opacity: 0.4;
+        }
+
+        ::-moz-placeholder { /* Firefox 19+ */
+            opacity: 0.4;
+        }
+
+        :-moz-placeholder { /* Firefox 4 - 18 */
+            opacity: 0.4;
+        }
+
+        ::-webkit-input-placeholder { /* Chrome */
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus::-webkit-input-placeholder {
+            opacity: 0.69;
+        }
+
+        :-ms-input-placeholder { /* IE 10+ */
+
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus:-ms-input-placeholder {
+            opacity: 0.69;
+        }
+
+        ::-moz-placeholder { /* Firefox 19+ */
+            opacity: 1;
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus::-moz-placeholder {
+            opacity: 0.69;
+        }
+
+        :-moz-placeholder { /* Firefox 4 - 18 */
+            opacity: 1;
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus:-moz-placeholder {
+            opacity: 0.69;
+        }
+    </style>
 @stop
 
 @section('content')
