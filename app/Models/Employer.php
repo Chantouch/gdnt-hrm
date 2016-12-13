@@ -30,15 +30,15 @@ class Employer extends Model
     public static function rules()
     {
         return [
-//            'full_name' => 'required',
-//            'gender' => 'required|in:f,m',
-//            'emp_id' => 'required|max:10|unique:users',
-//            'email' => 'required|unique:users',
-//            'dob' => 'required|date_format:Y-m-d|before:"now -18 year"',
-//            'id_card' => 'required',
-//            'id_card_expired' => 'required',
-//            'current_address' => 'required',
-//            'place_of_birth' => 'required',
+            'full_name' => 'required',
+            'gender' => 'required|in:f,m',
+            'emp_id' => 'required|max:10|unique:users',
+            'email' => 'required|unique:users',
+            'dob' => 'required|date_format:Y-m-d|before:"now -18 year"',
+            'id_card' => 'required',
+            'id_card_expired' => 'required',
+            'current_address' => 'required',
+            'place_of_birth' => 'required',
         ];
     }
 

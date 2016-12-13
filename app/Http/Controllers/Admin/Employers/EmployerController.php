@@ -143,6 +143,7 @@ class EmployerController extends Controller
             }
 
             //Out of frame status
+//            if (count($employer->outFrameNoSalary) >= 1) {
             foreach ($request->fn_department as $key => $department) {
                 if (!empty($department)) {
                     $entry = [
@@ -158,6 +159,7 @@ class EmployerController extends Controller
                     }
                 }
             }
+//            }
 
             //No Salary Status
             foreach ($request->nss_department as $key => $department) {
