@@ -27,6 +27,7 @@ class HomeController extends Controller
         return view('admin.dashboard', compact('title'));
     }
 
+
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
