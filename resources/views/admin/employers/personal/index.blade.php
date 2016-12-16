@@ -11,7 +11,7 @@
             <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="form-group{!! $errors->has('emp_id') ? ' has-error' : '' !!}">
                     <label for="emp_id" class="control-label"><strong>អត្តសញ្ណាណមន្ត្រីរាជការ:</strong></label>
-                    {!! Form::text('emp_id', null, array('placeholder' => 'សូមបញ្ចូលលេខអត្តសញ្ណាណមន្ត្រីរាជការ','class' => 'form-control')) !!}
+                    {!! Form::text('emp_id', null, array('placeholder' => 'សូមបញ្ចូលលេខអត្តសញ្ណាណមន្ត្រីរាជការ','class' => 'form-control', 'required', 'id' => 'emp_id')) !!}
                     {{--@if($errors->has('emp_id'))--}}
                     {{--<span class="help-block">--}}
                     {{--<strong>{!! $errors->first('emp_id') !!}</strong>--}}
@@ -24,7 +24,7 @@
                 <div class="form-group{!! $errors->has('id_notice_emp') ? ' has-error' : '' !!}">
                     <label for="id_notice_emp" class="control-label">
                         <strong>លេខប័ណ្ឌសម្គាល់មន្ត្រីកសហរ:</strong></label>
-                    {!! Form::text('id_notice_emp', null, array('placeholder' => 'សូមបញ្ចូលលេខប័ណ្ឌសម្គាល់មន្ត្រីកសហរ','class' => 'form-control')) !!}
+                    {!! Form::text('id_notice_emp', null, array('placeholder' => 'សូមបញ្ចូលលេខប័ណ្ឌសម្គាល់មន្ត្រីកសហរ','class' => 'form-control', 'id' => 'id_emp_notice')) !!}
                     @if($errors->has('id_notice_emp'))
                         <span class="help-block">
                             <strong>{!! $errors->first('id_notice_emp') !!}</strong>
@@ -37,7 +37,7 @@
                 <div class="form-group{!! $errors->has('department_code') ? ' has-error' : '' !!}">
                     <label for="department_code" class="control-label">
                         <strong>លេខកូដអង្គភាព:</strong></label>
-                    {!! Form::text('department_code', null, array('placeholder' => 'សូមបញ្ចូលលេខកូដអង្គភាព','class' => 'form-control')) !!}
+                    {!! Form::text('department_code', null, array('placeholder' => 'សូមបញ្ចូលលេខកូដអង្គភាព','class' => 'form-control', 'id' => 'department_code')) !!}
                     @if($errors->has('department_code'))
                         <span class="help-block">
                             <strong>{!! $errors->first('department_code') !!}</strong>
@@ -49,7 +49,8 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('full_name') ? ' has-error' : '' !!}">
                     <label for="full_name" class="control-label"><strong>គោត្តនាម-នាម:</strong></label>
-                    {!! Form::text('full_name', null, array('placeholder' => 'សូមបញ្ចូលគោត្តនាម-នាម','class' => 'form-control')) !!}
+                    {!! Form::text('full_name', null, array('placeholder' => 'សូមបញ្ចូលគោត្តនាម-នាម','class' => 'form-control', 'required')) !!}
+                    {{--<input type="text" name="full_name" class="form-control" value="{!! isset($employer->full_name) ? $employer->full_name : old('full_name') !!}">--}}
                     {{--@if($errors->has('full_name'))--}}
                     {{--<span class="help-block">--}}
                     {{--<strong>{!! $errors->first('full_name') !!}</strong>--}}
@@ -93,15 +94,15 @@
                 <div class="form-group{!! $errors->has('dob') ? ' has-error' : '' !!}">
                     <label for="dob" class="control-label"><strong>ថ្ងៃខែឆ្នាំកំណើត:</strong></label>
                     <div class="input-group">
-                        {!! Form::text('dob', null, array('placeholder' => 'ទម្រង់៖ឆ្នាំខែថ្ងៃ(Y-m-d)','class' => 'form-control date_picker', 'id'=>'dob')) !!}
+                        {!! Form::text('dob', null, array('placeholder' => 'ទម្រង់៖ឆ្នាំខែថ្ងៃ(Y-m-d)','class' => 'form-control', 'id'=>'dob', 'required')) !!}
                         <span class="input-group-addon bg-custom b-0 text-white">
                             <i class="icon-calender"></i>
                         </span>
-                        @if($errors->has('dob'))
-                            <span class="help-block">
-                                <strong>{!! $errors->first('dob') !!}</strong>
-                            </span>
-                        @endif
+                        {{--@if($errors->has('dob'))--}}
+                        {{--<span class="help-block">--}}
+                        {{--<strong>{!! $errors->first('dob') !!}</strong>--}}
+                        {{--</span>--}}
+                        {{--@endif--}}
                     </div>
                 </div>
             </div>
@@ -184,7 +185,7 @@
             <div class="col-xs-12 col-sm-3 col-md-3">
                 <div class="form-group{!! $errors->has('hand_phone') ? ' has-error' : '' !!}">
                     <label for="hand_phone" class="control-label"><strong>លេខទូរសព្ទដៃ:</strong></label>
-                    {!! Form::text('hand_phone', null, array('placeholder' => 'ឧទាហរណ៏៖ 070375783','class' => 'form-control', 'required')) !!}
+                    {!! Form::text('hand_phone', null, array('placeholder' => 'ឧទាហរណ៏៖ 070375783','class' => 'form-control', 'required', 'id' => 'hand_phone')) !!}
                     @if($errors->has('hand_phone'))
                         <span class="help-block">
                             <strong>{!! $errors->first('hand_phone') !!}</strong>
@@ -196,7 +197,7 @@
             <div class="col-xs-12 col-sm-3 col-md-3">
                 <div class="form-group{!! $errors->has('work_phone') ? ' has-error' : '' !!}">
                     <label for="work_phone" class="control-label"><strong>លេខទូរសព្ទធ្វើការ:</strong></label>
-                    {!! Form::text('work_phone', null, array('placeholder' => 'ឧទាហរណ៏៖ 070375783','class' => 'form-control')) !!}
+                    {!! Form::text('work_phone', null, array('placeholder' => 'ឧទាហរណ៏៖ 070375783','class' => 'form-control', 'id' => 'work_phone')) !!}
                     @if($errors->has('work_phone'))
                         <span class="help-block">
                             <strong>{!! $errors->first('work_phone') !!}</strong>
@@ -208,7 +209,7 @@
             <div class="col-xs-12 col-sm-3 col-md-3">
                 <div class="form-group{!! $errors->has('home_phone') ? ' has-error' : '' !!}">
                     <label for="home_phone" class="control-label"><strong>លេខទូរសព្ទផ្ទះ:</strong></label>
-                    {!! Form::text('home_phone', null, array('placeholder' => 'ឧទាហរណ៏៖ 070375783','class' => 'form-control')) !!}
+                    {!! Form::text('home_phone', null, array('placeholder' => 'ឧទាហរណ៏៖ 070375783','class' => 'form-control', 'id' => 'home_phone')) !!}
                     @if($errors->has('home_phone'))
                         <span class="help-block">
                             <strong>{!! $errors->first('home_phone') !!}</strong>
@@ -220,7 +221,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('id_card') ? ' has-error' : '' !!}">
                     <label for="id_card" class="control-label"><strong>អត្តសញ្ញាណប័ណ្ឌ:</strong></label>
-                    {!! Form::text('id_card', null, array('placeholder' => 'ឧទាហរណ៏៖ 012345678','class' => 'form-control')) !!}
+                    {!! Form::text('id_card', null, array('placeholder' => 'ឧទាហរណ៏៖ 012345678','class' => 'form-control', 'id' => 'id_card')) !!}
                     @if($errors->has('id_card'))
                         <span class="help-block">
                             <strong>{!! $errors->first('id_card') !!}</strong>
@@ -249,7 +250,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="form-group{!! $errors->has('passport') ? ' has-error' : '' !!}">
                     <label for="passport" class="control-label"><strong>លិខិតឆ្លងដែន:</strong></label>
-                    {!! Form::text('passport', null, array('placeholder' => 'ឧទាហរណ៏៖ 013354558','class' => 'form-control')) !!}
+                    {!! Form::text('passport', null, array('placeholder' => 'ឧទាហរណ៏៖ 013354558','class' => 'form-control', 'id' => 'passport')) !!}
                     @if($errors->has('passport'))
                         <span class="help-block">
                             <strong>{!! $errors->first('passport') !!}</strong>

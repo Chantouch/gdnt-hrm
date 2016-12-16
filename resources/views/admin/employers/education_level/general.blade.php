@@ -223,7 +223,8 @@
                     <div class="form-group{!! $errors->has('ge_level_edu') ? ' has-error' : '' !!}">
                         <label for="ge_level_edu" class="control-label">
                             <strong>កម្រិត:</strong></label>
-                        {!! Form::text('ge_level_edu[]', (isset($employer->educationLevel->ge_level_edu) ? $employer->educationLevel->ge_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'ge_level_edu')) !!}
+                        {{--{!! Form::text('ge_level_edu[]', (isset($employer->educationLevel->ge_level_edu) ? $employer->educationLevel->ge_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'ge_level_edu')) !!}--}}
+                        <input type="text" name="ge_level_edu[]" class="form-control">
                         @if($errors->has('ge_level_edu'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ge_level_edu') !!}</strong>
@@ -236,7 +237,8 @@
                     <div class="form-group{!! $errors->has('ge_school') ? ' has-error' : '' !!}">
                         <label for="ge_school" class="control-label">
                             <strong>ឈ្មោះសាលា:</strong></label>
-                        {!! Form::text('ge_school[]', (isset($employer->educationLevel->ge_school) ? $employer->educationLevel->ge_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'ge_school')) !!}
+                        {{--{!! Form::text('ge_school[]', (isset($employer->educationLevel->ge_school) ? $employer->educationLevel->ge_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'ge_school')) !!}--}}
+                        <input type="text" name="ge_school[]" class="form-control">
                         @if($errors->has('ge_school'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ge_school') !!}</strong>
@@ -249,7 +251,8 @@
                     <div class="form-group{!! $errors->has('ge_country') ? ' has-error' : '' !!}">
                         <label for="ge_country" class="control-label">
                             <strong>ប្រទេស:</strong></label>
-                        {!! Form::text('ge_country[]', (isset($employer->educationLevel->ge_country) ? $employer->educationLevel->ge_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'ge_country')) !!}
+                        {{--{!! Form::text('ge_country[]', (isset($employer->educationLevel->ge_country) ? $employer->educationLevel->ge_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'ge_country')) !!}--}}
+                        <input type="text" name="ge_country[]" class="form-control">
                         @if($errors->has('ge_country'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ge_country') !!}</strong>
@@ -261,7 +264,8 @@
                 <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group{!! $errors->has('ge_degree') ? ' has-error' : '' !!}">
                         <label for="ge_degree" class="control-label"><strong>ថ្មាក់:</strong></label>
-                        {!! Form::text('ge_degree[]', (isset($employer->educationLevel->ge_degree) ? $employer->educationLevel->ge_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'ge_degree')) !!}
+                        {{--{!! Form::text('ge_degree[]', (isset($employer->educationLevel->ge_degree) ? $employer->educationLevel->ge_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'ge_degree')) !!}--}}
+                        <input type="text" name="ge_degree[]" class="form-control">
                         @if($errors->has('ge_degree'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ge_degree') !!}</strong>
@@ -274,9 +278,11 @@
                     <div class="form-group{!! $errors->has('ge_start_date') ? ' has-error' : '' !!}">
                         <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                         <div class="input-group">
-                            {!! Form::text('ge_start_date[]', (isset($employer->educationLevel->ge_start_date) ? $employer->educationLevel->ge_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'ge_start_date')) !!}
+                            {{--{!! Form::text('ge_start_date[]', (isset($employer->educationLevel->ge_start_date) ? $employer->educationLevel->ge_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'ge_start_date')) !!}--}}
+                            <input type="text" name="ge_start_date[]" class="form-control date_picker">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
+                            <input type="text" name="[]" class="form-control">
                             @if($errors->has('ge_start_date'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('ge_start_date') !!}</strong>
@@ -290,9 +296,11 @@
                     <div class="form-group{!! $errors->has('ge_end_date') ? ' has-error' : '' !!}">
                         <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                         <div class="input-group">
-                            {!! Form::text('ge_end_date[]', (isset($employer->educationLevel->ge_end_date) ? $employer->educationLevel->ge_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'ge_end_date')) !!}
+                            {{--{!! Form::text('ge_end_date[]', (isset($employer->educationLevel->ge_end_date) ? $employer->educationLevel->ge_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'ge_end_date')) !!}--}}
+                            <input type="text" name="ge_end_date[]" class="form-control date_picker">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
+                            <input type="text" name="[]" class="form-control">
                             @if($errors->has('ge_end_date'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('ge_end_date') !!}</strong>

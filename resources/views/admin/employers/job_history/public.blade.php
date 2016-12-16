@@ -241,7 +241,8 @@
                             <strong>ថ្ងៃចូល:</strong>
                         </label>
                         <div class="input-group">
-                            {!! Form::text('phj_start_date[]', (isset($employer->jobHistoryPrivatePublic->phj_start_date) ? $employer->jobHistoryPrivatePublic->phj_start_date : null), array('placeholder' => 'សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ','class' => 'form-control  date_picker', 'id'=>'phj_start_date')) !!}
+                            {{--{!! Form::text('phj_start_date[]', (isset($employer->jobHistoryPrivatePublic->phj_start_date) ? $employer->jobHistoryPrivatePublic->phj_start_date : null), array('placeholder' => 'សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ','class' => 'form-control  date_picker', 'id'=>'phj_start_date')) !!}--}}
+                            <input type="text" name="phj_start_date[]" class="form-control date_picker">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i>
                                     </span>
@@ -260,7 +261,8 @@
                             <strong>ថ្ងៃឈប់:</strong>
                         </label>
                         <div class="input-group">
-                            {!! Form::text('phj_end_date[]', (isset($employer->jobHistoryPrivatePublic->phj_end_date) ? $employer->jobHistoryPrivatePublic->phj_end_date : null), array('placeholder' => 'សូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារ','class' => 'form-control  date_picker', 'id'=>'phj_end_date')) !!}
+                            {{--{!! Form::text('phj_end_date[]', (isset($employer->jobHistoryPrivatePublic->phj_end_date) ? $employer->jobHistoryPrivatePublic->phj_end_date : null), array('placeholder' => 'សូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារ','class' => 'form-control  date_picker', 'id'=>'phj_end_date')) !!}--}}
+                            <input type="text" name="phj_end_date[]" class="form-control date_picker">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i>
                                     </span>
@@ -278,7 +280,8 @@
                         <label for="phj_ministry_institute" class="control-label">
                             <strong>ក្រសួង-ស្ថាប័ន:</strong>
                         </label>
-                        {!! Form::text('phj_ministry_institute[]', (isset($employer->jobHistoryPrivatePublic->phj_ministry_institute) ? $employer->jobHistoryPrivatePublic->phj_ministry_institute : null), array('placeholder' => 'សូមបញ្ចូល ក្រសួងឬស្ថាប័នដែលបំពេញការងារ','class' => 'form-control', 'id'=>'phj_ministry_institute')) !!}
+                        {{--{!! Form::text('phj_ministry_institute[]', (isset($employer->jobHistoryPrivatePublic->phj_ministry_institute) ? $employer->jobHistoryPrivatePublic->phj_ministry_institute : null), array('placeholder' => 'សូមបញ្ចូល ក្រសួងឬស្ថាប័នដែលបំពេញការងារ','class' => 'form-control', 'id'=>'phj_ministry_institute')) !!}--}}
+                        <input type="text" name="phj_ministry_institute[]" class="form-control">
                         @if($errors->has('phj_ministry_institute'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('phj_ministry_institute') !!}</strong>
@@ -292,7 +295,8 @@
                         <label for="phj_department" class="control-label">
                             <strong>អង្គភាព:</strong>
                         </label>
-                        {!! Form::text('phj_department[]', (isset($employer->jobHistoryPrivatePublic->phj_department) ? $employer->jobHistoryPrivatePublic->phj_department : null), array('placeholder' => 'សូមបញ្ចូល អង្គភាពដែលបំពេញការងារ','class' => 'form-control', 'id'=>'phj_department')) !!}
+                        {{--{!! Form::text('phj_department[]', (isset($employer->jobHistoryPrivatePublic->phj_department) ? $employer->jobHistoryPrivatePublic->phj_department : null), array('placeholder' => 'សូមបញ្ចូល អង្គភាពដែលបំពេញការងារ','class' => 'form-control', 'id'=>'phj_department')) !!}--}}
+                        <input type="text" name="phj_department[]" class="form-control">
                         @if($errors->has('phj_department'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('phj_department') !!}</strong>
@@ -306,7 +310,8 @@
                         <label for="phj_occupation" class="control-label">
                             <strong>មុខតំណែង:</strong>
                         </label>
-                        {!! Form::text('phj_occupation[]', (isset($employer->jobHistoryPrivatePublic->phj_occupation) ? $employer->jobHistoryPrivatePublic->phj_occupation : null), array('placeholder' => 'សូមបំពេញ មុខតំណែងដែលបានកាន់កាប់','class' => 'form-control', 'id'=>'phj_occupation')) !!}
+                        {{--{!! Form::text('phj_occupation[]', (isset($employer->jobHistoryPrivatePublic->phj_occupation) ? $employer->jobHistoryPrivatePublic->phj_occupation : null), array('placeholder' => 'សូមបំពេញ មុខតំណែងដែលបានកាន់កាប់','class' => 'form-control', 'id'=>'phj_occupation')) !!}--}}
+                        <input type="text" name="phj_occupation[]" class="form-control">
                         @if($errors->has('phj_occupation'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('phj_occupation') !!}</strong>
@@ -320,7 +325,8 @@
                         <label for="phj_others" class="control-label">
                             <strong>ផ្សេងៗ:</strong>
                         </label>
-                        {!! Form::text('phj_others[]', (isset($employer->jobHistoryPrivatePublic->phj_others) ? $employer->jobHistoryPrivatePublic->phj_others : null), array('placeholder' => 'បើមានអ្វីផ្សេង សូមបញ្ចូលនៅទីនេះ','class' => 'form-control', 'id'=>'phj_others')) !!}
+                        {{--{!! Form::text('phj_others[]', (isset($employer->jobHistoryPrivatePublic->phj_others) ? $employer->jobHistoryPrivatePublic->phj_others : null), array('placeholder' => 'បើមានអ្វីផ្សេង សូមបញ្ចូលនៅទីនេះ','class' => 'form-control', 'id'=>'phj_others')) !!}--}}
+                        <input type="text" name="phj_others[]" class="form-control">
                         @if($errors->has('phj_others'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('phj_others') !!}</strong>
@@ -328,7 +334,6 @@
                         @endif
                     </div>
                 </div>
-                {!! Form::hidden('phj_type[]', 'Public', ['id'=> 'phj_type']) !!}
             </div>
         </div>
         {{--Add more fields--}}

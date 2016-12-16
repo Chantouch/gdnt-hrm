@@ -80,7 +80,8 @@
                 <h2>Create new Employer</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('admin.managements.employers.index') }}"> Back</a>
+                <a class="btn btn-primary waves-effect" href="{{ route('admin.managements.employers.index') }}">
+                    Back</a>
             </div>
         </div>
     </div>
@@ -107,15 +108,6 @@
     <script src="{!! asset('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}"></script>
     <script type="text/javascript">
 
-        function addRow() {
-            $("#add_language:first").clone(true).appendTo('#ll_lang').find('input, select').val('NO');
-            //$("._details:first").clone(true).appendTo('#edu_details').find('.datepicker').val('');
-        }
-        function removeRow() {
-            if ($("#add_language").length != 1)
-                $("#add_language").last().remove()
-        }
-
         $("input.date_picker").click(function () {
             $(this).datepicker({
                 autoclose: true,
@@ -127,6 +119,13 @@
     </script>
 @stop
 @section('script_ready')
+
+    $('#dob').datepicker({
+    todayHighlight: true,
+    endDate: "-18y",
+    autoclose: true,
+    format: "yyyy-m-d",
+    });
 
     $(".date_picker").datepicker({
     autoclose: true,

@@ -156,7 +156,8 @@
                         <label for="fn_department" class="control-label">
                             <strong>ស្ថាប័ន/អង្គភាព:</strong></label>
                         {{--{!! Form::text('fn_department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}--}}
-                        {!! Form::text('fn_department[]', null, array('placeholder' => 'សូមមេត្តាបញ្ចូលស្ថាប័ន/អង្គភាព','class' => 'form-control', 'id'=>'fn_department')) !!}
+                        {{--{!! Form::text('fn_department[]', null, array('placeholder' => 'សូមមេត្តាបញ្ចូលស្ថាប័ន/អង្គភាព','class' => 'form-control', 'id'=>'fn_department')) !!}--}}
+                        <input type="text" name="fn_department[]" placeholder="សូមមេត្តាបញ្ចូលស្ថាប័ន/អង្គភាព" class="form-control">
                         {{--@if($errors->has('fn_department'))--}}
                         {{--<span class="help-block">--}}
                         {{--<strong>{!! $errors->first('fn_department') !!}</strong>--}}
@@ -171,7 +172,8 @@
                             <strong>ថ្ងៃចាប់ផ្តើម:</strong></label>
                         <div class="input-group">
                             {{--{!! Form::text('fn_start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control', 'id'=>'fn_start_date')) !!}--}}
-                            {!! Form::text('fn_start_date[]', null, array('placeholder' => 'សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម','class' => 'form-control  date_picker', 'id'=>'datepicker')) !!}
+                            {{--{!! Form::text('fn_start_date[]', null, array('placeholder' => 'សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម','class' => 'form-control  date_picker', 'id'=>'datepicker')) !!}--}}
+                            <input type="text" name="fn_start_date[]" placeholder="សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម" class="form-control date_picker">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                             {{--@if($errors->has('fn_start_date'))--}}
@@ -189,7 +191,8 @@
                             <strong>ថ្ងៃបញ្ចប់:</strong></label>
                         <div class="input-group">
                             {{--{!! Form::text('fn_end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control', 'id'=>'fn_end_date')) !!}--}}
-                            {!! Form::text('fn_end_date[]', null, array('placeholder' => 'សូមជ្រើសរើសថ្ងៃបញ្ចប់','class' => 'form-control  date_picker', 'id'=>'datepicker')) !!}
+                            {{--{!! Form::text('fn_end_date[]', null, array('placeholder' => 'សូមជ្រើសរើសថ្ងៃបញ្ចប់','class' => 'form-control  date_picker', 'id'=>'datepicker')) !!}--}}
+                            <input type="text" name="fn_end_date[]" placeholder="សូមជ្រើសរើសថ្ងៃបញ្ចប់" class="form-control date_picker">
                             <span class="input-group-addon bg-custom b-0 text-white"><i
                                         class="icon-calender"></i></span>
                             {{--@if($errors->has('fn_end_date'))--}}

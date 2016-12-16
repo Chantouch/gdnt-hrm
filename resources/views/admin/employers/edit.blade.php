@@ -126,6 +126,14 @@
 @stop
 @section('script_ready')
 
+    $('#dob').datepicker({
+    todayHighlight: true,
+    startDate: "-18y",
+    endDate: "-18y",
+    autoclose: true,
+    format: "yyyy-m-d",
+    });
+
     $(".date_picker").datepicker({
     autoclose: true,
     todayHighlight: true,

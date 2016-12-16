@@ -195,7 +195,7 @@
                             <strong>ភាសា:</strong>
                         </label>
                         {!! Form::select('ll_lang_id[]', (isset($lang->ll_lang_id) ? (isset($lang->ll_lang_id) ? $language : null) : $language), (isset($lang->ll_lang_id) ? $lang->ll_lang_id : null), array('placeholder' => '--សូមជ្រើសភាសា--','class' => 'form-control')) !!}
-                        {{--{!! Form::text('ll_lang_id', (isset($lang->ll_lang_id) ? $lang->ll_lang_id : null), array('placeholder' => 'Enter education level','class' => 'form-control', 'id'=>'ll_lang_id')) !!}--}}
+
                         @if($errors->has('ll_lang_id'))
                             <span class="help-block">
                                     <strong>{!! $errors->first('ll_lang_id') !!}</strong>

@@ -197,7 +197,8 @@
                 <div class="col-xs-12 col-sm-5 col-md-5">
                     <div class="form-group{!! $errors->has('child_full_name') ? ' has-error' : '' !!}">
                         <label for="child_full_name" class="control-label"><strong>គោត្តនាម និង នាម:</strong></label>
-                        {!! Form::text('child_full_name[]', (isset($employer->children->child_full_name)? $employer->children->child_full_name : null), array('placeholder' => 'សូមបញ្ចូលគោត្តនៈនាមនិងនាម','class' => 'form-control')) !!}
+                        {{--{!! Form::text('child_full_name[]', (isset($employer->children->child_full_name)? $employer->children->child_full_name : null), array('placeholder' => 'សូមបញ្ចូលគោត្តនៈនាមនិងនាម','class' => 'form-control')) !!}--}}
+                        <input type="text" name="child_full_name[]" class="form-control" id="child_full_name">
                         @if($errors->has('child_full_name'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('child_full_name') !!}</strong>
@@ -209,7 +210,8 @@
                 <div class="col-xs-12 col-sm-5 col-md-5">
                     <div class="form-group{!! $errors->has('child_fn_en') ? ' has-error' : '' !!}">
                         <label for="child_fn_en" class="control-label"><strong>អក្សរឡាតាំង:</strong></label>
-                        {!! Form::text('child_fn_en[]', (isset($employer->children->child_fn_en)? $employer->children->child_fn_en : null), array('placeholder' => 'សូមបញ្ចូលជាអក្សរឡាតាំង','class' => 'form-control')) !!}
+                        {{--{!! Form::text('child_fn_en[]', (isset($employer->children->child_fn_en)? $employer->children->child_fn_en : null), array('placeholder' => 'សូមបញ្ចូលជាអក្សរឡាតាំង','class' => 'form-control')) !!}--}}
+                        <input type="text" name="child_fn_en[]" class="form-control">
                         @if($errors->has('child_fn_en'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('child_fn_en') !!}</strong>
@@ -233,7 +235,8 @@
                         <label for="child_dob" class="control-label">
                             <strong>ថ្ងៃខែកំណើត:</strong></label>
                         <div class="input-group">
-                            {!! Form::text('child_dob[]', (isset($employer->children->child_dob)? $employer->children->child_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control date_picker', 'id'=>'child_dob')) !!}
+                            {{--{!! Form::text('child_dob[]', (isset($employer->children->child_dob)? $employer->children->child_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control date_picker', 'id'=>'child_dob')) !!}--}}
+                            <input type="text" name="child_dob[]" class="form-control">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i>
                             </span>
@@ -249,7 +252,8 @@
                 <div class="col-xs-12 col-sm-5 col-md-5">
                     <div class="form-group{!! $errors->has('child_job') ? ' has-error' : '' !!}">
                         <label for="child_job" class="control-label"><strong>បុខរបរ(អង្គភាព):</strong></label>
-                        {!! Form::text('child_job[]', (isset($employer->children->child_job)? $employer->children->child_job : null), array('placeholder' => 'សូមបញ្ចូលមុខរបរបច្ចុប្បន្ននិងស្ថាប័នឬអង្គភាព','class' => 'form-control')) !!}
+                        {{--{!! Form::text('child_job[]', (isset($employer->children->child_job)? $employer->children->child_job : null), array('placeholder' => 'សូមបញ្ចូលមុខរបរបច្ចុប្បន្ននិងស្ថាប័នឬអង្គភាព','class' => 'form-control')) !!}--}}
+                        <input type="text" name="child_job[]" class="form-control">
                         @if($errors->has('child_job'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('child_job') !!}</strong>

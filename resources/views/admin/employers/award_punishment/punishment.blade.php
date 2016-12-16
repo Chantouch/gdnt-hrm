@@ -181,7 +181,8 @@
                 <div class="col-xs-12 col-sm-6 col-md-6">
                     <div class="form-group{!! $errors->has('doc_number') ? ' has-error' : '' !!}">
                         <label for="doc_number" class="control-label"><strong>លេខឯកសារ:</strong></label>
-                        {!! Form::text('pun_doc_number[]', (isset($punishment->pun_doc_number) ? $punishment->pun_doc_number : null), array('placeholder' => 'ឧទាហរណ៏៖​ 01255456','class' => 'form-control')) !!}
+                        {{--{!! Form::text('pun_doc_number[]', (isset($punishment->pun_doc_number) ? $punishment->pun_doc_number : null), array('placeholder' => 'ឧទាហរណ៏៖​ 01255456','class' => 'form-control')) !!}--}}
+                        <input type="text" name="pun_doc_number[]" class="form-control">
                         @if($errors->has('doc_number'))
                             <span class="help-block">
                                     <strong>{!! $errors->first('doc_number') !!}</strong>
@@ -195,7 +196,8 @@
                     <div class="form-group{!! $errors->has('published_date') ? ' has-error' : '' !!}">
                         <label for="published_date" class="control-label"><strong>កាលបរិច្ឆេទ:</strong></label>
                         <div class="input-group">
-                            {!! Form::text('pun_published_date[]', (isset($punishment->pun_published_date) ? $punishment->pun_published_date : null), array('placeholder' => 'ទម្រង់៖ឆ្នាំខែថ្ងៃ(Y-m-d)','class' => 'form-control  date_picker')) !!}
+                            {{--{!! Form::text('pun_published_date[]', (isset($punishment->pun_published_date) ? $punishment->pun_published_date : null), array('placeholder' => 'ទម្រង់៖ឆ្នាំខែថ្ងៃ(Y-m-d)','class' => 'form-control  date_picker')) !!}--}}
+                            <input type="text" name="pun_doc_number[]" class="form-control date_picker">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                     <i class="icon-calender"></i></span>
                             @if($errors->has('published_date'))
@@ -212,7 +214,8 @@
                     <div class="form-group{!! $errors->has('department') ? ' has-error' : '' !!}">
                         <label for="department" class="control-label">
                             <strong>ស្ថាប័ន/អង្គភាព (ស្នើសុំ):</strong></label>
-                        {!! Form::text('pun_department[]', (isset($punishment->pun_department) ? $punishment->pun_department : null), array('placeholder' => 'សូមបញ្ចូលស្ថប័នឬអង្គភាព','class' => 'form-control')) !!}
+                        {{--{!! Form::text('pun_department[]', (isset($punishment->pun_department) ? $punishment->pun_department : null), array('placeholder' => 'សូមបញ្ចូលស្ថប័នឬអង្គភាព','class' => 'form-control')) !!}--}}
+                        <input type="text" name="pun_department[]" class="form-control">
                         @if($errors->has('department'))
                             <span class="help-block">
                             <strong>{!! $errors->first('department') !!}</strong>
@@ -226,7 +229,8 @@
                     <div class="form-group{!! $errors->has('punish_type') ? ' has-error' : '' !!}">
                         <label for="punish_type" class="control-label">
                             <strong>ប្រភេទ:</strong></label>
-                        {!! Form::text('pun_punish_type[]', (isset($punishment->pun_punish_type) ? $punishment->pun_punish_type : null), array('placeholder' => 'សូមបញ្ចូលប្រភេទ ទណ្ឌកម្ម','class' => 'form-control')) !!}
+                        {{--{!! Form::text('pun_punish_type[]', (isset($punishment->pun_punish_type) ? $punishment->pun_punish_type : null), array('placeholder' => 'សូមបញ្ចូលប្រភេទ ទណ្ឌកម្ម','class' => 'form-control')) !!}--}}
+                        <input type="text" name="pun_punish_type[]" class="form-control">
                         @if($errors->has('punish_type'))
                             <span class="help-block">
                             <strong>{!! $errors->first('punish_type') !!}</strong>
@@ -239,7 +243,8 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group{!! $errors->has('description') ? ' has-error' : '' !!}">
                         <label for="description" class="control-label"><strong>ខ្លឹមសារ:</strong></label>
-                        {!! Form::textarea('pun_description[]', (isset($punishment->pun_description) ? $punishment->pun_description : null), array('placeholder' => 'សូមបញ្ចូលខ្លឹមសារ','class' => 'form-control', 'rows'=> '4')) !!}
+                        {{--{!! Form::textarea('pun_description[]', (isset($punishment->pun_description) ? $punishment->pun_description : null), array('placeholder' => 'សូមបញ្ចូលខ្លឹមសារ','class' => 'form-control', 'rows'=> '4')) !!}--}}
+                        <textarea name="pun_description[]" id="" cols="10" rows="5" class="form-control"></textarea>
                         @if($errors->has('description'))
                             <span class="help-block">
                             <strong>{!! $errors->first('description') !!}</strong>
