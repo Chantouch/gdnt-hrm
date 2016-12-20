@@ -121,20 +121,12 @@
 
     $('button#nss_btn_add').on('click', function(e){
     e.preventDefault();
-    nss_add_row();
-    $('div#no_salary_div_remove').removeClass('hidden');
-    $('div#no_salary_div_remove').addClass('');
-    $('div#no_salary_div_add').removeClass('');
-    $('div#no_salary_div_add').addClass('hidden');
+    add_new_form('date_picker', 'nss_form_add', 'nss_form');
     });
 
     $('button#nss_btn_remove').on('click', function(e){
     e.preventDefault();
     remove_row('div#nss_form');
-    $('div#no_salary_div_remove').removeClass('');
-    $('div#no_salary_div_remove').addClass('hidden');
-    $('div#no_salary_div_add').removeClass('hidden');
-    $('div#no_salary_div_add').addClass('');
     });
 
 

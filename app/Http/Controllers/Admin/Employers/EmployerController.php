@@ -330,19 +330,21 @@ class EmployerController extends Controller
                     }
                 }
             } else {
-                foreach ($request->nss_department as $key => $department) {
-                    $entry = [
-                        'nss_emp_id' => $employer->id,
-                        'nss_department' => $department,
-                        $nss_start_date = date('Y-m-d', strtotime($request->nss_start_date[$key])),
-                        'nss_start_date' => $nss_start_date,
-                        $nss_end_date = date('Y-m-d', strtotime($request->nss_end_date[$key])),
-                        'nss_end_date' => $nss_end_date,
-                    ];
-                    $nss = NoSalaryStatus::create($entry);
-                    if (!$nss) {
-                        DB::rollbackTransaction();
-                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                if (($request->nss_dpartment)) {
+                    foreach ($request->nss_department as $key => $department) {
+                        $entry = [
+                            'nss_emp_id' => $employer->id,
+                            'nss_department' => $department,
+                            $nss_start_date = date('Y-m-d', strtotime($request->nss_start_date[$key])),
+                            'nss_start_date' => $nss_start_date,
+                            $nss_end_date = date('Y-m-d', strtotime($request->nss_end_date[$key])),
+                            'nss_end_date' => $nss_end_date,
+                        ];
+                        $nss = NoSalaryStatus::create($entry);
+                        if (!$nss) {
+                            DB::rollbackTransaction();
+                            return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                        }
                     }
                 }
             }
@@ -532,7 +534,7 @@ class EmployerController extends Controller
                     }
                 }
             }
-            
+
             //Degree Specialize
             if (count($employer->degree_specializes) >= 1) {
                 $degree_specializes = DegreeSpecialize::with('employer')->where('ds_emp_id', '=', $employer->id)->get();
@@ -569,7 +571,7 @@ class EmployerController extends Controller
                     }
                 }
             }
-            
+
             //Short Courses
             if (count($employer->short_courses) >= 1) {
                 $short_courses = ShortCourse::with('employer')->where('courses_emp_id', '=', $employer->id)->get();
