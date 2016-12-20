@@ -33,7 +33,7 @@
                     </p>
                 </div>
                 <div class="pull-right">
-                    <a href="{!! route('admin.managements.employers.create') !!}" class="btn btn-default">
+                    <a href="{!! route('admin.managements.employers.create') !!}" class="btn btn-default waves-effect">
                         <i class="fa fa-plus"></i> Add</a>
                 </div>
 

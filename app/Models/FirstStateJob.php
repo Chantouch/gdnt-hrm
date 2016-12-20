@@ -13,8 +13,10 @@ class FirstStateJob extends Model
         'fsj_permanent_staff_date',
     ];
     protected $fillable = [
-        'fsj_custom1', 'fsj_custom2', 'fsj_department_id', 'fsj_department_unit_id', 'fsj_emp_id', 'fsj_frame_id',
-        'fsj_ministry_id', 'fsj_occupation_id', 'fsj_office_id', 'fsj_others', 'fsj_permanent_staff_date', 'fsj_start_date',
+        'fsj_custom1', 'fsj_custom2', 'fsj_department_id',
+        'fsj_department_unit_id', 'fsj_emp_id', 'fsj_frame_id',
+        'fsj_ministry_id', 'fsj_occupation_id', 'fsj_office_id',
+        'fsj_others', 'fsj_permanent_staff_date', 'fsj_start_date',
     ];
 
     public function getFSJStartDateAttribute()
@@ -44,8 +46,4 @@ class FirstStateJob extends Model
         return $this->hasMany(Employer::class);
     }
 
-    public function getFrameAttribute()
-    {
-        return $this->frame()->pluck('id');
-    }
 }

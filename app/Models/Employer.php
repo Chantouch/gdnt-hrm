@@ -31,12 +31,15 @@ class Employer extends Model
     {
         return [
             'full_name' => 'required',
-            'emp_id' => 'required|max:10',
-            'email' => 'required',
-            'id_card' => 'required',
-            'id_card_expired' => 'required',
-            'current_address' => 'required',
-            'place_of_birth' => 'required',
+            'gender' => 'required|in:f,m',
+            'emp_id' => 'required|max:10|unique:users',
+            'email' => 'required|unique:users',
+            'dob' => 'required|date_format:Y-m-d|before:"now -18 year"',
+            //'id_card' => 'required',
+            //'id_card_expired' => 'required',
+            //'current_address' => 'required',
+            //'place_of_birth' => 'required',
+            'hand_phone' => 'numeric'
         ];
     }
 
@@ -63,7 +66,7 @@ class Employer extends Model
             case 'PUT':
             case 'PATCH': {
                 return [
-                    'email' => 'required|email|unique:users,email,' . $id . ',id',
+                    'email' => 'email|unique:users,email,' . $id . ',id',
                 ];
             }
             default:
@@ -77,15 +80,15 @@ class Employer extends Model
     public static function messages()
     {
         return [
-            'full_name.required' => 'Please fill your full name'
+            'full_name.required' => 'Please fill your full name',
+            'email.unique' => 'លោកអ្នកមិនអាចបញ្ចូលនូវ Email ដែលស្ទួនគ្នាបានទេ',
         ];
     }
 
     /**
-     * @param $value
      * @return string
      */
-    public function setNameAttribute($value)
+    public function setNameAttribute()
     {
         return $this->attributes['name'] = "Default";
     }
@@ -132,7 +135,7 @@ class Employer extends Model
      */
     public function getDobAttribute()
     {
-        return Carbon::parse($this->attributes['dob'])->format('Y-M-d');
+        return Carbon::parse($this->attributes['dob'])->format('Y-m-d');
     }
 
     /**
@@ -140,7 +143,7 @@ class Employer extends Model
      */
     public function getIdCardExpiredAttribute()
     {
-        return Carbon::parse($this->attributes['id_card_expired'])->format('Y-M-d');
+        return Carbon::parse($this->attributes['id_card_expired'])->format('Y-m-d');
     }
 
     /**
@@ -148,7 +151,7 @@ class Employer extends Model
      */
     public function getPassportExpiredDateAttribute()
     {
-        return Carbon::parse($this->attributes['passport_expired_date'])->format('Y-M-d');
+        return Carbon::parse($this->attributes['passport_expired_date'])->format('Y-m-d');
     }
 
     public function setDepartmentCodeAttribute($value)

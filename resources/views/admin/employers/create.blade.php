@@ -1,8 +1,59 @@
 @extends('layouts.gdnt')
-@section('title', 'Create new user')
+@section('title', 'បន្ថែមបុគ្គលិកថ្មី')
 @section('specific_css')
     <link href="{!! asset('assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') !!}"
           rel="stylesheet">
+    <style>
+        ::-webkit-input-placeholder { /* Chrome */
+            opacity: 0.4;
+        }
+
+        :-ms-input-placeholder { /* IE 10+ */
+            opacity: 0.4;
+        }
+
+        ::-moz-placeholder { /* Firefox 19+ */
+            opacity: 0.4;
+        }
+
+        :-moz-placeholder { /* Firefox 4 - 18 */
+            opacity: 0.4;
+        }
+
+        ::-webkit-input-placeholder { /* Chrome */
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus::-webkit-input-placeholder {
+            opacity: 0.69;
+        }
+
+        :-ms-input-placeholder { /* IE 10+ */
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus:-ms-input-placeholder {
+            opacity: 0.69;
+        }
+
+        ::-moz-placeholder { /* Firefox 19+ */
+            opacity: 1;
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus::-moz-placeholder {
+            opacity: 0.69;
+        }
+
+        :-moz-placeholder { /* Firefox 4 - 18 */
+            opacity: 1;
+            transition: opacity 250ms ease-in-out;
+        }
+
+        :focus:-moz-placeholder {
+            opacity: 0.69;
+        }
+    </style>
 @stop
 @section('content')
     <div class="row">
@@ -29,7 +80,8 @@
                 <h2>Create new Employer</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('admin.managements.employers.index') }}"> Back</a>
+                <a class="btn btn-primary waves-effect" href="{{ route('admin.managements.employers.index') }}">
+                    Back</a>
             </div>
         </div>
     </div>
@@ -48,7 +100,6 @@
     </div>
 @stop
 
-
 @section('specific_js')
     <script src="{!! asset('js/employer_edit_form.js') !!}"></script>
 @stop
@@ -57,16 +108,7 @@
     <script src="{!! asset('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}"></script>
     <script type="text/javascript">
 
-        function addRow() {
-            $("#add_language:first").clone(true).appendTo('#ll_lang').find('input, select').val('NO');
-            //$("._details:first").clone(true).appendTo('#edu_details').find('.datepicker').val('');
-        }
-        function removeRow() {
-            if ($("#add_language").length != 1)
-                $("#add_language").last().remove()
-        }
-
-        $("input.mydatepickers, input.nss_date_pickers, input.hpj_date_picker, input.phj_date_picker, input.aw_date_picker").click(function () {
+        $("input.date_picker").click(function () {
             $(this).datepicker({
                 autoclose: true,
                 todayHighlight: true,
@@ -76,115 +118,82 @@
 
     </script>
 @stop
-
 @section('script_ready')
 
-    jQuery('#cjs_last_date_promoted, #passport_expired_date, #dob, #id_card_expired, #start_date, #fsj_permanent_staff_date, #cjs_last_date_got_promoted, #acp_start_date').datepicker({
+    $('#dob').datepicker({
+    todayHighlight: true,
+    endDate: "-18y",
+    autoclose: true,
+    format: "yyyy-m-d",
+    });
+
+    $(".date_picker").datepicker({
     autoclose: true,
     todayHighlight: true,
     format: 'yyyy-m-d',
     });
 
-    jQuery('#el_start_date, #el_end_date, #whp_dob, #sp_dob, #m_dob, #f_dob, #sib_dob').datepicker({
-    autoclose: true,
-    todayHighlight: true,
-    format: 'yyyy-m-d',
-    });
-
-    $(".mydatepickers, .nss_date_pickers, .hpj_date_picker, .phj_date_picker, .aw_date_picker, .pun_date_picker, .date_picker").datepicker({
-    autoclose: true,
-    todayHighlight: true,
-    format: 'yyyy-m-d',
-    });
-
-    $('#add').on('click', function(e){
+    $('#language_btn_add').on('click', function(e){
     e.preventDefault();
-    addRow();
+    add_row('form_language','form_language_add');
     });
-    $('button#minus').on('click', function(e){
+    $('button#language_btn_remove').on('click', function(e){
     e.preventDefault();
-    removeRow();
+    remove_row("div#form_language_add");
     });
 
+    {{--//Start Basic out of frame --}}
     $('button#out_frame_btn_add').on('click', function(e){
     e.preventDefault();
-    add_out_frame();
-    $('div#out_frame_div_remove').removeClass('hidden');
-    $('div#out_frame_div_remove').addClass('');
-    $('div#out_frame_div_add').removeClass('');
-    $('div#out_frame_div_add').addClass('hidden');
+    add_new_form('date_picker', 'more_frame', 'add_frame');
     });
 
     $('button#out_frame_btn_remove').on('click', function(e){
     e.preventDefault();
     remove_row("div#add_frame");
-    $('div#out_frame_div_remove').removeClass('');
-    $('div#out_frame_div_remove').addClass('hidden');
-    $('div#out_frame_div_add').removeClass('hidden');
-    $('div#out_frame_div_add').addClass('');
     });
+    {{--//End Basic out of frame --}}
 
+    {{--//Start No Salary Status--}}
     $('button#nss_btn_add').on('click', function(e){
     e.preventDefault();
-    nss_add_row();
-    $('div#no_salary_div_remove').removeClass('hidden');
-    $('div#no_salary_div_remove').addClass('');
-    $('div#no_salary_div_add').removeClass('');
-    $('div#no_salary_div_add').addClass('hidden');
+    add_new_form('date_picker', 'nss_form_add', 'nss_form');
     });
 
     $('button#nss_btn_remove').on('click', function(e){
     e.preventDefault();
     remove_row('div#nss_form');
-    $('div#no_salary_div_remove').removeClass('');
-    $('div#no_salary_div_remove').addClass('hidden');
-    $('div#no_salary_div_add').removeClass('hidden');
-    $('div#no_salary_div_add').addClass('');
     });
+    {{--//End No Salary Status--}}
 
-
+    {{--//Start History Private Job--}}
     $('button#hpj_btn_add').on('click', function(e){
     e.preventDefault();
     add_new_form_private();
-    $('div#private_btn_remove').removeClass('hidden');
-    $('div#private_btn_remove').addClass('');
-    $('div#private_btn_add').removeClass('');
-    $('div#private_btn_add').addClass('hidden');
     });
 
     $('button#hpj_btn_remove').on('click', function(e){
     e.preventDefault();
     remove_row('div#hpj_add_form');
-    $('div#private_btn_remove').removeClass('');
-    $('div#private_btn_remove').addClass('hidden');
-    $('div#private_btn_add').removeClass('hidden');
-    $('div#private_btn_add').addClass('');
     });
+    {{--//End History Private Job--}}
 
     {{--Form Public History Job--}}
     $('button#phj_btn_add').on('click', function(e){
     e.preventDefault();
-    add_new_form_public();
-    $('div#public_div_remove').removeClass('hidden');
-    $('div#public_div_remove').addClass('');
-    $('div#public_div_add').removeClass('');
-    $('div#public_div_add').addClass('hidden');
+    add_new_form('date_picker', 'public_add_form', 'public_form');
     });
 
     $('button#phj_btn_remove').on('click', function(e){
     e.preventDefault();
     remove_row('div#public_form');
-    $('div#public_div_remove').removeClass('');
-    $('div#public_div_remove').addClass('hidden');
-    $('div#public_div_add').removeClass('hidden');
-    $('div#public_div_add').addClass('');
     });
     {{--End form public history job--}}
 
     {{--Start Form Award Form--}}
     $('button#aw_btn_add').on('click', function(e){
     e.preventDefault();
-    add_new_form_award();
+    add_new_form('date_picker', 'award_form', 'award_form_add');
     });
 
     $('button#aw_btn_remove').on('click', function(e){
@@ -196,7 +205,7 @@
     {{--Start Form Punishment Form--}}
     $('button#pun_btn_add').on('click', function(e){
     e.preventDefault();
-    add_new_form_punishment();
+    add_new_form('date_picker', 'punishment_form', 'punishment_form_add');
     });
 
     $('button#pun_btn_remove').on('click', function(e){
@@ -215,6 +224,54 @@
     e.preventDefault();
     remove_row('div#child_form_add');
     });
-    {{--End Form Punishement Form--}}
+    {{--End Form Children Form--}}
+
+    {{--Start Form Siblings Form--}}
+    $('button#sibling_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form('date_picker', 'sibling_form', 'sibling_form_add');
+    });
+
+    $('button#sibling_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#sibling_form_add');
+    });
+    {{--End Form Siblings Form--}}
+
+    {{--Start Form General Education Form--}}
+    $('button#general_edu_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form('date_picker', 'general_edu_form', 'general_edu_form_add');
+    });
+
+    $('button#general_edu_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#general_edu_form_add');
+    });
+    {{--End Form General Education Form--}}
+
+    {{--Start Form Degree/Specialize Form--}}
+    $('button#degree_edu_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form('date_picker', 'degree_edu_form', 'degree_edu_form_add');
+    });
+
+    $('button#degree_edu_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#degree_edu_form_add');
+    });
+    {{--End Form Degree/Specialize Form--}}
+
+    {{--Start Form Short Courses Form--}}
+    $('button#courses_edu_btn_add').on('click', function(e){
+    e.preventDefault();
+    add_new_form('date_picker', 'courses_edu_form', 'courses_edu_form_add');
+    });
+
+    $('button#courses_edu_btn_remove').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#courses_edu_form_add');
+    });
+    {{--End Form Short Courses Form--}}
 
 @stop

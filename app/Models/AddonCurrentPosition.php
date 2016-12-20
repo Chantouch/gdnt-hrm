@@ -30,4 +30,18 @@ class AddonCurrentPosition extends Model
     {
         return $this->attributes['acp_start_date'] = Carbon::parse($this->attributes['acp_start_date'])->format('Y-m-d');
     }
+
+    public static function rules()
+    {
+        return [
+
+        ];
+    }
+
+    public static function messages()
+    {
+        return [
+
+        ];
+    }
 }

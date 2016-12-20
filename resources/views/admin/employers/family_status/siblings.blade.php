@@ -20,7 +20,7 @@
                         <div class="form-group{!! $errors->has('sib_full_name') ? ' has-error' : '' !!}">
                             <label for="sib_full_name" class="control-label"><strong>គោត្តនាម-នាម:</strong></label>
                             {{--{!! Form::text('sib_full_name', null, array('placeholder' => 'Enter full name','class' => 'form-control')) !!}--}}
-                            {!! Form::text('sib_full_name[]', (isset($sibling->sib_full_name)? $sibling->sib_full_name : null), array('placeholder' => 'Enter your full name','class' => 'form-control')) !!}
+                            {!! Form::text('sib_full_name[]', (isset($sibling->sib_full_name)? $sibling->sib_full_name : null), array('placeholder' => 'សូមបញ្ចូលគោត្តនៈនាមនិងនាម','class' => 'form-control')) !!}
                             @if($errors->has('sib_full_name'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('sib_full_name') !!}</strong>
@@ -33,7 +33,7 @@
                         <div class="form-group{!! $errors->has('sib_fn_en') ? ' has-error' : '' !!}">
                             <label for="sib_fn_en" class="control-label"><strong>ជាអក្សរឡាតាំង:</strong></label>
                             {{--{!! Form::text('sib_fn_en', null, array('placeholder' => 'Enter latin name','class' => 'form-control')) !!}--}}
-                            {!! Form::text('sib_fn_en[]', (isset($sibling->sib_fn_en)? $sibling->sib_fn_en : null), array('placeholder' => 'Enter latin name','class' => 'form-control')) !!}
+                            {!! Form::text('sib_fn_en[]', (isset($sibling->sib_fn_en)? $sibling->sib_fn_en : null), array('placeholder' => 'សូមបញ្ចូលជាអក្សរឡាតាំង','class' => 'form-control')) !!}
                             @if($errors->has('sib_fn_en'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('sib_fn_en') !!}</strong>
@@ -44,7 +44,7 @@
 
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <label for="sib_gender" class="control-label col-md-12">ភេទ:</label>
-                        {!! Form::select('sib_gender[]', (isset($sibling->sib_gender) ? (isset($sibling->sib_gender) ? $gender : null) : $gender), (isset($sibling->sib_gender) ? $sibling->sib_gender : null), array('placeholder' => 'Select gender','class' => 'form-control')) !!}
+                        {!! Form::select('sib_gender[]', (isset($sibling->sib_gender) ? (isset($sibling->sib_gender) ? $gender : null) : $gender), (isset($sibling->sib_gender) ? $sibling->sib_gender : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                         @if($errors->has('sib_gender'))
                             <span class="help-block">
                                     <strong>{!! $errors->first('sib_gender') !!}</strong>
@@ -74,7 +74,7 @@
                         <div class="form-group{!! $errors->has('sib_job') ? ' has-error' : '' !!}">
                             <label for="sib_job" class="control-label"><strong>មុខរបរ:</strong></label>
                             {{--{!! Form::text('sib_job', null, array('placeholder' => 'Enter job','class' => 'form-control')) !!}--}}
-                            {!! Form::text('sib_job[]', (isset($sibling->sib_job)? $sibling->sib_job : null), array('placeholder' => 'Enter your current job including department','class' => 'form-control')) !!}
+                            {!! Form::text('sib_job[]', (isset($sibling->sib_job)? $sibling->sib_job : null), array('placeholder' => 'សូមបញ្ចូលមុខរបរបច្ចុប្បន្ន ជាមួយនិងស្ថាប័នឬអង្គភាព','class' => 'form-control')) !!}
                             @if($errors->has('sib_job'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('sib_job') !!}</strong>
@@ -84,14 +84,14 @@
                     </div>
                 </div>
             @endforeach
-            @else
+        @else
             <div id="sibling_form">
                 <div id="sibling_form_add">
                     <div class="col-xs-12 col-sm-5 col-md-5">
                         <div class="form-group{!! $errors->has('sib_full_name') ? ' has-error' : '' !!}">
                             <label for="sib_full_name" class="control-label"><strong>គោត្តនាម-នាម:</strong></label>
                             {{--{!! Form::text('sib_full_name', null, array('placeholder' => 'Enter full name','class' => 'form-control')) !!}--}}
-                            {!! Form::text('sib_full_name[]', (isset($employer->siblings->sib_full_name)? $employer->siblings->sib_full_name : null), array('placeholder' => 'Enter your full name','class' => 'form-control')) !!}
+                            {!! Form::text('sib_full_name[]', (isset($employer->siblings->sib_full_name)? $employer->siblings->sib_full_name : null), array('placeholder' => 'សូមបញ្ចូលគោត្តនៈនាមនិងនាម','class' => 'form-control')) !!}
                             @if($errors->has('sib_full_name'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('sib_full_name') !!}</strong>
@@ -104,7 +104,7 @@
                         <div class="form-group{!! $errors->has('sib_fn_en') ? ' has-error' : '' !!}">
                             <label for="sib_fn_en" class="control-label"><strong>ជាអក្សរឡាតាំង:</strong></label>
                             {{--{!! Form::text('sib_fn_en', null, array('placeholder' => 'Enter latin name','class' => 'form-control')) !!}--}}
-                            {!! Form::text('sib_fn_en[]', (isset($employer->siblings->sib_fn_en)? $employer->siblings->sib_fn_en : null), array('placeholder' => 'Enter latin name','class' => 'form-control')) !!}
+                            {!! Form::text('sib_fn_en[]', (isset($employer->siblings->sib_fn_en)? $employer->siblings->sib_fn_en : null), array('placeholder' => 'សូមបញ្ចូលឈ្មោះឡាតាំង','class' => 'form-control')) !!}
                             @if($errors->has('sib_fn_en'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('sib_fn_en') !!}</strong>
@@ -115,7 +115,7 @@
 
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <label for="sib_gender" class="control-label col-md-12">ភេទ:</label>
-                        {!! Form::select('sib_gender[]', (isset($employer->siblings->sib_gender) ? (isset($employer->siblings->sib_gender) ? $gender : null) : $gender), (isset($employer->siblings->sib_gender) ? $employer->siblings->sib_gender : null), array('placeholder' => 'Select gender','class' => 'form-control')) !!}
+                        {!! Form::select('sib_gender[]', (isset($employer->siblings->sib_gender) ? (isset($employer->siblings->sib_gender) ? $gender : null) : $gender), (isset($employer->siblings->sib_gender) ? $employer->siblings->sib_gender : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                         @if($errors->has('sib_gender'))
                             <span class="help-block">
                             <strong>{!! $errors->first('sib_gender') !!}</strong>
@@ -145,7 +145,7 @@
                         <div class="form-group{!! $errors->has('sib_job') ? ' has-error' : '' !!}">
                             <label for="sib_job" class="control-label"><strong>មុខរបរ:</strong></label>
                             {{--{!! Form::text('sib_job', null, array('placeholder' => 'Enter job','class' => 'form-control')) !!}--}}
-                            {!! Form::text('sib_job[]', (isset($employer->siblings->sib_job)? $employer->siblings->sib_job : null), array('placeholder' => 'Enter your current job including department','class' => 'form-control')) !!}
+                            {!! Form::text('sib_job[]', (isset($employer->siblings->sib_job)? $employer->siblings->sib_job : null), array('placeholder' => 'សូមបញ្ចូលមុខរបរបច្ចុប្បន្ន ជាមួយនិងស្ថាប័នឬអង្គភាព','class' => 'form-control')) !!}
                             @if($errors->has('sib_job'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('sib_job') !!}</strong>
@@ -160,7 +160,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="col-xs-12 col-sm-2 col-md-2" id="no_salary_div_add">
                         <div class="form-group">
-                            <button type="button" id="sibling_btn_add" class="btn btn-block btn-default">
+                            <button type="button" id="sibling_btn_add" class="btn btn-block btn-default waves-effect">
                                 <i class="fa fa-plus-square"></i> បន្ថែម
                             </button>
                         </div>
@@ -169,7 +169,7 @@
                     <div class="col-xs-12 col-sm-2 col-md-2"
                          id="no_salary_div_remove">
                         <div class="form-group">
-                            <button type="button" id="sibling_btn_remove" class="btn btn-block btn-default">
+                            <button type="button" id="sibling_btn_remove" class="btn btn-block btn-default waves-effect">
                                 <i class="fa fa-minus-square"></i> ដកចេញ
                             </button>
                         </div>
@@ -184,7 +184,8 @@
                     <div class="form-group{!! $errors->has('sib_full_name') ? ' has-error' : '' !!}">
                         <label for="sib_full_name" class="control-label"><strong>គោត្តនាម-នាម:</strong></label>
                         {{--{!! Form::text('sib_full_name', null, array('placeholder' => 'Enter full name','class' => 'form-control')) !!}--}}
-                        {!! Form::text('sib_full_name[]', (isset($employer->siblings->sib_full_name)? $employer->siblings->sib_full_name : null), array('placeholder' => 'Enter your full name','class' => 'form-control')) !!}
+                        {{--{!! Form::text('sib_full_name[]', (isset($employer->siblings->sib_full_name)? $employer->siblings->sib_full_name : null), array('placeholder' => 'សូមបញ្ចូលគោត្តនៈនាមនិងនាម','class' => 'form-control')) !!}--}}
+                        <input type="text" name="sib_full_name[]" class="form-control">
                         @if($errors->has('sib_full_name'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('sib_full_name') !!}</strong>
@@ -197,7 +198,8 @@
                     <div class="form-group{!! $errors->has('sib_fn_en') ? ' has-error' : '' !!}">
                         <label for="sib_fn_en" class="control-label"><strong>ជាអក្សរឡាតាំង:</strong></label>
                         {{--{!! Form::text('sib_fn_en', null, array('placeholder' => 'Enter latin name','class' => 'form-control')) !!}--}}
-                        {!! Form::text('sib_fn_en[]', (isset($employer->siblings->sib_fn_en)? $employer->siblings->sib_fn_en : null), array('placeholder' => 'Enter latin name','class' => 'form-control')) !!}
+                        {{--{!! Form::text('sib_fn_en[]', (isset($employer->siblings->sib_fn_en)? $employer->siblings->sib_fn_en : null), array('placeholder' => 'សូមបញ្ចូលឈ្មោះឡាតាំង','class' => 'form-control')) !!}--}}
+                        <input type="text" name="sib_fn_en[]" class="form-control">
                         @if($errors->has('sib_fn_en'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('sib_fn_en') !!}</strong>
@@ -208,7 +210,8 @@
 
                 <div class="col-xs-12 col-sm-2 col-md-2">
                     <label for="sib_gender" class="control-label col-md-12">ភេទ:</label>
-                    {!! Form::select('sib_gender[]', (isset($employer->siblings->sib_gender) ? (isset($employer->siblings->sib_gender) ? $gender : null) : $gender), (isset($employer->siblings->sib_gender) ? $employer->siblings->sib_gender : null), array('placeholder' => 'Select gender','class' => 'form-control')) !!}
+                    {!! Form::select('sib_gender[]', (isset($employer->siblings->sib_gender) ? (isset($employer->siblings->sib_gender) ? $gender : null) : $gender), (isset($employer->siblings->sib_gender) ? $employer->siblings->sib_gender : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
+                    {{--<input type="text" name="sib_gender[]" class="form-control">--}}
                     @if($errors->has('sib_gender'))
                         <span class="help-block">
                             <strong>{!! $errors->first('sib_gender') !!}</strong>
@@ -222,7 +225,8 @@
                             <strong>ថ្ងៃខែឆ្នាំកំណើត:</strong></label>
                         <div class="input-group">
                             {{--{!! Form::text('sib_dob', null, array('placeholder' => 'Enter date of birth','class' => 'form-control', 'id'=>'sib_dob')) !!}--}}
-                            {!! Form::text('sib_dob[]', (isset($employer->siblings->sib_dob)? $employer->siblings->sib_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control date_picker', 'id'=>'sib_dob')) !!}
+                            {{--{!! Form::text('sib_dob[]', (isset($employer->siblings->sib_dob)? $employer->siblings->sib_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control date_picker', 'id'=>'sib_dob')) !!}--}}
+                            <input type="text" name="sib_dob[]" class="form-control">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
                             @if($errors->has('sib_dob'))
@@ -238,7 +242,8 @@
                     <div class="form-group{!! $errors->has('sib_job') ? ' has-error' : '' !!}">
                         <label for="sib_job" class="control-label"><strong>មុខរបរ:</strong></label>
                         {{--{!! Form::text('sib_job', null, array('placeholder' => 'Enter job','class' => 'form-control')) !!}--}}
-                        {!! Form::text('sib_job[]', (isset($employer->siblings->sib_job)? $employer->siblings->sib_job : null), array('placeholder' => 'Enter your current job including department','class' => 'form-control')) !!}
+                        {{--{!! Form::text('sib_job[]', (isset($employer->siblings->sib_job)? $employer->siblings->sib_job : null), array('placeholder' => 'សូមបញ្ចូលមុខរបរបច្ចុប្បន្ន ជាមួយនិងស្ថាប័នឬអង្គភាព','class' => 'form-control')) !!}--}}
+                        <input type="text" name="sib_job[]" class="form-control">
                         @if($errors->has('sib_job'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('sib_job') !!}</strong>
@@ -253,7 +258,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="col-xs-12 col-sm-2 col-md-2" id="no_salary_div_add">
                     <div class="form-group">
-                        <button type="button" id="sibling_btn_add" class="btn btn-block btn-default">
+                        <button type="button" id="sibling_btn_add" class="btn btn-block btn-default waves-effect">
                             <i class="fa fa-plus-square"></i> បន្ថែម
                         </button>
                     </div>
@@ -262,7 +267,7 @@
                 <div class="col-xs-12 col-sm-2 col-md-2"
                      id="no_salary_div_remove">
                     <div class="form-group">
-                        <button type="button" id="sibling_btn_remove" class="btn btn-block btn-default">
+                        <button type="button" id="sibling_btn_remove" class="btn btn-block btn-default waves-effect">
                             <i class="fa fa-minus-square"></i> ដកចេញ
                         </button>
                     </div>
