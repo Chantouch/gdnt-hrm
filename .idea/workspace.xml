@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="268d3325-ba6a-493d-a6bf-106b18bc1d78" name="Default" comment="- modified many files">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+=======
+    <list default="true" id="268d3325-ba6a-493d-a6bf-106b18bc1d78" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gdnt-hrm.iml" afterPath="$PROJECT_DIR$/.idea/gdnt-hrm.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Employers/EmployerController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Employers/EmployerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/employers/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/employers/edit.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/employers/public_status/free_no_salary_status.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/employers/public_status/free_no_salary_status.blade.php" />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
     </list>
     <ignored path="gdnt-hrm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -21,27 +30,118 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="gdnt-hrm" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <file leaf-file-name="EmployerController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Employers/EmployerController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="0">
+              <caret line="353" column="101" lean-forward="false" selection-start-line="353" selection-start-column="101" selection-end-line="353" selection-end-column="101" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="entrust.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/entrust.php">
+      <file leaf-file-name="fields.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/fields.blade.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="264">
+              <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+=======
+            <state relative-caret-position="0">
+              <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/job_history/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="480">
               <caret line="27" column="62" lean-forward="true" selection-start-line="27" selection-start-column="62" selection-end-line="27" selection-end-column="62" />
+=======
+            <state relative-caret-position="0">
+              <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="public.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/job_history/public.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="119" column="53" lean-forward="false" selection-start-line="119" selection-start-column="53" selection-end-line="119" selection-end-column="53" />
+              <folding>
+                <marker date="1481205438411" expanded="true" signature="1030:1256" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="1042:1254" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="2446:2661" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="2458:2659" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="3818:4067" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="3830:4065" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="4971:5181" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="4983:5179" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="6068:6278" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="6080:6276" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="8277:8555" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="8289:8553" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="9582:9849" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="9594:9847" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="10855:11156" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="10867:11154" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="11900:12162" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="11912:12160" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="12889:13151" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="12901:13149" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="13866:14112" ph="..." />
+                <marker date="1481205438411" expanded="true" signature="13878:14110" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/edit.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="124" column="7" lean-forward="false" selection-start-line="124" selection-start-column="7" selection-end-line="124" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="employer_edit_form.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/js/employer_edit_form.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="181" column="21" lean-forward="false" selection-start-line="181" selection-start-column="9" selection-end-line="181" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Employer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Employer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="324" column="5" lean-forward="false" selection-start-line="324" selection-start-column="5" selection-end-line="324" selection-end-column="5" />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
               <folding />
             </state>
           </provider>
@@ -58,68 +158,68 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mydatepickers</find>
-      <find>hpj_date_picker</find>
-      <find>aw_date_picker</find>
-      <find>phj_date_picker</find>
-      <find>pun_date_picker</find>
-      <find>date</find>
-      <find>Enter your doc number</find>
-      <find>Select your published date</find>
-      <find>Enter department</find>
-      <find>Enter your description</find>
-      <find>Enter education level</find>
-      <find>សូមបញ្ចូលឈ្នោះសាលារៀន</find>
-      <find>Enter school name</find>
-      <find>Enter country name</find>
-      <find>Enter degree level</find>
-      <find>Enter start date</find>
-      <find>Enter end date</find>
-      <find>btn-</find>
-      <find>--Select your known language--</find>
-      <find>--Select your ability--</find>
-      <find>Enter place of birth</find>
-      <find>btn-default</find>
-      <find>0.5</find>
-      <find>Select department unit</find>
-      <find>fsj_office_id</find>
-      <find>btn btn-block btn-default waves-effect</find>
-      <find>$employer-&gt;id</find>
+      <find>pun</find>
+      <find>$punishment</find>
+      <find>pun_</find>
+      <find>ap_type</find>
+      <find>$employer-&gt;languageLevel</find>
+      <find>$employer-&gt;children</find>
+      <find>$employer-&gt;siblings</find>
+      <find>child_dob</find>
+      <find>$sib</find>
+      <find>child_</find>
+      <find>sib_dob</find>
       <find>dob</find>
-      <find>phone</find>
-      <find>//</find>
+      <find>$employer-&gt;educationLevel</find>
+      <find>el_start_date</find>
+      <find>general_edu_btn_add</find>
+      <find>el_</find>
+      <find>Ge</find>
+      <find>general_</find>
+      <find>$general_education</find>
+      <find>ge_</find>
+      <find>de_</find>
+      <find>ds</find>
+      <find>degree_</find>
+      <find>$education</find>
+      <find>$degree_specialize</find>
+      <find>ds_</find>
+      <find>Ds</find>
+      <find>nss_form_add</find>
+      <find>nss_date_pickers</find>
+      <find>nss_btn_add</find>
     </findStrings>
     <replaceStrings>
+      <replace>nss_start_date</replace>
+      <replace>nss_end_date</replace>
+      <replace>noSalaryStatus</replace>
+      <replace>phj</replace>
+      <replace>$history</replace>
+      <replace>phj_</replace>
+      <replace>ap_published_date</replace>
+      <replace>pun</replace>
+      <replace>$punishment</replace>
+      <replace>aw</replace>
+      <replace>aw_</replace>
+      <replace>$award</replace>
+      <replace>aw_type</replace>
+      <replace>$lang</replace>
+      <replace>$child</replace>
+      <replace>$sibling</replace>
+      <replace>sibling</replace>
+      <replace>sibling_</replace>
+      <replace>$education</replace>
+      <replace>ge_</replace>
+      <replace>Ds</replace>
+      <replace>degree_</replace>
+      <replace>de_</replace>
+      <replace>$degree_specializes</replace>
+      <replace>$degree_specialize</replace>
+      <replace>ds_</replace>
+      <replace>$short_course</replace>
+      <replace>courses_</replace>
+      <replace>Courses</replace>
       <replace>date_picker</replace>
-      <replace>nss_form</replace>
-      <replace>nss_form_add</replace>
-      <replace>ឧទាហរណ៏៖​ 01255456</replace>
-      <replace>ទម្រង់៖ឆ្នាំខែថ្ងៃ(Y-m-d)</replace>
-      <replace>សូមបញ្ចូលស្ថប័នឬអង្គភាព</replace>
-      <replace>សូមបញ្ចូលខ្លឹមសារ</replace>
-      <replace>សូមបញ្ចូលកម្រិតវប្បធម៏</replace>
-      <replace>សូមបញ្ចូលឈ្នោះសាលារៀន</replace>
-      <replace>សូមបញ្ចូលប្រទេស</replace>
-      <replace>សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)</replace>
-      <replace>ៃចាប់ផ្តើមសិក្សា</replace>
-      <replace>ថ្ងៃចាប់ផ្តើមសិក្សា</replace>
-      <replace>ថ្ងៃបញ្ចប់ការសិក្សា</replace>
-      <replace>btn-default​ឹា</replace>
-      <replace>--សូមជ្រើសភាសា--</replace>
-      <replace>--សូមជ្រើសរើសកម្រិត--</replace>
-      <replace>សូមបញ្ចូលសញ្ជាតិ</replace>
-      <replace>សូមបញ្ចូលជនជាតិ</replace>
-      <replace>សូមបញ្ចូលថ្ងៃខែឆ្នាំកំណើត</replace>
-      <replace>សូមបញ្ចូលគោត្តនៈនាមនិងនាម</replace>
-      <replace>សូមបញ្ចូលជាអក្សរឡាតាំង</replace>
-      <replace>សូមបញ្ចូលមុខរបរបច្ចុប្បន្ននិងស្ថាប័នឬអង្គភាព</replace>
-      <replace>btn-default waves-effect</replace>
-      <replace>0.69</replace>
-      <replace>--សូមជ្រើសរើស--</replace>
-      <replace>btn btn-block btn-default waves-effect</replace>
-      <replace>$emp_id</replace>
-      <replace>http://hrm.treasury.gov.kh</replace>
-      <replace>\\</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -128,57 +228,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/personal_info.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/Children.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Employers/GeneralEducationController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_12_09_135208_create_general_education_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/GeneralEducation.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_12_09_152534_create_degree_specialize_table.php" />
-        <option value="$PROJECT_DIR$/app/Models/DegreeSpecialize.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_12_09_155520_create_short_course_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/education_level/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/ShortCourse.php" />
-        <option value="$PROJECT_DIR$/app/Models/AddonCurrentPosition.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/public_status/addon_current_job.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/FirstStateJob.php" />
+        <option value="$PROJECT_DIR$/app/Models/AwardPunishment.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/award_punishment.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/award_punishment/award.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_12_08_142533_create_punishment_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/Punishment.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_12_08_152318_create_award_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/Award.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/employers/award_punishment/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/job_history/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/spouse.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/parents.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/public_status/addon_current_job.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/employers/public_status/current_job_status.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/employers/public_status/first_state_job.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/employers/public_status/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/OutFrameNoSalary.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/public_status/free_no_salary_status.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/private_job.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/job_history.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/job_history/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/public_status/out_basic_frame_status.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/employers/job_history/public.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/employers/job_history/private.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/award_punishment/punishment.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/education_level/general.blade.php" />
-        <option value="$PROJECT_DIR$/public/plugins/index.html" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/education_level/degree_specialize.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/education_level/short_course.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/languages/fields.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/fields.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/siblings.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/children.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/employers/award_punishment/awards.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/public_status/out_basic_frame_status.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/Employer.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/employers/personal/index.blade.php" />
-        <option value="$PROJECT_DIR$/public/js/employer_edit_form.js" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/bootstrap/cache/config.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/FrontController.php" />
-        <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/menu.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Employers/EmployerController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/language_levels.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/languages/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/languages/fields.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/edu_level.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/Mother.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/father.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/spouse.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/fields.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/personal_info.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Children.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/employers/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/award_punishment/punishment.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/children.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/family_status/siblings.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Employers/GeneralEducationController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_12_09_135208_create_general_education_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/education_level/general.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/GeneralEducation.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_12_09_152534_create_degree_specialize_table.php" />
+        <option value="$PROJECT_DIR$/app/Models/DegreeSpecialize.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/education_level/degree_specialize.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_12_09_155520_create_short_course_table.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/education_level/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/education_level/short_course.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/ShortCourse.php" />
+        <option value="$PROJECT_DIR$/app/Models/Employer.php" />
+        <option value="$PROJECT_DIR$/public/js/employer_edit_form.js" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/public_status/free_no_salary_status.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/employers/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Employers/EmployerController.php" />
       </list>
     </option>
   </component>
@@ -281,10 +381,10 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
@@ -302,7 +402,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="Scratches" />
+=======
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -312,6 +415,212 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="personal" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="employers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="employers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public_status" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="employers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="job_history" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -339,23 +648,113 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+<<<<<<< HEAD
+        </subPane>
+      </pane>
+=======
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gdnt-hrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="//192.168.100.217/Share/IT/18_Sek_Chantouch/developments/hrms" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="menu.bl&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/resources/views/layouts/menu.blade.php&#10;edit.blade&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/resources/views/admin/employers/edit_lang.blade.php&#10;EmpCon&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/app/Http/Controllers/Admin/Employers/EmployerController.php&#10;Empl&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/app/Models/Employer.php&#10;menu.b&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/resources/views/layouts/menu.blade.php&#10;we&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/routes/web.php&#10;kern&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/app/Http/Kernel.php&#10;menu&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/resources/views/layouts/menu.blade.php&#10;web&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/routes/web.php&#10;WE&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/routes/web.php&#10;web.b&#9;null&#9;null&#10;me&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/vendor/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php&#10;meu&#9;null&#9;null&#10;men&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/resources/views/layouts/menu.blade.php&#10;wenb&#9;null&#9;null&#10;eb&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/routes/web.php&#10;web.p&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/routes/web.php&#10;mail&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/config/mail.php" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/database/migrations/2016_12_09_152534_create_degree_specialize_table.php&#10;edit.blade&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/resources/views/admin/employers/edit_lang.blade.php&#10;EmpCon&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/app/Http/Controllers/Admin/Employers/EmployerController.php&#10;Empl&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/app/Models/Employer.php&#10;menu.b&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/resources/views/layouts/menu.blade.php&#10;we&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/routes/web.php&#10;kern&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/app/Http/Kernel.php&#10;menu&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/resources/views/layouts/menu.blade.php&#10;web&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/routes/web.php&#10;WE&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/routes/web.php&#10;web.b&#9;null&#9;null&#10;me&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/vendor/monolog/monolog/src/Monolog/Processor/MemoryUsageProcessor.php&#10;meu&#9;null&#9;null&#10;men&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/resources/views/layouts/menu.blade.php&#10;wenb&#9;null&#9;null&#10;eb&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/routes/web.php&#10;web.p&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/routes/web.php&#10;mail&#9;FILE&#9;file://D:/Chantouch/Development/gdnt-hrm/config/mail.php" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/resources/views/admin/modules" />
     <property name="js.eslint.eslintPackage" value="" />
   </component>
@@ -366,51 +765,14 @@
       <recent name="D:\Chantouch\Development\gdnt-hrm\app\Http\Controllers\Admin\Modules" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Chantouch\Development\gdnt-hrm\app\Http\Controllers" />
-      <recent name="D:\Chantouch\Development\gdnt-hrm\public\front_end" />
       <recent name="D:\Chantouch\Development\gdnt-hrm\resources\views\admin\employers\education_level" />
       <recent name="D:\Chantouch\Development\gdnt-hrm" />
       <recent name="D:\Chantouch\Development\gdnt-hrm\resources\views\admin\employers" />
+      <recent name="D:\Chantouch\Development\gdnt-hrm\resources\views\admin\modules" />
+      <recent name="D:\Chantouch\Development\gdnt-hrm\resources\views\admin\modules\ministries" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ErlangApplicationRunConfiguration" factoryName="Erlang Application" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="debugOptions">
-        <ErlangDebugOptions>
-          <option name="autoUpdateModulesNotToInterpret" value="true" />
-          <option name="modulesNotToInterpret">
-            <set />
-          </option>
-        </ErlangDebugOptions>
-      </option>
-      <option name="erlFlags" value="" />
-      <option name="moduleAndFunction" value="" />
-      <option name="params" value="" />
-      <option name="useTestCodePath" value="false" />
-      <option name="workDirectory" />
-      <module />
-      <method />
-    </configuration>
-    <configuration default="true" type="ErlangUnitRunConfigurationType" factoryName="Erlang Eunit" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="debugOptions">
-        <ErlangDebugOptions>
-          <option name="autoUpdateModulesNotToInterpret" value="true" />
-          <option name="modulesNotToInterpret">
-            <set />
-          </option>
-        </ErlangDebugOptions>
-      </option>
-      <option name="workDirectory" />
-      <module />
-      <option name="functionNames">
-        <set />
-      </option>
-      <option name="kind" value="MODULE" />
-      <option name="moduleNames">
-        <set />
-      </option>
-      <method />
-    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -436,12 +798,6 @@
     </configuration>
     <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
       <PhpTestRunnerSettings />
-      <method />
-    </configuration>
-    <configuration default="true" type="RebarEunitRunConfigurationType" factoryName="Erlang Rebar Eunit" show_console_on_std_err="false" show_console_on_std_out="false">
-      <option name="command" value="eunit" />
-      <option name="skipDependencies" value="true" />
-      <module />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -505,6 +861,7 @@
       <workItem from="1480985956655" duration="29399000" />
       <workItem from="1481111299721" duration="25000" />
       <workItem from="1481158888567" duration="30404000" />
+<<<<<<< HEAD
       <workItem from="1481244310764" duration="25929000" />
       <workItem from="1481504831906" duration="26331000" />
       <workItem from="1481591748711" duration="17059000" />
@@ -513,6 +870,11 @@
       <workItem from="1481855303936" duration="3450000" />
       <workItem from="1481864004269" duration="4916000" />
       <workItem from="1482311517792" duration="115000" />
+=======
+      <workItem from="1481244310764" duration="24193000" />
+      <workItem from="1481387153132" duration="3074000" />
+      <workItem from="1481433076600" duration="779000" />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
     </task>
     <task id="LOCAL-00001" summary="- modified many files">
       <created>1479465929220</created>
@@ -525,31 +887,48 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="427659000" />
+=======
+    <option name="totallyTimeSpent" value="353015000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25965664" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39977852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29787233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
@@ -574,217 +953,112 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/family_status/siblings.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/award_punishment/award.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/public_status/addon_current_job.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/public_status/current_job_status.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/public_status/first_state_job.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/public_status/index.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/job_history.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/private_job.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/public_status/out_basic_frame_status.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/award_punishment/awards.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/language_levels.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/job_history/private.blade.php" />
+    <entry file="file://$PROJECT_DIR$/app/Models/LanguageLevel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="194" column="22" lean-forward="false" selection-start-line="194" selection-start-column="22" selection-end-line="194" selection-end-column="22" />
+        <state relative-caret-position="552">
+          <caret line="41" column="28" lean-forward="false" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/family_status/children.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/languages/fields.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/languages/index.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/award_punishment.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/edit_lang.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/edu_level.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/family_status/mother.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/family_status/parents.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/family_status.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/family_status/spouse.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/personal/index.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/family_status/index.blade.php" />
+    <entry file="file://$PROJECT_DIR$/app/Models/Children.php" />
+    <entry file="file://$PROJECT_DIR$/app/Models/Sibling.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/award_punishment/punishment.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="192" column="14" lean-forward="false" selection-start-line="192" selection-start-column="14" selection-end-line="192" selection-end-column="14" />
+        <state relative-caret-position="627">
+          <caret line="217" column="37" lean-forward="true" selection-start-line="207" selection-start-column="4" selection-end-line="217" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/gdnt-hrm.css">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/family_status/siblings.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/family_status/children.blade.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_11_25_162452_create_education_levels_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        <state relative-caret-position="250">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/JobsHistory.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Employers/GeneralEducationController.php" />
+    <entry file="file://$PROJECT_DIR$/app/Models/EducationLevel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="23" column="6" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="23" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_12_09_135208_create_general_education_table.php" />
+    <entry file="file://$PROJECT_DIR$/app/Models/GeneralEducation.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/education_level/general.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="327" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="327" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/DegreeSpecialize.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_12_09_155520_create_short_course_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_12_09_152534_create_degree_specialize_table.php" />
     <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/education_level/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+        <state relative-caret-position="375">
+          <caret line="20" column="64" lean-forward="true" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/ShortCourse.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/education_level/short_course.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="17" column="49" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/education_level/degree_specialize.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="210" column="54" lean-forward="false" selection-start-line="210" selection-start-column="54" selection-end-line="210" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/public_status/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="17" column="37" lean-forward="false" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/award_punishment/awards.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="189" column="36" lean-forward="true" selection-start-line="189" selection-start-column="36" selection-end-line="189" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/education_level/short_course.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="219" column="12" lean-forward="false" selection-start-line="219" selection-start-column="12" selection-end-line="219" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/public_status/out_basic_frame_status.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="164" column="38" lean-forward="true" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="34" column="40" lean-forward="true" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/fields.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        <state relative-caret-position="475">
+          <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Employer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="45" column="7" lean-forward="true" selection-start-line="45" selection-start-column="7" selection-end-line="45" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="137" column="20" lean-forward="true" selection-start-line="137" selection-start-column="20" selection-end-line="137" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/personal/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="132" column="18" lean-forward="true" selection-start-line="132" selection-start-column="18" selection-end-line="132" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/front_end/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1875">
-          <caret line="75" column="25" lean-forward="true" selection-start-line="75" selection-start-column="25" selection-end-line="75" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/cache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1818">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="234" column="52" lean-forward="true" selection-start-line="234" selection-start-column="52" selection-end-line="234" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/cache/services.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2325">
-          <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-693">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/cache/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7152">
-          <caret line="298" column="55" lean-forward="false" selection-start-line="298" selection-start-column="55" selection-end-line="298" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/ResetPasswordController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
-          <caret line="62" column="33" lean-forward="false" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Employers/GeneralEducationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RoleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -807,25 +1081,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+=======
+          <caret line="324" column="5" lean-forward="false" selection-start-line="324" selection-start-column="5" selection-end-line="324" selection-end-column="5" />
+          <folding />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Permission.php">
+    <entry file="file://$PROJECT_DIR$/public/js/employer_edit_form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="181" column="21" lean-forward="false" selection-start-line="181" selection-start-column="9" selection-end-line="181" selection-end-column="21" />
+          <folding />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Role.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="124" column="7" lean-forward="false" selection-start-line="124" selection-start-column="7" selection-end-line="124" selection-end-column="7" />
+          <folding />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/zizaco/entrust/src/Entrust/Entrust.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/public_status/free_no_salary_status.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="4368">
           <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
         </state>
@@ -884,83 +1173,79 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="90" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/RoleTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/menu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="48" column="54" lean-forward="true" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+=======
+        <state relative-caret-position="241">
+          <caret line="71" column="33" lean-forward="false" selection-start-line="71" selection-start-column="25" selection-end-line="71" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Employers/EmployerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="71" column="7" lean-forward="true" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="353" column="101" lean-forward="false" selection-start-line="353" selection-start-column="101" selection-end-line="353" selection-end-column="101" />
+          <folding />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/fields.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="392">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
+=======
+        <state relative-caret-position="0">
+          <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+          <folding />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/job_history/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="488">
+          <caret line="48" column="54" lean-forward="true" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+=======
+        <state relative-caret-position="0">
+          <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding />
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/employers/job_history/public.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="119" column="53" lean-forward="false" selection-start-line="119" selection-start-column="53" selection-end-line="119" selection-end-column="53" />
           <folding>
-            <element signature="e#1777#2964#0#PHP" expanded="false" />
-            <element signature="e#20132#20477#0#PHP" expanded="false" />
-            <element signature="e#20658#22653#0#PHP" expanded="false" />
-            <element signature="e#27344#29045#0#PHP" expanded="false" />
-            <element signature="e#30961#32895#0#PHP" expanded="false" />
-            <element signature="e#31151#31861#0#PHP" expanded="false" />
-            <element signature="e#31876#32895#0#PHP" expanded="false" />
-            <element signature="e#31899#32881#0#PHP" expanded="false" />
-            <element signature="e#32945#35469#0#PHP" expanded="false" />
-            <element signature="e#33141#34129#0#PHP" expanded="false" />
-            <element signature="e#34144#35469#0#PHP" expanded="false" />
-            <element signature="e#34167#35455#0#PHP" expanded="false" />
-            <element signature="e#35520#37893#0#PHP" expanded="false" />
-            <element signature="e#35733#36786#0#PHP" expanded="false" />
-            <element signature="e#36801#37893#0#PHP" expanded="false" />
-            <element signature="e#36824#37879#0#PHP" expanded="false" />
-            <element signature="e#37932#40201#0#PHP" expanded="false" />
-            <element signature="e#39074#40201#0#PHP" expanded="false" />
-            <element signature="e#40236#42368#0#PHP" expanded="false" />
-            <element signature="e#41283#42368#0#PHP" expanded="false" />
-            <element signature="e#41306#42354#0#PHP" expanded="false" />
-            <element signature="e#42429#44842#0#PHP" expanded="false" />
-            <element signature="e#43733#44842#0#PHP" expanded="false" />
-            <element signature="e#44888#47301#0#PHP" expanded="false" />
-            <element signature="e#45098#46177#0#PHP" expanded="false" />
-            <element signature="e#46192#47301#0#PHP" expanded="false" />
-            <element signature="e#47343#49796#0#PHP" expanded="false" />
-            <element signature="e#48637#49796#0#PHP" expanded="false" />
-            <element signature="e#48660#49782#0#PHP" expanded="false" />
-            <element signature="e#49839#51813#0#PHP" expanded="false" />
-            <element signature="e#50862#51813#0#PHP" expanded="false" />
-            <element signature="e#50885#51799#0#PHP" expanded="false" />
-            <element signature="e#51966#53053#0#PHP" expanded="false" />
-            <element signature="e#52499#53053#0#PHP" expanded="false" />
-            <element signature="e#52522#53039#0#PHP" expanded="false" />
-            <element signature="e#53206#54293#0#PHP" expanded="false" />
-            <element signature="e#53739#54293#0#PHP" expanded="false" />
-            <element signature="e#53762#54279#0#PHP" expanded="false" />
-            <element signature="e#54450#55542#0#PHP" expanded="false" />
-            <element signature="e#54556#54952#0#PHP" expanded="false" />
-            <element signature="e#54985#55542#0#PHP" expanded="false" />
-            <element signature="e#55008#55528#0#PHP" expanded="false" />
-            <element signature="e#55596#57647#0#PHP" expanded="false" />
-            <element signature="e#55778#56689#0#PHP" expanded="false" />
-            <element signature="e#55832#56671#0#PHP" expanded="false" />
-            <element signature="e#56704#57647#0#PHP" expanded="false" />
-            <element signature="e#56727#57633#0#PHP" expanded="false" />
-            <element signature="e#57701#59959#0#PHP" expanded="false" />
-            <element signature="e#57886#58875#0#PHP" expanded="false" />
-            <element signature="e#58890#59959#0#PHP" expanded="false" />
-            <element signature="e#60600#61155#0#PHP" expanded="false" />
+            <marker date="1481205438411" expanded="true" signature="1030:1256" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="1042:1254" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="2446:2661" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="2458:2659" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="3818:4067" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="3830:4065" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="4971:5181" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="4983:5179" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="6068:6278" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="6080:6276" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="8277:8555" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="8289:8553" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="9582:9849" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="9594:9847" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="10855:11156" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="10867:11154" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="11900:12162" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="11912:12160" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="12889:13151" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="12901:13149" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="13866:14112" ph="..." />
+            <marker date="1481205438411" expanded="true" signature="13878:14110" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/js/employer_edit_form.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -991,5 +1276,7 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> c9094ba3884fce3e29ac31b506e4e0310868ced6
   </component>
 </project>
