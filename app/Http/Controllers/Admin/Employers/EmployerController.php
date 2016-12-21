@@ -641,8 +641,13 @@ class EmployerController extends Controller
                     }
                 }
             } else {
+<<<<<<< HEAD
+                if (($request->nss_dpartment)) {
+                    foreach ($request->nss_department as $key => $department) {
+=======
                 foreach ($request->nss_department as $key => $department) {
                     if (!empty($department)) {
+>>>>>>> 229246a50668b8ddb7e5f4f12f1a7da7609d825e
                         $entry = [
                             'nss_emp_id' => $employer->id,
                             'nss_department' => $department,
