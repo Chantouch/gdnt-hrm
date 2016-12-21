@@ -22,9 +22,7 @@
                                 <strong>ថ្ងៃចូល:</strong>
                             </label>
                             <div class="input-group">
-                                {{--{!! Form::text('hpj_start_date[]', null, array('placeholder' => 'Select your start date','class' => 'form-control  date_picker')) !!}--}}
-                                <!-- {!! Form::text('hpj_start_date[]', (isset($hpj->hpj_start_date) ? $hpj->hpj_start_date : null), array('placeholder' => 'Select your start date','class' => 'form-control  date_picker', 'id'=>'hpj_start_date')) !!} -->
-                                <input type="text" name="hpj_start_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_start_date) ? $hpj->hpj_start_date : old('hpj_start_date') !!}">
+                                <input type="text" name="hpj_start_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_start_date) ? $hpj->hpj_start_date : old('hpj_start_date[]') !!}">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                             <i class="icon-calender"></i></span>
                                 @if($errors->has('start_date'))
@@ -42,9 +40,7 @@
                                 <strong>ថ្ងៃបញ្ចប់:</strong>
                             </label>
                             <div class="input-group">
-                                {{--{!! Form::text('hpj_end_date[]', null, array('placeholder' => 'Select your end date','class' => 'form-control  date_picker')) !!}--}}
-                                <!-- {!! Form::text('hpj_end_date[]', (isset($hpj->hpj_end_date) ? $hpj->hpj_end_date : null), array('placeholder' => 'Select your start date','class' => 'form-control  date_picker', 'id'=>'hpj_end_date')) !!} -->
-                                <input type="text" name="hpj_end_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_end_date) ? $hpj->hpj_end_date : old('hpj_end_date') !!}">
+                                <input type="text" name="hpj_end_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_end_date) ? $hpj->hpj_end_date : old('hpj_end_date[]') !!}">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                             <i class="icon-calender"></i></span>
                                 @if($errors->has('end_date'))
@@ -61,9 +57,7 @@
                             <label for="ministry_institute" class="control-label">
                                 <strong>គ្រឹះស្ថាន/អង្គភាព:</strong>
                             </label>
-                            {{--{!! Form::text('hpj_ministry_institute[]', null, array('placeholder' => 'Select ministry or institute','class' => 'form-control')) !!}--}}
-                            <!-- {!! Form::text('hpj_ministry_institute[]', (isset($hpj->hpj_ministry_institute) ? $hpj->hpj_ministry_institute : null), array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'hpj_ministry_institute')) !!} -->
-                            <input type="text" name="hpj_ministry_institute[]" class="form-control" value="{!! isset($hpj->hpj_ministry_institute) ? $hpj->hpj_ministry_institute : old('hpj_ministry_institute') !!}">
+                            <input type="text" name="hpj_ministry_institute[]" class="form-control" value="{!! isset($hpj->hpj_ministry_institute) ? $hpj->hpj_ministry_institute : old('hpj_ministry_institute[]') !!}">
                             @if($errors->has('ministry_institute'))
                                 <span class="help-block">
                                             <strong>{!! $errors->first('ministry_institute') !!}</strong>
@@ -77,9 +71,7 @@
                             <label for="occupation" class="control-label">
                                 <strong>តួនាទី:</strong>
                             </label>
-                            {{--{!! Form::text('hpj_occupation[]', null, array('placeholder' => 'Enter your occupation','class' => 'form-control')) !!}--}}
-                            <!-- {!! Form::text('hpj_occupation[]', (isset($hpj->hpj_occupation) ? $hpj->hpj_occupation : null), array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'hpj_occupation')) !!} -->
-                            <input type="text" name="hpj_occupation[]" class="form-control" value="{!! isset($hpj->hpj_occupation) ? $hpj->hpj_occupation : old('hpj_occupation') !!}">
+                            <input type="text" name="hpj_occupation[]" class="form-control" value="{!! isset($hpj->hpj_occupation) ? $hpj->hpj_occupation : old('hpj_occupation[]') !!}">
                             @if($errors->has('occupation'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('occupation') !!}</strong>
@@ -93,9 +85,7 @@
                             <label for="others" class="control-label">
                                 <strong>ជំនាញ/បច្ចេកទេស:</strong>
                             </label>
-                            {{--{!! Form::text('hpj_others[]', null, array('placeholder' => 'សូមបញ្ចូល ជំនាញ/បច្ចេកទេស','class' => 'form-control')) !!}--}}
-                            <!-- {!! Form::text('hpj_others[]', (isset($hpj->hpj_others) ? $hpj->hpj_others : null), array('placeholder' => 'Select your start date','class' => 'form-control', 'id'=>'hpj_others')) !!} -->
-                            <input type="text" name="hpj_others[]" class="form-control" value="{!! isset($hpj->hpj_others) ? $hpj->hpj_others : old('hpj_others') !!}" placeholder="សូមបញ្ចូល ជំនាញ/បច្ចេកទេស">
+                            <input type="text" name="hpj_others[]" class="form-control" value="{!! isset($hpj->hpj_others) ? $hpj->hpj_others : old('hpj_others[]') !!}" placeholder="សូមបញ្ចូល ជំនាញ/បច្ចេកទេស">
                             @if($errors->has('others'))
                                 <span class="help-block">
                                     <strong>{!! $errors->first('others') !!}</strong>
@@ -115,8 +105,7 @@
                                 <strong>ថ្ងៃចូល:</strong>
                             </label>
                             <div class="input-group">
-                                <!-- {!! Form::text('hpj_start_date[]', null, array('placeholder' => 'Select your start date','class' => 'form-control  date_picker', 'id' => 'hpj_start_date')) !!} -->
-                                <input type="text" name="hpj_start_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_start_date) ? $hpj->hpj_start_date : old('hpj_start_date') !!}">
+                                <input type="text" name="hpj_start_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_start_date) ? $hpj->hpj_start_date : old('hpj_start_date[]') !!}">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                                 @if($errors->has('start_date'))
@@ -134,8 +123,7 @@
                                 <strong>ថ្ងៃបញ្ចប់:</strong>
                             </label>
                             <div class="input-group">
-                                {!! Form::text('hpj_end_date[]', null, array('placeholder' => 'Select your end date','class' => 'form-control  date_picker', 'id' => 'hpj_end_date')) !!}
-                                <input type="text" name="hpj_end_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_end_date) ? $hpj->hpj_end_date : old('hpj_end_date') !!}">
+                                <input type="text" name="hpj_end_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_end_date) ? $hpj->hpj_end_date : old('hpj_end_date[]') !!}">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                                 @if($errors->has('end_date'))
@@ -152,8 +140,7 @@
                             <label for="ministry_institute" class="control-label">
                                 <strong>គ្រឹះស្ថាន/អង្គភាព:</strong>
                             </label>
-                            <!-- {!! Form::text('hpj_ministry_institute[]', null, array('placeholder' => 'Select ministry or institute','class' => 'form-control')) !!} -->
-                            <input type="text" name="hpj_ministry_institute[]" class="form-control" value="{!! isset($hpj->hpj_ministry_institute) ? $hpj->hpj_ministry_institute : old('hpj_ministry_institute') !!}">
+                            <input type="text" name="hpj_ministry_institute[]" class="form-control" value="{!! isset($hpj->hpj_ministry_institute) ? $hpj->hpj_ministry_institute : old('hpj_ministry_institute[]') !!}">
                             @if($errors->has('ministry_institute'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('ministry_institute') !!}</strong>
@@ -167,8 +154,7 @@
                             <label for="occupation" class="control-label">
                                 <strong>តួនាទី:</strong>
                             </label>
-                            <!-- {!! Form::text('hpj_occupation[]', null, array('placeholder' => 'Enter your occupation','class' => 'form-control')) !!} -->
-                            <input type="text" name="hpj_occupation[]" class="form-control" value="{!! isset($hpj->hpj_occupation) ? $hpj->hpj_occupation : old('hpj_occupation') !!}">
+                            <input type="text" name="hpj_occupation[]" class="form-control" value="{!! isset($hpj->hpj_occupation) ? $hpj->hpj_occupation : old('hpj_occupation[]') !!}">
                             @if($errors->has('occupation'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('occupation') !!}</strong>
@@ -182,8 +168,7 @@
                             <label for="others" class="control-label">
                                 <strong>ជំនាញ/បច្ចេកទេស:</strong>
                             </label>
-                            <!-- {!! Form::text('hpj_others[]', null, array('placeholder' => 'សូមបញ្ចូល ជំនាញ/បច្ចេកទេស','class' => 'form-control')) !!} -->
-                            <input type="text" name="hpj_others[]" class="form-control" value="{!! isset($hpj->hpj_others) ? $hpj->hpj_others : old('hpj_others') !!}" placeholder="សូមបញ្ចូល ជំនាញ/បច្ចេកទេស">
+                            <input type="text" name="hpj_others[]" class="form-control" value="{!! isset($hpj->hpj_others) ? $hpj->hpj_others : old('hpj_others[]') !!}" placeholder="សូមបញ្ចូល ជំនាញ/បច្ចេកទេស">
                             @if($errors->has('others'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('others') !!}</strong>
@@ -225,8 +210,7 @@
                             <strong>ថ្ងៃចូល:</strong>
                         </label>
                         <div class="input-group">
-                            {{--{!! Form::text('hpj_start_date[]', null, array('placeholder' => 'Select your start date','class' => 'form-control  date_picker', 'id' => 'hpj_start_date')) !!}--}}
-                            <input type="text" name="hpj_start_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_start_date) ? $hpj->hpj_start_date : old('hpj_start_date') !!}">
+                            <input type="text" name="hpj_start_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_start_date) ? $hpj->hpj_start_date : old('hpj_start_date[]') !!}">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                             @if($errors->has('start_date'))
@@ -244,8 +228,7 @@
                             <strong>ថ្ងៃបញ្ចប់:</strong>
                         </label>
                         <div class="input-group">
-                            {{--{!! Form::text('hpj_end_date[]', null, array('placeholder' => 'Select your end date','class' => 'form-control  date_picker', 'id' => 'hpj_end_date')) !!}--}}
-                            <input type="text" name="hpj_end_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_end_date) ? $hpj->hpj_end_date : old('hpj_end_date') !!}">
+                            <input type="text" name="hpj_end_date[]" class="form-control date_picker" value="{!! isset($hpj->hpj_end_date) ? $hpj->hpj_end_date : old('hpj_end_date[]') !!}">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                             @if($errors->has('end_date'))
@@ -262,8 +245,7 @@
                         <label for="ministry_institute" class="control-label">
                             <strong>គ្រឹះស្ថាន/អង្គភាព:</strong>
                         </label>
-                        {{--{!! Form::text('hpj_ministry_institute[]', null, array('placeholder' => 'Select ministry or institute','class' => 'form-control')) !!}--}}
-                        <input type="text" name="hpj_ministry_institute[]" class="form-control" value="{!! isset($hpj->hpj_ministry_institute) ? $hpj->hpj_ministry_institute : old('hpj_ministry_institute') !!}">
+                        <input type="text" name="hpj_ministry_institute[]" class="form-control" value="{!! isset($hpj->hpj_ministry_institute) ? $hpj->hpj_ministry_institute : old('hpj_ministry_institute[]') !!}">
                         @if($errors->has('ministry_institute'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('ministry_institute') !!}</strong>
@@ -277,8 +259,7 @@
                         <label for="occupation" class="control-label">
                             <strong>តួនាទី:</strong>
                         </label>
-                        {{--{!! Form::text('hpj_occupation[]', null, array('placeholder' => 'Enter your occupation','class' => 'form-control')) !!}--}}
-                        <input type="text" name="hpj_occupation[]" class="form-control" value="{!! isset($hpj->hpj_occupation) ? $hpj->hpj_occupation : old('hpj_occupation') !!}">
+                        <input type="text" name="hpj_occupation[]" class="form-control" value="{!! isset($hpj->hpj_occupation) ? $hpj->hpj_occupation : old('hpj_occupation[]') !!}">
                         @if($errors->has('occupation'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('occupation') !!}</strong>
@@ -292,8 +273,7 @@
                         <label for="others" class="control-label">
                             <strong>ជំនាញ/បច្ចេកទេស:</strong>
                         </label>
-                        {{--{!! Form::text('hpj_others[]', null, array('placeholder' => 'សូមបញ្ចូល ជំនាញ/បច្ចេកទេស','class' => 'form-control')) !!}--}}
-                        <input type="text" name="hpj_others[]" class="form-control" value="{!! isset($hpj->hpj_others) ? $hpj->hpj_others : old('hpj_others') !!}" placeholder="សូមបញ្ចូល ជំនាញ/បច្ចេកទេស">
+                        <input type="text" name="hpj_others[]" class="form-control" value="{!! isset($hpj->hpj_others) ? $hpj->hpj_others : old('hpj_others[]') !!}" placeholder="សូមបញ្ចូល ជំនាញ/បច្ចេកទេស">
                         @if($errors->has('others'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('others') !!}</strong>

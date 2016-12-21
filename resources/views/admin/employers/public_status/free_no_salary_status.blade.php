@@ -24,7 +24,7 @@
                             {{--{!! Form::text('nss_department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}--}}
                             <!-- {!! Form::text('nss_department[]', (isset($noSalary->nss_department) ? $noSalary->nss_department : null), array('placeholder' => 'សូមបញ្ចូលស្ថាប័ន/អង្គភាព','class' => 'form-control', 'id'=>'nss_department')) !!} -->
                                 <input type="text" name="nss_department[]" class="form-control"
-                                       value="{!! isset($noSalary->nss_department) ? $noSalary->nss_department : old('nss_department') !!}"
+                                       value="{!! isset($noSalary->nss_department) ? $noSalary->nss_department : old('nss_department[]') !!}"
                                        placeholder="សូមបញ្ចូលស្ថាប័ន/អង្គភាព">
                                 @if($errors->has('nss_department'))
                                     <span class="help-block">
@@ -42,7 +42,7 @@
                                 {{--{!! Form::text('nss_start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control', 'id' => 'nss_start_date')) !!}--}}
                                 <!-- {!! Form::text('nss_start_date[]', (isset($noSalary->nss_start_date) ? $noSalary->nss_start_date : null), array('placeholder' => 'សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម','class' => 'form-control date_picker', 'id'=>'nss_start_date')) !!} -->
                                     <input type="text" name="nss_start_date[]" class="form-control date_picker"
-                                           value="{!! isset($noSalary->nss_start_date) ? $noSalary->nss_start_date : old('nss_start_date') !!}"
+                                           value="{!! isset($noSalary->nss_start_date) ? $noSalary->nss_start_date : old('nss_start_date[]') !!}"
                                            placeholder="សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម">
                                     <span class="input-group-addon bg-custom b-0 text-white"><i
                                                 class="icon-calender"></i></span>
@@ -60,10 +60,8 @@
                                 <label for="nss_end_date" class="control-label">
                                     <strong>ថ្ងៃបញ្ចប់:</strong></label>
                                 <div class="input-group">
-                                {{--{!! Form::text('nss_end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control', 'id' => 'nss_end_date')) !!}--}}
-                                <!-- {!! Form::text('nss_end_date[]', (isset($noSalary->nss_end_date) ? $noSalary->nss_end_date : null), array('placeholder' => 'សូមជ្រើសរើសថ្ងៃបញ្ចប់','class' => 'form-control date_picker', 'id'=>'nss_end_date')) !!} -->
                                     <input type="text" name="nss_end_date[]" class="form-control date_picker"
-                                           value="{!! isset($noSalary->nss_end_date) ? $noSalary->nss_end_date : old('nss_end_date') !!}"
+                                           value="{!! isset($noSalary->nss_end_date) ? $noSalary->nss_end_date : old('nss_end_date[]') !!}"
                                            placeholder="សូមជ្រើសរើសថ្ងៃបញ្ចប់">
                                     <span class="input-group-addon bg-custom b-0 text-white"><i
                                                 class="icon-calender"></i></span>
@@ -84,10 +82,8 @@
                             <div class="form-group{!! $errors->has('nss_department') ? ' has-error' : '' !!}">
                                 <label for="nss_department" class="control-label">
                                     <strong>ស្ថាប័ន/អង្គភាព:</strong></label>
-                            {{--{!! Form::text('nss_department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}--}}
-                            <!-- {!! Form::text('nss_department[]', (isset($employer->noSalaryStatus->nss_department) ? $employer->noSalaryStatus->nss_department : null), array('placeholder' => 'សូមបញ្ចូលស្ថាប័ន/អង្គភាព','class' => 'form-control', 'id'=>'nss_department')) !!} -->
                                 <input type="text" name="nss_department[]" class="form-control"
-                                       value="{!! isset($noSalary->nss_department) ? $noSalary->nss_department : old('nss_department') !!}"
+                                       value="{!! isset($noSalary->nss_department) ? $noSalary->nss_department : old('nss_department[]') !!}"
                                        placeholder="សូមបញ្ចូលស្ថាប័ន/អង្គភាព">
                                 @if($errors->has('nss_department'))
                                     <span class="help-block">
@@ -102,10 +98,8 @@
                                 <label for="nss_start_date" class="control-label">
                                     <strong>ថ្ងៃចាប់ផ្តើម:</strong></label>
                                 <div class="input-group">
-                                {{--{!! Form::text('nss_start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control', 'id' => 'nss_start_date')) !!}--}}
-                                <!-- {!! Form::text('nss_start_date[]', (isset($employer->noSalaryStatus->nss_start_date) ? $employer->noSalaryStatus->nss_start_date : null), array('placeholder' => 'សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម','class' => 'form-control date_picker', 'id'=>'nss_start_date')) !!} -->
                                     <input type="text" name="nss_start_date[]" class="form-control date_picker"
-                                           value="{!! isset($noSalary->nss_start_date) ? $noSalary->nss_start_date : old('nss_start_date') !!}"
+                                           value="{!! isset($noSalary->nss_start_date) ? $noSalary->nss_start_date : old('nss_start_date[]') !!}"
                                            placeholder="សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម">
                                     <span class="input-group-addon bg-custom b-0 text-white"><i
                                                 class="icon-calender"></i></span>
@@ -123,10 +117,8 @@
                                 <label for="nss_end_date" class="control-label">
                                     <strong>ថ្ងៃបញ្ចប់:</strong></label>
                                 <div class="input-group">
-                                {{--{!! Form::text('nss_end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control', 'id' => 'nss_end_date')) !!}--}}
-                                <!-- {!! Form::text('nss_end_date[]', (isset($employer->noSalaryStatus->nss_end_date) ? $employer->noSalaryStatus->nss_end_date : null), array('placeholder' => 'សូមជ្រើសរើសថ្ងៃបញ្ចប់','class' => 'form-control date_picker', 'id'=>'nss_end_date')) !!} -->
                                     <input type="text" name="nss_end_date[]" class="form-control date_picker"
-                                           value="{!! isset($noSalary->nss_end_date) ? $noSalary->nss_end_date : old('nss_end_date') !!}"
+                                           value="{!! isset($noSalary->nss_end_date) ? $noSalary->nss_end_date : old('nss_end_date[]') !!}"
                                            placeholder="សូមជ្រើសរើសថ្ងៃបញ្ចប់">
                                     <span class="input-group-addon bg-custom b-0 text-white"><i
                                                 class="icon-calender"></i></span>
@@ -174,10 +166,8 @@
                         <div class="form-group{!! $errors->has('nss_department') ? ' has-error' : '' !!}">
                             <label for="nss_department" class="control-label">
                                 <strong>ស្ថាប័ន/អង្គភាព:</strong></label>
-                            {{--{!! Form::text('nss_department', null, array('placeholder' => 'Enter department','class' => 'form-control')) !!}--}}
-                            {{--{!! Form::text('nss_department[]', (isset($employer->noSalaryStatus->nss_department) ? $employer->noSalaryStatus->nss_department : null), array('placeholder' => 'សូមបញ្ចូលស្ថាប័ន/អង្គភាព','class' => 'form-control', 'id'=>'nss_department')) !!}--}}
                             <input type="text" name="nss_department[]" class="form-control"
-                                   value="{!! isset($noSalary->nss_department) ? $noSalary->nss_department : old('nss_department') !!}"
+                                   value="{!! isset($noSalary->nss_department) ? $noSalary->nss_department : old('nss_department[]') !!}"
                                    placeholder="សូមបញ្ចូលស្ថាប័ន/អង្គភាព">
                             @if($errors->has('nss_department'))
                                 <span class="help-block">
@@ -192,14 +182,8 @@
                             <label for="nss_start_date" class="control-label">
                                 <strong>ថ្ងៃចាប់ផ្តើម:</strong></label>
                             <div class="input-group">
-                                {{--{!! Form::text('nss_start_date', null, array('placeholder' => 'Enter start date','class' => 'form-control', 'id' => 'nss_start_date')) !!}--}}
-
-                                {!! Form::text('nss_start_date[]', (isset($employer->noSalaryStatus->nss_start_date) ? $employer->noSalaryStatus->nss_start_date : null), array('placeholder' => 'សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម','class' => 'form-control date_picker', 'id'=>'nss_start_date')) !!}
-
-                                {{--{!! Form::text('nss_start_date[]', (isset($employer->noSalaryStatus->nss_start_date) ? $employer->noSalaryStatus->nss_start_date : null), array('placeholder' => 'សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម','class' => 'form-control date_picker', 'id'=>'nss_start_date')) !!}--}}
-
                                 <input type="text" name="nss_start_date[]" class="form-control date_picker"
-                                       value="{!! isset($noSalary->nss_start_date) ? $noSalary->nss_start_date : old('nss_start_date') !!}"
+                                       value="{!! isset($noSalary->nss_start_date) ? $noSalary->nss_start_date : old('nss_start_date[]') !!}"
                                        placeholder="សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម">
 
                                 <input type="text" name="nss_start_date[]" class="form-control date_picker">
@@ -219,14 +203,8 @@
                             <label for="nss_end_date" class="control-label">
                                 <strong>ថ្ងៃបញ្ចប់:</strong></label>
                             <div class="input-group">
-                                {{--{!! Form::text('nss_end_date', null, array('placeholder' => 'Enter end date','class' => 'form-control', 'id' => 'nss_end_date')) !!}--}}
-
-                                {!! Form::text('nss_end_date[]', (isset($employer->noSalaryStatus->nss_end_date) ? $employer->noSalaryStatus->nss_end_date : null), array('placeholder' => 'សូមជ្រើសរើសថ្ងៃបញ្ចប់','class' => 'form-control date_picker', 'id'=>'nss_end_date')) !!}
-
-                                {{--{!! Form::text('nss_end_date[]', (isset($employer->noSalaryStatus->nss_end_date) ? $employer->noSalaryStatus->nss_end_date : null), array('placeholder' => 'សូមជ្រើសរើសថ្ងៃបញ្ចប់','class' => 'form-control date_picker', 'id'=>'nss_end_date')) !!}--}}
-
                                 <input type="text" name="nss_end_date[]" class="form-control date_picker"
-                                       value="{!! isset($noSalary->nss_end_date) ? $noSalary->nss_end_date : old('nss_end_date') !!}"
+                                       value="{!! isset($noSalary->nss_end_date) ? $noSalary->nss_end_date : old('nss_end_date[]') !!}"
                                        placeholder="សូមជ្រើសរើសថ្ងៃបញ្ចប់">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                               <i class="icon-calender"></i></span>
