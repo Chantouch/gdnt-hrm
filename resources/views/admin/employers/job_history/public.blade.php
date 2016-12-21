@@ -253,7 +253,7 @@
                             <strong>ថ្ងៃចូល:</strong>
                         </label>
                         <div class="input-group">
-                            <!-- {{--{!! Form::text('phj_start_date[]', (isset($employer->jobHistoryPrivatePublic->phj_start_date) ? $employer->jobHistoryPrivatePublic->phj_start_date : null), array('placeholder' => 'សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ','class' => 'form-control  date_picker', 'id'=>'phj_start_date')) !!}--}} -->
+                            {{--{!! Form::text('phj_start_date[]', (isset($employer->jobHistoryPrivatePublic->phj_start_date) ? $employer->jobHistoryPrivatePublic->phj_start_date : null), array('placeholder' => 'សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ','class' => 'form-control  date_picker', 'id'=>'phj_start_date')) !!}--}}
                             <input type="text" name="phj_start_date[]" class="form-control date_picker" value="{!! isset($history->phj_start_date) ? $history->phj_start_date : old('phj_start_date') !!}" placeholder="សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i>
@@ -273,7 +273,7 @@
                             <strong>ថ្ងៃឈប់:</strong>
                         </label>
                         <div class="input-group">
-                            <!-- {{--{!! Form::text('phj_end_date[]', (isset($employer->jobHistoryPrivatePublic->phj_end_date) ? $employer->jobHistoryPrivatePublic->phj_end_date : null), array('placeholder' => 'សូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារ','class' => 'form-control  date_picker', 'id'=>'phj_end_date')) !!}--}} -->
+                            {{--{!! Form::text('phj_end_date[]', (isset($employer->jobHistoryPrivatePublic->phj_end_date) ? $employer->jobHistoryPrivatePublic->phj_end_date : null), array('placeholder' => 'សូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារ','class' => 'form-control  date_picker', 'id'=>'phj_end_date')) !!}--}}
                             <input type="text" name="phj_end_date[]" class="form-control date_picker" value="{!! isset($history->phj_end_date) ? $history->phj_end_date : old('phj_end_date') !!}" placeholder="សូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារ">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i>
