@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="//192.168.100.217/Share/IT/18_Sek_Chantouch/developments/hrms" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../git/gdnt-hrm" vcs="Git" />
   </component>
 </project>
