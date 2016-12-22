@@ -35,7 +35,7 @@
                             <label for="fn_start_date" class="control-label">
                                 <strong>ថ្ងៃចាប់ផ្តើម:</strong></label>
                             <div class="input-group">
-                                <input type="text" name="nss_start_date[]" class="form-control date_picker" value="{!! isset($outFrame->nss_start_date) ? $outFrame->nss_start_date : old('nss_start_date[]') !!}" placeholder="សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម">
+                                <input type="text" name="fn_start_date[]" class="form-control date_picker" value="{!! isset($outFrame->fn_start_date) ? $outFrame->fn_start_date : old('fn_start_date[]') !!}" placeholder="សូមជ្រើសរើសថ្ងៃចាប់ផ្តើម">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i>
                                 </span>

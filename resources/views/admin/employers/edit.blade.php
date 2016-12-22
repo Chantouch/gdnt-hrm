@@ -105,15 +105,6 @@
     <script src="{!! asset('assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}"></script>
     <script type="text/javascript">
 
-        function addRow() {
-            $("#add_language:first").clone(true).appendTo('#ll_lang').find('input, select').val('NO');
-            //$("._details:first").clone(true).appendTo('#edu_details').find('.datepicker').val('');
-        }
-        function removeRow() {
-            if ($("#add_language").length != 1)
-                $("#add_language").last().remove()
-        }
-
         $("input.date_picker").click(function () {
             $(this).datepicker({
                 autoclose: true,
@@ -128,7 +119,6 @@
 
     $('#dob').datepicker({
     todayHighlight: true,
-    startDate: "-18y",
     endDate: "-18y",
     autoclose: true,
     format: "yyyy-m-d",
@@ -140,13 +130,13 @@
     format: 'yyyy-m-d',
     });
 
-    $('#add').on('click', function(e){
+    $('#language_btn_add').on('click', function(e){
     e.preventDefault();
-    addRow();
+    add_row('form_language','form_language_add');
     });
-    $('button#minus').on('click', function(e){
+    $('button#language_btn_remove').on('click', function(e){
     e.preventDefault();
-    removeRow();
+    remove_row("div#form_language_add");
     });
 
     {{--//Start Basic out of frame --}}
@@ -176,7 +166,7 @@
     {{--//Start History Private Job--}}
     $('button#hpj_btn_add').on('click', function(e){
     e.preventDefault();
-    add_new_form_private();
+    add_new_form('date_picker', 'hpj_add_form', 'hpj_form');
     });
 
     $('button#hpj_btn_remove').on('click', function(e){
@@ -278,6 +268,18 @@
     $('button#courses_edu_btn_remove').on('click', function(e){
     e.preventDefault();
     remove_row('div#courses_edu_form_add');
+    });
+    {{--End Form Short Courses Form--}}
+
+    {{--Start Form Short Courses Form--}}
+    $('button#language_btn_remove').on('click', function(e){
+    e.preventDefault();
+    add_new_form('date_picker', 'form_language_add', 'form_language');
+    });
+
+    $('button#language_btn_add').on('click', function(e){
+    e.preventDefault();
+    remove_row('div#form_language_add');
     });
     {{--End Form Short Courses Form--}}
 

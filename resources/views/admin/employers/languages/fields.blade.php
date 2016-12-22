@@ -167,8 +167,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="col-xs-12 col-sm-2 col-md-2" id="no_salary_div_add">
                         <div class="form-group">
-                            <button type="button" id="courses_edu_btn_add"
-                                    class="btn btn-block btn-default waves-effect">
+                            <button type="button" id="language_btn_add" class="btn btn-block btn-default waves-effect">
                                 <i class="fa fa-plus-square"></i> បន្ថែម
                             </button>
                         </div>
@@ -177,7 +176,7 @@
                     <div class="col-xs-12 col-sm-2 col-md-2"
                          id="no_salary_div_remove">
                         <div class="form-group">
-                            <button type="button" id="courses_edu_btn_remove"
+                            <button type="button" id="language_btn_remove"
                                     class="btn btn-block btn-default waves-effect">
                                 <i class="fa fa-minus-square"></i> ដកចេញ
                             </button>

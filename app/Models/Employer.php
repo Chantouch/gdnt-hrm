@@ -69,13 +69,13 @@ class Employer extends Model
                     'email' => 'email|unique:users,email,' . $id . ',id',
                     'full_name' => 'required',
                     'gender' => 'required|in:f,m',
-                    'emp_id' => 'required|max:10|unique:users',
+                    'emp_id' => 'required|max:10|unique:users,emp_id,' . $id . ',id',
                     'dob' => 'required|date_format:Y-m-d|before:"now -18 year"',
-                    'id_card' => 'required|unique:users',
+                    'id_card' => 'required|unique:users,id_card,' . $id . ',id',
                     'id_card_expired' => 'required',
                     'current_address' => 'required',
                     'place_of_birth' => 'required',
-                    'hand_phone' => 'numeric|unique:users'
+                    'hand_phone' => 'numeric|unique:users,hand_phone,' . $id . ',id'
                 ];
             }
             default:

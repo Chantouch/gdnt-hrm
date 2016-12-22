@@ -143,23 +143,22 @@ class EmployerController extends Controller
             }
 
             //Out of frame status
-//            if (count($employer->outFrameNoSalary) >= 1) {
-//            foreach ($request->fn_department as $key => $department) {
-//                if (!empty($department)) {
-//                    $entry = [
-//                        'fn_emp_id' => $emp_id,
-//                        'fn_department' => $department,
-//                        'fn_start_date' => date('Y-m-d', strtotime($request->fn_start_date[$key])),
-//                        'fn_end_date' => date('Y-m-d', strtotime($request->fn_end_date[$key])),
-//                    ];
-//                    $of = OutFrameNoSalary::create($entry);
-//                    if (!$of) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
-//            }
-//            }
+            foreach ($request->fn_department as $key => $department) {
+                if (!empty($department)) {
+                    $entry = [
+                        'fn_emp_id' => $emp_id,
+                        'fn_department' => $department,
+                        'fn_start_date' => date('Y-m-d', strtotime($request->fn_start_date[$key])),
+                        'fn_end_date' => date('Y-m-d', strtotime($request->fn_end_date[$key])),
+                    ];
+                    $of = OutFrameNoSalary::create($entry);
+                    if (!$of) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
+
 
             //No Salary Status
             foreach ($request->nss_department as $key => $department) {
@@ -255,151 +254,151 @@ class EmployerController extends Controller
                 }
             }
 //            //General Education
-//            foreach ($request->ge_level_edu as $key => $level) {
-//                if (!empty($level)) {
-//                    $entry = [
-//                        'ge_emp_id' => $emp_id,
-//                        'ge_level_edu' => $level,
-//                        'ge_degree' => $data['ge_degree'][$key],
-//                        'ge_school' => $data['ge_school'][$key],
-//                        'ge_country' => $data['ge_country'][$key],
-//                        'ge_end_date' => date('Y-m-d', strtotime($data['ge_end_date'][$key])),
-//                        'ge_start_date' => date('Y-m-d', strtotime($data['ge_start_date'][$key]))
-//                    ];
-//                    $general_education = GeneralEducation::create($entry);
-//                    if (!$general_education) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
-//            }
+            foreach ($request->ge_level_edu as $key => $level) {
+                if (!empty($level)) {
+                    $entry = [
+                        'ge_emp_id' => $emp_id,
+                        'ge_level_edu' => $level,
+                        'ge_degree' => $data['ge_degree'][$key],
+                        'ge_school' => $data['ge_school'][$key],
+                        'ge_country' => $data['ge_country'][$key],
+                        'ge_end_date' => date('Y-m-d', strtotime($data['ge_end_date'][$key])),
+                        'ge_start_date' => date('Y-m-d', strtotime($data['ge_start_date'][$key]))
+                    ];
+                    $general_education = GeneralEducation::create($entry);
+                    if (!$general_education) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
 //            //Degree Specialize
-//            foreach ($request->ds_level_edu as $key => $level) {
-//                if (!empty($level)) {
-//                    $entry = [
-//                        'ds_emp_id' => $emp_id,
-//                        'ds_level_edu' => $level,
-//                        'ds_degree' => $data['ds_degree'][$key],
-//                        'ds_school' => $data['ds_school'][$key],
-//                        'ds_country' => $data['ds_country'][$key],
-//                        'ds_end_date' => date('Y-m-d', strtotime($data['ds_end_date'][$key])),
-//                        'ds_start_date' => date('Y-m-d', strtotime($data['ds_start_date'][$key]))
-//                    ];
-//                    $degree_specialize = DegreeSpecialize::create($entry);
-//                    if (!$degree_specialize) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
-//            }
+            foreach ($request->ds_level_edu as $key => $level) {
+                if (!empty($level)) {
+                    $entry = [
+                        'ds_emp_id' => $emp_id,
+                        'ds_level_edu' => $level,
+                        'ds_degree' => $data['ds_degree'][$key],
+                        'ds_school' => $data['ds_school'][$key],
+                        'ds_country' => $data['ds_country'][$key],
+                        'ds_end_date' => date('Y-m-d', strtotime($data['ds_end_date'][$key])),
+                        'ds_start_date' => date('Y-m-d', strtotime($data['ds_start_date'][$key]))
+                    ];
+                    $degree_specialize = DegreeSpecialize::create($entry);
+                    if (!$degree_specialize) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
 //            //Short Courses
-//            foreach ($request->courses_level_edu as $key => $level) {
-//                if (!empty($level)) {
-//                    $entry = [
-//                        'courses_emp_id' => $emp_id,
-//                        'courses_level_edu' => $level,
-//                        'courses_degree' => $data['courses_degree'][$key],
-//                        'courses_school' => $data['courses_school'][$key],
-//                        'courses_country' => $data['courses_country'][$key],
-//                        'courses_end_date' => date('Y-m-d', strtotime($data['courses_end_date'][$key])),
-//                        'courses_start_date' => date('Y-m-d', strtotime($data['courses_start_date'][$key]))
-//                    ];
-//                    $short_course = ShortCourse::create($entry);
-//                    if (!$short_course) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
-//            }
+            foreach ($request->courses_level_edu as $key => $level) {
+                if (!empty($level)) {
+                    $entry = [
+                        'courses_emp_id' => $emp_id,
+                        'courses_level_edu' => $level,
+                        'courses_degree' => $data['courses_degree'][$key],
+                        'courses_school' => $data['courses_school'][$key],
+                        'courses_country' => $data['courses_country'][$key],
+                        'courses_end_date' => date('Y-m-d', strtotime($data['courses_end_date'][$key])),
+                        'courses_start_date' => date('Y-m-d', strtotime($data['courses_start_date'][$key]))
+                    ];
+                    $short_course = ShortCourse::create($entry);
+                    if (!$short_course) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
 //            //Languages
-//            foreach ($request->ll_lang_id as $key => $ll_lang) {
-//                if (!empty($ll_lang)) {
-//                    $data = [
-//                        'll_emp_id' => $emp_id,
-//                        'll_lang_id' => $ll_lang,
-//                        'll_read' => $request->ll_read[$key],
-//                        'll_write' => $request->ll_write[$key],
-//                        'll_listen' => $request->ll_listen[$key],
-//                        'll_speak' => $request->ll_speak[$key],
-//                    ];
-//
-//                    $language = LanguageLevel::create($data);
-//                    if (!$language) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
-//            }
+            foreach ($request->ll_lang_id as $key => $ll_lang) {
+                if (!empty($ll_lang)) {
+                    $data = [
+                        'll_emp_id' => $emp_id,
+                        'll_lang_id' => $ll_lang,
+                        'll_read' => $request->ll_read[$key],
+                        'll_write' => $request->ll_write[$key],
+                        'll_listen' => $request->ll_listen[$key],
+                        'll_speak' => $request->ll_speak[$key],
+                    ];
+
+                    $language = LanguageLevel::create($data);
+                    if (!$language) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
 //            //Family status: Father
-//            if ($request->has('f_full_name')) {
-//                if ($request->get('f_full_name') != '') {
-//                    $data['f_emp_id'] = $emp_id;
-//                    $father = Father::create($data);
-//                    if (!$father) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
-//            }
+            if ($request->has('f_full_name')) {
+                if ($request->get('f_full_name') != '') {
+                    $data['f_emp_id'] = $emp_id;
+                    $father = Father::create($data);
+                    if (!$father) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
 //            //Family status: Mother
-//            if ($request->has('m_full_name')) {
-//                if ($request->get('m_full_name') != '') {
-//                    $data['m_emp_id'] = $emp_id;
-//                    $mother = Mother::create($data);
-//                    if (!$mother) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
-//            }
+            if ($request->has('m_full_name')) {
+                if ($request->get('m_full_name') != '') {
+                    $data['m_emp_id'] = $emp_id;
+                    $mother = Mother::create($data);
+                    if (!$mother) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
 //            //Family status: Siblings
-//            foreach ($request->sib_full_name as $key => $name) {
-//                if (!empty($name)) {
-//                    $entry = [
-//                        'sib_emp_id' => $emp_id,
-//                        'sib_full_name' => $name,
-//                        'sib_fn_en' => $request->sib_fn_en[$key],
-//                        'sib_dob' => $request->sib_dob[$key],
-//                        'sib_gender' => $request->sib_gender[$key],
-//                        'sib_job' => $request->sib_job[$key]
-//                    ];
-//                    $sibling = Sibling::create($entry);
-//                    if (!$sibling) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
-//            }
+            foreach ($request->sib_full_name as $key => $name) {
+                if (!empty($name)) {
+                    $entry = [
+                        'sib_emp_id' => $emp_id,
+                        'sib_full_name' => $name,
+                        'sib_fn_en' => $request->sib_fn_en[$key],
+                        'sib_dob' => $request->sib_dob[$key],
+                        'sib_gender' => $request->sib_gender[$key],
+                        'sib_job' => $request->sib_job[$key]
+                    ];
+                    $sibling = Sibling::create($entry);
+                    if (!$sibling) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
 //            //Spouse
-//            if ($request->has('sp_full_name')) {
-//                if ($request->get('sp_full_name') != '') {
-//                    $data['sp_emp_id'] = $emp_id;
-//                    $spouse = Spouse::create($data);
-//                    if (!$spouse) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
-//            }
-//            //Family Status: Children
-//            foreach ($request->child_full_name as $key => $child_full_name) {
-//                if (!empty($name)) {
-//                    $entry = [
-//                        'child_emp_id' => $emp_id,
-//                        'child_full_name' => $child_full_name,
-//                        'child_fn_en' => $request->child_fn_en[$key],
-//                        'child_dob' => $request->child_dob[$key],
-//                        'child_gender' => $request->child_gender[$key],
-//                        'child_job' => $request->child_job[$key],
-//                        'child_subsidy' => $request->child_subsidy[$key],
-//                    ];
-//                    $children = Children::create($entry);
-//                    if (!$children) {
-//                        DB::rollbackTransaction();
-//                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
-//                    }
-//                }
-//            }
+            if ($request->has('sp_full_name')) {
+                if ($request->get('sp_full_name') != '') {
+                    $data['sp_emp_id'] = $emp_id;
+                    $spouse = Spouse::create($data);
+                    if (!$spouse) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
+//            ///Family Status: Children
+            foreach ($request->child_full_name as $key => $child_full_name) {
+                if (!empty($name)) {
+                    $entry = [
+                        'child_emp_id' => $emp_id,
+                        'child_full_name' => $child_full_name,
+                        'child_fn_en' => $request->child_fn_en[$key],
+                        'child_dob' => $request->child_dob[$key],
+                        'child_gender' => $request->child_gender[$key],
+                        'child_job' => $request->child_job[$key],
+                        'child_subsidy' => $request->child_subsidy[$key],
+                    ];
+                    $children = Children::create($entry);
+                    if (!$children) {
+                        DB::rollbackTransaction();
+                        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact system admin');
+                    }
+                }
+            }
 
             if (!$employer) {
                 DB::rollbackTransaction();
@@ -1148,8 +1147,8 @@ class EmployerController extends Controller
             }
 
             //Do Update Employer details
-            $employer = $employer->update($data);
-            if (!$employer) {
+            $employee = $employer->update($data);
+            if (!$employee) {
                 DB::rollbackTransaction();
                 return redirect()->back()->with('error', 'Unable to process your request right now');
             }
@@ -1157,7 +1156,7 @@ class EmployerController extends Controller
 
         }
         DB::commit();
-        return redirect()->route('admin.managements.employers.index')->with('success', "Employer was successfully updated");
+        return redirect()->route('admin.managements.employers.index')->with('success', "បុគ្គលិកមានឈ្មោះ: $employer->full_name បានកែប្រែដោយជោគជ័យ។");
 
     }
 

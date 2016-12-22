@@ -187,7 +187,7 @@
                             <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                             <div class="input-group">
                                 {{--{!! Form::text('ds_end_date[]', (isset($employer->degree_specializes->ds_end_date) ? $employer->degree_specializes->ds_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'ds_end_date')) !!}--}}
-                                <input type="text" name="ds_end_date[]" class="form-control">
+                                <input type="text" name="ds_end_date[]" class="form-control date_picker">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i>
                             </span>
@@ -305,7 +305,7 @@
                         <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                         <div class="input-group">
                             {{--{!! Form::text('ds_end_date[]', (isset($employer->degree_specializes->ds_end_date) ? $employer->degree_specializes->ds_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'ds_end_date')) !!}--}}
-                            <input type="text" name="ds_end_date[]" class="form-control">
+                            <input type="text" name="ds_end_date[]" class="form-control date_picker">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i>
                             </span>
