@@ -12,7 +12,7 @@
             <th>សញ្ជាតិ</th>
             <th>កន្លែងកំណើត</th>
             <th>ស្ថានភាព</th>
-            <th width="100px" class="text-center">សកម្មភាព</th>
+            <th width="150px" class="text-center">សកម្មភាព</th>
         </tr>
         @foreach ($employers as $key => $employer)
             <tr>
@@ -59,15 +59,10 @@
                         {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>
                     {!! Form::close() !!}
-                    {!! Form::open(['route' => ['admin.managements.employers.destroy', $employer->id], 'method' => 'delete']) !!}
+
+                    {!! Form::open(['route' => ['admin.managements.employers.permanently_delete', $employer->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{!! route('admin.managements.employers.show', [$employer->id]) !!}"
-                           class='btn btn-default btn-xs'>
-                            <i class="glyphicon glyphicon-eye-open"></i></a>
-                        <a href="{!! route('admin.managements.employers.edit', [$employer->id]) !!}"
-                           class='btn btn-default btn-xs'>
-                            <i class="glyphicon glyphicon-edit"></i></a>
-                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
+                        {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('តើលោកអ្នកប្រាកដហើយ? ទិន្និន័យមិនអាចត្រលប់ក្រោយបានទេ។')"]) !!}
                     </div>
                     {!! Form::close() !!}
                 </td>
