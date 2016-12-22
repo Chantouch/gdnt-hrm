@@ -32,7 +32,7 @@
                         <div class="form-group{!! $errors->has('published_date') ? ' has-error' : '' !!}">
                             <label for="published_date" class="control-label"><strong>កាលបរិច្ឆេទ:</strong></label>
                             <div class="input-group">
-                                <input type="text" name="aw_published_date[]" class="form-control" value="{!! isset($award->aw_published_date) ? $award->aw_published_date : old('aw_published_date[]') !!}" placeholder="ទម្រង់៖ឆ្នាំខែថ្ងៃ(Y-m-d)">
+                                <input type="text" name="aw_published_date[]" class="form-control date_picker" value="{!! isset($award->aw_published_date) ? $award->aw_published_date : old('aw_published_date[]') !!}" placeholder="ទម្រង់៖ឆ្នាំខែថ្ងៃ(Y-m-d)">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                     <i class="icon-calender"></i></span>
                                 @if($errors->has('published_date'))
@@ -61,7 +61,9 @@
                         <div class="form-group{!! $errors->has('punish_type') ? ' has-error' : '' !!}">
                             <label for="punish_type" class="control-label">
                                 <strong>ប្រភេទ:</strong></label>
-                            <input type="text" name="aw_type[]" class="form-control" value="{!! isset($award->aw_type) ? $award->aw_type : old('aw_type[]') !!}">
+                            {{--{!! Form::text('aw_type[]', (isset($award->aw_type) ? $award->aw_type : null), array('placeholder' => 'Select your punish_type','class' => 'form-control')) !!}--}}
+                             {!! Form::select('aw_type[]', (isset($award->aw_type) ? (isset($award->aw_type) ? $types : null) : $types), (isset($award->aw_type) ? $award->aw_type : null), array('placeholder' => 'Select Type','class' => 'form-control')) !!}
+                            {{--<input type="text" name="aw_type[]" class="form-control" value="{!! isset($award->aw_type) ? $award->aw_type : old('aw_type') !!}">--}}
                             @if($errors->has('punish_type'))
                                 <span class="help-block">
                             <strong>{!! $errors->first('punish_type') !!}</strong>
@@ -134,7 +136,9 @@
                         <div class="form-group{!! $errors->has('punish_type') ? ' has-error' : '' !!}">
                             <label for="punish_type" class="control-label">
                                 <strong>ប្រភេទ:</strong></label>
-                            <input type="text" name="aw_type[]" class="form-control" value="{!! isset($award->aw_type) ? $award->aw_type : old('aw_type[]') !!}" placeholder="--សូមជ្រើសរើស--">
+                            {{--{!! Form::text('aw_type[]', (isset($award->aw_type) ? $award->aw_type : null), array('placeholder' => 'សូម','class' => 'form-control')) !!}--}}
+                            {!! Form::select('aw_type[]', (isset($award->aw_type) ? (isset($award->aw_type) ? $types : null) : $types), (isset($award->aw_type) ? $award->aw_type : null), array('placeholder' => 'សូមជ្រើសរើស','class' => 'form-control')) !!}
+                            {{--<input type="text" name="aw_type[]" class="form-control" value="{!! isset($award->aw_type) ? $award->aw_type : old('aw_type') !!}" placeholder="--សូមជ្រើសរើស--">--}}
                             @if($errors->has('punish_type'))
                                 <span class="help-block">
                             <strong>{!! $errors->first('punish_type') !!}</strong>
@@ -230,7 +234,9 @@
                     <div class="form-group{!! $errors->has('punish_type') ? ' has-error' : '' !!}">
                         <label for="punish_type" class="control-label">
                             <strong>ប្រភេទ:</strong></label>
-                        <input type="text" name="aw_type[]" class="form-control" value="{!! isset($award->aw_type) ? $award->aw_type : old('aw_type[]') !!}" placeholder="--សូមជ្រើសរើស--">
+                        {{--{!! Form::text('aw_type[]', (isset($award->aw_type) ? $award->aw_type : null), array('placeholder' => 'សូមបញ្ចូល','class' => 'form-control')) !!}--}}
+                        {!! Form::select('aw_type[]', (isset($award->aw_type) ? (isset($award->aw_type) ? $types : null) : $types), (isset($award->aw_type) ? $award->aw_type : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
+                        {{--<input type="text" name="aw_type[]" class="form-control" value="{!! isset($award->aw_type) ? $award->aw_type : old('aw_type') !!}" placeholder="--សូមជ្រើសរើស--">--}}
                         @if($errors->has('punish_type'))
                             <span class="help-block">
                             <strong>{!! $errors->first('punish_type') !!}</strong>
@@ -243,6 +249,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group{!! $errors->has('description') ? ' has-error' : '' !!}">
                         <label for="description" class="control-label"><strong>ខ្លឹមសារ:</strong></label>
+                        {{--{!! Form::textarea('aw_description[]', (isset($award->aw_description) ? $award->aw_description : null), array('placeholder' => 'សូមបញ្ចូលខ្លឹមសារ','class' => 'form-control', 'rows'=> '4')) !!}--}}
                         {{--<input type="text" name="aw_description[]" class="form-control">--}}
                         <textarea name="aw_description[]" id="" cols="10" rows="5" class="form-control">{!! isset($award->aw_description) ? $award->aw_description : old('aw_description[]') !!}</textarea>
                         @if($errors->has('description'))

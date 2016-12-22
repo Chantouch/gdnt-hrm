@@ -62,7 +62,7 @@
                             <div class="input-group">
                                 {{--{!! Form::text('sib_dob', null, array('placeholder' => 'Enter date of birth','class' => 'form-control', 'id'=>'sib_dob')) !!}--}}
                                 {{--<!-- {!! Form::text('sib_dob[]', (isset($sibling->sib_dob)? $sibling->sib_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control date_picker', 'id'=>'sib_dob')) !!} -->--}}
-                                <input type="text" name="sib_dob[]" class="form-control" value="{!! isset($sibling->sib_dob) ? $sibling->sib_dob : old('sib_dob[]') !!}" placeholder="yyyy-m-d">
+                                <input type="text" name="sib_dob[]" class="form-control date_picker" value="{!! isset($sibling->sib_dob) ? $sibling->sib_dob : old('sib_dob[]') !!}" placeholder="yyyy-m-d">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                                 @if($errors->has('sib_dob'))
@@ -131,7 +131,7 @@
                             <label for="sib_dob" class="control-label">
                                 <strong>ថ្ងៃខែឆ្នាំកំណើត:</strong></label>
                             <div class="input-group">
-                                <input type="text" name="sib_dob[]" class="form-control" value="" placeholder="yyyy-m-d">
+                                <input type="text" name="sib_dob[]" class="form-control date_picker" value="" placeholder="yyyy-m-d">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
                                 @if($errors->has('sib_dob'))
@@ -227,7 +227,7 @@
                         <div class="input-group">
                             {{--{!! Form::text('sib_dob', null, array('placeholder' => 'Enter date of birth','class' => 'form-control', 'id'=>'sib_dob')) !!}--}}
                             {{--{!! Form::text('sib_dob[]', (isset($employer->siblings->sib_dob)? $employer->siblings->sib_dob : null), array('placeholder' => 'yyyy-m-d','class' => 'form-control date_picker', 'id'=>'sib_dob')) !!}--}}
-                            <input type="text" name="sib_dob[]" class="form-control" value="" placeholder="yyyy-m-d">
+                            <input type="text" name="sib_dob[]" class="form-control date_picker" value="" placeholder="yyyy-m-d">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
                             @if($errors->has('sib_dob'))

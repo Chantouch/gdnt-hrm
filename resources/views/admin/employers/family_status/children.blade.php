@@ -42,7 +42,8 @@
 
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <label for="child_gender" class="control-label col-md-12">ភេទ:</label>
-                        <input type="text" name="child_gender[]" class="form-control" value="{!! isset($child->child_gender) ? $child->child_gender : old('child_gender[]') !!}" placeholder="--សូមជ្រើសរើស--">
+                        {{--<input type="text" name="child_gender[]" class="form-control" value="{!! isset($child->child_gender) ? $child->child_gender : old('child_gender[]') !!}" placeholder="--សូមជ្រើសរើស--">--}}
+                        {!! Form::select('child_gender[]', (isset($child->child_gender) ? (isset($child->child_gender) ? $gender : null) : $gender), (isset($child->child_gender) ? $child->child_gender : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                         @if($errors->has('child_gender'))
                             <span class="help-block">
                                     <strong>{!! $errors->first('child_gender') !!}</strong>
@@ -80,7 +81,8 @@
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <label for="subsidy" class="control-label col-md-12">ប្រាក់ឧបត្ថម្ភ:</label>
-                        <input type="text" name="child_subsidy[]" class="form-control" value="{!! isset($child->child_subsidy) ? $child->child_subsidy : old('child_subsidy[]') !!}" placeholder="--សូមជ្រើសរើស--">
+                        {{--<input type="text" name="child_subsidy[]" class="form-control" value="{!! isset($child->child_subsidy) ? $child->child_subsidy : old('child_subsidy[]') !!}" placeholder="--សូមជ្រើសរើស--">--}}
+                        {!! Form::select('child_subsidy[]', (isset($child->child_subsidy) ? (isset($child->child_subsidy) ? $subsidy : null) : $subsidy), (isset($child->child_subsidy) ? $child->child_subsidy : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                         @if($errors->has('child_subsidy'))
                             <span class="help-block">
                                     <strong>{!! $errors->first('child_subsidy') !!}</strong>
@@ -94,39 +96,35 @@
                 <div id="child_form_add">
                     <div class="col-xs-12 col-sm-5 col-md-5">
                         <div class="form-group{!! $errors->has('child_full_name') ? ' has-error' : '' !!}">
-                            <label for="child_full_name" class="control-label">
-                                <strong>គោត្តនាម និង នាម:</strong>
-                            </label>
+                            <label for="child_full_name" class="control-label"><strong>គោត្តនាម និង នាម:</strong></label>
                             <input type="text" name="child_full_name[]" class="form-control" value="{!! isset($child->child_full_name) ? $child->child_full_name : old('child_full_name[]') !!}" placeholder="សូមបញ្ចូលគោត្តនៈនាមនិងនាម">
                             @if($errors->has('child_full_name'))
                                 <span class="help-block">
-                                    <strong>{!! $errors->first('child_full_name') !!}</strong>
-                                </span>
+                                <strong>{!! $errors->first('child_full_name') !!}</strong>
+                            </span>
                             @endif
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-5 col-md-5">
                         <div class="form-group{!! $errors->has('child_fn_en') ? ' has-error' : '' !!}">
-                            <label for="child_fn_en" class="control-label">
-                                <strong>អក្សរឡាតាំង:</strong>
-                            </label>
+                            <label for="child_fn_en" class="control-label"><strong>អក្សរឡាតាំង:</strong></label>
                             <input type="text" name="child_fn_en[]" class="form-control" value="{!! isset($child->child_fn_en) ? $child->child_fn_en : old('child_fn_en[]') !!}" placeholder="សូមបញ្ចូលជាអក្សរឡាតាំង">
                             @if($errors->has('child_fn_en'))
                                 <span class="help-block">
-                                    <strong>{!! $errors->first('child_fn_en') !!}</strong>
-                                </span>
+                                <strong>{!! $errors->first('child_fn_en') !!}</strong>
+                            </span>
                             @endif
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <label for="child_gender" class="control-label col-md-12">ភេទ:</label>
-                        <input type="text" name="child_gender[]" class="form-control" value="{!! isset($child->child_gender) ? $child->child_gender : old('child_gender[]') !!}" placeholder="--សូមជ្រើសរើស--">
+                        {!! Form::select('child_gender[]', (isset($employer->children->child_gender) ? (isset($employer->children->child_gender) ? $gender : null) : $gender), (isset($employer->children->child_gender) ? $employer->children->child_gender : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                         @if($errors->has('child_gender'))
                             <span class="help-block">
-                                <strong>{!! $errors->first('child_gender') !!}</strong>
-                            </span>
+                            <strong>{!! $errors->first('child_gender') !!}</strong>
+                        </span>
                         @endif
                     </div>
 
@@ -137,11 +135,12 @@
                             <div class="input-group">
                                 <input type="text" name="child_dob[]" class="form-control date_picker" value="{!! isset($child->child_dob) ? $child->child_dob : old('child_dob[]') !!}" placeholder="yyyy-m-d">
                                 <span class="input-group-addon bg-custom b-0 text-white">
-                                <i class="icon-calender"></i></span>
+                                <i class="icon-calender"></i>
+                            </span>
                                 @if($errors->has('child_dob'))
                                     <span class="help-block">
-                                        <strong>{!! $errors->first('child_dob') !!}</strong>
-                                    </span>
+                                    <strong>{!! $errors->first('child_dob') !!}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
@@ -153,18 +152,18 @@
                             <input type="text" name="child_job[]" class="form-control" value="{!! isset($child->child_job) ? $child->child_job : old('child_job[]') !!}" placeholder="សូមបញ្ចូលមុខរបរបច្ចុប្បន្ននិងស្ថាប័នឬអង្គភាព">
                             @if($errors->has('child_job'))
                                 <span class="help-block">
-                                    <strong>{!! $errors->first('child_job') !!}</strong>
-                                </span>
+                                <strong>{!! $errors->first('child_job') !!}</strong>
+                            </span>
                             @endif
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <label for="subsidy" class="control-label col-md-12">ប្រាក់ឧបត្ថម្ភ:</label>
-                        <input type="text" name="child_subsidy[]" class="form-control" value="{!! isset($child->child_subsidy) ? $child->child_subsidy : old('child_subsidy[]') !!}" placeholder="--សូមជ្រើសរើស--">
+                        {!! Form::select('child_subsidy[]', (isset($employer->children->child_subsidy) ? (isset($employer->children->child_subsidy) ? $subsidy : null) : $subsidy), (isset($employer->children->child_subsidy) ? $employer->children->child_subsidy : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                         @if($errors->has('child_subsidy'))
                             <span class="help-block">
-                                <strong>{!! $errors->first('child_subsidy') !!}</strong>
-                            </span>
+                            <strong>{!! $errors->first('child_subsidy') !!}</strong>
+                        </span>
                         @endif
                     </div>
                 </div>
@@ -220,7 +219,7 @@
 
                 <div class="col-xs-12 col-sm-2 col-md-2">
                     <label for="child_gender" class="control-label col-md-12">ភេទ:</label>
-                    <input type="text" name="child_gender[]" class="form-control" value="{!! isset($child->child_gender) ? $child->child_gender : old('child_gender[]') !!}" placeholder="--សូមជ្រើសរើស--">
+                    {!! Form::select('child_gender[]', (isset($employer->children->child_gender) ? (isset($employer->children->child_gender) ? $gender : null) : $gender), (isset($employer->children->child_gender) ? $employer->children->child_gender : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                     @if($errors->has('child_gender'))
                         <span class="help-block">
                             <strong>{!! $errors->first('child_gender') !!}</strong>
@@ -233,7 +232,7 @@
                         <label for="child_dob" class="control-label">
                             <strong>ថ្ងៃខែកំណើត:</strong></label>
                         <div class="input-group">
-                            <input type="text" name="child_dob[]" class="form-control" value="{!! isset($child->child_dob) ? $child->child_dob : old('child_dob[]') !!}" placeholder="yyyy-m-d">
+                            <input type="text" name="child_dob[]" class="form-control date_picker" value="{!! isset($child->child_dob) ? $child->child_dob : old('child_dob[]') !!}" placeholder="yyyy-m-d">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i>
                             </span>
@@ -259,7 +258,7 @@
                 </div>
                 <div class="col-xs-12 col-sm-2 col-md-2">
                     <label for="subsidy" class="control-label col-md-12">ប្រាក់ឧបត្ថម្ភ:</label>
-                    <input type="text" name="child_subsidy[]" class="form-control" value="{!! isset($child->child_subsidy) ? $child->child_subsidy : old('child_subsidy[]') !!}" placeholder="--សូមជ្រើសរើស--">
+                    {!! Form::select('child_subsidy[]', (isset($employer->children->child_subsidy) ? (isset($employer->children->child_subsidy) ? $subsidy : null) : $subsidy), (isset($employer->children->child_subsidy) ? $employer->children->child_subsidy : null), array('placeholder' => '--សូមជ្រើសរើស--','class' => 'form-control')) !!}
                     @if($errors->has('child_subsidy'))
                         <span class="help-block">
                             <strong>{!! $errors->first('child_subsidy') !!}</strong>

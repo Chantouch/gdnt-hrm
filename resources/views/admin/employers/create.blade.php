@@ -118,6 +118,7 @@
 
     </script>
 @stop
+
 @section('script_ready')
 
     $('#dob').datepicker({
@@ -274,16 +275,5 @@
     });
     {{--End Form Short Courses Form--}}
 
-    {{--Start Form Short Courses Form--}}
-    $('button#language_btn_remove').on('click', function(e){
-    e.preventDefault();
-    add_new_form('date_picker', 'form_language_add', 'form_language');
-    });
-
-    $('button#language_btn_add').on('click', function(e){
-    e.preventDefault();
-    remove_row('div#form_language_add');
-    });
-    {{--End Form Short Courses Form--}}
 
 @stop

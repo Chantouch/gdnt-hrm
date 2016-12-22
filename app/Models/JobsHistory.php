@@ -17,21 +17,16 @@ class JobsHistory extends Model
         'phj_ministry_institute',
         'phj_end_date',
         'phj_start_date',
-        'phj_type',
         'phj_occupation',
     ];
     protected $dates = ['phj_start_date', 'phj_end_date'];
     protected $guarded = ['_method'];
 
-//    public function setPHJStartDateAttribute()
-//    {
-//        Carbon::parse($this->attributes['phj_start_date'])->format('Y-m-d');
-//    }
-
-    public function getPHJStartDateAttribute()
+    public function setPhjTypeAttribute($value)
     {
-        return $this->attributes['phj_start_date'] = Carbon::parse($this->attributes['phj_start_date'])->format('Y-m-d');
+        $this->attributes['phj_type'] = ($value == '') ? 'Public' : $value;
     }
+
 
 //    public function setPHJEndDateAttribute()
 //    {

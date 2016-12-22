@@ -1127,7 +1127,7 @@ class EmployerController extends Controller
                 }
             } else {
                 foreach ($request->child_full_name as $key => $child_full_name) {
-                    if (!empty($name)) {
+                    if (!empty($child_full_name)) {
                         $entry = [
                             'child_emp_id' => $employer->id,
                             'child_full_name' => $child_full_name,
@@ -1175,6 +1175,22 @@ class EmployerController extends Controller
         }
         $employer->delete();
         return redirect()->route('admin.managements.employers.index')->with('success', "Employer name $employer->full_name was deleted successfully");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function permanently_delete($id)
+    {
+        $employer = Employer::with('firstStateJob')->with('currentJob')->with('addOnCurrentPosition')->with('educationLevel')->findOrFail($id);
+        if (empty($employer)) {
+            return redirect()->route('admin.managements.employers.index')->with('error', 'Employer not found');
+        }
+        $employer->forceDelete();
+        return redirect()->route('admin.managements.employers.index')->with('success', "Employer was deleted successfully");
     }
 
 }
