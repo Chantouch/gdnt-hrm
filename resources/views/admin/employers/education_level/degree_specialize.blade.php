@@ -23,6 +23,9 @@
                                     <strong>កម្រិត:</strong>
                                 </label>
                                 {!! Form::text('ds_level_edu[]', (isset($degree_specialize->ds_level_edu) ? $degree_specialize->ds_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'ds_level_edu')) !!}
+                                <input type="text" name="ds_level_edu[]" class="form-control"
+                                      value="{!! isset($degree_specialize->ds_level_edu) ? $degree_specialize->ds_level_edu : old('ds_level_edu[]') !!}"
+                                            placeholder="សូមបញ្ចូលកម្រិតវប្បធម៏">
                                 @if($errors->has('ds_level_edu'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('ds_level_edu') !!}</strong>
@@ -37,6 +40,9 @@
                                     <strong>ឈ្មោះសាលា:</strong>
                                 </label>
                                 {!! Form::text('ds_school[]', (isset($degree_specialize->ds_school) ? $degree_specialize->ds_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'ds_school')) !!}
+                                <input type="text" name="ds_level_edu[]" class="form-control"
+                                      value="{!! isset($degree_specialize->ds_school) ? $degree_specialize->ds_school : old('ds_school[]') !!}"
+                                            placeholder="សូមបញ្ចូលឈ្នោះសាលារៀន">
                                 @if($errors->has('ds_school'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('ds_school') !!}</strong>
@@ -51,6 +57,9 @@
                                     <strong>ប្រទេស:</strong>
                                 </label>
                                 {!! Form::text('ds_country[]', (isset($degree_specialize->ds_country) ? $degree_specialize->ds_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'ds_country')) !!}
+                                <input type="text" name="ds_country[]" class="form-control"
+                                      value="{!! isset($degree_specialize->ds_country) ? $degree_specialize->ds_country : old('ds_country[]') !!}"
+                                            placeholder="សូមបញ្ចូលប្រទេស">
                                 @if($errors->has('ds_country'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('ds_country') !!}</strong>
@@ -63,6 +72,9 @@
                             <div class="form-group{!! $errors->has('ds_degree') ? ' has-error' : '' !!}">
                                 <label for="ds_degree" class="control-label"><strong>ថ្មាក់:</strong></label>
                                 {!! Form::text('ds_degree[]', (isset($degree_specialize->ds_degree) ? $degree_specialize->ds_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'ds_degree')) !!}
+                                <input type="text" name="ds_degree[]" class="form-control"
+                                      value="{!! isset($degree_specialize->ds_degree) ? $degree_specialize->ds_degree : old('ds_degree[]') !!}"
+                                            placeholder="សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)">
                                 @if($errors->has('ds_degree'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('ds_degree') !!}</strong>
@@ -76,6 +88,9 @@
                                 <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                                 <div class="input-group">
                                     {!! Form::text('ds_start_date[]', (isset($degree_specialize->ds_start_date) ? $degree_specialize->ds_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'ds_start_date')) !!}
+                                    <input type="text" name="ds_start_date[]" class="form-control date_picker"
+                                          value="{!! isset($degree_specialize->ds_start_date) ? $degree_specialize->ds_start_date : old('ds_start_date[]') !!}"
+                                                placeholder="ថ្ងៃចាប់ផ្តើមសិក្សា">
                                     <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                                     @if($errors->has('ds_start_date'))
@@ -92,6 +107,9 @@
                                 <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                                 <div class="input-group">
                                     {!! Form::text('ds_end_date[]', (isset($degree_specialize->ds_end_date) ? $degree_specialize->ds_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'ds_end_date')) !!}
+                                    <input type="text" name="ds_end_date[]" class="form-control date_picker"
+                                          value="{!! isset($degree_specialize->ds_end_date) ? $degree_specialize->ds_end_date : old('ds_end_date[]') !!}"
+                                                placeholder="ថ្ងៃបញ្ចប់ការសិក្សា">
                                     <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                                     @if($errors->has('ds_end_date'))
@@ -114,7 +132,9 @@
                             <label for="ds_level_edu" class="control-label">
                                 <strong>កម្រិត:</strong></label>
                             {{--{!! Form::text('ds_level_edu[]', (isset($employer->degree_specializes->ds_level_edu) ? $employer->degree_specializes->ds_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'ds_level_edu')) !!}--}}
-                            <input type="text" name="ds_level_edu[]" class="form-control">
+                            <input type="text" name="ds_level_edu[]" class="form-control"
+                                  value="{!! isset($degree_specialize->ds_level_edu) ? $degree_specialize->ds_level_edu : old('ds_level_edu[]') !!}"
+                                        placeholder="សូមបញ្ចូលកម្រិតវប្បធម៏">
                             @if($errors->has('ds_level_edu'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('ds_level_edu') !!}</strong>
@@ -128,7 +148,9 @@
                             <label for="ds_school" class="control-label">
                                 <strong>ឈ្មោះសាលា:</strong></label>
                             {{--{!! Form::text('ds_school[]', (isset($employer->degree_specializes->ds_school) ? $employer->degree_specializes->ds_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'ds_school')) !!}--}}
-                            <input type="text" name="ds_school[]" class="form-control">
+                            <input type="text" name="ds_school[]" class="form-control"
+                                  value="{!! isset($degree_specialize->ds_school) ? $degree_specialize->ds_school : old('ds_school[]') !!}"
+                                        placeholder="សូមបញ្ចូលឈ្នោះសាលារៀន">
                             @if($errors->has('ds_school'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('ds_school') !!}</strong>
@@ -142,7 +164,9 @@
                             <label for="ds_country" class="control-label">
                                 <strong>ប្រទេស:</strong></label>
                             {{--{!! Form::text('ds_country[]', (isset($employer->degree_specializes->ds_country) ? $employer->degree_specializes->ds_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'ds_country')) !!}--}}
-                            <input type="text" name="ds_country[]" class="form-control">
+                            <input type="text" name="ds_country[]" class="form-control"
+                                  value="{!! isset($degree_specialize->ds_country) ? $degree_specialize->ds_country : old('ds_country[]') !!}"
+                                        placeholder="សូមបញ្ចូលប្រទេស">
                             @if($errors->has('ds_country'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('ds_country') !!}</strong>
@@ -155,7 +179,9 @@
                         <div class="form-group{!! $errors->has('ds_degree') ? ' has-error' : '' !!}">
                             <label for="ds_degree" class="control-label"><strong>ថ្មាក់:</strong></label>
                             {{--{!! Form::text('ds_degree[]', (isset($employer->degree_specializes->ds_degree) ? $employer->degree_specializes->ds_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'ds_degree')) !!}--}}
-                            <input type="text" name="ds_degree[]" class="form-control">
+                            <input type="text" name="ds_degree[]" class="form-control"
+                                  value="{!! isset($degree_specialize->ds_degree) ? $degree_specialize->ds_degree : old('ds_degree[]') !!}"
+                                        placeholder="សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)">
                             @if($errors->has('ds_degree'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('ds_degree') !!}</strong>
@@ -169,7 +195,9 @@
                             <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                             <div class="input-group">
                                 {{--{!! Form::text('ds_start_date[]', (isset($employer->degree_specializes->ds_start_date) ? $employer->degree_specializes->ds_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'ds_start_date')) !!}--}}
-                                <input type="text" name="ds_start_date[]" class="form-control date_picker">
+                                <input type="text" name="ds_start_date[]" class="form-control date_picker"
+                                      value="{!! isset($degree_specialize->ds_start_date) ? $degree_specialize->ds_start_date : old('ds_start_date[]') !!}"
+                                            placeholder="ថ្ងៃចាប់ផ្តើមសិក្សា">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i>
                             </span>
@@ -187,7 +215,9 @@
                             <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                             <div class="input-group">
                                 {{--{!! Form::text('ds_end_date[]', (isset($employer->degree_specializes->ds_end_date) ? $employer->degree_specializes->ds_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'ds_end_date')) !!}--}}
-                                <input type="text" name="ds_end_date[]" class="form-control date_picker">
+                                <input type="text" name="ds_end_date[]" class="form-control date_picker"
+                                      value="{!! isset($degree_specialize->ds_end_date) ? $degree_specialize->ds_end_date : old('ds_end_date[]') !!}"
+                                            placeholder="ថ្ងៃបញ្ចប់ការសិក្សា">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i>
                             </span>
@@ -232,7 +262,9 @@
                         <label for="ds_level_edu" class="control-label">
                             <strong>កម្រិត:</strong></label>
                         {{--{!! Form::text('ds_level_edu[]', (isset($employer->degree_specializes->ds_level_edu) ? $employer->degree_specializes->ds_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'ds_level_edu')) !!}--}}
-                        <input type="text" name="ds_level_edu[]" class="form-control">
+                        <input type="text" name="ds_level_edu[]" class="form-control"
+                              value="{!! isset($degree_specialize->ds_level_edu) ? $degree_specialize->ds_level_edu : old('ds_level_edu[]') !!}"
+                                    placeholder="សូមបញ្ចូលកម្រិតវប្បធម៏">
                         @if($errors->has('ds_level_edu'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ds_level_edu') !!}</strong>
@@ -246,7 +278,9 @@
                         <label for="ds_school" class="control-label">
                             <strong>ឈ្មោះសាលា:</strong></label>
                         {{--{!! Form::text('ds_school[]', (isset($employer->degree_specializes->ds_school) ? $employer->degree_specializes->ds_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'ds_school')) !!}--}}
-                        <input type="text" name="ds_school[]" class="form-control">
+                        <input type="text" name="ds_school[]" class="form-control"
+                              value="{!! isset($degree_specialize->ds_school) ? $degree_specialize->ds_school : old('ds_school[]') !!}"
+                                    placeholder="សូមបញ្ចូលឈ្នោះសាលារៀន">
                         @if($errors->has('ds_school'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ds_school') !!}</strong>
@@ -260,7 +294,9 @@
                         <label for="ds_country" class="control-label">
                             <strong>ប្រទេស:</strong></label>
                         {{--{!! Form::text('ds_country[]', (isset($employer->degree_specializes->ds_country) ? $employer->degree_specializes->ds_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'ds_country')) !!}--}}
-                        <input type="text" name="ds_country[]" class="form-control">
+                        <input type="text" name="ds_country[]" class="form-control"
+                              value="{!! isset($degree_specialize->ds_country) ? $degree_specialize->ds_country : old('ds_country[]') !!}"
+                                    placeholder="សូមបញ្ចូលប្រទេស">
                         @if($errors->has('ds_country'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ds_country') !!}</strong>
@@ -273,7 +309,9 @@
                     <div class="form-group{!! $errors->has('ds_degree') ? ' has-error' : '' !!}">
                         <label for="ds_degree" class="control-label"><strong>ថ្មាក់:</strong></label>
                         {{--{!! Form::text('ds_degree[]', (isset($employer->degree_specializes->ds_degree) ? $employer->degree_specializes->ds_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'ds_degree')) !!}--}}
-                        <input type="text" name="ds_degree[]" class="form-control">
+                        <input type="text" name="ds_degree[]" class="form-control"
+                              value="{!! isset($degree_specialize->ds_degree) ? $degree_specialize->ds_degree : old('ds_degree[]') !!}"
+                                    placeholder="សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)">
                         @if($errors->has('ds_degree'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ds_degree') !!}</strong>
@@ -287,7 +325,9 @@
                         <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                         <div class="input-group">
                             {{--{!! Form::text('ds_start_date[]', (isset($employer->degree_specializes->ds_start_date) ? $employer->degree_specializes->ds_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'ds_start_date')) !!}--}}
-                            <input type="text" name="ds_start_date[]" class="form-control date_picker">
+                            <input type="text" name="ds_start_date[]" class="form-control date_picker"
+                                  value="{!! isset($degree_specialize->ds_start_date) ? $degree_specialize->ds_start_date : old('ds_start_date[]') !!}"
+                                        placeholder="ថ្ងៃចាប់ផ្តើមសិក្សា">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i>
                             </span>
@@ -305,7 +345,9 @@
                         <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                         <div class="input-group">
                             {{--{!! Form::text('ds_end_date[]', (isset($employer->degree_specializes->ds_end_date) ? $employer->degree_specializes->ds_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'ds_end_date')) !!}--}}
-                            <input type="text" name="ds_end_date[]" class="form-control date_picker">
+                            <input type="text" name="ds_end_date[]" class="form-control date_picker"
+                                  value="{!! isset($degree_specialize->ds_end_date) ? $degree_specialize->ds_end_date : old('ds_end_date[]') !!}"
+                                        placeholder="ថ្ងៃបញ្ចប់ការសិក្សា">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i>
                             </span>

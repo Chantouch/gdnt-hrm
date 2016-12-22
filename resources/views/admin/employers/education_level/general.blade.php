@@ -23,6 +23,9 @@
                                     <strong>កម្រិត:</strong>
                                 </label>
                                 {!! Form::text('ge_level_edu[]', (isset($education->ge_level_edu) ? $education->ge_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'ge_level_edu')) !!}
+                                <input type="text" name="ge_level_edu[]" class="form-control"
+                                      value="{!! isset($education->ge_level_edu) ? $education->ge_level_edu : old('ge_level_edu[]') !!}"
+                                        placeholder="សូមបញ្ចូលកម្រិតវប្បធម៏">
                                 @if($errors->has('ge_level_edu'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('ge_level_edu') !!}</strong>
@@ -37,6 +40,9 @@
                                     <strong>ឈ្មោះសាលា:</strong>
                                 </label>
                                 {!! Form::text('ge_school[]', (isset($education->ge_school) ? $education->ge_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'ge_school')) !!}
+                                <input type="text" name="ge_school[]" class="form-control"
+                                      value="{!! isset($education->ge_school) ? $education->ge_school : old('ge_school[]') !!}"
+                                          placeholder="សូមបញ្ចូលឈ្នោះសាលារៀន">
                                 @if($errors->has('ge_school'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('ge_school') !!}</strong>
@@ -51,6 +57,9 @@
                                     <strong>ប្រទេស:</strong>
                                 </label>
                                 {!! Form::text('ge_country[]', (isset($education->ge_country) ? $education->ge_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'ge_country')) !!}
+                                <input type="text" name="ge_country[]" class="form-control"
+                                      value="{!! isset($education->ge_country) ? $education->ge_country : old('ge_country[]') !!}"
+                                            placeholder="សូមបញ្ចូលប្រទេស">
                                 @if($errors->has('ge_country'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('ge_country') !!}</strong>
@@ -63,6 +72,9 @@
                             <div class="form-group{!! $errors->has('ge_degree') ? ' has-error' : '' !!}">
                                 <label for="ge_degree" class="control-label"><strong>ថ្មាក់:</strong></label>
                                 {!! Form::text('ge_degree[]', (isset($education->ge_degree) ? $education->ge_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'ge_degree')) !!}
+                                <input type="text" name="ge_degree[]" class="form-control"
+                                      value="{!! isset($education->ge_degree) ? $education->ge_degree : old('ge_degree[]') !!}"
+                                            placeholder="សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)">
                                 @if($errors->has('ge_degree'))
                                     <span class="help-block">
                                         <strong>{!! $errors->first('ge_degree') !!}</strong>
@@ -76,6 +88,9 @@
                                 <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                                 <div class="input-group">
                                     {!! Form::text('ge_start_date[]', (isset($education->ge_start_date) ? $education->ge_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'ge_start_date')) !!}
+                                    <input type="text" name="ge_start_date[]" class="form-control date_picker"
+                                          value="{!! isset($education->ge_start_date) ? $education->ge_start_date : old('ge_start_date[]') !!}"
+                                                placeholder="ថ្ងៃចាប់ផ្តើមសិក្សា">
                                     <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                                     @if($errors->has('ge_start_date'))
@@ -92,6 +107,9 @@
                                 <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                                 <div class="input-group">
                                     {!! Form::text('ge_end_date[]', (isset($education->ge_end_date) ? $education->ge_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'ge_end_date')) !!}
+                                    <input type="text" name="ge_end_date[]" class="form-control date_picker"
+                                          value="{!! isset($education->ge_end_date) ? $education->ge_end_date : old('ge_end_date[]') !!}"
+                                                placeholder="ថ្ងៃបញ្ចប់ការសិក្សា">
                                     <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i></span>
                                     @if($errors->has('ge_end_date'))
@@ -114,7 +132,9 @@
                             <label for="ge_level_edu" class="control-label">
                                 <strong>កម្រិត:</strong></label>
                             {{--{!! Form::text('ge_level_edu[]', (isset($employer->educationLevel->ge_level_edu) ? $employer->educationLevel->ge_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'ge_level_edu')) !!}--}}
-                            <input type="text" name="ge_level_edu[]" class="form-control">
+                            <input type="text" name="ge_level_edu[]" class="form-control"
+                                  value="{!! isset($education->ge_level_edu) ? $education->ge_level_edu : old('ge_level_edu[]') !!}"
+                                        placeholder="សូមបញ្ចូលកម្រិតវប្បធម៏">
                             @if($errors->has('ge_level_edu'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('ge_level_edu') !!}</strong>
@@ -128,7 +148,9 @@
                             <label for="ge_school" class="control-label">
                                 <strong>ឈ្មោះសាលា:</strong></label>
                             {{--{!! Form::text('ge_school[]', (isset($employer->educationLevel->ge_school) ? $employer->educationLevel->ge_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'ge_school')) !!}--}}
-                            <input type="text" name="ge_school[]" class="form-control">
+                            <input type="text" name="ge_school[]" class="form-control"
+                                  value="{!! isset($education->ge_school) ? $education->ge_school : old('ge_school[]') !!}"
+                                        placeholder="សូមបញ្ចូលឈ្នោះសាលារៀន">
                             @if($errors->has('ge_school'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('ge_school') !!}</strong>
@@ -142,7 +164,9 @@
                             <label for="ge_country" class="control-label">
                                 <strong>ប្រទេស:</strong></label>
                             {{--{!! Form::text('ge_country[]', (isset($employer->educationLevel->ge_country) ? $employer->educationLevel->ge_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'ge_country')) !!}--}}
-                            <input type="text" name="ge_country[]" class="form-control">
+                            <input type="text" name="ge_country[]" class="form-control"
+                                  value="{!! isset($education->ge_country) ? $education->ge_country : old('ge_country[]') !!}"
+                                        placeholder="សូមបញ្ចូលប្រទេស">
                             @if($errors->has('ge_country'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('ge_country') !!}</strong>
@@ -155,7 +179,9 @@
                         <div class="form-group{!! $errors->has('ge_degree') ? ' has-error' : '' !!}">
                             <label for="ge_degree" class="control-label"><strong>ថ្មាក់:</strong></label>
                             {{--{!! Form::text('ge_degree[]', (isset($employer->educationLevel->ge_degree) ? $employer->educationLevel->ge_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'ge_degree')) !!}--}}
-                            <input type="text" name="ge_degree[]" class="form-control">
+                            <input type="text" name="ge_degree[]" class="form-control"
+                                  value="{!! isset($education->ge_degree) ? $education->ge_degree : old('ge_degree[]') !!}"
+                                        placeholder="សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)">
                             @if($errors->has('ge_degree'))
                                 <span class="help-block">
                                 <strong>{!! $errors->first('ge_degree') !!}</strong>
@@ -169,7 +195,9 @@
                             <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                             <div class="input-group">
                                 {{--{!! Form::text('ge_start_date[]', (isset($employer->educationLevel->ge_start_date) ? $employer->educationLevel->ge_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'ge_start_date')) !!}--}}
-                                <input type="text" name="ge_start_date[]" class="form-control date_picker">
+                                <input type="text" name="ge_start_date[]" class="form-control date_picker"
+                                      value="{!! isset($education->ge_start_date) ? $education->ge_start_date : old('ge_start_date[]') !!}"
+                                            placeholder="ថ្ងៃចាប់ផ្តើមសិក្សា">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
                                 @if($errors->has('ge_start_date'))
@@ -186,7 +214,9 @@
                             <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                             <div class="input-group">
                                 {{--{!! Form::text('ge_end_date[]', (isset($employer->educationLevel->ge_end_date) ? $employer->educationLevel->ge_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'ge_end_date')) !!}--}}
-                                <input type="text" name="ge_end_date[]" class="form-control date_picker">
+                                <input type="text" name="ge_end_date[]" class="form-control date_picker"
+                                      value="{!! isset($education->ge_end_date) ? $education->ge_end_date : old('ge_end_date[]') !!}"
+                                            placeholder="ថ្ងៃបញ្ចប់ការសិក្សា">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
                                 @if($errors->has('ge_end_date'))
@@ -230,7 +260,9 @@
                         <label for="ge_level_edu" class="control-label">
                             <strong>កម្រិត:</strong></label>
                         {{--{!! Form::text('ge_level_edu[]', (isset($employer->educationLevel->ge_level_edu) ? $employer->educationLevel->ge_level_edu : null), array('placeholder' => 'សូមបញ្ចូលកម្រិតវប្បធម៏','class' => 'form-control', 'id'=>'ge_level_edu')) !!}--}}
-                        <input type="text" name="ge_level_edu[]" class="form-control">
+                        <input type="text" name="ge_level_edu[]" class="form-control"
+                              value="{!! isset($education->ge_level_edu) ? $education->ge_level_edu : old('ge_level_edu[]') !!}"
+                                    placeholder="សូមបញ្ចូលកម្រិតវប្បធម៏">
                         @if($errors->has('ge_level_edu'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ge_level_edu') !!}</strong>
@@ -244,7 +276,9 @@
                         <label for="ge_school" class="control-label">
                             <strong>ឈ្មោះសាលា:</strong></label>
                         {{--{!! Form::text('ge_school[]', (isset($employer->educationLevel->ge_school) ? $employer->educationLevel->ge_school : null), array('placeholder' => 'សូមបញ្ចូលឈ្នោះសាលារៀន','class' => 'form-control', 'id'=>'ge_school')) !!}--}}
-                        <input type="text" name="ge_school[]" class="form-control">
+                        <input type="text" name="ge_school[]" class="form-control"
+                              value="{!! isset($education->ge_school) ? $education->ge_school : old('ge_school[]') !!}"
+                                    placeholder="សូមបញ្ចូលឈ្នោះសាលារៀន">
                         @if($errors->has('ge_school'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ge_school') !!}</strong>
@@ -258,7 +292,9 @@
                         <label for="ge_country" class="control-label">
                             <strong>ប្រទេស:</strong></label>
                         {{--{!! Form::text('ge_country[]', (isset($employer->educationLevel->ge_country) ? $employer->educationLevel->ge_country : null), array('placeholder' => 'សូមបញ្ចូលប្រទេស','class' => 'form-control', 'id'=>'ge_country')) !!}--}}
-                        <input type="text" name="ge_country[]" class="form-control">
+                        <input type="text" name="ge_country[]" class="form-control"
+                              value="{!! isset($education->ge_country) ? $education->ge_country : old('ge_country[]') !!}"
+                                    placeholder="សូមបញ្ចូលប្រទេស">
                         @if($errors->has('ge_country'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ge_country') !!}</strong>
@@ -271,7 +307,9 @@
                     <div class="form-group{!! $errors->has('ge_degree') ? ' has-error' : '' !!}">
                         <label for="ge_degree" class="control-label"><strong>ថ្មាក់:</strong></label>
                         {{--{!! Form::text('ge_degree[]', (isset($employer->educationLevel->ge_degree) ? $employer->educationLevel->ge_degree : null), array('placeholder' => 'សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)','class' => 'form-control', 'id'=>'ge_degree')) !!}--}}
-                        <input type="text" name="ge_degree[]" class="form-control">
+                        <input type="text" name="ge_degree[]" class="form-control"
+                              value="{!! isset($education->ge_degree) ? $education->ge_degree : old('ge_degree[]') !!}"
+                                    placeholder="សូមបញ្ចូលសញ្ញាបត្រទទួលបាន(ជំនាញឯកទេស)">
                         @if($errors->has('ge_degree'))
                             <span class="help-block">
                                 <strong>{!! $errors->first('ge_degree') !!}</strong>
@@ -285,7 +323,9 @@
                         <label for="start_date" class="control-label"><strong>ថ្ងៃចូល:</strong></label>
                         <div class="input-group">
                             {{--{!! Form::text('ge_start_date[]', (isset($employer->educationLevel->ge_start_date) ? $employer->educationLevel->ge_start_date : null), array('placeholder' => 'ថ្ងៃចាប់ផ្តើមសិក្សា','class' => 'form-control date_picker', 'id'=>'ge_start_date')) !!}--}}
-                            <input type="text" name="ge_start_date[]" class="form-control date_picker">
+                            <input type="text" name="ge_start_date[]" class="form-control date_picker"
+                                  value="{!! isset($education->ge_start_date) ? $education->ge_start_date : old('ge_start_date[]') !!}"
+                                        placeholder="ថ្ងៃចាប់ផ្តើមសិក្សា">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
                             @if($errors->has('ge_start_date'))
@@ -302,7 +342,9 @@
                         <label for="end_date" class="control-label"><strong>ថ្ងៃបញ្ចប់:</strong></label>
                         <div class="input-group">
                             {{--{!! Form::text('ge_end_date[]', (isset($employer->educationLevel->ge_end_date) ? $employer->educationLevel->ge_end_date : null), array('placeholder' => 'ថ្ងៃបញ្ចប់ការសិក្សា','class' => 'form-control date_picker', 'id'=>'ge_end_date')) !!}--}}
-                            <input type="text" name="ge_end_date[]" class="form-control date_picker">
+                            <input type="text" name="ge_end_date[]" class="form-control date_picker"
+                                  value="{!! isset($education->ge_end_date) ? $education->ge_end_date : old('ge_end_date[]') !!}"
+                                        placeholder="ថ្ងៃបញ្ចប់ការសិក្សា">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                 <i class="icon-calender"></i></span>
                             @if($errors->has('ge_end_date'))
