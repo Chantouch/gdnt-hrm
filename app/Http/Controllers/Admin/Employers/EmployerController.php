@@ -179,6 +179,7 @@ class EmployerController extends Controller
                     }
                 }
             }
+
             //Public Status jobs
             foreach ($request->hpj_ministry_institute as $key => $ministry_institute) {
                 if (!empty($ministry_institute)) {

@@ -63,6 +63,17 @@
                         <li><a href="crm-contact.html"> Add more </a></li>
                     </ul>
                 </li>
+
+                <li class="has_sub">
+                    <a href="#" class="waves-effect">
+                        <i class="ti-settings"></i><span> Settings </span></a>
+                    <ul class="list-unstyled">
+                        <li class="">
+                            <a href="{!! url('/clear-cache') !!}"> Clear Cache </a></li>
+                        <li><a href="{!! url('/cache-config') !!}"> Config Cache </a></li>
+                    </ul>
+                </li>
+
             </ul>
             <div class="clearfix"></div>
         </div>

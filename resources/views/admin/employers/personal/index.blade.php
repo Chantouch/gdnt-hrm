@@ -238,12 +238,12 @@
                         {!! Form::text('id_card_expired', null, array('placeholder' => 'ទម្រង់៖ឆ្នាំខែថ្ងៃ(Y-m-d)','class' => 'form-control date_picker', 'id'=> 'id_card_expired')) !!}
                         <span class="input-group-addon bg-custom b-0 text-white"><i
                                     class="icon-calender"></i></span>
-                        @if($errors->has('id_card_expired'))
-                            <span class="help-block">
+                    </div>
+                    @if($errors->has('id_card_expired'))
+                        <span class="help-block">
                                 <strong>{!! $errors->first('id_card_expired') !!}</strong>
                             </span>
-                        @endif
-                    </div>
+                    @endif
                 </div>
             </div>
 
@@ -267,12 +267,12 @@
                         {!! Form::text('passport_expired_date', null, array('placeholder' => 'ទម្រង់៖ឆ្នាំខែថ្ងៃ(Y-m-d)','class' => 'form-control date_picker', 'id'=>'passport_expired_date')) !!}
                         <span class="input-group-addon bg-custom b-0 text-white">
                             <i class="icon-calender"></i></span>
-                        @if($errors->has('passport_expired_date'))
-                            <span class="help-block">
+                    </div>
+                    @if($errors->has('passport_expired_date'))
+                        <span class="help-block">
                                 <strong>{!! $errors->first('passport_expired_date') !!}</strong>
                             </span>
-                        @endif
-                    </div>
+                    @endif
                 </div>
             </div>
         </div>

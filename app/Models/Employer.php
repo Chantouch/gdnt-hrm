@@ -35,11 +35,11 @@ class Employer extends Model
             'emp_id' => 'required|max:10|unique:users',
             'email' => 'required|unique:users',
             'dob' => 'required|date_format:Y-m-d|before:"now -18 year"',
-            //'id_card' => 'required',
-            //'id_card_expired' => 'required',
-            //'current_address' => 'required',
-            //'place_of_birth' => 'required',
-            'hand_phone' => 'numeric'
+            'id_card' => 'required|unique:users',
+            'id_card_expired' => 'required|date_format:Y-m-d|after:"now"',
+//            'current_address' => 'required',
+//            'place_of_birth' => 'required',
+            'hand_phone' => 'numeric|unique:users'
         ];
     }
 
@@ -67,6 +67,15 @@ class Employer extends Model
             case 'PATCH': {
                 return [
                     'email' => 'email|unique:users,email,' . $id . ',id',
+                    'full_name' => 'required',
+                    'gender' => 'required|in:f,m',
+                    'emp_id' => 'required|max:10|unique:users',
+                    'dob' => 'required|date_format:Y-m-d|before:"now -18 year"',
+                    'id_card' => 'required|unique:users',
+                    'id_card_expired' => 'required',
+                    'current_address' => 'required',
+                    'place_of_birth' => 'required',
+                    'hand_phone' => 'numeric|unique:users'
                 ];
             }
             default:
@@ -83,14 +92,6 @@ class Employer extends Model
             'full_name.required' => 'Please fill your full name',
             'email.unique' => 'លោកអ្នកមិនអាចបញ្ចូលនូវ Email ដែលស្ទួនគ្នាបានទេ',
         ];
-    }
-
-    /**
-     * @return string
-     */
-    public function setNameAttribute()
-    {
-        return $this->attributes['name'] = "Default";
     }
 
     /**
@@ -156,7 +157,7 @@ class Employer extends Model
 
     public function setDepartmentCodeAttribute($value)
     {
-        $this->attributes['department_code'] = ($value == 'GDNT') ? '' : $value;
+        $this->attributes['department_code'] = ($value == '') ? '0' : $value;
     }
 
     /**
@@ -164,7 +165,23 @@ class Employer extends Model
      */
     public function setIdNoticeEmpAttribute($value)
     {
-        $this->attributes['id_notice_emp'] = ($value == '') ? '' : $value;
+        $this->attributes['id_notice_emp'] = ($value == '') ? '0' : $value;
+    }
+
+    /**
+     * @param $value
+     */
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = ($value == '') ? 'Default' : $value;
+    }
+
+    /**
+     * @param $value
+     */
+    public function setMaritalStatusAttribute($value)
+    {
+        $this->attributes['marital_status'] = ($value == '') ? 's' : $value;
     }
 
     /**

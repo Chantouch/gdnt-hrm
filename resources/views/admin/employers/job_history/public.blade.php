@@ -15,100 +15,111 @@
     @if(isset($employer))
         @if(count($employer->jobHistoryPrivatePublic) >= 1)
             @foreach($employer->jobHistoryPrivatePublic as $history)
-                @if($history->phj_type == 'Public')
-                    <div id="public_form">
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('phj_start_date') ? ' has-error' : '' !!}">
-                                <label for="phj_start_date" class="control-label">
-                                    <strong>ថ្ងៃចូល:</strong>
-                                </label>
-                                <div class="input-group">
-                                    <input type="text" name="phj_start_date[]" class="form-control date_picker" value="{!! isset($history->phj_start_date) ? $history->phj_start_date : old('phj_start_date[]') !!}" placeholder="សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ">
-                                    <span class="input-group-addon bg-custom b-0 text-white">
+                <div id="public_form">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group{!! $errors->has('phj_start_date') ? ' has-error' : '' !!}">
+                            <label for="phj_start_date" class="control-label">
+                                <strong>ថ្ងៃចូល:</strong>
+                            </label>
+                            <div class="input-group">
+                                <input type="text" name="phj_start_date[]" class="form-control date_picker"
+                                       value="{!! isset($history->phj_start_date) ? $history->phj_start_date : old('phj_start_date[]') !!}"
+                                       placeholder="សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ">
+                                <span class="input-group-addon bg-custom b-0 text-white">
                                             <i class="icon-calender"></i></span>
-                                    @if($errors->has('phj_start_date'))
-                                        <span class="help-block">
+                                @if($errors->has('phj_start_date'))
+                                    <span class="help-block">
                                                     <strong>{!! $errors->first('phj_start_date') !!}</strong>
                                                 </span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        {{--//End date--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('phj_end_date') ? ' has-error' : '' !!}">
-                                <label for="phj_end_date" class="control-label">
-                                    <strong>ថ្ងៃឈប់:</strong>
-                                </label>
-                                <div class="input-group">
-                                    <input type="text" name="phj_end_date[]" class="form-control date_picker" value="{!! isset($history->phj_end_date) ? $history->phj_end_date : old('phj_end_date[]') !!}" placeholder="សសូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារ">
-                                    <span class="input-group-addon bg-custom b-0 text-white">
-                                            <i class="icon-calender"></i></span>
-                                    @if($errors->has('phj_end_date'))
-                                        <span class="help-block">
-                                                    <strong>{!! $errors->first('phj_end_date') !!}</strong>
-                                                </span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-                        {{--//Ministry institute--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('phj_ministry_institute') ? ' has-error' : '' !!}">
-                                <label for="phj_ministry_institute" class="control-label">
-                                    <strong>ក្រសួង-ស្ថាប័ន:</strong>
-                                </label>
-                                <input type="text" name="phj_ministry_institute[]" class="form-control" value="{!! isset($history->phj_ministry_institute) ? $history->phj_ministry_institute : old('phj_ministry_institute[]') !!}" placeholder="សូមបញ្ចូល ក្រសួងឬស្ថាប័នដែលបំពេញការងារ">
-                                @if($errors->has('phj_ministry_institute'))
-                                    <span class="help-block">
-                                                <strong>{!! $errors->first('phj_ministry_institute') !!}</strong>
-                                            </span>
-                                @endif
-                            </div>
-                        </div>
-                        {{--//Department--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('phj_department') ? ' has-error' : '' !!}">
-                                <label for="phj_department" class="control-label">
-                                    <strong>អង្គភាព:</strong>
-                                </label>
-                                <input type="text" name="phj_department[]" class="form-control" value="{!! isset($history->phj_department) ? $history->phj_department : old('phj_department[]') !!}" placeholder="សូមបញ្ចូល អង្គភាពដែលបំពេញការងារ">
-                                @if($errors->has('phj_department'))
-                                    <span class="help-block">
-                                                <strong>{!! $errors->first('phj_department') !!}</strong>
-                                            </span>
-                                @endif
-                            </div>
-                        </div>
-                        {{--//position--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('phj_occupation') ? ' has-error' : '' !!}">
-                                <label for="phj_occupation" class="control-label">
-                                    <strong>មុខតំណែង:</strong>
-                                </label>
-                                <input type="text" name="phj_occupation[]" class="form-control" value="{!! isset($history->phj_occupation) ? $history->phj_occupation : old('phj_occupation[]') !!}" placeholder="សូមបញ្ចូល មុខតំណែងដែលបានកាន់កាប់">
-                                @if($errors->has('phj_occupation'))
-                                    <span class="help-block">
-                                                <strong>{!! $errors->first('phj_occupation') !!}</strong>
-                                            </span>
-                                @endif
-                            </div>
-                        </div>
-                        {{--//Others--}}
-                        <div class="col-xs-12 col-sm-6 col-md-6">
-                            <div class="form-group{!! $errors->has('phj_others') ? ' has-error' : '' !!}">
-                                <label for="phj_others" class="control-label">
-                                    <strong>ផ្សេងៗ:</strong></label>
-                                <input type="text" name="phj_others[]" class="form-control" value="{!! isset($history->phj_others) ? $history->phj_others : old('phj_others[]') !!}" placeholder="បើមានអ្វីផ្សេង សូមបញ្ចូលនៅទីនេះ">
-                                @if($errors->has('phj_others'))
-                                    <span class="help-block">
-                                                <strong>{!! $errors->first('phj_others') !!}</strong>
-                                            </span>
                                 @endif
                             </div>
                         </div>
                     </div>
-                @endif
+                    {{--//End date--}}
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group{!! $errors->has('phj_end_date') ? ' has-error' : '' !!}">
+                            <label for="phj_end_date" class="control-label">
+                                <strong>ថ្ងៃឈប់:</strong>
+                            </label>
+                            <div class="input-group">
+                                <input type="text" name="phj_end_date[]" class="form-control date_picker"
+                                       value="{!! isset($history->phj_end_date) ? $history->phj_end_date : old('phj_end_date[]') !!}"
+                                       placeholder="សសូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារ">
+                                <span class="input-group-addon bg-custom b-0 text-white">
+                                            <i class="icon-calender"></i></span>
+                                @if($errors->has('phj_end_date'))
+                                    <span class="help-block">
+                                                    <strong>{!! $errors->first('phj_end_date') !!}</strong>
+                                                </span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                    {{--//Ministry institute--}}
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group{!! $errors->has('phj_ministry_institute') ? ' has-error' : '' !!}">
+                            <label for="phj_ministry_institute" class="control-label">
+                                <strong>ក្រសួង-ស្ថាប័ន:</strong>
+                            </label>
+                            <input type="text" name="phj_ministry_institute[]" class="form-control"
+                                   value="{!! isset($history->phj_ministry_institute) ? $history->phj_ministry_institute : old('phj_ministry_institute[]') !!}"
+                                   placeholder="សូមបញ្ចូល ក្រសួងឬស្ថាប័នដែលបំពេញការងារ">
+                            @if($errors->has('phj_ministry_institute'))
+                                <span class="help-block">
+                                                <strong>{!! $errors->first('phj_ministry_institute') !!}</strong>
+                                            </span>
+                            @endif
+                        </div>
+                    </div>
+                    {{--//Department--}}
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group{!! $errors->has('phj_department') ? ' has-error' : '' !!}">
+                            <label for="phj_department" class="control-label">
+                                <strong>អង្គភាព:</strong>
+                            </label>
+                            <input type="text" name="phj_department[]" class="form-control"
+                                   value="{!! isset($history->phj_department) ? $history->phj_department : old('phj_department[]') !!}"
+                                   placeholder="សូមបញ្ចូល អង្គភាពដែលបំពេញការងារ">
+                            @if($errors->has('phj_department'))
+                                <span class="help-block">
+                                                <strong>{!! $errors->first('phj_department') !!}</strong>
+                                            </span>
+                            @endif
+                        </div>
+                    </div>
+                    {{--//position--}}
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group{!! $errors->has('phj_occupation') ? ' has-error' : '' !!}">
+                            <label for="phj_occupation" class="control-label">
+                                <strong>មុខតំណែង:</strong>
+                            </label>
+                            <input type="text" name="phj_occupation[]" class="form-control"
+                                   value="{!! isset($history->phj_occupation) ? $history->phj_occupation : old('phj_occupation[]') !!}"
+                                   placeholder="សូមបញ្ចូល មុខតំណែងដែលបានកាន់កាប់">
+                            @if($errors->has('phj_occupation'))
+                                <span class="help-block">
+                                                <strong>{!! $errors->first('phj_occupation') !!}</strong>
+                                            </span>
+                            @endif
+                        </div>
+                    </div>
+                    {{--//Others--}}
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="form-group{!! $errors->has('phj_others') ? ' has-error' : '' !!}">
+                            <label for="phj_others" class="control-label">
+                                <strong>ផ្សេងៗ:</strong></label>
+                            <input type="text" name="phj_others[]" class="form-control"
+                                   value="{!! isset($history->phj_others) ? $history->phj_others : old('phj_others[]') !!}"
+                                   placeholder="បើមានអ្វីផ្សេង សូមបញ្ចូលនៅទីនេះ">
+                            @if($errors->has('phj_others'))
+                                <span class="help-block">
+                                                <strong>{!! $errors->first('phj_others') !!}</strong>
+                                            </span>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
             @endforeach
         @else
             <div id="public_add_form">
@@ -119,7 +130,8 @@
                                 <strong>ថ្ងៃចូល:</strong>
                             </label>
                             <div class="input-group">
-                                <input type="text" name="phj_start_date[]" class="form-control date_picker" value="{!! isset($history->phj_start_date) ? $history->phj_start_date : old('phj_start_date[]') !!}" placeholder="សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ">
+                                <input type="text" name="phj_start_date[]" class="form-control date_picker" value=""
+                                       placeholder="សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i>
                                     </span>
@@ -138,7 +150,8 @@
                                 <strong>ថ្ងៃឈប់:</strong>
                             </label>
                             <div class="input-group">
-                                <input type="text" name="phj_end_date[]" class="form-control date_picker" value="{!! isset($history->phj_end_date) ? $history->phj_end_date : old('phj_end_date[]') !!}" placeholder="សូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារះ">
+                                <input type="text" name="phj_end_date[]" class="form-control date_picker" value=""
+                                       placeholder="សូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារះ">
                                 <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i>
                                     </span>
@@ -156,7 +169,8 @@
                             <label for="phj_ministry_institute" class="control-label">
                                 <strong>ក្រសួង-ស្ថាប័ន:</strong>
                             </label>
-                            <input type="text" name="phj_ministry_institute[]" class="form-control" value="{!! isset($history->phj_ministry_institute) ? $history->phj_ministry_institute : old('phj_ministry_institute[]') !!}" placeholder="សូមបញ្ចូល ក្រសួងឬស្ថាប័នដែលបំពេញការងារ">
+                            <input type="text" name="phj_ministry_institute[]" class="form-control" value=""
+                                   placeholder="សូមបញ្ចូល ក្រសួងឬស្ថាប័នដែលបំពេញការងារ">
                             @if($errors->has('phj_ministry_institute'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('phj_ministry_institute') !!}</strong>
@@ -170,7 +184,8 @@
                             <label for="phj_department" class="control-label">
                                 <strong>អង្គភាព:</strong>
                             </label>
-                            <input type="text" name="phj_department[]" class="form-control" value="{!! isset($history->phj_department) ? $history->phj_department : old('phj_department[]') !!}" placeholder="សូមបញ្ចូល អង្គភាពដែលបំពេញការងារ">
+                            <input type="text" name="phj_department[]" class="form-control" value=""
+                                   placeholder="សូមបញ្ចូល អង្គភាពដែលបំពេញការងារ">
                             @if($errors->has('phj_department'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('phj_department') !!}</strong>
@@ -184,7 +199,8 @@
                             <label for="phj_occupation" class="control-label">
                                 <strong>មុខតំណែង:</strong>
                             </label>
-                            <input type="text" name="phj_occupation[]" class="form-control" value="{!! isset($history->phj_occupation) ? $history->phj_occupation : old('phj_occupation[]') !!}" placeholder="សូមបំពេញ មុខតំណែងដែលបានកាន់កាប់">
+                            <input type="text" name="phj_occupation[]" class="form-control" value=""
+                                   placeholder="សូមបំពេញ មុខតំណែងដែលបានកាន់កាប់">
                             @if($errors->has('phj_occupation'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('phj_occupation') !!}</strong>
@@ -198,7 +214,8 @@
                             <label for="phj_others" class="control-label">
                                 <strong>ផ្សេងៗ:</strong>
                             </label>
-                            <input type="text" name="phj_others[]" class="form-control" value="{!! isset($history->phj_others) ? $history->phj_others : old('phj_others[]') !!}" placeholder="បើមានអ្វីផ្សេង សូមបញ្ចូលនៅទីនេះ">
+                            <input type="text" name="phj_others[]" class="form-control" value=""
+                                   placeholder="បើមានអ្វីផ្សេង សូមបញ្ចូលនៅទីនេះ">
                             @if($errors->has('phj_others'))
                                 <span class="help-block">
                                         <strong>{!! $errors->first('phj_others') !!}</strong>
@@ -206,7 +223,6 @@
                             @endif
                         </div>
                     </div>
-                    {!! Form::hidden('phj_type[]', 'Public', ['id'=> 'phj_type']) !!}
                 </div>
             </div>
             {{--Add more fields--}}
@@ -241,7 +257,8 @@
                             <strong>ថ្ងៃចូល:</strong>
                         </label>
                         <div class="input-group">
-                            <input type="text" name="phj_start_date[]" class="form-control date_picker" value="{!! isset($history->phj_start_date) ? $history->phj_start_date : old('phj_start_date[]') !!}" placeholder="សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ">
+                            <input type="text" name="phj_start_date[]" class="form-control date_picker" value=""
+                                   placeholder="សូមជ្រើសរើស ថ្ងៃចាប់ផ្តើមការងារ">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i>
                                     </span>
@@ -260,7 +277,8 @@
                             <strong>ថ្ងៃឈប់:</strong>
                         </label>
                         <div class="input-group">
-                            <input type="text" name="phj_end_date[]" class="form-control date_picker" value="{!! isset($history->phj_end_date) ? $history->phj_end_date : old('phj_end_date[]') !!}" placeholder="សូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារ">
+                            <input type="text" name="phj_end_date[]" class="form-control date_picker" value=""
+                                   placeholder="សូមជ្រើសរើស ថ្ងៃបញ្ចប់ការងារ">
                             <span class="input-group-addon bg-custom b-0 text-white">
                                         <i class="icon-calender"></i>
                                     </span>
@@ -278,7 +296,8 @@
                         <label for="phj_ministry_institute" class="control-label">
                             <strong>ក្រសួង-ស្ថាប័ន:</strong>
                         </label>
-                        <input type="text" name="phj_ministry_institute[]" class="form-control" value="{!! isset($history->phj_ministry_institute) ? $history->phj_ministry_institute : old('phj_ministry_institute[]') !!}" placeholder="សូមបញ្ចូល ក្រសួងឬស្ថាប័នដែលបំពេញការងារ">
+                        <input type="text" name="phj_ministry_institute[]" class="form-control" value=""
+                               placeholder="សូមបញ្ចូល ក្រសួងឬស្ថាប័នដែលបំពេញការងារ">
                         @if($errors->has('phj_ministry_institute'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('phj_ministry_institute') !!}</strong>
@@ -292,7 +311,8 @@
                         <label for="phj_department" class="control-label">
                             <strong>អង្គភាព:</strong>
                         </label>
-                        <input type="text" name="phj_department[]" class="form-control" value="{!! isset($history->phj_department) ? $history->phj_department : old('phj_department[]') !!}" placeholder="សូមបញ្ចូល អង្គភាពដែលបំពេញការងារ">
+                        <input type="text" name="phj_department[]" class="form-control" value=""
+                               placeholder="សូមបញ្ចូល អង្គភាពដែលបំពេញការងារ">
                         @if($errors->has('phj_department'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('phj_department') !!}</strong>
@@ -306,7 +326,8 @@
                         <label for="phj_occupation" class="control-label">
                             <strong>មុខតំណែង:</strong>
                         </label>
-                        <input type="text" name="phj_occupation[]" class="form-control" value="{!! isset($history->phj_occupation) ? $history->phj_occupation : old('phj_occupation[]') !!}" placeholder="សូមបញ្ចូល មុខតំណែងដែលបានកាន់កាប់">
+                        <input type="text" name="phj_occupation[]" class="form-control" value=""
+                               placeholder="សូមបញ្ចូល មុខតំណែងដែលបានកាន់កាប់">
                         @if($errors->has('phj_occupation'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('phj_occupation') !!}</strong>
@@ -320,7 +341,8 @@
                         <label for="phj_others" class="control-label">
                             <strong>ផ្សេងៗ:</strong>
                         </label>
-                        <input type="text" name="phj_others[]" class="form-control" value="{!! isset($history->phj_others) ? $history->phj_others : old('phj_others[]') !!}" placeholder="បើមានអ្វីផ្សេង សូមបញ្ចូលនៅទីនេះ">
+                        <input type="text" name="phj_others[]" class="form-control" value=""
+                               placeholder="បើមានអ្វីផ្សេង សូមបញ្ចូលនៅទីនេះ">
                         @if($errors->has('phj_others'))
                             <span class="help-block">
                                         <strong>{!! $errors->first('phj_others') !!}</strong>

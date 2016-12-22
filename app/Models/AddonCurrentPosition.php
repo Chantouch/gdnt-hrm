@@ -21,10 +21,13 @@ class AddonCurrentPosition extends Model
     protected $dates = ['acp_start_date'];
     protected $guarded = ['_method'];
 
-//    public function setACPStartDateAttribute()
-//    {
-//        return $this->attributes['acp_start_date'] = Carbon::parse($this->attributes['acp_start_date'])->format('Y-m-d');
-//    }
+    /**
+     * @param $value
+     */
+    public function setACPStartDateAttribute($value)
+    {
+        $this->attributes['acp_start_date'] = Carbon::createFromFormat('Y-m-d', $value);
+    }
 
     public function getACPStartDateAttribute()
     {

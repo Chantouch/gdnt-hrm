@@ -10,8 +10,24 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::get('/cache-config', function () {
+    $exitCode = Artisan::call('config:cache');
+    if (!$exitCode) {
+        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact System Admin');
+    }
+    return redirect()->back()->with('success', 'Cache successfully configured!');
+});
 
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@home']);
+Route::get('/clear-cache', function () {
+    $exitCode = Artisan::call('cache:clear');
+    if (!$exitCode) {
+        return redirect()->back()->with('error', 'Unable to process your request right now, Please contact System Admin');
+    }
+    return redirect()->back()->with('success', 'Cache successfully clear!');
+});
+
+
+Route::get('/', ['as' => 'home', 'uses' => 'FrontController@index']);
 
 Auth::routes();
 
@@ -56,16 +72,7 @@ Route::group(['middleware' => ['auth']], function () {
         //Route Management
         Route::group(array('prefix' => 'managements'), function () {
             Route::resource('employers', 'Admin\Employers\EmployerController', ["as" => 'admin.managements']);
-            Route::post('employers/store-emp', ['as' => 'admin.managements.employers.store-emp', 'uses' => 'Admin\Employers\EmployerController@storeEmp']);
-            Route::get('employers/{idEmp}/editEmp', ['as' => 'admin.managements.employers.edit-emp', 'uses' => 'Admin\Employers\EmployerController@editEmp']);
         });
     });
-
-//    Route::group(array('prefix' => 'admin/'), function () {
-//        Route::group(array('prefix' => 'system'), function () {
-//            //USERS
-//
-//        });
-//    });
 
 });
